@@ -1,0 +1,172 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot1CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 87,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot2CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 150,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_3",
+          "text": "3",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot3CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 213,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_4",
+          "text": "4",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot4CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 276,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_5",
+          "text": "5",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot5CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 330,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_6",
+          "text": "6",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot6CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 87,
+          "y": 143
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_7",
+          "text": "7",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot7CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 150,
+          "y": 143
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_8",
+          "text": "8",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot8CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 213,
+          "y": 143
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_9",
+          "text": "9",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot9CSM"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 276,
+          "y": 143
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_10",
+          "text": "10",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Slot10CSM"
+          },
+          "width": 35,
+          "height": 20,
+          "x": 330,
+          "y": 143
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

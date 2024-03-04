@@ -1,0 +1,64 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:Rika"
+      },
+      {
+        "value": "CUSTOM:SatoruGojo"
+      },
+      {
+        "value": "CUSTOM:YujiItadori"
+      },
+      {
+        "value": "CUSTOM:YutaOkkotsu"
+      },
+      {
+        "value": "CUSTOM:NanamiKento"
+      },
+      {
+        "value": "CUSTOM:AwakenedMaki"
+      },
+      {
+        "value": "CUSTOM:SuguruGeto"
+      },
+      {
+        "value": "CUSTOM:Panda"
+      },
+      {
+        "value": "CUSTOM:HajimeKashimo"
+      },
+      {
+        "value": "CUSTOM:MegumiFushiguro"
+      },
+      {
+        "value": "CUSTOM:TogeInumaki"
+      },
+      {
+        "value": "CUSTOM:AoiTodo"
+      },
+      {
+        "value": "CUSTOM:JinichiZenin"
+      },
+      {
+        "value": "CUSTOM:MeiMei"
+      },
+      {
+        "value": "CUSTOM:Naobito"
+      },
+      {
+        "value": "CUSTOM:ShinjukuGojo"
+      }
+    ],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "sorcerers",
+    "namespace": "mod"
+  }
+}

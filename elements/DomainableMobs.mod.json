@@ -1,0 +1,34 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:SatoruGojo"
+      },
+      {
+        "value": "CUSTOM:Jogo"
+      },
+      {
+        "value": "CUSTOM:MegumiFushiguro"
+      },
+      {
+        "value": "CUSTOM:RyomenSukuna"
+      },
+      {
+        "value": "CUSTOM:HeianEraSukuna"
+      },
+      {
+        "value": "CUSTOM:ShinjukuGojo"
+      }
+    ],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "domainable_mobs",
+    "namespace": "mod"
+  }
+}

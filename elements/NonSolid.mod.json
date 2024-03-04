@@ -1,0 +1,742 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "Blocks.POINTED_DRIPSTONE"
+      },
+      {
+        "value": "Blocks.MOSS_CARPET"
+      },
+      {
+        "value": "Blocks.SAPLING#0"
+      },
+      {
+        "value": "Blocks.SAPLING#1"
+      },
+      {
+        "value": "Blocks.SAPLING#2"
+      },
+      {
+        "value": "Blocks.SAPLING#3"
+      },
+      {
+        "value": "Blocks.SAPLING#4"
+      },
+      {
+        "value": "Blocks.SAPLING#5"
+      },
+      {
+        "value": "Blocks.MANGROVE_PROPAGULE"
+      },
+      {
+        "value": "Blocks.REEDS"
+      },
+      {
+        "value": "Blocks.AMETHYST_CLUSTER"
+      },
+      {
+        "value": "Blocks.LARGE_AMETHYST_BUD"
+      },
+      {
+        "value": "Blocks.MEDIUM_AMETHYST_BUD"
+      },
+      {
+        "value": "Blocks.SMALL_AMETHYST_BUD"
+      },
+      {
+        "value": "Blocks.WEB"
+      },
+      {
+        "value": "Blocks.DEADBUSH"
+      },
+      {
+        "value": "Blocks.TALLGRASS#0"
+      },
+      {
+        "value": "Blocks.TALLGRASS#1"
+      },
+      {
+        "value": "Blocks.TALLGRASS#2"
+      },
+      {
+        "value": "Blocks.YELLOW_FLOWER"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#0"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#1"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#2"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#3"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#4"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#5"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#6"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#7"
+      },
+      {
+        "value": "Blocks.RED_FLOWER#8"
+      },
+      {
+        "value": "Blocks.CORNFLOWER"
+      },
+      {
+        "value": "Blocks.LILY_OF_THE_VALLEY"
+      },
+      {
+        "value": "Blocks.WITHER_ROSE"
+      },
+      {
+        "value": "Blocks.DOUBLE_PLANT#0"
+      },
+      {
+        "value": "Blocks.DOUBLE_PLANT#1"
+      },
+      {
+        "value": "Blocks.DOUBLE_PLANT#2"
+      },
+      {
+        "value": "Blocks.DOUBLE_PLANT#3"
+      },
+      {
+        "value": "Blocks.DOUBLE_PLANT#4"
+      },
+      {
+        "value": "Blocks.DOUBLE_PLANT#5"
+      },
+      {
+        "value": "Blocks.BROWN_MUSHROOM"
+      },
+      {
+        "value": "Blocks.RED_MUSHROOM"
+      },
+      {
+        "value": "Blocks.WARPED_FUNGUS"
+      },
+      {
+        "value": "Blocks.CRIMSON_FUNGUS"
+      },
+      {
+        "value": "Blocks.FIRE"
+      },
+      {
+        "value": "Blocks.SOUL_FIRE"
+      },
+      {
+        "value": "Blocks.CAMPFIRE"
+      },
+      {
+        "value": "Blocks.SOUL_CAMPFIRE"
+      },
+      {
+        "value": "Blocks.CANDLE#0"
+      },
+      {
+        "value": "Blocks.CANDLE#1"
+      },
+      {
+        "value": "Blocks.CANDLE#2"
+      },
+      {
+        "value": "Blocks.CANDLE#3"
+      },
+      {
+        "value": "Blocks.CANDLE#4"
+      },
+      {
+        "value": "Blocks.CANDLE#5"
+      },
+      {
+        "value": "Blocks.CANDLE#6"
+      },
+      {
+        "value": "Blocks.CANDLE#7"
+      },
+      {
+        "value": "Blocks.STANDING_SIGN"
+      },
+      {
+        "value": "Blocks.SPRUCE_SIGN"
+      },
+      {
+        "value": "Blocks.BIRCH_SIGN"
+      },
+      {
+        "value": "Blocks.ACACIA_SIGN"
+      },
+      {
+        "value": "Blocks.JUNGLE_SIGN"
+      },
+      {
+        "value": "Blocks.DARK_OAK_SIGN"
+      },
+      {
+        "value": "Blocks.CRIMSON_SIGN"
+      },
+      {
+        "value": "Blocks.WARPED_SIGN"
+      },
+      {
+        "value": "Blocks.MANGROVE_SIGN"
+      },
+      {
+        "value": "Blocks.WALL_SIGN"
+      },
+      {
+        "value": "Blocks.SPRUCE_WALL_SIGN"
+      },
+      {
+        "value": "Blocks.BIRCH_WALL_SIGN"
+      },
+      {
+        "value": "Blocks.ACACIA_WALL_SIGN"
+      },
+      {
+        "value": "Blocks.JUNGLE_WALL_SIGN"
+      },
+      {
+        "value": "Blocks.DARK_OAK_WALL_SIGN"
+      },
+      {
+        "value": "Blocks.CRIMSON_WALL_SIGN"
+      },
+      {
+        "value": "Blocks.WARPED_WALL_SIGN"
+      },
+      {
+        "value": "Blocks.MANGROVE_WALL_SIGN"
+      },
+      {
+        "value": "Blocks.TRAPDOOR"
+      },
+      {
+        "value": "Blocks.SPRUCE_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.BIRCH_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.JUNGLE_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.ACACIA_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.DARK_OAK_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.CRIMSON_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.WARPED_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.MANGROVE_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.IRON_TRAPDOOR"
+      },
+      {
+        "value": "Blocks.LADDER"
+      },
+      {
+        "value": "Blocks.LEVER"
+      },
+      {
+        "value": "Blocks.STONE_BUTTON"
+      },
+      {
+        "value": "Blocks.POLISHED_BLACKSTONE_BUTTON"
+      },
+      {
+        "value": "Blocks.WOODEN_BUTTON"
+      },
+      {
+        "value": "Blocks.SPRUCE_BUTTON"
+      },
+      {
+        "value": "Blocks.BIRCH_BUTTON"
+      },
+      {
+        "value": "Blocks.JUNGLE_BUTTON"
+      },
+      {
+        "value": "Blocks.ACACIA_BUTTON"
+      },
+      {
+        "value": "Blocks.DARK_OAK_BUTTON"
+      },
+      {
+        "value": "Blocks.CRIMSON_BUTTON"
+      },
+      {
+        "value": "Blocks.WARPED_BUTTON"
+      },
+      {
+        "value": "Blocks.MANGROVE_BUTTON"
+      },
+      {
+        "value": "Blocks.WOODEN_PRESSURE_PLATE"
+      },
+      {
+        "value": "Blocks.MELON_STEM"
+      },
+      {
+        "value": "Blocks.ATTACHED_MELON_STEM"
+      },
+      {
+        "value": "Blocks.PUMPKIN_STEM"
+      },
+      {
+        "value": "Blocks.ATTACHED_PUMPKIN_STEM"
+      },
+      {
+        "value": "Blocks.SWEET_BERRY_BUSH"
+      },
+      {
+        "value": "Blocks.VINE"
+      },
+      {
+        "value": "Blocks.GLOW_LICHEN"
+      },
+      {
+        "value": "Blocks.WATERLILY"
+      },
+      {
+        "value": "Blocks.POTTED_ALLIUM"
+      },
+      {
+        "value": "Blocks.POTTED_RED_MUSHROOM"
+      },
+      {
+        "value": "Blocks.POTTED_FLOWERING_AZALEA_BUSH"
+      },
+      {
+        "value": "Blocks.CARROTS"
+      },
+      {
+        "value": "Blocks.POTATOES"
+      },
+      {
+        "value": "Blocks.SEAGRASS"
+      },
+      {
+        "value": "Blocks.TALL_SEAGRASS"
+      },
+      {
+        "value": "Blocks.BUBBLE_CORAL_BLOCK"
+      },
+      {
+        "value": "Blocks.FIRE_CORAL_BLOCK"
+      },
+      {
+        "value": "Blocks.HORN_CORAL_BLOCK"
+      },
+      {
+        "value": "Blocks.DEAD_TUBE_CORAL"
+      },
+      {
+        "value": "Blocks.DEAD_BRAIN_CORAL"
+      },
+      {
+        "value": "Blocks.DEAD_BUBBLE_CORAL"
+      },
+      {
+        "value": "Blocks.DEAD_FIRE_CORAL"
+      },
+      {
+        "value": "Blocks.DEAD_HORN_CORAL"
+      },
+      {
+        "value": "Blocks.TUBE_CORAL"
+      },
+      {
+        "value": "Blocks.BRAIN_CORAL"
+      },
+      {
+        "value": "Blocks.BUBBLE_CORAL"
+      },
+      {
+        "value": "Blocks.FIRE_CORAL"
+      },
+      {
+        "value": "Blocks.HORN_CORAL"
+      },
+      {
+        "value": "Blocks.DEAD_TUBE_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_BRAIN_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_BUBBLE_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_FIRE_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_HORN_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.TUBE_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.BRAIN_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.BUBBLE_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.FIRE_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.HORN_CORAL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_TUBE_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_BRAIN_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_BUBBLE_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_FIRE_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.DEAD_HORN_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.TUBE_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.BRAIN_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.BUBBLE_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.FIRE_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.HORN_CORAL_WALL_FAN"
+      },
+      {
+        "value": "Blocks.WARPED_ROOTS"
+      },
+      {
+        "value": "Blocks.NETHER_SPROUTS"
+      },
+      {
+        "value": "Blocks.WEEPING_VINES"
+      },
+      {
+        "value": "Blocks.TWISTING_VINES"
+      },
+      {
+        "value": "Blocks.TWISTING_VINES_PLANT"
+      },
+      {
+        "value": "Blocks.RESPAWN_ANCHOR"
+      },
+      {
+        "value": "Blocks.CAVE_VINES"
+      },
+      {
+        "value": "Blocks.CAVE_VINES_PLANT"
+      },
+      {
+        "value": "Blocks.SPORE_BLOSSOM"
+      },
+      {
+        "value": "Blocks.BIG_DRIPLEAF_STEM"
+      },
+      {
+        "value": "Blocks.SMALL_DRIPLEAF"
+      },
+      {
+        "value": "Blocks.HANGING_ROOTS"
+      },
+      {
+        "value": "Blocks.GLASS"
+      },
+      {
+        "value": "Blocks.TINTED_GLASS"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#0"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#1"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#2"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#3"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#4"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#5"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#6"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#7"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#8"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#9"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#10"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#11"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#12"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#13"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#14"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS#15"
+      },
+      {
+        "value": "Blocks.GLASS_PANE"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#0"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#1"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#2"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#3"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#4"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#5"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#6"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#7"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#8"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#9"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#10"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#11"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#12"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#13"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#14"
+      },
+      {
+        "value": "Blocks.STAINED_GLASS_PANE#15"
+      },
+      {
+        "value": "Blocks.DIRT#0"
+      },
+      {
+        "value": "Blocks.DIRT#1"
+      },
+      {
+        "value": "Blocks.DIRT#2"
+      },
+      {
+        "value": "Blocks.ROOTED_DIRT"
+      },
+      {
+        "value": "Blocks.LOG#0"
+      },
+      {
+        "value": "Blocks.LOG#1"
+      },
+      {
+        "value": "Blocks.LOG#2"
+      },
+      {
+        "value": "Blocks.LOG#3"
+      },
+      {
+        "value": "Blocks.LOG2#0"
+      },
+      {
+        "value": "Blocks.LOG2#1"
+      },
+      {
+        "value": "Blocks.WARPED_STEM"
+      },
+      {
+        "value": "Blocks.CRIMSON_STEM"
+      },
+      {
+        "value": "Blocks.MANGROVE_LOG"
+      },
+      {
+        "value": "Blocks.MANGROVE_ROOTS"
+      },
+      {
+        "value": "Blocks.MUDDY_MANGROVE_ROOTS"
+      },
+      {
+        "value": "Blocks.STRIPPED_OAK_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_SPRUCE_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_BIRCH_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_JUNGLE_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_ACACIA_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_DARK_OAK_LOG"
+      },
+      {
+        "value": "Blocks.STRIPPED_WARPED_STEM"
+      },
+      {
+        "value": "Blocks.STRIPPED_CRIMSON_STEM"
+      },
+      {
+        "value": "Blocks.STRIPPED_MANGROVE_LOG"
+      },
+      {
+        "value": "Blocks.OAK_WOOD"
+      },
+      {
+        "value": "Blocks.SPRUCE_WOOD"
+      },
+      {
+        "value": "Blocks.BIRCH_WOOD"
+      },
+      {
+        "value": "Blocks.JUNGLE_WOOD"
+      },
+      {
+        "value": "Blocks.ACACIA_WOOD"
+      },
+      {
+        "value": "Blocks.DARK_OAK_WOOD"
+      },
+      {
+        "value": "Blocks.WARPED_HYPHAE"
+      },
+      {
+        "value": "Blocks.CRIMSON_HYPHAE"
+      },
+      {
+        "value": "Blocks.MANGROVE_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_OAK_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_SPRUCE_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_BIRCH_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_JUNGLE_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_ACACIA_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_DARK_OAK_WOOD"
+      },
+      {
+        "value": "Blocks.STRIPPED_WARPED_HYPHAE"
+      },
+      {
+        "value": "Blocks.STRIPPED_CRIMSON_HYPHAE"
+      },
+      {
+        "value": "Blocks.STRIPPED_MANGROVE_WOOD"
+      },
+      {
+        "value": "Blocks.LEAVES#0"
+      },
+      {
+        "value": "Blocks.LEAVES#1"
+      },
+      {
+        "value": "Blocks.LEAVES#2"
+      },
+      {
+        "value": "Blocks.LEAVES#3"
+      },
+      {
+        "value": "Blocks.LEAVES2#0"
+      },
+      {
+        "value": "Blocks.LEAVES2#1"
+      },
+      {
+        "value": "Blocks.MANGROVE_LEAVES"
+      },
+      {
+        "value": "Blocks.AZALEA_LEAVES"
+      },
+      {
+        "value": "Blocks.FLOWERING_AZALEA_LEAVES"
+      }
+    ],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "non_solid",
+    "namespace": "mod"
+  }
+}

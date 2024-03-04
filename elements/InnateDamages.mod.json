@@ -1,0 +1,46 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Damage types",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "damageTypes": [
+      {
+        "value": "CUSTOM:BloodDamage"
+      },
+      {
+        "value": "CUSTOM:CrushingDamage"
+      },
+      {
+        "value": "CUSTOM:CursedEnergyDamage"
+      },
+      {
+        "value": "CUSTOM:ElectricDamage"
+      },
+      {
+        "value": "CUSTOM:FrameAttack"
+      },
+      {
+        "value": "CUSTOM:FrostCalmDamage"
+      },
+      {
+        "value": "CUSTOM:RatioDamage"
+      },
+      {
+        "value": "CUSTOM:RepellingDamage"
+      },
+      {
+        "value": "CUSTOM:SlashingDamage"
+      },
+      {
+        "value": "CUSTOM:SoulDamage"
+      }
+    ],
+    "name": "innate_damages",
+    "namespace": "mod"
+  }
+}

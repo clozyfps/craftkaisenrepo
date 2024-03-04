@@ -1,0 +1,734 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 0,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "mainmenu.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "entitymodel",
+        "data": {
+          "entityModel": {
+            "name": "ReturnPlayer"
+          },
+          "scale": 40,
+          "rotationX": 0,
+          "followMouseMovement": true,
+          "x": 56,
+          "y": 111
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_race_human",
+          "text": {
+            "fixedValue": "Human"
+          },
+          "color": {
+            "value": -16724788,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ReturnHuman"
+          },
+          "x": 352,
+          "y": 37
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_skillpoints",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSkillpoints"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 59
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_curse",
+          "text": {
+            "fixedValue": "Curse"
+          },
+          "color": {
+            "value": -11005165,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ReturnCursedSpirit"
+          },
+          "x": 352,
+          "y": 37
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_exp_display",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnExpDisplay"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 95
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_rep",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnRep"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 175
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_affiliation",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnAffiliation"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 157
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_level",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnLevel"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 77
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_special",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSpecial"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 113
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_strength",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnStrength"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 249,
+          "y": 59
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_health",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnHealth"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 249,
+          "y": 77
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_cursed_energy",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCursedEnergy"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 249,
+          "y": 113
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_energy_control",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnEnergyControl"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 249,
+          "y": 95
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_speed",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSpeed"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 249,
+          "y": 131
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
+          "onClick": {
+            "name": "StrengthButton"
+          },
+          "x": 357,
+          "y": 55
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png1",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
+          "onClick": {
+            "name": "HealthButton"
+          },
+          "x": 357,
+          "y": 73
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png3",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
+          "onClick": {
+            "name": "ControlButton"
+          },
+          "x": 357,
+          "y": 91
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png2",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
+          "onClick": {
+            "name": "EnergyButton"
+          },
+          "x": 357,
+          "y": 109
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_smallbutton1png4",
+          "image": "addstatbutton.png",
+          "hoveredImage": "addstatbutton_h.png",
+          "onClick": {
+            "name": "SpeedButton"
+          },
+          "x": 357,
+          "y": 127
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increases_attack_damage",
+          "text": {
+            "fixedValue": "increases attack damage"
+          },
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 56
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increase_max_health",
+          "text": {
+            "fixedValue": "increase max health"
+          },
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 74
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increase_max_cursed_energy",
+          "text": {
+            "fixedValue": "increase max cursed energy"
+          },
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 110
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increase_energy_regen_rate_and_m",
+          "text": {
+            "fixedValue": "increase energy regen rate and max output"
+          },
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 92
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_increase_movement_speed",
+          "text": {
+            "fixedValue": "increase movement speed"
+          },
+          "width": 23,
+          "height": 13,
+          "x": 358,
+          "y": 128
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fourthgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGradeFour"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirdgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGradeThree"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stwograde.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySemiGrade2"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "twograde.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGrade2"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sonegrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySemiGrade1"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "onegrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGrade1"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "spgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySpecialGrade"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pageoneopen.png",
+          "use1Xscale": false,
+          "x": -4,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pagethreeclosed.png",
+          "use1Xscale": false,
+          "x": -4,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pagetwoclosed.png",
+          "use1Xscale": false,
+          "x": -4,
+          "y": 0
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "OpenSelfVowGUI"
+          },
+          "x": 20,
+          "y": 55
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click1",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "OpenMoves"
+          },
+          "x": 20,
+          "y": 76
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_perk",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnPerk"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 131
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_display_yen",
+          "text": {
+            "fixedValue": "",
+            "name": "DisplayYen"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_display_technique",
+          "text": {
+            "fixedValue": "",
+            "name": "DisplayTechnique"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 101,
+          "y": 37
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_prestige",
+          "text": {
+            "fixedValue": "Prestige"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 45,
+          "y": 181
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_0",
+          "text": {
+            "fixedValue": "0"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP0"
+          },
+          "x": 62,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ii",
+          "text": {
+            "fixedValue": "I"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP1"
+          },
+          "x": 63,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ii1",
+          "text": {
+            "fixedValue": "II"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP2"
+          },
+          "x": 62,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_iii",
+          "text": {
+            "fixedValue": "III"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP3"
+          },
+          "x": 60,
+          "y": 193
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_iv",
+          "text": {
+            "fixedValue": "IV"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayP4"
+          },
+          "x": 61,
+          "y": 193
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_mastery_button",
+          "image": "mastery_button.png",
+          "hoveredImage": "mastery_button_h.png",
+          "onClick": {
+            "name": "OpenMastery"
+          },
+          "x": 361,
+          "y": 183
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_prestigebutton",
+          "image": "prestigebutton.png",
+          "hoveredImage": "prestigebutton_h.png",
+          "onClick": {
+            "name": "OpenPrestigeMenu"
+          },
+          "displayCondition": {
+            "name": "DisplayPrestigeButton"
+          },
+          "x": 341,
+          "y": 183
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_open_mastery",
+          "text": {
+            "fixedValue": "Open Mastery"
+          },
+          "width": 18,
+          "height": 20,
+          "x": 362,
+          "y": 183
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_open_prestige",
+          "text": {
+            "fixedValue": "Open Prestige"
+          },
+          "displayCondition": {
+            "name": "DisplayPrestigeButton"
+          },
+          "width": 18,
+          "height": 22,
+          "x": 342,
+          "y": 182
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "mainmenu_empty.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pageoneclosed.png",
+          "use1Xscale": false,
+          "x": -4,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pagetwoopen.png",
+          "use1Xscale": false,
+          "x": -4,
+          "y": 0
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "MenuOnKeyPressed"
+          },
+          "x": 20,
+          "y": 34
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fourthgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGradeFour"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thirdgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGradeThree"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stwograde.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySemiGrade2"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "twograde.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGrade2"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sonegrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySemiGrade1"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "onegrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayGrade1"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "spgrade.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplaySpecialGrade"
+          },
+          "x": 0,
+          "y": 5
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pagethreeclosed.png",
+          "use1Xscale": false,
+          "x": -4,
+          "y": 0
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_click1",
+          "image": "click.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "OpenMoves"
+          },
+          "x": 20,
+          "y": 76
+        }
+      },
+      {
+        "type": "entitymodel",
+        "data": {
+          "entityModel": {
+            "name": "ReturnPlayer"
+          },
+          "scale": 40,
+          "rotationX": 0,
+          "followMouseMovement": true,
+          "x": 56,
+          "y": 111
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

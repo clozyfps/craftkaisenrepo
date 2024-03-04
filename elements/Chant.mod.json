@@ -1,0 +1,10 @@
+{
+  "_fv": 57,
+  "_type": "command",
+  "definition": {
+    "commandName": "chant",
+    "type": "STANDARD",
+    "permissionLevel": "1",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"literal\"><field name=\"name\">Create</field><statement name=\"args\"><block type=\"message\"><field name=\"name\">createchant</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ChantCreate</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">ClearList</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ChantRemove</field></block></statement><next><block type=\"literal\"><field name=\"name\">List</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ChantList</field></block></statement></block></next></block></next></block></next></block></xml>"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "craft_kaisen:custom/splitsoulkatana",
+  "textures": {
+    "0": "craft_kaisen:block/split_soul_katana_texture",
+    "particle": "craft_kaisen:item/air102_layer_2"
+  }
+}

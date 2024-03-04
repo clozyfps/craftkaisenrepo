@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "craft_kaisen:blood_damage",
+    "craft_kaisen:crushing_damage",
+    "craft_kaisen:cursed_energy_damage",
+    "craft_kaisen:electric_damage",
+    "craft_kaisen:frame_attack",
+    "craft_kaisen:frost_calm_damage",
+    "craft_kaisen:ratio_damage",
+    "craft_kaisen:repelling_damage",
+    "craft_kaisen:slashing_damage",
+    "craft_kaisen:soul_damage"
+  ]
+}

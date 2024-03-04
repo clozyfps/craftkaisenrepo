@@ -1,0 +1,616 @@
+{
+  "_fv": 57,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer12.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBarEmpty"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer11.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar1"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer10.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar2"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer9.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar3"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer8.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar4"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer7.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar5"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer6.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar6"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar7"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar8"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar9"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar10"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebarlayer1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar11"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cebar.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayBar12"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "hotbarv.png",
+          "use1Xscale": true,
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput1"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput2"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput3"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput4"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput5"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output6.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput6"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output7.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput7"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output8.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput8"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output9.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput9"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "output10.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DisplayOutput10"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_cursed_energy",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar12"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 43
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar11"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 54
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay1",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar10"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 66
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay2",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar9"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 78
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay3",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar8"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 90
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay4",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar7"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 102
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay5",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar6"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 114
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay6",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar5"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 126
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay7",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar4"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 138
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay8",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar3"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 150
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay9",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar2"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 162
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ce_overlay10",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnCEOverlay"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBar1"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 174
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_0",
+          "text": {
+            "fixedValue": "0"
+          },
+          "color": {
+            "value": -12283715,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DisplayBarEmpty"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 18,
+          "y": 185
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "lockedhalf.png",
+          "use1Xscale": true,
+          "anchorPoint": "CENTER_LEFT",
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_boogie_woogie_target_displa",
+          "text": {
+            "fixedValue": "",
+            "name": "BoogieWoogieTargetDisplay"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "BoogieWoogieTargetConditition"
+          },
+          "anchorPoint": "CENTER",
+          "x": 4,
+          "y": 204
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

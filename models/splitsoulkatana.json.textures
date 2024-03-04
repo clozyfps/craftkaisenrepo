@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "split_soul_katana_texture"
+      },
+      "name": "default"
+    }
+  }
+}

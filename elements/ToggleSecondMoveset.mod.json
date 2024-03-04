@@ -1,0 +1,15 @@
+{
+  "_fv": 57,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "NONE",
+    "keyBindingName": "Toggle Second Moveset",
+    "keyBindingCategoryKey": "craft_kaisen",
+    "onKeyPressed": {
+      "name": "ToggleSecondMovesetOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "ToggleSecondMovesetOnKeyReleased"
+    }
+  }
+}
