@@ -42,7 +42,7 @@ public class PlayerTickProcedure {
 		DisasterPlantsMovesProcedure.execute(world, entity);
 		DisasterFlamesMovesProcedure.execute(world, x, y, z, entity);
 		AntiGravitySystemMovesProcedure.execute(world, x, y, z, entity);
-		PPLTMovesProcedure.execute(entity);
+		PPLTMovesProcedure.execute(world, x, y, z, entity);
 		MeleeMovesProcedure.execute(world, x, y, z, entity);
 		WeaponMovesProcedure.execute(entity);
 		CursedEnergyMovesProcedure.execute(world, entity);
@@ -76,5 +76,8 @@ public class PlayerTickProcedure {
 		SukunaCooldownProcedure.execute(entity);
 		ChantTimerProcedure.execute(world, x, y, z, entity);
 		SlamProcedure.execute(world, x, y, z, entity);
+		RoundBeginsProcedure.execute(world, x, y, z, entity);
+		RoundGameChoiceTimerProcedure.execute(world, x, y, z, entity);
+		BeginRollingProcedure.execute(world, x, y, z, entity);
 	}
 }

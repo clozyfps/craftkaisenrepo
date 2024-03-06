@@ -30,6 +30,7 @@ import net.mcreator.craftkaisen.client.model.Modelroppongicursedspirit;
 import net.mcreator.craftkaisen.client.model.Modelreversalred;
 import net.mcreator.craftkaisen.client.model.Modelrepelpink;
 import net.mcreator.craftkaisen.client.model.Modelprisonbox;
+import net.mcreator.craftkaisen.client.model.Modelpachinko_ball;
 import net.mcreator.craftkaisen.client.model.Modelnewmuzi;
 import net.mcreator.craftkaisen.client.model.Modelmouthcursedspirit;
 import net.mcreator.craftkaisen.client.model.Modelmaximummeteornewwww;
@@ -130,6 +131,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(ModelYujikuna.LAYER_LOCATION, ModelYujikuna::createBodyLayer);
 		event.registerLayerDefinition(Modelserpentground.LAYER_LOCATION, Modelserpentground::createBodyLayer);
 		event.registerLayerDefinition(ModelCrowProjectile.LAYER_LOCATION, ModelCrowProjectile::createBodyLayer);
+		event.registerLayerDefinition(Modelpachinko_ball.LAYER_LOCATION, Modelpachinko_ball::createBodyLayer);
 		event.registerLayerDefinition(Modeltojishirt.LAYER_LOCATION, Modeltojishirt::createBodyLayer);
 		event.registerLayerDefinition(Modelhanami.LAYER_LOCATION, Modelhanami::createBodyLayer);
 		event.registerLayerDefinition(Modelsukunafit.LAYER_LOCATION, Modelsukunafit::createBodyLayer);

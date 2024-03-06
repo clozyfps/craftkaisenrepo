@@ -292,6 +292,7 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> NAOBITO_OUTFIT_LEGGINGS = REGISTRY.register("naobito_outfit_leggings", () -> new NaobitoOutfitItem.Leggings());
 	public static final RegistryObject<Item> MEGUNA_OUTFIT_CHESTPLATE = REGISTRY.register("meguna_outfit_chestplate", () -> new MegunaOutfitItem.Chestplate());
 	public static final RegistryObject<Item> MEGUNA_OUTFIT_LEGGINGS = REGISTRY.register("meguna_outfit_leggings", () -> new MegunaOutfitItem.Leggings());
+	public static final RegistryObject<Item> PPLT_DOMAIN_FLOOR = block(CraftKaisenModBlocks.PPLT_DOMAIN_FLOOR);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

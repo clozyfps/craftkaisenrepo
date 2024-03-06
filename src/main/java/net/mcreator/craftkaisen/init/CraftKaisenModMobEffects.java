@@ -41,6 +41,7 @@ import net.mcreator.craftkaisen.potion.PiercingBloodMobEffect;
 import net.mcreator.craftkaisen.potion.NueElectricityEffectMobEffect;
 import net.mcreator.craftkaisen.potion.LapseBlueControlMobEffect;
 import net.mcreator.craftkaisen.potion.LapseBlueControlGojoMobEffect;
+import net.mcreator.craftkaisen.potion.JackpotMobEffect;
 import net.mcreator.craftkaisen.potion.HeianSlicesMobEffect;
 import net.mcreator.craftkaisen.potion.FrozenSolidMobEffect;
 import net.mcreator.craftkaisen.potion.FrameOnMobEffect;
@@ -116,4 +117,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> PRE_WORLD_CUT = REGISTRY.register("pre_world_cut", () -> new PreWorldCutMobEffect());
 	public static final RegistryObject<MobEffect> REVERSAL_RED_CONTROL = REGISTRY.register("reversal_red_control", () -> new ReversalRedControlMobEffect());
 	public static final RegistryObject<MobEffect> DOMAIN_CLASH_POTION = REGISTRY.register("domain_clash_potion", () -> new DomainClashPotionMobEffect());
+	public static final RegistryObject<MobEffect> JACKPOT = REGISTRY.register("jackpot", () -> new JackpotMobEffect());
 }

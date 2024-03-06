@@ -223,5 +223,39 @@
         "stream": false
       }
     ]
+  },
+  "domain.pplt": {
+    "subtitle": "subtitles.domain.pplt",
+    "sounds": [
+      {
+        "name": "craft_kaisen:hakari-domain-expansion-_mp3cut.net_",
+        "stream": false
+      }
+    ]
+  },
+  "domain.spin": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:hakari-domain-expansion-_mp3cut.net_-_1_",
+        "stream": false
+      }
+    ]
+  },
+  "domain.jackpot": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:hakari-domain-expansion-_mp3cut.net_-_4_",
+        "stream": false
+      }
+    ]
+  },
+  "domain.crack": {
+    "subtitle": "subtitles.domain.crack",
+    "sounds": [
+      {
+        "name": "craft_kaisen:hakari-domain-expansion-_mp3cut.net_-_5_",
+        "stream": false
+      }
+    ]
   }
 }

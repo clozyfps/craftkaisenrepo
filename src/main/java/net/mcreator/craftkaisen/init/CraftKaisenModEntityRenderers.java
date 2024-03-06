@@ -40,8 +40,10 @@ import net.mcreator.craftkaisen.client.renderer.RikoAmanaiRenderer;
 import net.mcreator.craftkaisen.client.renderer.RikaRenderer;
 import net.mcreator.craftkaisen.client.renderer.ReversalRedEntityRenderer;
 import net.mcreator.craftkaisen.client.renderer.ResurrectedTojiRenderer;
+import net.mcreator.craftkaisen.client.renderer.RedPachinkoBallProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.RedOpenDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.RedClosedDoorRenderer;
+import net.mcreator.craftkaisen.client.renderer.RainbowPachinkoBallProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowOpenDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowDragonRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowClosedDoorRenderer;
@@ -71,9 +73,11 @@ import net.mcreator.craftkaisen.client.renderer.HundredDemonsTickRenderer;
 import net.mcreator.craftkaisen.client.renderer.HeianEraSukunaRenderer;
 import net.mcreator.craftkaisen.client.renderer.HanamiRenderer;
 import net.mcreator.craftkaisen.client.renderer.HajimeKashimoRenderer;
+import net.mcreator.craftkaisen.client.renderer.GreenPachinkoBallProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.GreenOpenDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.GreenClosedDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.GreatSerpentRenderer;
+import net.mcreator.craftkaisen.client.renderer.GoldPachinkoBallProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.GoldOpenDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.GoldClosedDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.FrozenFrameRenderer;
@@ -233,5 +237,9 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.THROW_PLAYER_MOB.get(), ThrowPlayerMobRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.WORLD_CUT_DISMANTLE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.STRONG_PUNCH.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.GREEN_PACHINKO_BALL_PROJECTILE.get(), GreenPachinkoBallProjectileRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.RED_PACHINKO_BALL_PROJECTILE.get(), RedPachinkoBallProjectileRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.GOLD_PACHINKO_BALL_PROJECTILE.get(), GoldPachinkoBallProjectileRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.RAINBOW_PACHINKO_BALL_PROJECTILE.get(), RainbowPachinkoBallProjectileRenderer::new);
 	}
 }

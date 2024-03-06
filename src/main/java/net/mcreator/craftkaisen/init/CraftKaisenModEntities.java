@@ -57,8 +57,10 @@ import net.mcreator.craftkaisen.entity.ReversalRedProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.ReversalRedProjectile1Entity;
 import net.mcreator.craftkaisen.entity.ReversalRedEntityEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
+import net.mcreator.craftkaisen.entity.RedPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.RedOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.RedClosedDoorEntity;
+import net.mcreator.craftkaisen.entity.RainbowPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.RainbowOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
@@ -97,9 +99,11 @@ import net.mcreator.craftkaisen.entity.HollowPurpleGojoEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
+import net.mcreator.craftkaisen.entity.GreenPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.GreenOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.GreenClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
+import net.mcreator.craftkaisen.entity.GoldPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.GoldOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.GoldClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.FrozenFrameEntity;
@@ -559,6 +563,18 @@ public class CraftKaisenModEntities {
 			.setCustomClientFactory(WorldCutDismantleEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<StrongPunchEntity>> STRONG_PUNCH = register("projectile_strong_punch",
 			EntityType.Builder.<StrongPunchEntity>of(StrongPunchEntity::new, MobCategory.MISC).setCustomClientFactory(StrongPunchEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<GreenPachinkoBallProjectileEntity>> GREEN_PACHINKO_BALL_PROJECTILE = register("projectile_green_pachinko_ball_projectile",
+			EntityType.Builder.<GreenPachinkoBallProjectileEntity>of(GreenPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(GreenPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<RedPachinkoBallProjectileEntity>> RED_PACHINKO_BALL_PROJECTILE = register("projectile_red_pachinko_ball_projectile",
+			EntityType.Builder.<RedPachinkoBallProjectileEntity>of(RedPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(RedPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<GoldPachinkoBallProjectileEntity>> GOLD_PACHINKO_BALL_PROJECTILE = register("projectile_gold_pachinko_ball_projectile",
+			EntityType.Builder.<GoldPachinkoBallProjectileEntity>of(GoldPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(GoldPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<RainbowPachinkoBallProjectileEntity>> RAINBOW_PACHINKO_BALL_PROJECTILE = register("projectile_rainbow_pachinko_ball_projectile",
+			EntityType.Builder.<RainbowPachinkoBallProjectileEntity>of(RainbowPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(RainbowPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
