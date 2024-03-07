@@ -222,6 +222,10 @@ public class CraftKaisenModVariables {
 				clone.RollingNumber1 = original.RollingNumber1;
 				clone.RollingNumber2 = original.RollingNumber2;
 				clone.RollingNumber3 = original.RollingNumber3;
+				clone.LosingStreak = original.LosingStreak;
+				clone.RolledNumber = original.RolledNumber;
+				clone.RolledStage = original.RolledStage;
+				clone.MiddleCard = original.MiddleCard;
 			}
 		}
 
@@ -565,6 +569,10 @@ public class CraftKaisenModVariables {
 		public String RollingNumber1 = "";
 		public String RollingNumber2 = "";
 		public String RollingNumber3 = "";
+		public double LosingStreak = 0;
+		public double RolledNumber = 0;
+		public double RolledStage = 0;
+		public boolean MiddleCard = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -721,6 +729,10 @@ public class CraftKaisenModVariables {
 			nbt.putString("RollingNumber1", RollingNumber1);
 			nbt.putString("RollingNumber2", RollingNumber2);
 			nbt.putString("RollingNumber3", RollingNumber3);
+			nbt.putDouble("LosingStreak", LosingStreak);
+			nbt.putDouble("RolledNumber", RolledNumber);
+			nbt.putDouble("RolledStage", RolledStage);
+			nbt.putBoolean("MiddleCard", MiddleCard);
 			return nbt;
 		}
 
@@ -874,6 +886,10 @@ public class CraftKaisenModVariables {
 			RollingNumber1 = nbt.getString("RollingNumber1");
 			RollingNumber2 = nbt.getString("RollingNumber2");
 			RollingNumber3 = nbt.getString("RollingNumber3");
+			LosingStreak = nbt.getDouble("LosingStreak");
+			RolledNumber = nbt.getDouble("RolledNumber");
+			RolledStage = nbt.getDouble("RolledStage");
+			MiddleCard = nbt.getBoolean("MiddleCard");
 		}
 	}
 
@@ -1046,6 +1062,10 @@ public class CraftKaisenModVariables {
 					variables.RollingNumber1 = message.data.RollingNumber1;
 					variables.RollingNumber2 = message.data.RollingNumber2;
 					variables.RollingNumber3 = message.data.RollingNumber3;
+					variables.LosingStreak = message.data.LosingStreak;
+					variables.RolledNumber = message.data.RolledNumber;
+					variables.RolledStage = message.data.RolledStage;
+					variables.MiddleCard = message.data.MiddleCard;
 				}
 			});
 			context.setPacketHandled(true);

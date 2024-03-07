@@ -30935,6 +30935,481 @@
         ]
       },
       "path": "~/Abilities/PrivatePureLoveTrain"
+    },
+    {
+      "name": "DisplayJackpotOne1",
+      "type": "procedure",
+      "sortid": 1335,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_one_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotOne1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotOne2",
+      "type": "procedure",
+      "sortid": 1336,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_one_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotOne2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotOne3",
+      "type": "procedure",
+      "sortid": 1337,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_one_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotOne3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotTwo1",
+      "type": "procedure",
+      "sortid": 1338,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_two_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotTwo1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotTwo2",
+      "type": "procedure",
+      "sortid": 1339,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_two_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotTwo2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotTwo3",
+      "type": "procedure",
+      "sortid": 1341,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_two_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotTwo3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotThree1",
+      "type": "procedure",
+      "sortid": 1340,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_three_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotThree1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotThree2",
+      "type": "procedure",
+      "sortid": 1342,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_three_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotThree2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotThree3",
+      "type": "procedure",
+      "sortid": 1343,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_three_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotThree3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotFour1",
+      "type": "procedure",
+      "sortid": 1344,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_four_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotFour1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotFour2",
+      "type": "procedure",
+      "sortid": 1345,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_four_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotFour2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotFour3",
+      "type": "procedure",
+      "sortid": 1346,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_four_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotFour3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotFive1",
+      "type": "procedure",
+      "sortid": 1347,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_five_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotFive1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotFive2",
+      "type": "procedure",
+      "sortid": 1348,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_five_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotFive2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotFive3",
+      "type": "procedure",
+      "sortid": 1349,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_five_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotFive3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotSix1",
+      "type": "procedure",
+      "sortid": 1350,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_six_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotSix1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotSix2",
+      "type": "procedure",
+      "sortid": 1351,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_six_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotSix2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotSix3",
+      "type": "procedure",
+      "sortid": 1352,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_six_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotSix3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotSeven1",
+      "type": "procedure",
+      "sortid": 1353,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_seven_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotSeven1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotSeven2",
+      "type": "procedure",
+      "sortid": 1354,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_seven_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotSeven2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "DisplayJackpotSeven3",
+      "type": "procedure",
+      "sortid": 1355,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_jackpot_seven_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayJackpotSeven3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain/DisplayEffects"
+    },
+    {
+      "name": "PachinkoOverlay",
+      "type": "overlay",
+      "sortid": 1356,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pachinko_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/screens/PachinkoOverlayOverlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "DisplayRolls",
+      "type": "procedure",
+      "sortid": 1357,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_rolls",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisplayRollsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/PrivatePureLoveTrain"
     }
   ],
   "variable_elements": [
@@ -31885,6 +32360,30 @@
       "type": "string",
       "scope": "player_lifetime",
       "value": ""
+    },
+    {
+      "name": "LosingStreak",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "RolledNumber",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "RolledStage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "MiddleCard",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -32140,8 +32639,8 @@
   "language_map": {
     "en_us": {
       "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-      "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "subtitles.sukuna": "sukuna talking",
+      "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
       "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
@@ -32161,11 +32660,11 @@
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
       "gui.craft_kaisen.imbue_gui.ImbueValue": "Cursed Energy Amount",
       "entity.craft_kaisen.round_deer": "Round Deer",
-      "entity.craft_kaisen.icile": "Icile",
       "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
+      "entity.craft_kaisen.icile": "Icile",
       "item.craft_kaisen.ember_insect_spawn_egg": "Ember Insect Spawn Egg",
-      "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
       "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
+      "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
       "entity.craft_kaisen.jinichi_zenin": "Jinichi Zenin",
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
@@ -32173,22 +32672,22 @@
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
-      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
+      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
-      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
-      "advancements.special_grade.title": "Special Grade",
       "gui.craft_kaisen.main_menu.label_0": "0",
+      "advancements.special_grade.title": "Special Grade",
+      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
       "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
-      "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.red_open_door": "Red Open Door",
+      "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
-      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.repelling_damage": "%1$s died to repulsion",
+      "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "advancements.simple_domain_learned.title": "Simple Domain",
       "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
@@ -32803,7 +33302,12 @@
           },
           {
             "name": "PrivatePureLoveTrain",
-            "children": []
+            "children": [
+              {
+                "name": "DisplayEffects",
+                "children": []
+              }
+            ]
           },
           {
             "name": "BlackBirdManipulation",
