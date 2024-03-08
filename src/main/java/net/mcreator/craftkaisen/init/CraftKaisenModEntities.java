@@ -57,8 +57,10 @@ import net.mcreator.craftkaisen.entity.ReversalRedProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.ReversalRedProjectile1Entity;
 import net.mcreator.craftkaisen.entity.ReversalRedEntityEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
+import net.mcreator.craftkaisen.entity.RedPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.RedOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.RedClosedDoorEntity;
+import net.mcreator.craftkaisen.entity.RainbowPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.RainbowOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
@@ -97,9 +99,11 @@ import net.mcreator.craftkaisen.entity.HollowPurpleGojoEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
+import net.mcreator.craftkaisen.entity.GreenPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.GreenOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.GreenClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.GreatSerpentEntity;
+import net.mcreator.craftkaisen.entity.GoldPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.GoldOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.GoldClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.FrozenFrameEntity;
@@ -175,6 +179,10 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<YutaOkkotsuEntity>of(YutaOkkotsuEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(YutaOkkotsuEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<RikaEntity>> RIKA = register("rika",
+			EntityType.Builder.<RikaEntity>of(RikaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RikaEntity::new)
+
+					.sized(1.4f, 2.2f));
 	public static final RegistryObject<EntityType<GreatSerpentEntity>> GREAT_SERPENT = register("great_serpent",
 			EntityType.Builder.<GreatSerpentEntity>of(GreatSerpentEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GreatSerpentEntity::new)
 
@@ -555,10 +563,18 @@ public class CraftKaisenModEntities {
 			.setCustomClientFactory(WorldCutDismantleEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<StrongPunchEntity>> STRONG_PUNCH = register("projectile_strong_punch",
 			EntityType.Builder.<StrongPunchEntity>of(StrongPunchEntity::new, MobCategory.MISC).setCustomClientFactory(StrongPunchEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<RikaEntity>> RIKA = register("rika",
-			EntityType.Builder.<RikaEntity>of(RikaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RikaEntity::new)
-
-					.sized(1.4f, 2.2f));
+	public static final RegistryObject<EntityType<GreenPachinkoBallProjectileEntity>> GREEN_PACHINKO_BALL_PROJECTILE = register("projectile_green_pachinko_ball_projectile",
+			EntityType.Builder.<GreenPachinkoBallProjectileEntity>of(GreenPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(GreenPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<RedPachinkoBallProjectileEntity>> RED_PACHINKO_BALL_PROJECTILE = register("projectile_red_pachinko_ball_projectile",
+			EntityType.Builder.<RedPachinkoBallProjectileEntity>of(RedPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(RedPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<GoldPachinkoBallProjectileEntity>> GOLD_PACHINKO_BALL_PROJECTILE = register("projectile_gold_pachinko_ball_projectile",
+			EntityType.Builder.<GoldPachinkoBallProjectileEntity>of(GoldPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(GoldPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<RainbowPachinkoBallProjectileEntity>> RAINBOW_PACHINKO_BALL_PROJECTILE = register("projectile_rainbow_pachinko_ball_projectile",
+			EntityType.Builder.<RainbowPachinkoBallProjectileEntity>of(RainbowPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(RainbowPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -574,6 +590,7 @@ public class CraftKaisenModEntities {
 			RyomenSukunaEntity.init();
 			RoppongiCursedSpiritEntity.init();
 			YutaOkkotsuEntity.init();
+			RikaEntity.init();
 			GreatSerpentEntity.init();
 			RugbyFieldCursedSpiritEntity.init();
 			KoGuyEntity.init();
@@ -652,7 +669,6 @@ public class CraftKaisenModEntities {
 			UnlimitedVoidAccelerateEntity.init();
 			NaobitoEntity.init();
 			ThrowPlayerMobEntity.init();
-			RikaEntity.init();
 		});
 	}
 
@@ -665,6 +681,7 @@ public class CraftKaisenModEntities {
 		event.put(RYOMEN_SUKUNA.get(), RyomenSukunaEntity.createAttributes().build());
 		event.put(ROPPONGI_CURSED_SPIRIT.get(), RoppongiCursedSpiritEntity.createAttributes().build());
 		event.put(YUTA_OKKOTSU.get(), YutaOkkotsuEntity.createAttributes().build());
+		event.put(RIKA.get(), RikaEntity.createAttributes().build());
 		event.put(GREAT_SERPENT.get(), GreatSerpentEntity.createAttributes().build());
 		event.put(RUGBY_FIELD_CURSED_SPIRIT.get(), RugbyFieldCursedSpiritEntity.createAttributes().build());
 		event.put(KO_GUY.get(), KoGuyEntity.createAttributes().build());
@@ -743,6 +760,5 @@ public class CraftKaisenModEntities {
 		event.put(UNLIMITED_VOID_ACCELERATE.get(), UnlimitedVoidAccelerateEntity.createAttributes().build());
 		event.put(NAOBITO.get(), NaobitoEntity.createAttributes().build());
 		event.put(THROW_PLAYER_MOB.get(), ThrowPlayerMobEntity.createAttributes().build());
-		event.put(RIKA.get(), RikaEntity.createAttributes().build());
 	}
 }

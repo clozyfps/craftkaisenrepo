@@ -38,6 +38,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.TOJI_FUSHIGURO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.YUJI_ITADORI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.YUTA_OKKOTSU_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.RIKA_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.CHOSO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.NANAMI_KENTO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.RESURRECTED_TOJI_SPAWN_EGG.get());
@@ -57,7 +58,6 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.SHINJUKU_GOJO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.KENJAKU_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.NAOBITO_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.RIKA_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {

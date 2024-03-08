@@ -6,7 +6,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
 import net.mcreator.craftkaisen.entity.RoundDeerEntity;
-import net.mcreator.craftkaisen.entity.RikaEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
 
@@ -37,13 +36,6 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof SmallPoxDeityEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof RikaEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

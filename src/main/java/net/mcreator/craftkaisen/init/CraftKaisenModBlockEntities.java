@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.craftkaisen.block.entity.PPLTDomainFloorBlockEntity;
 import net.mcreator.craftkaisen.block.entity.MagmaDomainWallBlockEntity;
 import net.mcreator.craftkaisen.block.entity.MagmaDomainFloorBlockEntity;
 import net.mcreator.craftkaisen.block.entity.DomainStarBlockBlockEntity;
@@ -55,6 +56,7 @@ public class CraftKaisenModBlockEntities {
 	public static final RegistryObject<BlockEntityType<?>> DOMAIN_LAVA = register("domain_lava", CraftKaisenModBlocks.DOMAIN_LAVA, DomainLavaBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> DOMAIN_ICE_STALAGMITE = register("domain_ice_stalagmite", CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE, DomainIceStalagmiteBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> DOMAIN_ICE_STALAGMITE_TALL = register("domain_ice_stalagmite_tall", CraftKaisenModBlocks.DOMAIN_ICE_STALAGMITE_TALL, DomainIceStalagmiteTallBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> PPLT_DOMAIN_FLOOR = register("pplt_domain_floor", CraftKaisenModBlocks.PPLT_DOMAIN_FLOOR, PPLTDomainFloorBlockEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));

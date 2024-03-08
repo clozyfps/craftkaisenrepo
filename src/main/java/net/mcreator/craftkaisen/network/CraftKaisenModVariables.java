@@ -218,6 +218,15 @@ public class CraftKaisenModVariables {
 				clone.Chant3Timer = original.Chant3Timer;
 				clone.Chant2Timer = original.Chant2Timer;
 				clone.Chant1Timer = original.Chant1Timer;
+				clone.RollingNumber1 = original.RollingNumber1;
+				clone.MiddleCard = original.MiddleCard;
+				clone.LosingStreak = original.LosingStreak;
+				clone.RollingNumber2 = original.RollingNumber2;
+				clone.RollingNumber3 = original.RollingNumber3;
+				clone.Rolling = original.Rolling;
+				clone.RollingTimer = original.RollingTimer;
+				clone.RolledStage = original.RolledStage;
+				clone.RolledNumber = original.RolledNumber;
 			}
 		}
 
@@ -557,6 +566,15 @@ public class CraftKaisenModVariables {
 		public double CsmSlot7Stack = 0;
 		public double Chant1Timer = 0;
 		public double CsmSlot3Stack = 0;
+		public String RollingNumber1 = "";
+		public boolean MiddleCard = false;
+		public double LosingStreak = 0;
+		public String RollingNumber2 = "";
+		public String RollingNumber3 = "";
+		public boolean Rolling = false;
+		public double RollingTimer = 0;
+		public double RolledStage = 0;
+		public double RolledNumber = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -709,6 +727,15 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("CsmSlot7Stack", CsmSlot7Stack);
 			nbt.putDouble("Chant1Timer", Chant1Timer);
 			nbt.putDouble("CsmSlot3Stack", CsmSlot3Stack);
+			nbt.putString("RollingNumber1", RollingNumber1);
+			nbt.putBoolean("MiddleCard", MiddleCard);
+			nbt.putDouble("LosingStreak", LosingStreak);
+			nbt.putString("RollingNumber2", RollingNumber2);
+			nbt.putString("RollingNumber3", RollingNumber3);
+			nbt.putBoolean("Rolling", Rolling);
+			nbt.putDouble("RollingTimer", RollingTimer);
+			nbt.putDouble("RolledStage", RolledStage);
+			nbt.putDouble("RolledNumber", RolledNumber);
 			return nbt;
 		}
 
@@ -858,6 +885,15 @@ public class CraftKaisenModVariables {
 			CsmSlot7Stack = nbt.getDouble("CsmSlot7Stack");
 			Chant1Timer = nbt.getDouble("Chant1Timer");
 			CsmSlot3Stack = nbt.getDouble("CsmSlot3Stack");
+			RollingNumber1 = nbt.getString("RollingNumber1");
+			MiddleCard = nbt.getBoolean("MiddleCard");
+			LosingStreak = nbt.getDouble("LosingStreak");
+			RollingNumber2 = nbt.getString("RollingNumber2");
+			RollingNumber3 = nbt.getString("RollingNumber3");
+			Rolling = nbt.getBoolean("Rolling");
+			RollingTimer = nbt.getDouble("RollingTimer");
+			RolledStage = nbt.getDouble("RolledStage");
+			RolledNumber = nbt.getDouble("RolledNumber");
 		}
 	}
 
@@ -1026,6 +1062,15 @@ public class CraftKaisenModVariables {
 					variables.CsmSlot7Stack = message.data.CsmSlot7Stack;
 					variables.Chant1Timer = message.data.Chant1Timer;
 					variables.CsmSlot3Stack = message.data.CsmSlot3Stack;
+					variables.RollingNumber1 = message.data.RollingNumber1;
+					variables.MiddleCard = message.data.MiddleCard;
+					variables.LosingStreak = message.data.LosingStreak;
+					variables.RollingNumber2 = message.data.RollingNumber2;
+					variables.RollingNumber3 = message.data.RollingNumber3;
+					variables.Rolling = message.data.Rolling;
+					variables.RollingTimer = message.data.RollingTimer;
+					variables.RolledStage = message.data.RolledStage;
+					variables.RolledNumber = message.data.RolledNumber;
 				}
 			});
 			context.setPacketHandled(true);

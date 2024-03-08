@@ -42,4 +42,8 @@ public class CraftKaisenModSounds {
 	public static final RegistryObject<SoundEvent> MAGICHIT = REGISTRY.register("magichit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "magichit")));
 	public static final RegistryObject<SoundEvent> SLICINGPUNCH = REGISTRY.register("slicingpunch", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "slicingpunch")));
 	public static final RegistryObject<SoundEvent> LIGHTNINGFLASH = REGISTRY.register("lightningflash", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "lightningflash")));
+	public static final RegistryObject<SoundEvent> DOMAIN_PPLT = REGISTRY.register("domain.pplt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "domain.pplt")));
+	public static final RegistryObject<SoundEvent> DOMAIN_CRACK = REGISTRY.register("domain.crack", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "domain.crack")));
+	public static final RegistryObject<SoundEvent> DOMAIN_JACKPOT = REGISTRY.register("domain.jackpot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "domain.jackpot")));
+	public static final RegistryObject<SoundEvent> DOMAIN_SPIN = REGISTRY.register("domain.spin", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "domain.spin")));
 }
