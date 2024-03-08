@@ -226,6 +226,7 @@ public class CraftKaisenModVariables {
 				clone.RolledNumber = original.RolledNumber;
 				clone.RolledStage = original.RolledStage;
 				clone.MiddleCard = original.MiddleCard;
+				clone.RollingTimer = original.RollingTimer;
 			}
 		}
 
@@ -573,6 +574,7 @@ public class CraftKaisenModVariables {
 		public double RolledNumber = 0;
 		public double RolledStage = 0;
 		public boolean MiddleCard = false;
+		public double RollingTimer = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -733,6 +735,7 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("RolledNumber", RolledNumber);
 			nbt.putDouble("RolledStage", RolledStage);
 			nbt.putBoolean("MiddleCard", MiddleCard);
+			nbt.putDouble("RollingTimer", RollingTimer);
 			return nbt;
 		}
 
@@ -890,6 +893,7 @@ public class CraftKaisenModVariables {
 			RolledNumber = nbt.getDouble("RolledNumber");
 			RolledStage = nbt.getDouble("RolledStage");
 			MiddleCard = nbt.getBoolean("MiddleCard");
+			RollingTimer = nbt.getDouble("RollingTimer");
 		}
 	}
 
@@ -1066,6 +1070,7 @@ public class CraftKaisenModVariables {
 					variables.RolledNumber = message.data.RolledNumber;
 					variables.RolledStage = message.data.RolledStage;
 					variables.MiddleCard = message.data.MiddleCard;
+					variables.RollingTimer = message.data.RollingTimer;
 				}
 			});
 			context.setPacketHandled(true);

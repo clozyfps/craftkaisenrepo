@@ -24,8 +24,16 @@ public class BeginRollingProcedure {
 			return;
 		double rNum = 0;
 		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Rolling) {
-			entity.getPersistentData().putDouble("rollingTimer", (entity.getPersistentData().getDouble("rollingTimer") + 1));
-			if (entity.getPersistentData().getDouble("rollingTimer") >= 0 && !(entity.getPersistentData().getDouble("rollingTimer") == 100) && !(entity.getPersistentData().getDouble("rollingTimer") == 20)) {
+			{
+				double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingTimer + 1;
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.RollingTimer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingTimer >= 0
+					&& !((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingTimer == 100)
+					&& !((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingTimer == 20)) {
 				if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber1).isEmpty()
 						&& !((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber2).isEmpty()
 						&& !((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber3).isEmpty()) {
@@ -204,6 +212,13 @@ public class BeginRollingProcedure {
 						{
 							double _setval = 0;
 							entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.RollingTimer = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						{
+							double _setval = 0;
+							entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.RolledNumber = _setval;
 								capability.syncPlayerVariables(entity);
 							});
@@ -215,10 +230,17 @@ public class BeginRollingProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						entity.getPersistentData().putDouble("displayProgress", 0);
 					});
 				}
-			} else if (entity.getPersistentData().getDouble("rollingTimer") == 20) {
-				entity.getPersistentData().putDouble("rollingTimer", 21);
+			} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingTimer == 0) {
+				{
+					double _setval = 1;
+					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.RollingTimer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 				{
 					boolean _setval = false;
 					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -240,8 +262,14 @@ public class BeginRollingProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-			} else if (entity.getPersistentData().getDouble("rollingTimer") == 100) {
-				entity.getPersistentData().putDouble("rollingTimer", (-40));
+			} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingTimer == 100) {
+				{
+					double _setval = -10;
+					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.RollingTimer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 				rNum = Mth.nextInt(RandomSource.create(), 1, 7);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
@@ -258,6 +286,7 @@ public class BeginRollingProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					entity.getPersistentData().putDouble("displayProgress", 1);
 				} else if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber1).isEmpty()
 						&& ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber2).isEmpty()) {
 					if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).LosingStreak == 0) {
@@ -277,6 +306,7 @@ public class BeginRollingProcedure {
 							});
 						}
 					}
+					entity.getPersistentData().putDouble("displayProgress", 2);
 				} else if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber1).isEmpty()
 						&& !((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber2).isEmpty()
 						&& ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber3).isEmpty()) {
@@ -297,6 +327,7 @@ public class BeginRollingProcedure {
 							});
 						}
 					}
+					entity.getPersistentData().putDouble("displayProgress", 3);
 				}
 				DisplayRollsProcedure.execute(entity);
 			}

@@ -24,31 +24,6 @@ public class RoundGameChoiceTimerProcedure {
 			entity.getPersistentData().putDouble("roundChoiceTimer", (entity.getPersistentData().getDouble("roundChoiceTimer") - 1));
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal(("\u00A7a\u00A7l\u00A7oTime Left: " + new java.text.DecimalFormat("#").format(Math.floor(entity.getPersistentData().getDouble("roundChoiceTimer")) / 20))), true);
-			if (entity.getPersistentData().getDouble("roundChoiceTimer") == 75) {
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_block.break")), SoundSource.NEUTRAL, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_block.break")), SoundSource.NEUTRAL, 1, 1, false);
-					}
-				}
-			} else if (entity.getPersistentData().getDouble("roundChoiceTimer") == 50) {
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_block.break")), SoundSource.NEUTRAL, 1, (float) 0.8);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_block.break")), SoundSource.NEUTRAL, 1, (float) 0.8, false);
-					}
-				}
-			} else if (entity.getPersistentData().getDouble("roundChoiceTimer") == 25) {
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_block.break")), SoundSource.NEUTRAL, 1, (float) 0.8);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_block.break")), SoundSource.NEUTRAL, 1, (float) 0.8, false);
-					}
-				}
-			}
 		} else if (entity.getPersistentData().getDouble("roundChoiceTimer") == 1) {
 			entity.getPersistentData().putDouble("roundChoiceTimer", 0);
 			if (world instanceof Level _level) {

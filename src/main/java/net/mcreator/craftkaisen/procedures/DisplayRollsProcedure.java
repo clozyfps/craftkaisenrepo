@@ -10,7 +10,7 @@ public class DisplayRollsProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber1).isEmpty()) {
+		if (entity.getPersistentData().getDouble("displayProgress") == 1) {
 			if (new Object() {
 				double convert(String s) {
 					try {
@@ -222,8 +222,7 @@ public class DisplayRollsProcedure {
 					});
 				}
 			}
-		} else if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber1).isEmpty()
-				&& ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber2).isEmpty()) {
+		} else if (entity.getPersistentData().getDouble("displayProgress") == 2) {
 			if (new Object() {
 				double convert(String s) {
 					try {
@@ -435,9 +434,7 @@ public class DisplayRollsProcedure {
 					});
 				}
 			}
-		} else if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber1).isEmpty()
-				&& !((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber2).isEmpty()
-				&& ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RollingNumber3).isEmpty()) {
+		} else if (entity.getPersistentData().getDouble("displayProgress") == 3) {
 			if (new Object() {
 				double convert(String s) {
 					try {
