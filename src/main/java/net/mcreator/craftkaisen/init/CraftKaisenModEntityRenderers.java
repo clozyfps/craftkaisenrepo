@@ -113,7 +113,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.RYOMEN_SUKUNA.get(), RyomenSukunaRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.ROPPONGI_CURSED_SPIRIT.get(), RoppongiCursedSpiritRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.YUTA_OKKOTSU.get(), YutaOkkotsuRenderer::new);
-		event.registerEntityRenderer(CraftKaisenModEntities.RIKA.get(), RikaRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.GREAT_SERPENT.get(), GreatSerpentRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.RUGBY_FIELD_CURSED_SPIRIT.get(), RugbyFieldCursedSpiritRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.KO_GUY.get(), KoGuyRenderer::new);
@@ -233,5 +232,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.THROW_PLAYER_MOB.get(), ThrowPlayerMobRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.WORLD_CUT_DISMANTLE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.STRONG_PUNCH.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.RIKA.get(), RikaRenderer::new);
 	}
 }

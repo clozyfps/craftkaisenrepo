@@ -1,27 +1,18 @@
 {
   "_fv": 57,
-  "_type": "livingentity",
+  "_type": "animatedentity",
   "definition": {
     "mobName": "Rika",
     "mobLabel": "",
-    "mobModelName": "ModelRika",
     "mobModelTexture": "rikatexture.png",
-    "transparentModelCondition": {
-      "fixedValue": false
-    },
-    "isShakingCondition": {
-      "fixedValue": false
-    },
-    "solidBoundingBox": {
-      "fixedValue": false
-    },
+    "mobModelGlowTexture": "",
     "visualScale": {
       "fixedValue": 1.0
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "entityDataEntries": [],
     "modelWidth": 1.4000000000000001,
     "modelHeight": 2.2,
     "modelShadowSize": 0.5,
@@ -65,23 +56,18 @@
     "attackKnockback": 1.0,
     "knockbackResistance": 15.0,
     "movementSpeed": 0.5,
-    "stepHeight": 0.6,
     "armorBaseValue": 0.1,
     "trackingRange": 64,
     "followRange": 50,
     "health": 590,
     "xpAmount": 0,
     "waterMob": false,
-    "breatheUnderwater": {
-      "fixedValue": false
-    },
-    "pushedByFluids": {
-      "fixedValue": true
-    },
-    "flyingMob": true,
+    "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "deathTime": 20,
+    "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
     "canControlForward": false,
@@ -114,7 +100,6 @@
     "stepSound": {
       "value": ""
     },
-    "entityDataEntries": [],
     "whenMobDies": {
       "name": "RikaEntityDies"
     },
@@ -126,9 +111,33 @@
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"59\" y=\"64\"><next><block type=\"fight_as_owner\"><field name=\"condition\">null,null</field><next><block type=\"protect_owner\"><field name=\"condition\">null,null</field><next><block type=\"attack_on_collide\"><field name=\"speed\">2.7</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"attack_fly\"><field name=\"radius\">50</field><field name=\"speed\">4</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"59\" y=\"64\"><next><block type=\"fight_as_owner\"><field name=\"condition\">null,null</field><next><block type=\"protect_owner\"><field name=\"condition\">null,null</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.8</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"attack_fly\"><field name=\"radius\">50</field><field name=\"speed\">4</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "model": "rika.geo.json",
+    "groupName": "",
+    "animation1": "rikaidle",
+    "animation2": "rikamove",
+    "animation3": "",
+    "animation4": "rikaslash",
+    "animation5": "",
+    "animation6": "",
+    "animation7": "",
+    "animation8": "",
+    "animation9": "",
+    "animation10": "",
+    "enable2": true,
+    "enable3": false,
+    "enable4": true,
+    "enable5": false,
+    "enable6": false,
+    "enable7": false,
+    "enable8": false,
+    "enable9": false,
+    "enable10": false,
     "breedable": true,
     "tameable": true,
+    "disableDeathRotation": false,
+    "headMovement": false,
+    "eyeHeight": false,
     "breedTriggerItems": [
       {
         "value": "CUSTOM:Test"
@@ -141,6 +150,7 @@
     "rangedItemType": "Default item",
     "rangedAttackInterval": 20,
     "rangedAttackRadius": 10.0,
+    "height": 0.0,
     "spawnThisMob": false,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 1,
