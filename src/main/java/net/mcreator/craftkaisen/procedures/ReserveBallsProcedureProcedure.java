@@ -1,8 +1,24 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.entity.RedPachinkoBallProjectileEntity;
+import net.mcreator.craftkaisen.entity.RainbowPachinkoBallProjectileEntity;
+import net.mcreator.craftkaisen.entity.GreenPachinkoBallProjectileEntity;
+import net.mcreator.craftkaisen.entity.GoldPachinkoBallProjectileEntity;
 
 public class ReserveBallsProcedureProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -19,7 +35,7 @@ public class ReserveBallsProcedureProcedure {
 		}
 		if (doorchance >= 1 && doorchance >= 70) {
 			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = new GreenPachinkoBallProjectileEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
+				Entity entityToSpawn = new GreenPachinkoBallProjectileEntity(CraftKaisenModEntities.GREEN_PACHINKO_BALL_PROJECTILE.get(), _level);
 				entityToSpawn.moveTo((entity.getX() + Mth.nextInt(RandomSource.create(), (int) (-0.75), (int) 0.75)), (entity.getY() + Mth.nextInt(RandomSource.create(), (int) (-0.1), (int) 0.5)),
 						(entity.getZ() + Mth.nextInt(RandomSource.create(), (int) (-0.75), (int) 0.75)), 0, 0);
 				entityToSpawn.setYBodyRot(0);
@@ -58,7 +74,7 @@ public class ReserveBallsProcedureProcedure {
 		}
 		if (doorchance == 100) {
 			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = new RainbowPachinkoBallProjectileEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
+				Entity entityToSpawn = new RainbowPachinkoBallProjectileEntity(CraftKaisenModEntities.RAINBOW_PACHINKO_BALL_PROJECTILE.get(), _level);
 				entityToSpawn.moveTo((entity.getX() + Mth.nextInt(RandomSource.create(), (int) (-0.75), (int) 0.75)), (entity.getY() + Mth.nextInt(RandomSource.create(), (int) (-0.1), (int) 0.5)),
 						(entity.getZ() + Mth.nextInt(RandomSource.create(), (int) (-0.75), (int) 0.75)), 0, 0);
 				entityToSpawn.setYBodyRot(0);

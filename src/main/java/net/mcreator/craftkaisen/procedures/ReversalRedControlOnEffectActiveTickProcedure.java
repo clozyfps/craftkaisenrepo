@@ -1,20 +1,25 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.client.gui.screens.Screen;
@@ -41,7 +46,7 @@ public class ReversalRedControlOnEffectActiveTickProcedure {
 							(entity.level.clip(
 									new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("redz")))), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
 									.getBlockPos().getZ())),
-							Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "particle minecraft:dust 1 0 0 2 ^0 ^0 ^0 0.1 0.2 0.1 0 10");
+							Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "particle minecraft:dust 1 0 0 4 ^0 ^0 ^0 0.1 0.1 0.1 0 10");
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE,
 					(entity.level
@@ -101,8 +106,24 @@ public class ReversalRedControlOnEffectActiveTickProcedure {
 				if (!(entity == entityiterator) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 					if (entityiterator instanceof LivingEntity) {
 						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:repelling_damage"))), entity),
-								(float) (15 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5));
+								(float) (17 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5));
 						entityiterator.setDeltaMovement(new Vec3((2 * entity.getLookAngle().x), (2 * entity.getLookAngle().y), (2 * entity.getLookAngle().z)));
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 10, 2, 2, 2, 0);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 1, 2, 2, 2, 0.4);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.POOF, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 2, 2, 2, 2, 0.4);
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")),
+										SoundSource.NEUTRAL, 1, 1);
+							} else {
+								_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
+							}
+						}
+						if (entity instanceof LivingEntity _entity)
+							_entity.removeEffect(CraftKaisenModMobEffects.REVERSAL_RED_CONTROL.get());
 					}
 				}
 			}

@@ -21,7 +21,8 @@ public class ChargeTickProcedure {
 		if (entity == null)
 			return;
 		if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(CraftKaisenModMobEffects.RCT.get()))) {
-			if (!(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(CraftKaisenModMobEffects.LAPSE_BLUE_CONTROL.get()))) {
+			if (!(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(CraftKaisenModMobEffects.LAPSE_BLUE_CONTROL.get()) || entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(CraftKaisenModMobEffects.REVERSAL_RED_CONTROL.get())
+					|| entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
 				if (entity.getPersistentData().getBoolean("charging") == true) {
 					if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < (entity
 							.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).maxCursedEnergy) {

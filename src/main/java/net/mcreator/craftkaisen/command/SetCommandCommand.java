@@ -187,7 +187,7 @@ public class SetCommandCommand {
 
 					SetTenShadowsProcedure.execute(arguments);
 					return 0;
-				})).then(Commands.literal("StrawDoll").executes(arguments -> {
+				})).then(Commands.literal("StrawDollWIP").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -229,7 +229,7 @@ public class SetCommandCommand {
 
 					SetDisasterPlantsProcedure.execute(arguments);
 					return 0;
-				})).then(Commands.literal("CursedSpiritManipulation").executes(arguments -> {
+				})).then(Commands.literal("CursedSpiritManipulationWIP").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -299,7 +299,7 @@ public class SetCommandCommand {
 
 					SetIceProcedure.execute(arguments);
 					return 0;
-				})).then(Commands.literal("PrivatePureLoveTrain").executes(arguments -> {
+				})).then(Commands.literal("PrivatePureLoveTrainWIP").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

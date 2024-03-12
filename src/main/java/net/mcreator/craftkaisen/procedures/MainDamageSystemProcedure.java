@@ -46,41 +46,6 @@ public class MainDamageSystemProcedure {
 						random = Mth.nextInt(RandomSource.create(), 1, 4);
 						if (random == 1) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 3;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.leftLegDamage = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-						} else if (random == 2) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage + amount / 3;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.leftArmDamage = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-						} else if (random == 3) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightArmDamage + amount / 3;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.rightArmDamage = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-						} else if (random == 4) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage + amount / 3;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.rightLegDamage = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-						}
-					} else if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:crushing_damage")))) {
-						random = Mth.nextInt(RandomSource.create(), 1, 4);
-						if (random == 1) {
-							{
 								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 5;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.leftLegDamage = _setval;
@@ -112,11 +77,11 @@ public class MainDamageSystemProcedure {
 								});
 							}
 						}
-					} else {
+					} else if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:crushing_damage")))) {
 						random = Mth.nextInt(RandomSource.create(), 1, 4);
 						if (random == 1) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 7;
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 8;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.leftLegDamage = _setval;
 									capability.syncPlayerVariables(entity);
@@ -124,7 +89,7 @@ public class MainDamageSystemProcedure {
 							}
 						} else if (random == 2) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage + amount / 7;
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage + amount / 8;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.leftArmDamage = _setval;
 									capability.syncPlayerVariables(entity);
@@ -132,7 +97,7 @@ public class MainDamageSystemProcedure {
 							}
 						} else if (random == 3) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightArmDamage + amount / 7;
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightArmDamage + amount / 8;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.rightArmDamage = _setval;
 									capability.syncPlayerVariables(entity);
@@ -140,7 +105,42 @@ public class MainDamageSystemProcedure {
 							}
 						} else if (random == 4) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage + amount / 7;
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage + amount / 8;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.rightLegDamage = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						}
+					} else {
+						random = Mth.nextInt(RandomSource.create(), 1, 4);
+						if (random == 1) {
+							{
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 10;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.leftLegDamage = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if (random == 2) {
+							{
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage + amount / 10;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.leftArmDamage = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if (random == 3) {
+							{
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightArmDamage + amount / 10;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.rightArmDamage = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if (random == 4) {
+							{
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage + amount / 10;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.rightLegDamage = _setval;
 									capability.syncPlayerVariables(entity);
@@ -151,41 +151,6 @@ public class MainDamageSystemProcedure {
 				}
 				if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
 					if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:slashing_damage")))) {
-						random = Mth.nextInt(RandomSource.create(), 1, 4);
-						if (random == 1) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 6;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.leftLegDamage = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-						} else if (random == 2) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage + amount / 6;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.leftArmDamage = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-						} else if (random == 3) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightArmDamage + amount / 6;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.rightArmDamage = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-						} else if (random == 4) {
-							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage + amount / 6;
-								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.rightLegDamage = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-						}
-					} else if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:crushing_damage")))) {
 						random = Mth.nextInt(RandomSource.create(), 1, 4);
 						if (random == 1) {
 							{
@@ -220,11 +185,11 @@ public class MainDamageSystemProcedure {
 								});
 							}
 						}
-					} else {
+					} else if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:crushing_damage")))) {
 						random = Mth.nextInt(RandomSource.create(), 1, 4);
 						if (random == 1) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 11;
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 12;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.leftLegDamage = _setval;
 									capability.syncPlayerVariables(entity);
@@ -232,7 +197,7 @@ public class MainDamageSystemProcedure {
 							}
 						} else if (random == 2) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage + amount / 11;
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage + amount / 12;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.leftArmDamage = _setval;
 									capability.syncPlayerVariables(entity);
@@ -240,7 +205,7 @@ public class MainDamageSystemProcedure {
 							}
 						} else if (random == 3) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightArmDamage + amount / 11;
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightArmDamage + amount / 12;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.rightArmDamage = _setval;
 									capability.syncPlayerVariables(entity);
@@ -248,7 +213,42 @@ public class MainDamageSystemProcedure {
 							}
 						} else if (random == 4) {
 							{
-								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage + amount / 11;
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage + amount / 12;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.rightLegDamage = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						}
+					} else {
+						random = Mth.nextInt(RandomSource.create(), 1, 4);
+						if (random == 1) {
+							{
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage + amount / 16;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.leftLegDamage = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if (random == 2) {
+							{
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage + amount / 16;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.leftArmDamage = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if (random == 3) {
+							{
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightArmDamage + amount / 16;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.rightArmDamage = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if (random == 4) {
+							{
+								double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage + amount / 16;
 								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.rightLegDamage = _setval;
 									capability.syncPlayerVariables(entity);

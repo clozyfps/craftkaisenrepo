@@ -49,7 +49,7 @@ public class FinishCharacterProcedure {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("You are born with the legendary Six Eyes."), false);
 			{
-				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + ", Six Eyes";
+				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + " Six Eyes";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.special = _setval;
 					capability.syncPlayerVariables(entity);
@@ -68,7 +68,7 @@ public class FinishCharacterProcedure {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("You are blessed by the sparks."), false);
 			{
-				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + ", Blessed By The Sparks";
+				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + " Blessed By The Sparks";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.special = _setval;
 					capability.syncPlayerVariables(entity);
@@ -94,7 +94,7 @@ public class FinishCharacterProcedure {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("You are born with a exceptional amount of cursed energy"), false);
 			{
-				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + ", Overflowing Cursed Energy";
+				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + " Overflowing Cursed Energy";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.special = _setval;
 					capability.syncPlayerVariables(entity);
@@ -120,7 +120,7 @@ public class FinishCharacterProcedure {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("You are born with the ability to percieve souls"), false);
 			{
-				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + ", Soul Perception";
+				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + " Soul Perception";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.special = _setval;
 					capability.syncPlayerVariables(entity);
@@ -139,7 +139,7 @@ public class FinishCharacterProcedure {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("You are born as a cursed womb"), false);
 			{
-				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + ", Cursed Womb";
+				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + " Cursed Womb";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.special = _setval;
 					capability.syncPlayerVariables(entity);

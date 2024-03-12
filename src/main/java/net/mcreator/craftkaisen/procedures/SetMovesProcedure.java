@@ -25,7 +25,7 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putDouble("moveCost", 25);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 5) {
 					entity.getPersistentData().putString("moveDisplay", "Unlimited Void");
-					entity.getPersistentData().putDouble("moveCost", 40);
+					entity.getPersistentData().putDouble("moveCost", 70);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Cursed Speech")) {
@@ -69,7 +69,7 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putDouble("moveCost", 18);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 4) {
 					entity.getPersistentData().putString("moveDisplay", "Malevolent Shrine");
-					entity.getPersistentData().putDouble("moveCost", 40);
+					entity.getPersistentData().putDouble("moveCost", 70);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Copy")) {
@@ -85,7 +85,7 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putDouble("moveCost", 12);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 4) {
 					entity.getPersistentData().putString("moveDisplay", "Pure Love");
-					entity.getPersistentData().putDouble("moveCost", 25);
+					entity.getPersistentData().putDouble("moveCost", 35);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Blood Manipulation")) {
@@ -166,7 +166,7 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putDouble("moveCost", 35);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 11) {
 					entity.getPersistentData().putString("moveDisplay", "Chimera Shadow Garden");
-					entity.getPersistentData().putDouble("moveCost", 40);
+					entity.getPersistentData().putDouble("moveCost", 65);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Disaster Flames")) {
@@ -185,11 +185,11 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putDouble("moveCost", 18);
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 5) {
 					entity.getPersistentData().putString("moveDisplay", "Coffin of the Iron Mountain");
-					entity.getPersistentData().putDouble("moveCost", 35);
+					entity.getPersistentData().putDouble("moveCost", 70);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Disaster Plants")) {
-				entity.getPersistentData().putDouble("maxMoves", 5);
+				entity.getPersistentData().putDouble("maxMoves", 4);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Roots");
 					entity.getPersistentData().putDouble("moveCost", 5);
@@ -202,9 +202,6 @@ public class SetMovesProcedure {
 				} else if (entity.getPersistentData().getDouble("moveNumber") == 4) {
 					entity.getPersistentData().putString("moveDisplay", "Cursed Bud");
 					entity.getPersistentData().putDouble("moveCost", 18);
-				} else if (entity.getPersistentData().getDouble("moveNumber") == 5) {
-					entity.getPersistentData().putString("moveDisplay", "Flower Offering");
-					entity.getPersistentData().putDouble("moveCost", 35);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Cursed Spirit Manipulation")) {
@@ -319,11 +316,11 @@ public class SetMovesProcedure {
 				}
 				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
 					entity.getPersistentData().putString("moveDisplay", "Frost Calm");
-					entity.getPersistentData().putDouble("moveCost", 12);
+					entity.getPersistentData().putDouble("moveCost", 17);
 				}
 				if (entity.getPersistentData().getDouble("moveNumber") == 4) {
 					entity.getPersistentData().putString("moveDisplay", "Glacial Embrace");
-					entity.getPersistentData().putDouble("moveCost", 25);
+					entity.getPersistentData().putDouble("moveCost", 70);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Private Pure Love Train")) {

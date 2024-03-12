@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -22,6 +23,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
 import net.mcreator.craftkaisen.CraftKaisenMod;
@@ -196,7 +198,8 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
-						if (!(entityiterator instanceof LivingEntity _livEnt163 && _livEnt163.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))) {
+						if (!(entityiterator instanceof LivingEntity _livEnt163 && _livEnt163.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+								|| !(entityiterator instanceof LivingEntity _livEnt164 && _livEnt164.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COT_MEFFECT.get(), 150, 0, false, false));
 						}
@@ -219,6 +222,11 @@ public class CoffinOfTheIronMountainProcedureProcedure {
 		} else if (entity.getPersistentData().getBoolean("domain")) {
 			RemoveCoffinProcedure.execute(world, (entity.getPersistentData().getDouble("domainx")), (entity.getPersistentData().getDouble("domainy")), (entity.getPersistentData().getDouble("domainz")));
 			entity.getPersistentData().putBoolean("domain", false);
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.UNSTABLE.get(),
+						(int) (1600 - (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level * 3), 0, false, false));
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("Unstable"), false);
 		}
 	}
 }

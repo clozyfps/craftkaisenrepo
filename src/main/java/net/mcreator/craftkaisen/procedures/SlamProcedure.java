@@ -33,14 +33,23 @@ public class SlamProcedure {
 							if (!((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi))).getBlock() == Blocks.AIR)) {
 								entity.setDeltaMovement(new Vec3(0, 0, 0));
 								if (world instanceof ServerLevel _level)
-									_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x + xi, y + i, z + zi, 5, 2, 2, 2, 0);
+									_level.sendParticles(ParticleTypes.EXPLOSION, x + xi, y + i, z + zi, 5, 2, 1, 2, 0);
 								if (world instanceof ServerLevel _level)
-									_level.sendParticles(ParticleTypes.POOF, x + xi, y + i, z + zi, 7, 2, 2, 2, 0.3);
+									_level.sendParticles(ParticleTypes.POOF, x + xi, y + i, z + zi, 7, 2, 1, 2, 0.4);
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x + xi, y + i, z + zi, 2, 2, 1, 2, 0.4);
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
 									} else {
 										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
+									}
+								}
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.attack_impact")), SoundSource.NEUTRAL, 1, 1);
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.attack_impact")), SoundSource.NEUTRAL, 1, 1, false);
 									}
 								}
 								if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())

@@ -24,6 +24,18 @@ public class CooldownSetProcedure {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("Skill Nullified"), true);
 		}
+		if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).isEmpty() && entity instanceof LivingEntity _livEnt2
+				&& _livEnt2.hasEffect(CraftKaisenModMobEffects.UNSTABLE.get())) {
+			{
+				String _setval = "";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.currentMove = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("Technique is Unstable"), true);
+		}
 		if (!((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).isEmpty() && entity.getPersistentData().getDouble("chantnumber") == 3) {
 			{
 				String _setval = "";

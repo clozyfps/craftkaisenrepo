@@ -3,6 +3,7 @@ package net.mcreator.craftkaisen.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.MobSpawnType;
@@ -17,68 +18,121 @@ import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.RikaEntity;
-import net.mcreator.craftkaisen.CraftKaisenMod;
 
+import java.util.stream.Collectors;
+import java.util.List;
 import java.util.Comparator;
 
 public class SummonRikaProcedureProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!entity.getPersistentData().getBoolean("rika")) {
-			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 50) {
-				{
-					double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 50;
-					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.currentCursedEnergy = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new RikaEntity(CraftKaisenModEntities.RIKA.get(), _level);
-					entityToSpawn.moveTo((entity.getX() - 3), (entity.getY() + 1), (entity.getZ() - 3), world.getRandom().nextFloat() * 360F, 0);
-					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				entity.getPersistentData().putBoolean("rika", true);
-				CraftKaisenMod.queueServerWork(10, () -> {
-					if (!(((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
+		if (entity instanceof Player _player && !_player.level.isClientSide())
+			_player.displayClientMessage(Component.literal("rika"), true);
+		if (!entity.isShiftKeyDown()) {
+			if (!entity.getPersistentData().getBoolean("rika")) {
+				if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 50) {
+					{
+						double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 50;
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.currentCursedEnergy = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						final Vec3 _center = new Vec3(x, y, z);
+						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+								.collect(Collectors.toList());
+						for (Entity entityiterator : _entfound) {
+							if (entityiterator instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal(("<" + entity.getDisplayName().getString() + ">" + " Come, Rika!")), false);
+						}
+					}
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = new RikaEntity(CraftKaisenModEntities.RIKA.get(), _level);
+						entityToSpawn.moveTo((entity.getX() - 3), (entity.getY() + 1), (entity.getZ() - 3), world.getRandom().nextFloat() * 360F, 0);
+						if (entityToSpawn instanceof Mob _mobToSpawn)
+							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					entity.getPersistentData().putBoolean("rika", true);
+					if (!(((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 15, 15, 15), e -> true).stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 						}
 					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)) {
-						if (((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
+						if (((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 15, 15, 15), e -> true).stream().sorted(new Object() {
 							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 							}
 						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _toTame && entity instanceof Player _owner)
 							_toTame.tame(_owner);
 					}
-				});
-			} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 50) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("#").format(50) + " cursed energy to use this move.")), true);
-			}
-		} else if (entity.getPersistentData().getBoolean("rika")) {
-			entity.getPersistentData().putBoolean("rika", false);
-			if (((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
-				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+				} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 50) {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("#").format(50) + " cursed energy to use this move.")), true);
 				}
-			}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) {
-				if (!((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
+			} else if (entity.getPersistentData().getBoolean("rika")) {
+				entity.getPersistentData().putBoolean("rika", false);
+				if (((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)).level.isClientSide())
-					((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) {
+					if (!((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)).discard();
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 20, 0, false, false));
+					}.compareDistOf(x, y, z)).findFirst().orElse(null)).level.isClientSide())
+						((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+							}
+						}.compareDistOf(x, y, z)).findFirst().orElse(null)).discard();
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 20, 0, false, false));
+				}
+			}
+		} else if (entity.isShiftKeyDown()) {
+			if (!entity.getPersistentData().getBoolean("rika")) {
+				if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 20) {
+					{
+						double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 20;
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.currentCursedEnergy = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = new RikaEntity(CraftKaisenModEntities.RIKA.get(), _level);
+						entityToSpawn.moveTo(
+								(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
+								(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
+								(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()),
+								world.getRandom().nextFloat() * 360F, 0);
+						if (entityToSpawn instanceof Mob _mobToSpawn)
+							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (!(((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).stream().sorted(new Object() {
+						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+						}
+					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)) {
+						if (((Entity) world.getEntitiesOfClass(RikaEntity.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+							}
+						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+							_toTame.tame(_owner);
+					}
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.PARTIAL_SUMMON_RIKA.get(), 20, 0, false, false));
+					entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 200);
+				} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 50) {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("#").format(50) + " cursed energy to use this move.")), true);
+				}
 			}
 		}
 	}

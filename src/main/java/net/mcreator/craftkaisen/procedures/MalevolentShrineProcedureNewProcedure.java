@@ -19,20 +19,14 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.MalevolentShrineEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.Comparator;
-
-import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
-import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
-import dev.kosmx.playerAnim.api.layered.ModifierLayer;
-import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
-import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 public class MalevolentShrineProcedureNewProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -40,14 +34,6 @@ public class MalevolentShrineProcedureNewProcedure {
 			return;
 		if (!entity.getPersistentData().getBoolean("domain")) {
 			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy >= 500) {
-				if (world.isClientSide()) {
-					if (entity instanceof AbstractClientPlayer player) {
-						var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-						if (animation != null) {
-							animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "shrinestart"))));
-						}
-					}
-				}
 				entity.getPersistentData().putString("domaintype", "Malevolent Shrine");
 				{
 					double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy - 500;
@@ -58,16 +44,6 @@ public class MalevolentShrineProcedureNewProcedure {
 				}
 				CraftKaisenMod.queueServerWork(1, () -> {
 					entity.getPersistentData().putBoolean("domain", true);
-				});
-				CraftKaisenMod.queueServerWork(15, () -> {
-					if (world.isClientSide()) {
-						if (entity instanceof AbstractClientPlayer player) {
-							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-							if (animation != null) {
-								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "shrineactive"))));
-							}
-						}
-					}
 				});
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
@@ -83,9 +59,9 @@ public class MalevolentShrineProcedureNewProcedure {
 				CraftKaisenMod.queueServerWork(20, () -> {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:bell")), SoundSource.NEUTRAL, 1, 1);
+							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:bells")), SoundSource.NEUTRAL, (float) 0.5, 1);
 						} else {
-							_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:bell")), SoundSource.NEUTRAL, 1, 1, false);
+							_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:bells")), SoundSource.NEUTRAL, (float) 0.5, 1, false);
 						}
 					}
 					CraftKaisenMod.queueServerWork(25, () -> {
@@ -99,41 +75,21 @@ public class MalevolentShrineProcedureNewProcedure {
 								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 							_level.addFreshEntity(entityToSpawn);
 						}
-						CraftKaisenMod.queueServerWork(10, () -> {
-							if (!world.getEntitiesOfClass(MalevolentShrineEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).isEmpty()) {
-								if (((Entity) world.getEntitiesOfClass(MalevolentShrineEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).stream().sorted(new Object() {
-									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-										return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-									}
-								}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _toTame && entity instanceof Player _owner)
-									_toTame.tame(_owner);
-							}
-						});
-					});
-				});
-				CraftKaisenMod.queueServerWork(200, () -> {
-					if (world.isClientSide()) {
-						if (entity instanceof AbstractClientPlayer player) {
-							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-							if (animation != null && !animation.isActive()) {
-								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "defaultend"))));
-							}
+						if (!world.getEntitiesOfClass(MalevolentShrineEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).isEmpty()) {
+							if (((Entity) world.getEntitiesOfClass(MalevolentShrineEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).stream().sorted(new Object() {
+								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+								}
+							}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+								_toTame.tame(_owner);
 						}
-					}
+					});
 				});
 			} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 500) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(500) + " cursed energy to use this move.")), true);
 			}
 		} else if (entity.getPersistentData().getBoolean("domain")) {
-			if (world.isClientSide()) {
-				if (entity instanceof AbstractClientPlayer player) {
-					var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-					if (animation != null && !animation.isActive()) {
-						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "defaultend"))));
-					}
-				}
-			}
 			CraftKaisenMod.queueServerWork(1, () -> {
 				entity.getPersistentData().putBoolean("domain", false);
 				if (!world.getEntitiesOfClass(MalevolentShrineEntity.class, AABB.ofSize(new Vec3(x, y, z), 150, 150, 150), e -> true).isEmpty()) {
@@ -156,9 +112,11 @@ public class MalevolentShrineProcedureNewProcedure {
 						}
 					}
 				}
-				entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1900);
+				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.UNSTABLE.get(),
+							(int) (1600 - (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level * 3), 0, false, false));
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Burnout"), true);
+					_player.displayClientMessage(Component.literal("Unstable"), true);
 			});
 		}
 	}

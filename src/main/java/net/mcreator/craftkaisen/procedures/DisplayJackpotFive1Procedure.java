@@ -1,14 +1,21 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Entity;
 
-import javax.annotation.Nullable;
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 public class DisplayJackpotFive1Procedure {
-public static boolean execute(
-) {
-boolean v = false;
-if (==5&&>=1&&!) {v = true;}else{v = false;}return
-v;
-}
+	public static boolean execute(Entity entity) {
+		if (entity == null)
+			return false;
+		boolean v = false;
+		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RolledNumber == 5
+				&& (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RolledStage >= 1
+				&& !(entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).MiddleCard) {
+			v = true;
+		} else {
+			v = false;
+		}
+		return v;
+	}
 }

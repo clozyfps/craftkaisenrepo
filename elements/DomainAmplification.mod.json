@@ -16,6 +16,9 @@
     "onStarted": {
       "name": "DomainAmplificationEffectStartedapplied"
     },
+    "onActiveTick": {
+      "name": "DomainAmplificationOnEffectActiveTick"
+    },
     "onExpired": {
       "name": "DomainAmplificationEffectExpires"
     }

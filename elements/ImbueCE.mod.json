@@ -7,9 +7,6 @@
     "keyBindingCategoryKey": "craft_kaisen",
     "onKeyPressed": {
       "name": "ImbueCEOnKeyPressed"
-    },
-    "onKeyReleased": {
-      "name": "ImbueCEOnKeyReleased"
     }
   }
 }

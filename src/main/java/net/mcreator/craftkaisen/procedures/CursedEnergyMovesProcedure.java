@@ -1,6 +1,5 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -9,7 +8,7 @@ import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 
 public class CursedEnergyMovesProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
+	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
 		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput > 0) {
@@ -23,7 +22,7 @@ public class CursedEnergyMovesProcedure {
 					});
 				}
 			} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Domain Amplification")) {
-				DomainAmplificationProcedureProcedure.execute(world, entity);
+				DomainAmplificationProcedureProcedure.execute(entity);
 				{
 					String _setval = "";
 					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

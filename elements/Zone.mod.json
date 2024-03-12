@@ -5,13 +5,16 @@
     "effectName": "Zone",
     "icon": "totem_heart.png",
     "color": {
-      "value": -16724737,
+      "value": -6750208,
       "falpha": 0.0
     },
     "isInstant": false,
     "isBad": false,
     "isBenefitical": false,
     "renderStatusInInventory": false,
-    "renderStatusInHUD": true
+    "renderStatusInHUD": true,
+    "onActiveTick": {
+      "name": "ZoneOnEffectActiveTick"
+    }
   }
 }

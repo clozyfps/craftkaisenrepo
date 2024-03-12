@@ -186,6 +186,7 @@ public class CraftKaisenModVariables {
 			clone.CsmSlot4Stack = original.CsmSlot4Stack;
 			clone.CsmSlot7Stack = original.CsmSlot7Stack;
 			clone.CsmSlot3Stack = original.CsmSlot3Stack;
+			clone.SuperJumpEnable = original.SuperJumpEnable;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -575,6 +576,7 @@ public class CraftKaisenModVariables {
 		public double RollingTimer = 0;
 		public double RolledStage = 0;
 		public double RolledNumber = 0;
+		public boolean SuperJumpEnable = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -736,6 +738,7 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("RollingTimer", RollingTimer);
 			nbt.putDouble("RolledStage", RolledStage);
 			nbt.putDouble("RolledNumber", RolledNumber);
+			nbt.putBoolean("SuperJumpEnable", SuperJumpEnable);
 			return nbt;
 		}
 
@@ -894,6 +897,7 @@ public class CraftKaisenModVariables {
 			RollingTimer = nbt.getDouble("RollingTimer");
 			RolledStage = nbt.getDouble("RolledStage");
 			RolledNumber = nbt.getDouble("RolledNumber");
+			SuperJumpEnable = nbt.getBoolean("SuperJumpEnable");
 		}
 	}
 
@@ -1071,6 +1075,7 @@ public class CraftKaisenModVariables {
 					variables.RollingTimer = message.data.RollingTimer;
 					variables.RolledStage = message.data.RolledStage;
 					variables.RolledNumber = message.data.RolledNumber;
+					variables.SuperJumpEnable = message.data.SuperJumpEnable;
 				}
 			});
 			context.setPacketHandled(true);

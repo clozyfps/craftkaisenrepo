@@ -1,0 +1,28 @@
+{
+  "_fv": 57,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:MouthCursedSpirit"
+      },
+      {
+        "value": "CUSTOM:RoppongiCursedSpirit"
+      },
+      {
+        "value": "CUSTOM:RugbyFieldCursedSpirit"
+      },
+      {
+        "value": "CUSTOM:FlyingCursedSpirit"
+      }
+    ],
+    "biomes": [],
+    "damageTypes": [],
+    "name": "weak_cursed_spirits",
+    "namespace": "mod"
+  }
+}

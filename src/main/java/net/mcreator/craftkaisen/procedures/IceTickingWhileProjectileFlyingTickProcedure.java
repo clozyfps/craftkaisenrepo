@@ -4,8 +4,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -22,7 +20,6 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.UraumeEntity;
 import net.mcreator.craftkaisen.entity.BindingIceBlockEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
@@ -57,18 +54,10 @@ public class IceTickingWhileProjectileFlyingTickProcedure {
 							if (!(entity == entityiterator)) {
 								if (!(immediatesourceentity == entityiterator)) {
 									if (!(entityiterator instanceof LivingEntity _livEnt10 && _livEnt10.hasEffect(CraftKaisenModMobEffects.FROZEN_SOLID.get()))) {
-										if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-											_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
-									}
-									if (world instanceof ServerLevel _level) {
-										Entity entityToSpawn = new BindingIceBlockEntity(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), _level);
-										entityToSpawn.moveTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 0, 0);
-										entityToSpawn.setYBodyRot(0);
-										entityToSpawn.setYHeadRot(0);
-										entityToSpawn.setDeltaMovement(0, 0, 0);
-										if (entityToSpawn instanceof Mob _mobToSpawn)
-											_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-										_level.addFreshEntity(entityToSpawn);
+										if (!(entityiterator instanceof BindingIceBlockEntity)) {
+											if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+												_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
+										}
 									}
 									entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FREEZE), immediatesourceentity, entity),
 											(float) (8 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5));
@@ -84,19 +73,11 @@ public class IceTickingWhileProjectileFlyingTickProcedure {
 						for (Entity entityiterator : _entfound) {
 							if (!(entity == entityiterator)) {
 								if (!(immediatesourceentity == entityiterator)) {
-									if (!(entityiterator instanceof LivingEntity _livEnt21 && _livEnt21.hasEffect(CraftKaisenModMobEffects.FROZEN_SOLID.get()))) {
-										if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-											_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
-									}
-									if (world instanceof ServerLevel _level) {
-										Entity entityToSpawn = new BindingIceBlockEntity(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), _level);
-										entityToSpawn.moveTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 0, 0);
-										entityToSpawn.setYBodyRot(0);
-										entityToSpawn.setYHeadRot(0);
-										entityToSpawn.setDeltaMovement(0, 0, 0);
-										if (entityToSpawn instanceof Mob _mobToSpawn)
-											_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-										_level.addFreshEntity(entityToSpawn);
+									if (!(entityiterator instanceof LivingEntity _livEnt18 && _livEnt18.hasEffect(CraftKaisenModMobEffects.FROZEN_SOLID.get()))) {
+										if (!(entityiterator instanceof BindingIceBlockEntity)) {
+											if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+												_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
+										}
 									}
 									entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FREEZE), immediatesourceentity, entity),
 											(float) (6 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 4));
@@ -133,9 +114,11 @@ public class IceTickingWhileProjectileFlyingTickProcedure {
 					for (Entity entityiterator : _entfound) {
 						if (!(entity == entityiterator)) {
 							if (!(immediatesourceentity == entityiterator)) {
-								if (!(entityiterator instanceof LivingEntity _livEnt50 && _livEnt50.hasEffect(CraftKaisenModMobEffects.FROZEN_SOLID.get()))) {
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-										_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
+								if (!(entityiterator instanceof LivingEntity _livEnt44 && _livEnt44.hasEffect(CraftKaisenModMobEffects.FROZEN_SOLID.get()))) {
+									if (!(entityiterator instanceof BindingIceBlockEntity)) {
+										if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+											_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
+									}
 								}
 								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FREEZE), immediatesourceentity, entity),
 										(float) (8 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5));
@@ -152,19 +135,11 @@ public class IceTickingWhileProjectileFlyingTickProcedure {
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
 						if (!(immediatesourceentity == entityiterator)) {
-							if (!(entityiterator instanceof LivingEntity _livEnt57 && _livEnt57.hasEffect(CraftKaisenModMobEffects.FROZEN_SOLID.get()))) {
-								if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-									_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
-							}
-							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = new BindingIceBlockEntity(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), _level);
-								entityToSpawn.moveTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 0, 0);
-								entityToSpawn.setYBodyRot(0);
-								entityToSpawn.setYHeadRot(0);
-								entityToSpawn.setDeltaMovement(0, 0, 0);
-								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-								_level.addFreshEntity(entityToSpawn);
+							if (!(entityiterator instanceof LivingEntity _livEnt52 && _livEnt52.hasEffect(CraftKaisenModMobEffects.FROZEN_SOLID.get()))) {
+								if (!(entityiterator instanceof BindingIceBlockEntity)) {
+									if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+										_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
+								}
 							}
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FREEZE), immediatesourceentity, entity), 16);
 						}

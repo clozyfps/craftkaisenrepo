@@ -135,6 +135,7 @@ import net.mcreator.craftkaisen.entity.CrowEntity;
 import net.mcreator.craftkaisen.entity.CoffinMountainEntity;
 import net.mcreator.craftkaisen.entity.ChosoEntity;
 import net.mcreator.craftkaisen.entity.ChimeraShadowGardenMobEntity;
+import net.mcreator.craftkaisen.entity.BoogieWoogieProjectileEntity;
 import net.mcreator.craftkaisen.entity.BodyRepel3Entity;
 import net.mcreator.craftkaisen.entity.BodyRepel2Entity;
 import net.mcreator.craftkaisen.entity.BodyRepel1Entity;
@@ -179,10 +180,6 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<YutaOkkotsuEntity>of(YutaOkkotsuEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(YutaOkkotsuEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<RikaEntity>> RIKA = register("rika",
-			EntityType.Builder.<RikaEntity>of(RikaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RikaEntity::new)
-
-					.sized(1.4f, 2.2f));
 	public static final RegistryObject<EntityType<GreatSerpentEntity>> GREAT_SERPENT = register("great_serpent",
 			EntityType.Builder.<GreatSerpentEntity>of(GreatSerpentEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GreatSerpentEntity::new)
 
@@ -575,6 +572,13 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<RainbowPachinkoBallProjectileEntity>> RAINBOW_PACHINKO_BALL_PROJECTILE = register("projectile_rainbow_pachinko_ball_projectile",
 			EntityType.Builder.<RainbowPachinkoBallProjectileEntity>of(RainbowPachinkoBallProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(RainbowPachinkoBallProjectileEntity::new).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<RikaEntity>> RIKA = register("rika",
+			EntityType.Builder.<RikaEntity>of(RikaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RikaEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<BoogieWoogieProjectileEntity>> BOOGIE_WOOGIE_PROJECTILE = register("projectile_boogie_woogie_projectile",
+			EntityType.Builder.<BoogieWoogieProjectileEntity>of(BoogieWoogieProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(BoogieWoogieProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -590,7 +594,6 @@ public class CraftKaisenModEntities {
 			RyomenSukunaEntity.init();
 			RoppongiCursedSpiritEntity.init();
 			YutaOkkotsuEntity.init();
-			RikaEntity.init();
 			GreatSerpentEntity.init();
 			RugbyFieldCursedSpiritEntity.init();
 			KoGuyEntity.init();
@@ -669,6 +672,7 @@ public class CraftKaisenModEntities {
 			UnlimitedVoidAccelerateEntity.init();
 			NaobitoEntity.init();
 			ThrowPlayerMobEntity.init();
+			RikaEntity.init();
 		});
 	}
 
@@ -681,7 +685,6 @@ public class CraftKaisenModEntities {
 		event.put(RYOMEN_SUKUNA.get(), RyomenSukunaEntity.createAttributes().build());
 		event.put(ROPPONGI_CURSED_SPIRIT.get(), RoppongiCursedSpiritEntity.createAttributes().build());
 		event.put(YUTA_OKKOTSU.get(), YutaOkkotsuEntity.createAttributes().build());
-		event.put(RIKA.get(), RikaEntity.createAttributes().build());
 		event.put(GREAT_SERPENT.get(), GreatSerpentEntity.createAttributes().build());
 		event.put(RUGBY_FIELD_CURSED_SPIRIT.get(), RugbyFieldCursedSpiritEntity.createAttributes().build());
 		event.put(KO_GUY.get(), KoGuyEntity.createAttributes().build());
@@ -760,5 +763,6 @@ public class CraftKaisenModEntities {
 		event.put(UNLIMITED_VOID_ACCELERATE.get(), UnlimitedVoidAccelerateEntity.createAttributes().build());
 		event.put(NAOBITO.get(), NaobitoEntity.createAttributes().build());
 		event.put(THROW_PLAYER_MOB.get(), ThrowPlayerMobEntity.createAttributes().build());
+		event.put(RIKA.get(), RikaEntity.createAttributes().build());
 	}
 }

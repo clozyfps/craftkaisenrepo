@@ -194,11 +194,6 @@ public class CraftKaisenModKeyMappings {
 			if (isDownOld != isDown && isDown) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new ImbueCEMessage(0, 0));
 				ImbueCEMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-				IMBUE_CE_LASTPRESS = System.currentTimeMillis();
-			} else if (isDownOld != isDown && !isDown) {
-				int dt = (int) (System.currentTimeMillis() - IMBUE_CE_LASTPRESS);
-				CraftKaisenMod.PACKET_HANDLER.sendToServer(new ImbueCEMessage(1, dt));
-				ImbueCEMessage.pressAction(Minecraft.getInstance().player, 1, dt);
 			}
 			isDownOld = isDown;
 		}
@@ -223,7 +218,6 @@ public class CraftKaisenModKeyMappings {
 	};
 	private static long CHARGE_CURSED_ENERGY_LASTPRESS = 0;
 	private static long REVERSE_CURSED_TECHNIQUE_LASTPRESS = 0;
-	private static long IMBUE_CE_LASTPRESS = 0;
 	private static long TOGGLE_SECOND_MOVESET_LASTPRESS = 0;
 
 	@SubscribeEvent

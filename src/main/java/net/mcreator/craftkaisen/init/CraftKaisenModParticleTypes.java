@@ -49,4 +49,5 @@ public class CraftKaisenModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> UNLIMITED_VOID_SPLASH_2 = REGISTRY.register("unlimited_void_splash_2", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> UNLIMITED_VOID_SPLASH_3 = REGISTRY.register("unlimited_void_splash_3", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> FIRE_PARTICLE = REGISTRY.register("fire_particle", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> PURE_LOVE_PULSE = REGISTRY.register("pure_love_pulse", () -> new SimpleParticleType(true));
 }

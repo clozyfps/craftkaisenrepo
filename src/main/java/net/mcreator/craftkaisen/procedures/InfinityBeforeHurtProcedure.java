@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
@@ -38,6 +39,10 @@ public class InfinityBeforeHurtProcedure {
 					if (!(immediatesourceentity instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
 						if (event != null && event.isCancelable()) {
 							event.setCanceled(true);
+						}
+						if (entity instanceof SatoruGojoEntity || entity instanceof ShinjukuGojoEntity) {
+							if (entity instanceof Mob _entity && immediatesourceentity instanceof LivingEntity _ent)
+								_entity.setTarget(_ent);
 						}
 					}
 				}

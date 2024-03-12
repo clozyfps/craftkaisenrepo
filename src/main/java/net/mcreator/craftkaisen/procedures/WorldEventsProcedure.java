@@ -73,8 +73,7 @@ public class WorldEventsProcedure {
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
-				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
-						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).neary = 75;
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					if (world instanceof Level _level) {
@@ -99,7 +98,7 @@ public class WorldEventsProcedure {
 							+ new java.text.DecimalFormat("#").format(Math.round(CraftKaisenModVariables.MapVariables.get(world).nearz)))), false);
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new MegunaEntity(CraftKaisenModEntities.MEGUNA.get(), _level);
-					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
+					entityToSpawn.moveTo(CraftKaisenModVariables.MapVariables.get(world).nearx, neary, CraftKaisenModVariables.MapVariables.get(world).nearz, world.getRandom().nextFloat() * 360F, 0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
 						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 					_level.addFreshEntity(entityToSpawn);
@@ -110,8 +109,7 @@ public class WorldEventsProcedure {
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
-				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
-						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).neary = 75;
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					if (world instanceof Level _level) {
@@ -148,8 +146,7 @@ public class WorldEventsProcedure {
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
-				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
-						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).neary = 75;
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					if (world instanceof Level _level) {
@@ -247,8 +244,7 @@ public class WorldEventsProcedure {
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				CraftKaisenModVariables.MapVariables.get(world).nearz = world.getLevelData().getZSpawn() + Mth.nextInt(RandomSource.create(), 100, 1500);
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
-				CraftKaisenModVariables.MapVariables.get(world).neary = world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) CraftKaisenModVariables.MapVariables.get(world).nearx,
-						(int) CraftKaisenModVariables.MapVariables.get(world).nearz);
+				CraftKaisenModVariables.MapVariables.get(world).neary = 75;
 				CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					if (world instanceof Level _level) {

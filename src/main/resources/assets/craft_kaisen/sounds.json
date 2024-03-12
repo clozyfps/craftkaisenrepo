@@ -257,5 +257,13 @@
         "stream": false
       }
     ]
+  },
+  "bells": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:audio_-_jujutsu_jjk_-_sukuna_malevolent_shrine_activation_-_creator_store",
+        "stream": false
+      }
+    ]
   }
 }

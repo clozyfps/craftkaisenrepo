@@ -1,6 +1,9 @@
 
 package net.mcreator.craftkaisen.potion;
 
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffect;
+
 public class JackpotMobEffect extends MobEffect {
 	public JackpotMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -13369600);

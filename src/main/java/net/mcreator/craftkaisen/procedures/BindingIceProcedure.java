@@ -11,8 +11,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -25,8 +23,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
 import net.mcreator.craftkaisen.entity.BindingIceBlockEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
@@ -189,21 +187,12 @@ public class BindingIceProcedure {
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (!(entityiterator == entity) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
-						if (!(entityiterator instanceof LivingEntity _livEnt141 && _livEnt141.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
-								|| !(entityiterator instanceof LivingEntity _livEnt142 && _livEnt142.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
+					if (!(entityiterator == entity) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
+							&& !(entityiterator instanceof BindingIceBlockEntity)) {
+						if (!(entityiterator instanceof LivingEntity _livEnt142 && _livEnt142.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+								|| !(entityiterator instanceof LivingEntity _livEnt143 && _livEnt143.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
-							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = new BindingIceBlockEntity(CraftKaisenModEntities.BINDING_ICE_BLOCK.get(), _level);
-								entityToSpawn.moveTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 0, 0);
-								entityToSpawn.setYBodyRot(0);
-								entityToSpawn.setYHeadRot(0);
-								entityToSpawn.setDeltaMovement(0, 0, 0);
-								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-								_level.addFreshEntity(entityToSpawn);
-							}
 						}
 					}
 					CraftKaisenMod.queueServerWork(1, () -> {
@@ -228,6 +217,11 @@ public class BindingIceProcedure {
 			});
 		} else if (entity.getPersistentData().getBoolean("domain")) {
 			IceDomainRemoveProcedure.execute(world, (entity.getPersistentData().getDouble("domainx")), (entity.getPersistentData().getDouble("domainy")), (entity.getPersistentData().getDouble("domainz")));
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("Unstable"), false);
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.UNSTABLE.get(),
+						(int) (1600 - (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level * 3), 0, false, false));
 		}
 	}
 }

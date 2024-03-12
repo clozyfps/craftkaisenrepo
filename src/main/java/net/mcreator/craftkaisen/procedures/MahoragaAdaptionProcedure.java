@@ -175,11 +175,11 @@ public class MahoragaAdaptionProcedure {
 				if (damagesource.is(DamageTypes.EXPLOSION) || damagesource.is(DamageTypes.PLAYER_EXPLOSION) || damagesource.is(DamageTypes.BAD_RESPAWN_POINT) || damagesource.is(DamageTypes.FIREBALL)
 						|| damagesource.is(DamageTypes.UNATTRIBUTED_FIREBALL)) {
 					if (entity.getPersistentData().getBoolean("ExplosionAdapted") == false) {
-						if (entity.getPersistentData().getDouble("ExplosionAdaptation") < 15) {
+						if (entity.getPersistentData().getDouble("ExplosionAdaptation") < 10) {
 							entity.getPersistentData().putDouble("ExplosionAdaptation", (entity.getPersistentData().getDouble("ExplosionAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("ExplosionAdaptation") == 15) {
+						} else if (entity.getPersistentData().getDouble("ExplosionAdaptation") == 10) {
 							entity.getPersistentData().putDouble("ExplosionAdaptation", (entity.getPersistentData().getDouble("ExplosionAdaptation") + 1));
-							entity.getPersistentData().putDouble("ExplosionAdaptationTimer", 500);
+							entity.getPersistentData().putDouble("ExplosionAdaptationTimer", 200);
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wooden_trapdoor.close")), SoundSource.HOSTILE, 1, (float) 0.5);
@@ -566,11 +566,11 @@ public class MahoragaAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:slashing_damage")))) {
 					if (entity.getPersistentData().getBoolean("SlashesAdapted") == false) {
-						if (entity.getPersistentData().getDouble("SlashesAdaptation") < 15) {
+						if (entity.getPersistentData().getDouble("SlashesAdaptation") < 10) {
 							entity.getPersistentData().putDouble("SlashesAdaptation", (entity.getPersistentData().getDouble("SlashesAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("SlashesAdaptation") == 15) {
+						} else if (entity.getPersistentData().getDouble("SlashesAdaptation") == 10) {
 							entity.getPersistentData().putDouble("SlashesAdaptation", (entity.getPersistentData().getDouble("SlashesAdaptation") + 1));
-							entity.getPersistentData().putDouble("SlashesAdaptationTimer", 200);
+							entity.getPersistentData().putDouble("SlashesAdaptationTimer", 100);
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wooden_trapdoor.close")), SoundSource.HOSTILE, 1, (float) 0.5);
@@ -626,11 +626,11 @@ public class MahoragaAdaptionProcedure {
 				}
 				if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:cursed_energy_damage")))) {
 					if (entity.getPersistentData().getBoolean("CursedEnergyAdapted") == false) {
-						if (entity.getPersistentData().getDouble("CursedEnergyAdaptation") < 15) {
+						if (entity.getPersistentData().getDouble("CursedEnergyAdaptation") < 10) {
 							entity.getPersistentData().putDouble("CursedEnergyAdaptation", (entity.getPersistentData().getDouble("CursedEnergyAdaptation") + 1));
-						} else if (entity.getPersistentData().getDouble("CursedEnergyAdaptation") == 15) {
+						} else if (entity.getPersistentData().getDouble("CursedEnergyAdaptation") == 10) {
 							entity.getPersistentData().putDouble("CursedEnergyAdaptation", (entity.getPersistentData().getDouble("CursedEnergyAdaptation") + 1));
-							entity.getPersistentData().putDouble("CursedEnergyAdaptationTimer", 200);
+							entity.getPersistentData().putDouble("CursedEnergyAdaptationTimer", 100);
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wooden_trapdoor.close")), SoundSource.HOSTILE, 1, (float) 0.5);

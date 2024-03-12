@@ -33,9 +33,9 @@ public class MalevolentShrineSukunaProcedure {
 					entity.getPersistentData().putBoolean("predomain", true);
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:sukunadomain")), SoundSource.NEUTRAL, 1, 1);
+							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:sukunadomain")), SoundSource.NEUTRAL, (float) 0.5, 1);
 						} else {
-							_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:sukunadomain")), SoundSource.NEUTRAL, 1, 1, false);
+							_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:sukunadomain")), SoundSource.NEUTRAL, (float) 0.5, 1, false);
 						}
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -45,9 +45,9 @@ public class MalevolentShrineSukunaProcedure {
 					CraftKaisenMod.queueServerWork(20, () -> {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:bell")), SoundSource.NEUTRAL, 1, 1);
+								_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:bells")), SoundSource.NEUTRAL, (float) 0.5, 1);
 							} else {
-								_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:bell")), SoundSource.NEUTRAL, 1, 1, false);
+								_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:bells")), SoundSource.NEUTRAL, (float) 0.5, 1, false);
 							}
 						}
 						CraftKaisenMod.queueServerWork(25, () -> {
