@@ -60,5 +60,6 @@ public class PlayerTickProcedure {
 		RoundBeginsProcedure.execute(world, x, y, z, entity);
 		RoundGameChoiceTimerProcedure.execute(world, x, y, z, entity);
 		BeginRollingProcedure.execute(world, x, y, z, entity);
+		CountTickProcedure.execute(entity);
 	}
 }

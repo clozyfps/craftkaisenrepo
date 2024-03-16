@@ -187,6 +187,11 @@ public class CraftKaisenModVariables {
 			clone.CsmSlot7Stack = original.CsmSlot7Stack;
 			clone.CsmSlot3Stack = original.CsmSlot3Stack;
 			clone.SuperJumpEnable = original.SuperJumpEnable;
+			clone.DomainClashAvalible = original.DomainClashAvalible;
+			clone.DomainClashing = original.DomainClashing;
+			clone.CountTick = original.CountTick;
+			clone.DomainClashGame = original.DomainClashGame;
+			clone.DomainClashWon = original.DomainClashWon;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -577,6 +582,11 @@ public class CraftKaisenModVariables {
 		public double RolledStage = 0;
 		public double RolledNumber = 0;
 		public boolean SuperJumpEnable = false;
+		public boolean DomainClashAvalible = false;
+		public boolean DomainClashing = false;
+		public double CountTick = 0.0;
+		public double DomainClashGame = 1.0;
+		public boolean DomainClashWon = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -739,6 +749,11 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("RolledStage", RolledStage);
 			nbt.putDouble("RolledNumber", RolledNumber);
 			nbt.putBoolean("SuperJumpEnable", SuperJumpEnable);
+			nbt.putBoolean("DomainClashAvalible", DomainClashAvalible);
+			nbt.putBoolean("DomainClashing", DomainClashing);
+			nbt.putDouble("CountTick", CountTick);
+			nbt.putDouble("DomainClashGame", DomainClashGame);
+			nbt.putBoolean("DomainClashWon", DomainClashWon);
 			return nbt;
 		}
 
@@ -898,6 +913,11 @@ public class CraftKaisenModVariables {
 			RolledStage = nbt.getDouble("RolledStage");
 			RolledNumber = nbt.getDouble("RolledNumber");
 			SuperJumpEnable = nbt.getBoolean("SuperJumpEnable");
+			DomainClashAvalible = nbt.getBoolean("DomainClashAvalible");
+			DomainClashing = nbt.getBoolean("DomainClashing");
+			CountTick = nbt.getDouble("CountTick");
+			DomainClashGame = nbt.getDouble("DomainClashGame");
+			DomainClashWon = nbt.getBoolean("DomainClashWon");
 		}
 	}
 
@@ -1076,6 +1096,11 @@ public class CraftKaisenModVariables {
 					variables.RolledStage = message.data.RolledStage;
 					variables.RolledNumber = message.data.RolledNumber;
 					variables.SuperJumpEnable = message.data.SuperJumpEnable;
+					variables.DomainClashAvalible = message.data.DomainClashAvalible;
+					variables.DomainClashing = message.data.DomainClashing;
+					variables.CountTick = message.data.CountTick;
+					variables.DomainClashGame = message.data.DomainClashGame;
+					variables.DomainClashWon = message.data.DomainClashWon;
 				}
 			});
 			context.setPacketHandled(true);
