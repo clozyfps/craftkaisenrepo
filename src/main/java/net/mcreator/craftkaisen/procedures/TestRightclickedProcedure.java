@@ -19,25 +19,23 @@ public class TestRightclickedProcedure {
 		double myz = 0;
 		String blocktext = "";
 		String block = "";
-		if (!entity.isShiftKeyDown()) {
-			{
-				String _setval = "Summon Rika";
-				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.currentMove = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Summon Rika")) {
-				if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput > 0) {
-					SummonRikaProcedureProcedure.execute(world, x, y, z, entity);
-				} else {
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(Component.literal("Not Enough Output"), false);
-				}
+		{
+			String _setval = "Unlimited Void";
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.currentMove = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Unlimited Void")) {
+			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput > 0) {
+				UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Cant Summon Rika"), false);
+					_player.displayClientMessage(Component.literal("1"), false);
 			}
+		} else {
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("2"), false);
 		}
 	}
 }

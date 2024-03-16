@@ -20,6 +20,7 @@ import net.mcreator.craftkaisen.client.gui.MasteryGUIScreen;
 import net.mcreator.craftkaisen.client.gui.MainMenuScreen;
 import net.mcreator.craftkaisen.client.gui.KenjakuGUIScreen;
 import net.mcreator.craftkaisen.client.gui.ImbueGUIScreen;
+import net.mcreator.craftkaisen.client.gui.DomainClashingGUIScreen;
 import net.mcreator.craftkaisen.client.gui.DomainClashScreen;
 import net.mcreator.craftkaisen.client.gui.CTMoveGUIScreen;
 import net.mcreator.craftkaisen.client.gui.CSMGUIScreen;
@@ -41,6 +42,7 @@ public class CraftKaisenModScreens {
 			MenuScreens.register(CraftKaisenModMenus.KENJAKU_GUI.get(), KenjakuGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.MASTERY_GUI.get(), MasteryGUIScreen::new);
 			MenuScreens.register(CraftKaisenModMenus.PRESTIGE_MENU.get(), PrestigeMenuScreen::new);
+			MenuScreens.register(CraftKaisenModMenus.DOMAIN_CLASHING_GUI.get(), DomainClashingGUIScreen::new);
 		});
 	}
 }

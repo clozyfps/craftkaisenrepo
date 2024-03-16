@@ -188,6 +188,11 @@ public class CraftKaisenModVariables {
 			clone.CsmSlot3Stack = original.CsmSlot3Stack;
 			clone.SuperJumpEnable = original.SuperJumpEnable;
 			clone.HRprogress = original.HRprogress;
+			clone.DomainClashAvalible = original.DomainClashAvalible;
+			clone.CountTick = original.CountTick;
+			clone.DomainClashWon = original.DomainClashWon;
+			clone.DomainClashGame = original.DomainClashGame;
+			clone.DomainClashing = original.DomainClashing;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -579,6 +584,11 @@ public class CraftKaisenModVariables {
 		public double RolledNumber = 0;
 		public boolean SuperJumpEnable = false;
 		public double HRprogress = 0;
+		public boolean DomainClashAvalible = false;
+		public double CountTick = 0.0;
+		public boolean DomainClashWon = false;
+		public double DomainClashGame = 1.0;
+		public boolean DomainClashing = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -742,6 +752,11 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("RolledNumber", RolledNumber);
 			nbt.putBoolean("SuperJumpEnable", SuperJumpEnable);
 			nbt.putDouble("HRprogress", HRprogress);
+			nbt.putBoolean("DomainClashAvalible", DomainClashAvalible);
+			nbt.putDouble("CountTick", CountTick);
+			nbt.putBoolean("DomainClashWon", DomainClashWon);
+			nbt.putDouble("DomainClashGame", DomainClashGame);
+			nbt.putBoolean("DomainClashing", DomainClashing);
 			return nbt;
 		}
 
@@ -902,6 +917,11 @@ public class CraftKaisenModVariables {
 			RolledNumber = nbt.getDouble("RolledNumber");
 			SuperJumpEnable = nbt.getBoolean("SuperJumpEnable");
 			HRprogress = nbt.getDouble("HRprogress");
+			DomainClashAvalible = nbt.getBoolean("DomainClashAvalible");
+			CountTick = nbt.getDouble("CountTick");
+			DomainClashWon = nbt.getBoolean("DomainClashWon");
+			DomainClashGame = nbt.getDouble("DomainClashGame");
+			DomainClashing = nbt.getBoolean("DomainClashing");
 		}
 	}
 
@@ -1081,6 +1101,11 @@ public class CraftKaisenModVariables {
 					variables.RolledNumber = message.data.RolledNumber;
 					variables.SuperJumpEnable = message.data.SuperJumpEnable;
 					variables.HRprogress = message.data.HRprogress;
+					variables.DomainClashAvalible = message.data.DomainClashAvalible;
+					variables.CountTick = message.data.CountTick;
+					variables.DomainClashWon = message.data.DomainClashWon;
+					variables.DomainClashGame = message.data.DomainClashGame;
+					variables.DomainClashing = message.data.DomainClashing;
 				}
 			});
 			context.setPacketHandled(true);
