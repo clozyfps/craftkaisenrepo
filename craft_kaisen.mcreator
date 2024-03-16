@@ -31644,6 +31644,56 @@
         ]
       },
       "path": "~/Abilities/BoogieWoogie"
+    },
+    {
+      "name": "HeavenlyRestrictionAwakening",
+      "type": "achievement",
+      "sortid": 1381,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heavenly_restriction_awakening",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/heavenly_restriction_awakening.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "HRAwakening",
+      "type": "procedure",
+      "sortid": 1382,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hr_awakening",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HRAwakeningProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -32630,6 +32680,12 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "HRprogress",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -33439,6 +33495,7 @@
       "advancements.grade_1.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.main_menu.tooltip_open_mastery": "Open Mastery",
       "advancements.cursed_womb.descr": "Be Born as a Cursed Womb Death Painting",
+      "advancements.heavenly_restriction_awakening.title": "Heavenly Restriction Awakening",
       "key.categories.craft_kaisen": "Craft Kaisen",
       "entity.craft_kaisen.heian_era_sukuna": "Heian Era Sukuna",
       "gamerule.sukunaVesselMode": "SukunaVesselMultiplayer",
@@ -33506,6 +33563,7 @@
       "item.craft_kaisen.dismantle": "Dismantle",
       "item.craft_kaisen.flower_projectile": "Flower Projectile",
       "advancements.grade_4.title": "Grade 4",
+      "advancements.heavenly_restriction_awakening.descr": "Awaken your soul",
       "item.craft_kaisen.naobito_outfit_chestplate": "Naobito Outfit",
       "item.craft_kaisen.hollow_purple_projectile": "Hollow Purple Projectile",
       "item.craft_kaisen.hiten": "Hiten",

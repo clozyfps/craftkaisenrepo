@@ -22,11 +22,11 @@ public class FinishCharacterProcedure {
 		double overflow = 0;
 		double SoulPerception = 0;
 		double CursedWomb = 0;
-		SixEyes = Mth.nextInt(RandomSource.create(), 1, 600);
-		Flash = Mth.nextInt(RandomSource.create(), 1, 100);
-		overflow = Mth.nextInt(RandomSource.create(), 1, 200);
-		SoulPerception = Mth.nextInt(RandomSource.create(), 1, 200);
-		CursedWomb = Mth.nextInt(RandomSource.create(), 1, 200);
+		SixEyes = Mth.nextInt(RandomSource.create(), 1, 400);
+		Flash = Mth.nextInt(RandomSource.create(), 1, 70);
+		overflow = Mth.nextInt(RandomSource.create(), 1, 100);
+		SoulPerception = Mth.nextInt(RandomSource.create(), 1, 90);
+		CursedWomb = Mth.nextInt(RandomSource.create(), 1, 100);
 		if (entity instanceof Player _player)
 			_player.closeContainer();
 		{
@@ -47,7 +47,7 @@ public class FinishCharacterProcedure {
 				}
 			}
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(Component.literal("You are born with the legendary Six Eyes."), false);
+				_player.displayClientMessage(Component.literal("You are born with the legendary \u00A7bSix Eyes."), false);
 			{
 				String _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special + " Six Eyes";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
