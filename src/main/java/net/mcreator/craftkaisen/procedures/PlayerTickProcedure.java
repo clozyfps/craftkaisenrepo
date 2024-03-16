@@ -39,9 +39,6 @@ public class PlayerTickProcedure {
 		CooldownSetProcedure.execute(entity);
 		BloodEdgeTickProcedure.execute(entity);
 		StopPlayerTickProcedure.execute(entity);
-		MeleeMovesProcedure.execute(world, x, y, z, entity);
-		WeaponMovesProcedure.execute(entity);
-		RestrictedMovesProcedure.execute(world, x, y, z, entity);
 		StarPlasmaVesselQuestProcedure.execute(world, x, y, z, entity);
 		SixEyesTickProcedure.execute(world, entity);
 		GainRikaTrustProcedure.execute(world, x, y, z, entity);
