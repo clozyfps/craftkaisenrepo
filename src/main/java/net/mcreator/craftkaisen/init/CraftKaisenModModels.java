@@ -32,7 +32,9 @@ import net.mcreator.craftkaisen.client.model.Modelserpentground;
 import net.mcreator.craftkaisen.client.model.Modelroppongicursedspirit;
 import net.mcreator.craftkaisen.client.model.Modelreversalred;
 import net.mcreator.craftkaisen.client.model.Modelrepelpink;
+import net.mcreator.craftkaisen.client.model.Modelprsealarmor;
 import net.mcreator.craftkaisen.client.model.Modelprisonbox;
+import net.mcreator.craftkaisen.client.model.Modelprison_realm_mob;
 import net.mcreator.craftkaisen.client.model.Modelpachinko_ball;
 import net.mcreator.craftkaisen.client.model.Modelnewmuzi;
 import net.mcreator.craftkaisen.client.model.Modelmouthcursedspirit;
@@ -103,6 +105,7 @@ public class CraftKaisenModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(ModelMahoraga.LAYER_LOCATION, ModelMahoraga::createBodyLayer);
+		event.registerLayerDefinition(Modelprison_realm_mob.LAYER_LOCATION, Modelprison_realm_mob::createBodyLayer);
 		event.registerLayerDefinition(Modelfist.LAYER_LOCATION, Modelfist::createBodyLayer);
 		event.registerLayerDefinition(ModelRoppongiCurse.LAYER_LOCATION, ModelRoppongiCurse::createBodyLayer);
 		event.registerLayerDefinition(Modelyutafitnew.LAYER_LOCATION, Modelyutafitnew::createBodyLayer);
@@ -180,6 +183,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelitadoriuniform.LAYER_LOCATION, Modelitadoriuniform::createBodyLayer);
 		event.registerLayerDefinition(ModeltpCircle.LAYER_LOCATION, ModeltpCircle::createBodyLayer);
 		event.registerLayerDefinition(ModelSorcererArmor.LAYER_LOCATION, ModelSorcererArmor::createBodyLayer);
+		event.registerLayerDefinition(Modelprsealarmor.LAYER_LOCATION, Modelprsealarmor::createBodyLayer);
 		event.registerLayerDefinition(Modelcustom_model.LAYER_LOCATION, Modelcustom_model::createBodyLayer);
 		event.registerLayerDefinition(Modelkashimooutfit.LAYER_LOCATION, Modelkashimooutfit::createBodyLayer);
 		event.registerLayerDefinition(Modelmouthcursedspirit.LAYER_LOCATION, Modelmouthcursedspirit::createBodyLayer);

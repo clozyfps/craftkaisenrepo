@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:reroll_ct"
+    },
+    "title": {
+      "translate": "advancements.subjugation_of_hanami.title"
+    },
+    "description": {
+      "translate": "advancements.subjugation_of_hanami.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "subjugation_of_hanami": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1
+  },
+  "parent": "craft_kaisen:grade_3"
+}

@@ -35,6 +35,7 @@ import net.mcreator.craftkaisen.potion.RCTMobEffect;
 import net.mcreator.craftkaisen.potion.PureLovePreMobEffect;
 import net.mcreator.craftkaisen.potion.PureLoveActiveMobEffect;
 import net.mcreator.craftkaisen.potion.PunchBarragePotionMobEffect;
+import net.mcreator.craftkaisen.potion.PrisonBoxStunMobEffect;
 import net.mcreator.craftkaisen.potion.PreWorldCutMobEffect;
 import net.mcreator.craftkaisen.potion.PreRedMobEffect;
 import net.mcreator.craftkaisen.potion.PreFireArrowMobEffect;
@@ -122,4 +123,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> JACKPOT = REGISTRY.register("jackpot", () -> new JackpotMobEffect());
 	public static final RegistryObject<MobEffect> PARTIAL_SUMMON_RIKA = REGISTRY.register("partial_summon_rika", () -> new PartialSummonRikaMobEffect());
 	public static final RegistryObject<MobEffect> UNSTABLE = REGISTRY.register("unstable", () -> new UnstableMobEffect());
+	public static final RegistryObject<MobEffect> PRISON_BOX_STUN = REGISTRY.register("prison_box_stun", () -> new PrisonBoxStunMobEffect());
 }

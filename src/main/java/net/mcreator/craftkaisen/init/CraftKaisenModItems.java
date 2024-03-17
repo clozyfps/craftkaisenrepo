@@ -37,6 +37,7 @@ import net.mcreator.craftkaisen.item.ReversalRedProjectileItem;
 import net.mcreator.craftkaisen.item.ReversalRedItem;
 import net.mcreator.craftkaisen.item.RerollCtItem;
 import net.mcreator.craftkaisen.item.PureLoveBeamRangedItem;
+import net.mcreator.craftkaisen.item.PrisonRealmSealItem;
 import net.mcreator.craftkaisen.item.PlayfulCloudItem;
 import net.mcreator.craftkaisen.item.PhoneItem;
 import net.mcreator.craftkaisen.item.NyoiStaffItem;
@@ -61,6 +62,7 @@ import net.mcreator.craftkaisen.item.JujutsuSorcererUniformItem;
 import net.mcreator.craftkaisen.item.JujutsuHistoryBookItem;
 import net.mcreator.craftkaisen.item.ItadoriOutfitItem;
 import net.mcreator.craftkaisen.item.InvertedSpearItem;
+import net.mcreator.craftkaisen.item.HumanStoryModeItem;
 import net.mcreator.craftkaisen.item.HollowPurpleProjectileItem;
 import net.mcreator.craftkaisen.item.HitenItem;
 import net.mcreator.craftkaisen.item.HammerItem;
@@ -293,6 +295,9 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> MEGUNA_OUTFIT_LEGGINGS = REGISTRY.register("meguna_outfit_leggings", () -> new MegunaOutfitItem.Leggings());
 	public static final RegistryObject<Item> PPLT_DOMAIN_FLOOR = block(CraftKaisenModBlocks.PPLT_DOMAIN_FLOOR);
 	public static final RegistryObject<Item> RIKA_SPAWN_EGG = REGISTRY.register("rika_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.RIKA, -1, -15527149, new Item.Properties()));
+	public static final RegistryObject<Item> HUMAN_STORY_MODE = REGISTRY.register("human_story_mode", () -> new HumanStoryModeItem());
+	public static final RegistryObject<Item> PRISON_REALM_SEAL_CHESTPLATE = REGISTRY.register("prison_realm_seal_chestplate", () -> new PrisonRealmSealItem.Chestplate());
+	public static final RegistryObject<Item> PRISON_BOX_SPAWN_EGG = REGISTRY.register("prison_box_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.PRISON_BOX, -11004160, -1, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

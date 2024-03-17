@@ -193,6 +193,7 @@ public class CraftKaisenModVariables {
 			clone.DomainClashWon = original.DomainClashWon;
 			clone.DomainClashGame = original.DomainClashGame;
 			clone.DomainClashing = original.DomainClashing;
+			clone.StoryModeLevel = original.StoryModeLevel;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -589,6 +590,7 @@ public class CraftKaisenModVariables {
 		public boolean DomainClashWon = false;
 		public double DomainClashGame = 1.0;
 		public boolean DomainClashing = false;
+		public double StoryModeLevel = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -757,6 +759,7 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("DomainClashWon", DomainClashWon);
 			nbt.putDouble("DomainClashGame", DomainClashGame);
 			nbt.putBoolean("DomainClashing", DomainClashing);
+			nbt.putDouble("StoryModeLevel", StoryModeLevel);
 			return nbt;
 		}
 
@@ -922,6 +925,7 @@ public class CraftKaisenModVariables {
 			DomainClashWon = nbt.getBoolean("DomainClashWon");
 			DomainClashGame = nbt.getDouble("DomainClashGame");
 			DomainClashing = nbt.getBoolean("DomainClashing");
+			StoryModeLevel = nbt.getDouble("StoryModeLevel");
 		}
 	}
 
@@ -1106,6 +1110,7 @@ public class CraftKaisenModVariables {
 					variables.DomainClashWon = message.data.DomainClashWon;
 					variables.DomainClashGame = message.data.DomainClashGame;
 					variables.DomainClashing = message.data.DomainClashing;
+					variables.StoryModeLevel = message.data.StoryModeLevel;
 				}
 			});
 			context.setPacketHandled(true);

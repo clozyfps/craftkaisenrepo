@@ -28,7 +28,6 @@ public class PlayerTickProcedure {
 			return;
 		InfinityTickProcedure.execute(world, x, y, z, entity);
 		LimitlessTick2Procedure.execute(world, x, y, z, entity);
-		SetStatsProcedure.execute(world, entity);
 		PartyListTickProcedure.execute(world, entity);
 		SpecialTickProcedure.execute(entity);
 		ChargeTickProcedure.execute(world, x, y, z, entity);

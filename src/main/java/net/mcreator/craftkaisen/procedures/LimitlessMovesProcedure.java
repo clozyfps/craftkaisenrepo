@@ -213,14 +213,14 @@ public class LimitlessMovesProcedure {
 									}
 								}
 							}
-							DomainClashUnlimitedVoidProcedure.execute(world, x, y, z, entity);
+							UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
 							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
 						} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
 							if (entity instanceof Player _player && !_player.level.isClientSide())
 								_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(600) + " cursed energy to use this move.")), true);
 						}
 					} else if (entity.getPersistentData().getBoolean("domain")) {
-						DomainClashUnlimitedVoidProcedure.execute(world, x, y, z, entity);
+						VoidRemoveProcedure.execute(world, x, y, z);
 						entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 1500);
 					}
 					{

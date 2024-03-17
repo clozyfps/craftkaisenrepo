@@ -166,6 +166,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.CURSED_MASK.get());
 					tabData.accept(CraftKaisenModItems.CURSED_TOTEM.get());
 					tabData.accept(CraftKaisenModItems.REROLL_CT.get());
+					tabData.accept(CraftKaisenModItems.HUMAN_STORY_MODE.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_blocks"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_blocks")).icon(() -> new ItemStack(CraftKaisenModBlocks.BARRIER_BLOCK.get())).displayItems((parameters, tabData) -> {
