@@ -310,6 +310,8 @@ public class CraftKaisenModVariables {
 		public double nearz = 0;
 		public boolean BrotherOne = false;
 		public boolean BrotherTwo = false;
+		public String Brother1 = "\"\"";
+		public String Brother2 = "\"\"";
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -330,6 +332,8 @@ public class CraftKaisenModVariables {
 			nearz = nbt.getDouble("nearz");
 			BrotherOne = nbt.getBoolean("BrotherOne");
 			BrotherTwo = nbt.getBoolean("BrotherTwo");
+			Brother1 = nbt.getString("Brother1");
+			Brother2 = nbt.getString("Brother2");
 		}
 
 		@Override
@@ -346,6 +350,8 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("nearz", nearz);
 			nbt.putBoolean("BrotherOne", BrotherOne);
 			nbt.putBoolean("BrotherTwo", BrotherTwo);
+			nbt.putString("Brother1", Brother1);
+			nbt.putString("Brother2", Brother2);
 			return nbt;
 		}
 

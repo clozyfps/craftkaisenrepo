@@ -6,17 +6,21 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 import javax.annotation.Nullable;
+
+import java.util.ArrayList;
 
 @Mod.EventBusSubscriber
 public class OnFirstJoinProcedure {
@@ -221,7 +225,11 @@ public class OnFirstJoinProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					CraftKaisenModVariables.MapVariables.get(world).Brother1 = entity.getDisplayName().getString();
+					CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 				} else if (CraftKaisenModVariables.MapVariables.get(world).BrotherTwo == false) {
+					CraftKaisenModVariables.MapVariables.get(world).Brother2 = entity.getDisplayName().getString();
+					CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 					CraftKaisenModVariables.MapVariables.get(world).BrotherTwo = true;
 					CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 					{
@@ -230,6 +238,14 @@ public class OnFirstJoinProcedure {
 							capability.BortherTwoif = _setval;
 							capability.syncPlayerVariables(entity);
 						});
+					}
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal(("Your brother is " + CraftKaisenModVariables.MapVariables.get(world).Brother1)), false);
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).BrotherOneIf == true) {
+							if (entityiterator instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal(("Your brother is " + CraftKaisenModVariables.MapVariables.get(world).Brother2)), false);
+						}
 					}
 				}
 			}

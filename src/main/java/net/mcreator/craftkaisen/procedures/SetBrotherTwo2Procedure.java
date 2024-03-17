@@ -9,7 +9,7 @@ import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 import java.util.ArrayList;
 
-public class SetBrotherOneProcedure {
+public class SetBrotherTwo2Procedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
@@ -17,25 +17,25 @@ public class SetBrotherOneProcedure {
 			{
 				boolean _setval = false;
 				entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.BrotherOneIf = _setval;
+					capability.BortherTwoif = _setval;
 					capability.syncPlayerVariables(entityiterator);
 				});
 			}
-			if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).BortherTwoif == true) {
+			if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).BrotherOneIf == true) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal(("Your brother is " + entity.getDisplayName().getString())), false);
 			}
 		}
+		CraftKaisenModVariables.MapVariables.get(world).Brother2 = entity.getDisplayName().getString();
+		CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 		{
 			boolean _setval = true;
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.BrotherOneIf = _setval;
+				capability.BortherTwoif = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
-		CraftKaisenModVariables.MapVariables.get(world).Brother1 = entity.getDisplayName().getString();
-		CraftKaisenModVariables.MapVariables.get(world).syncData(world);
 		if (entity instanceof Player _player && !_player.level.isClientSide())
-			_player.displayClientMessage(Component.literal(("Your brother is " + CraftKaisenModVariables.MapVariables.get(world).Brother2)), false);
+			_player.displayClientMessage(Component.literal(("Your brother is " + CraftKaisenModVariables.MapVariables.get(world).Brother1)), false);
 	}
 }

@@ -57,7 +57,7 @@ import net.mcreator.craftkaisen.procedures.SetCurseUserProcedure;
 import net.mcreator.craftkaisen.procedures.SetCurseProcedure;
 import net.mcreator.craftkaisen.procedures.SetCopyProcedure;
 import net.mcreator.craftkaisen.procedures.SetCSMProcedure;
-import net.mcreator.craftkaisen.procedures.SetBrotherTwoProcedure;
+import net.mcreator.craftkaisen.procedures.SetBrotherTwo2Procedure;
 import net.mcreator.craftkaisen.procedures.SetBrotherOneProcedure;
 import net.mcreator.craftkaisen.procedures.SetBoogieWoogieProcedure;
 import net.mcreator.craftkaisen.procedures.SetBloodManipulationProcedure;
@@ -677,7 +677,7 @@ public class SetCommandCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					SetBrotherTwoProcedure.execute(world, entity);
+					SetBrotherTwo2Procedure.execute(world, entity);
 					return 0;
 				})))).then(Commands.literal("Affiliation").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Sorcerer").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
