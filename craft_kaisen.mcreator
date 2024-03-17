@@ -13617,9 +13617,6 @@
       "locked_code": false,
       "registry_name": "melee_moves",
       "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/MeleeMovesProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -31707,7 +31704,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/DomainClashingButton4Procedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures"
     },
@@ -31723,7 +31725,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/DomainClashingButton3Procedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures"
     },
@@ -31754,7 +31761,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/CountTickProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures"
     },
@@ -31826,7 +31838,12 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/DomainClashButton2Procedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures"
     },
@@ -31842,9 +31859,287 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/DomainClashButton1Procedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures"
+    },
+    {
+      "name": "HumanStoryMode",
+      "type": "item",
+      "sortid": 1389,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "human_story_mode",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/human_story_mode.json",
+          "src/main/java/net/mcreator/craftkaisen/item/HumanStoryModeItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "HumanStoryModeRightclicked",
+      "type": "procedure",
+      "sortid": 1390,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "human_story_mode_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HumanStoryModeRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "SubjugationOfHanami",
+      "type": "achievement",
+      "sortid": 1391,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "subjugation_of_hanami",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/subjugation_of_hanami.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "PrisonRealmSealChestplateTickEvent",
+      "type": "procedure",
+      "sortid": 1392,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "prison_realm_seal_chestplate_tick_event",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PrisonRealmSealChestplateTickEventProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Armor/Procedures"
+    },
+    {
+      "name": "PrisonRealmSeal",
+      "type": "armor",
+      "sortid": 1393,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "prison_realm_seal",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/prison_realm_seal_chestplate.json",
+          "src/main/java/net/mcreator/craftkaisen/item/PrisonRealmSealItem.java"
+        ]
+      },
+      "path": "~/Armor"
+    },
+    {
+      "name": "PrisonBoxStunOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1394,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "prison_box_stun_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PrisonBoxStunOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "PrisonBoxStun",
+      "type": "potioneffect",
+      "sortid": 1395,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "prison_box_stun",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/PrisonBoxStunMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "OpenPrisonBoxOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1396,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_prison_box_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OpenPrisonBoxOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "OpenPrisonBoxOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1397,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_prison_box_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OpenPrisonBoxOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "OpenPrisonBox",
+      "type": "livingentity",
+      "sortid": 1398,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_prison_box",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/OpenPrisonBoxEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/OpenPrisonBoxRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "PrisonBoxOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1399,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "prison_box_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PrisonBoxOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "PrisonBox",
+      "type": "livingentity",
+      "sortid": 1400,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "prison_box",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/PrisonBoxRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/prison_box_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/PrisonBoxEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
     }
   ],
   "variable_elements": [
@@ -32867,6 +33162,12 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "StoryModeLevel",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -33150,12 +33451,13 @@
       "entity.craft_kaisen.toji_fushiguro": "Toji Fushiguro",
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
       "gui.craft_kaisen.imbue_gui.ImbueValue": "Cursed Energy Amount",
+      "item.craft_kaisen.human_story_mode": "Human Story Mode",
       "entity.craft_kaisen.round_deer": "Round Deer",
       "advancements.ten_shadows_technique.title": "Ten Shadows Technique",
       "entity.craft_kaisen.icile": "Icile",
       "item.craft_kaisen.ember_insect_spawn_egg": "Ember Insect Spawn Egg",
-      "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
       "item.craft_kaisen.choso_armor_leggings": "Choso Pants",
+      "entity.craft_kaisen.inventory_curse_mob": "Inventory Curse Mob",
       "entity.craft_kaisen.jinichi_zenin": "Jinichi Zenin",
       "advancements.grade_4.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_shift_soul_summon": "SHIFT - Soul Summon",
@@ -33163,6 +33465,7 @@
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
+      "advancements.subjugation_of_hanami.title": "Subjugation Of Hanami",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
@@ -33177,8 +33480,8 @@
       "entity.craft_kaisen.red_open_door": "Red Open Door",
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
-      "death.attack.repelling_damage": "%1$s died to repulsion",
       "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
+      "death.attack.repelling_damage": "%1$s died to repulsion",
       "advancements.simple_domain_learned.title": "Simple Domain",
       "advancements.perfect_preparation.descr": "Kill Kenjaku",
       "item.craft_kaisen.mahito_outfit_chestplate": "Mahito Outfit ",
@@ -33199,6 +33502,7 @@
       "item.craft_kaisen.choso_armor_chestplate": "Choso Outfit",
       "effect.craft_kaisen.small_pox_deity_cooldown": "SPDC",
       "effect.craft_kaisen.unstable": "Unstable",
+      "entity.craft_kaisen.open_prison_box": "Open Prison Box",
       "item.craft_kaisen.fly_head_spawn_egg": "Fly Head Spawn Egg",
       "item.craft_kaisen.uraume_spawn_egg": "Uraume Spawn Egg",
       "item.craft_kaisen.white_divine_dog_spawn_egg": "White Divine Dog Spawn Egg",
@@ -33346,6 +33650,7 @@
       "subtitles.hit": "strong hit",
       "death.attack.reversal_red_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.flying_cursed_spirit": "Flying Cursed Spirit",
+      "item.craft_kaisen.prison_box_spawn_egg": "Prison Box Spawn Egg",
       "subtitles.unlimitedsplash": "",
       "advancements.shinjuku_showdown.title": "Shinjuku Showdown",
       "gui.craft_kaisen.main_menu.tooltip_increase_max_health": "increase max health",
@@ -33540,6 +33845,7 @@
       "advancements.ten_shadows_technique.descr": "Get the ten shadows technique",
       "item.craft_kaisen.ember_insect_projectile": "Ember Insect Projectile",
       "entity.craft_kaisen.rainbow_open_door": "Rainbow Open Door",
+      "item.craft_kaisen.prison_realm_seal_chestplate": "Prison Realm Seal",
       "gui.craft_kaisen.main_menu.label_empty4": "+",
       "subtitles.domain.pplt": "DOMAIN EXPANSION",
       "gui.craft_kaisen.main_menu.label_empty3": "+",
@@ -33668,6 +33974,7 @@
       "advancements.rika_tamed.title": "Rika",
       "subtitles.unlimitedvoid": "",
       "entity.craft_kaisen.throw_player_mob": "Throw Player Mob",
+      "effect.craft_kaisen.prison_box_stun": "PrisonBoxStun",
       "advancements.blessed_by_the_sparks_advancement.descr": "Your chances for landing a black flash are significantly increased.",
       "advancements.rabbit_escape.title": "Rabbit Escape",
       "entity.craft_kaisen.nanami_kento": "Nanami Kento",
@@ -33676,6 +33983,7 @@
       "advancements.grade_1.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.main_menu.tooltip_open_mastery": "Open Mastery",
       "advancements.cursed_womb.descr": "Be Born as a Cursed Womb Death Painting",
+      "advancements.heavenly_restriction_awakening.title": "Heavenly Restriction Awakening",
       "key.categories.craft_kaisen": "Craft Kaisen",
       "entity.craft_kaisen.heian_era_sukuna": "Heian Era Sukuna",
       "gamerule.sukunaVesselMode": "SukunaVesselMultiplayer",
@@ -33696,6 +34004,7 @@
       "effect.craft_kaisen.zone": "Zone",
       "item.craft_kaisen.round_deer_spawn_egg": "Round Deer Spawn Egg",
       "effect.craft_kaisen.pre_fire_arrow": "PreFireArrow",
+      "advancements.subjugation_of_hanami.descr": "Exorcise the special grade \"Hanami\"",
       "effect.craft_kaisen.toji_cooldown": "TojiCooldown",
       "advancements.fearsome_womb.descr": "Kill a Finger Bearer",
       "item.craft_kaisen.blast_away_ranged": "Blast Away Ranged",
@@ -33717,6 +34026,7 @@
       "item.craft_kaisen.toji_fushiguro_spawn_egg": "Toji Fushiguro Spawn Egg",
       "block.craft_kaisen.domain_blackstone_stalagmite_tall": "Domain Block",
       "block.craft_kaisen.domain_packed_ice": "Domain Block",
+      "entity.craft_kaisen.prison_box": "Prison Box",
       "item.craft_kaisen.old_lady_spawn_egg": "Old Lady Spawn Egg",
       "gui.craft_kaisen.lapse_blue_overlay.label_alt_move_closer": "CTRL - Pull",
       "effect.craft_kaisen.evade_cooldown": "EvadeCooldown",
@@ -33743,6 +34053,7 @@
       "item.craft_kaisen.dismantle": "Dismantle",
       "item.craft_kaisen.flower_projectile": "Flower Projectile",
       "advancements.grade_4.title": "Grade 4",
+      "advancements.heavenly_restriction_awakening.descr": "Awaken your soul",
       "item.craft_kaisen.naobito_outfit_chestplate": "Naobito Outfit",
       "item.craft_kaisen.hollow_purple_projectile": "Hollow Purple Projectile",
       "item.craft_kaisen.hiten": "Hiten",
