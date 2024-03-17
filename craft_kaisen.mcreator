@@ -382,6 +382,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -31660,7 +31664,7 @@
       "name": "HRAwakening",
       "type": "procedure",
       "sortid": 1382,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "hr_awakening",
       "metadata": {
@@ -31696,7 +31700,7 @@
       "name": "DomainClashingButton4",
       "type": "procedure",
       "sortid": 1388,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "domain_clashing_button_4",
       "metadata": {
@@ -31717,7 +31721,7 @@
       "name": "DomainClashingButton3",
       "type": "procedure",
       "sortid": 1387,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "domain_clashing_button_3",
       "metadata": {
@@ -31774,7 +31778,7 @@
       "name": "DomainClashUnlimitedVoid",
       "type": "procedure",
       "sortid": 1383,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "domain_clash_unlimited_void",
       "metadata": {
@@ -31830,7 +31834,7 @@
       "name": "DomainClashButton2",
       "type": "procedure",
       "sortid": 1386,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "domain_clash_button_2",
       "metadata": {
@@ -31851,7 +31855,7 @@
       "name": "DomainClashButton1",
       "type": "procedure",
       "sortid": 1385,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "domain_clash_button_1",
       "metadata": {
@@ -32140,6 +32144,90 @@
         ]
       },
       "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "BrotherTick",
+      "type": "procedure",
+      "sortid": 1401,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "brother_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BrotherTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SetBrotherOne",
+      "type": "procedure",
+      "sortid": 1402,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_brother_one",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetBrotherOneProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "SetBrotherTwo",
+      "type": "procedure",
+      "sortid": 1403,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_brother_two",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetBrotherTwoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
     }
   ],
   "variable_elements": [
@@ -33168,6 +33256,30 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "BrotherOne",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "BrotherTwo",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "BrotherOneIf",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "BortherTwoif",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [

@@ -57,6 +57,8 @@ import net.mcreator.craftkaisen.procedures.SetCurseUserProcedure;
 import net.mcreator.craftkaisen.procedures.SetCurseProcedure;
 import net.mcreator.craftkaisen.procedures.SetCopyProcedure;
 import net.mcreator.craftkaisen.procedures.SetCSMProcedure;
+import net.mcreator.craftkaisen.procedures.SetBrotherTwoProcedure;
+import net.mcreator.craftkaisen.procedures.SetBrotherOneProcedure;
 import net.mcreator.craftkaisen.procedures.SetBoogieWoogieProcedure;
 import net.mcreator.craftkaisen.procedures.SetBloodManipulationProcedure;
 import net.mcreator.craftkaisen.procedures.SetBlessedByTheSparksProcedure;
@@ -648,6 +650,34 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					RctsetProcedure.execute(arguments, entity);
+					return 0;
+				})).then(Commands.literal("BrotherOne").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetBrotherOneProcedure.execute(world, entity);
+					return 0;
+				})).then(Commands.literal("BrotherTwo").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetBrotherTwoProcedure.execute(world, entity);
 					return 0;
 				})))).then(Commands.literal("Affiliation").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Sorcerer").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

@@ -193,6 +193,9 @@ public class CraftKaisenModVariables {
 			clone.DomainClashWon = original.DomainClashWon;
 			clone.DomainClashGame = original.DomainClashGame;
 			clone.DomainClashing = original.DomainClashing;
+			clone.StoryModeLevel = original.StoryModeLevel;
+			clone.BrotherOneIf = original.BrotherOneIf;
+			clone.BortherTwoif = original.BortherTwoif;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -305,6 +308,8 @@ public class CraftKaisenModVariables {
 		public double neary = 0;
 		public double nearx = 0;
 		public double nearz = 0;
+		public boolean BrotherOne = false;
+		public boolean BrotherTwo = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -323,6 +328,8 @@ public class CraftKaisenModVariables {
 			neary = nbt.getDouble("neary");
 			nearx = nbt.getDouble("nearx");
 			nearz = nbt.getDouble("nearz");
+			BrotherOne = nbt.getBoolean("BrotherOne");
+			BrotherTwo = nbt.getBoolean("BrotherTwo");
 		}
 
 		@Override
@@ -337,6 +344,8 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("neary", neary);
 			nbt.putDouble("nearx", nearx);
 			nbt.putDouble("nearz", nearz);
+			nbt.putBoolean("BrotherOne", BrotherOne);
+			nbt.putBoolean("BrotherTwo", BrotherTwo);
 			return nbt;
 		}
 
@@ -589,6 +598,9 @@ public class CraftKaisenModVariables {
 		public boolean DomainClashWon = false;
 		public double DomainClashGame = 1.0;
 		public boolean DomainClashing = false;
+		public double StoryModeLevel = 0;
+		public boolean BrotherOneIf = false;
+		public boolean BortherTwoif = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -757,6 +769,9 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("DomainClashWon", DomainClashWon);
 			nbt.putDouble("DomainClashGame", DomainClashGame);
 			nbt.putBoolean("DomainClashing", DomainClashing);
+			nbt.putDouble("StoryModeLevel", StoryModeLevel);
+			nbt.putBoolean("BrotherOneIf", BrotherOneIf);
+			nbt.putBoolean("BortherTwoif", BortherTwoif);
 			return nbt;
 		}
 
@@ -922,6 +937,9 @@ public class CraftKaisenModVariables {
 			DomainClashWon = nbt.getBoolean("DomainClashWon");
 			DomainClashGame = nbt.getDouble("DomainClashGame");
 			DomainClashing = nbt.getBoolean("DomainClashing");
+			StoryModeLevel = nbt.getDouble("StoryModeLevel");
+			BrotherOneIf = nbt.getBoolean("BrotherOneIf");
+			BortherTwoif = nbt.getBoolean("BortherTwoif");
 		}
 	}
 
@@ -1106,6 +1124,9 @@ public class CraftKaisenModVariables {
 					variables.DomainClashWon = message.data.DomainClashWon;
 					variables.DomainClashGame = message.data.DomainClashGame;
 					variables.DomainClashing = message.data.DomainClashing;
+					variables.StoryModeLevel = message.data.StoryModeLevel;
+					variables.BrotherOneIf = message.data.BrotherOneIf;
+					variables.BortherTwoif = message.data.BortherTwoif;
 				}
 			});
 			context.setPacketHandled(true);

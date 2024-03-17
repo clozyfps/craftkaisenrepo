@@ -47,7 +47,9 @@ import net.mcreator.craftkaisen.client.renderer.RainbowPachinkoBallProjectileRen
 import net.mcreator.craftkaisen.client.renderer.RainbowOpenDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowDragonRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowClosedDoorRenderer;
+import net.mcreator.craftkaisen.client.renderer.PrisonBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.PoxDeityDomainRenderer;
+import net.mcreator.craftkaisen.client.renderer.OpenPrisonBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.OldLadyRenderer;
 import net.mcreator.craftkaisen.client.renderer.NueRenderer;
 import net.mcreator.craftkaisen.client.renderer.NobaraKugisakiRenderer;
@@ -242,5 +244,7 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.RAINBOW_PACHINKO_BALL_PROJECTILE.get(), RainbowPachinkoBallProjectileRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.RIKA.get(), RikaRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.BOOGIE_WOOGIE_PROJECTILE.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.OPEN_PRISON_BOX.get(), OpenPrisonBoxRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.PRISON_BOX.get(), PrisonBoxRenderer::new);
 	}
 }

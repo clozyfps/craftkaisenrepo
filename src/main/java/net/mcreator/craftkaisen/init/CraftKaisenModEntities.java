@@ -65,8 +65,10 @@ import net.mcreator.craftkaisen.entity.RainbowOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.PureLoveBeamRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.PrisonBoxEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
 import net.mcreator.craftkaisen.entity.PiercingBloodProjectileEntity;
+import net.mcreator.craftkaisen.entity.OpenPrisonBoxEntity;
 import net.mcreator.craftkaisen.entity.OldLadyEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
 import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
@@ -579,6 +581,12 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<BoogieWoogieProjectileEntity>> BOOGIE_WOOGIE_PROJECTILE = register("projectile_boogie_woogie_projectile",
 			EntityType.Builder.<BoogieWoogieProjectileEntity>of(BoogieWoogieProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(BoogieWoogieProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<OpenPrisonBoxEntity>> OPEN_PRISON_BOX = register("open_prison_box",
+			EntityType.Builder.<OpenPrisonBoxEntity>of(OpenPrisonBoxEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OpenPrisonBoxEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<PrisonBoxEntity>> PRISON_BOX = register("prison_box", EntityType.Builder.<PrisonBoxEntity>of(PrisonBoxEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+			.setUpdateInterval(3).setCustomClientFactory(PrisonBoxEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -673,6 +681,8 @@ public class CraftKaisenModEntities {
 			NaobitoEntity.init();
 			ThrowPlayerMobEntity.init();
 			RikaEntity.init();
+			OpenPrisonBoxEntity.init();
+			PrisonBoxEntity.init();
 		});
 	}
 
@@ -764,5 +774,7 @@ public class CraftKaisenModEntities {
 		event.put(NAOBITO.get(), NaobitoEntity.createAttributes().build());
 		event.put(THROW_PLAYER_MOB.get(), ThrowPlayerMobEntity.createAttributes().build());
 		event.put(RIKA.get(), RikaEntity.createAttributes().build());
+		event.put(OPEN_PRISON_BOX.get(), OpenPrisonBoxEntity.createAttributes().build());
+		event.put(PRISON_BOX.get(), PrisonBoxEntity.createAttributes().build());
 	}
 }
