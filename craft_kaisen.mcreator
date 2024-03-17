@@ -31663,7 +31663,7 @@
       "name": "HRAwakening",
       "type": "procedure",
       "sortid": 1382,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "hr_awakening",
       "metadata": {
@@ -31699,7 +31699,7 @@
       "name": "DomainClashingButton4",
       "type": "procedure",
       "sortid": 1388,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clashing_button_4",
       "metadata": {
@@ -31715,7 +31715,7 @@
       "name": "DomainClashingButton3",
       "type": "procedure",
       "sortid": 1387,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clashing_button_3",
       "metadata": {
@@ -31762,7 +31762,7 @@
       "name": "DomainClashUnlimitedVoid",
       "type": "procedure",
       "sortid": 1383,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clash_unlimited_void",
       "metadata": {
@@ -31818,7 +31818,7 @@
       "name": "DomainClashButton2",
       "type": "procedure",
       "sortid": 1386,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clash_button_2",
       "metadata": {
@@ -31834,7 +31834,7 @@
       "name": "DomainClashButton1",
       "type": "procedure",
       "sortid": 1385,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clash_button_1",
       "metadata": {
