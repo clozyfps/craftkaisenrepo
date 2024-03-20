@@ -194,9 +194,11 @@ public class CraftKaisenModVariables {
 			clone.DomainClashGame = original.DomainClashGame;
 			clone.DomainClashing = original.DomainClashing;
 			clone.StoryModeLevel = original.StoryModeLevel;
-			clone.TitleColor = original.TitleColor;
 			clone.Title = original.Title;
+			clone.TitleColor = original.TitleColor;
 			clone.cameraroll = original.cameraroll;
+			clone.BrotherOneIf = original.BrotherOneIf;
+			clone.BortherTwoif = original.BortherTwoif;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -309,6 +311,10 @@ public class CraftKaisenModVariables {
 		public double neary = 0;
 		public double nearx = 0;
 		public double nearz = 0;
+		public String Brother1 = "\"\"";
+		public String Brother2 = "\"\"";
+		public boolean BrotherTwo = false;
+		public boolean BrotherOne = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -327,6 +333,10 @@ public class CraftKaisenModVariables {
 			neary = nbt.getDouble("neary");
 			nearx = nbt.getDouble("nearx");
 			nearz = nbt.getDouble("nearz");
+			Brother1 = nbt.getString("Brother1");
+			Brother2 = nbt.getString("Brother2");
+			BrotherTwo = nbt.getBoolean("BrotherTwo");
+			BrotherOne = nbt.getBoolean("BrotherOne");
 		}
 
 		@Override
@@ -341,6 +351,10 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("neary", neary);
 			nbt.putDouble("nearx", nearx);
 			nbt.putDouble("nearz", nearz);
+			nbt.putString("Brother1", Brother1);
+			nbt.putString("Brother2", Brother2);
+			nbt.putBoolean("BrotherTwo", BrotherTwo);
+			nbt.putBoolean("BrotherOne", BrotherOne);
 			return nbt;
 		}
 
@@ -594,9 +608,11 @@ public class CraftKaisenModVariables {
 		public double DomainClashGame = 1.0;
 		public boolean DomainClashing = false;
 		public double StoryModeLevel = 0;
-		public String TitleColor = "\"\"";
 		public String Title = "\"\"";
+		public String TitleColor = "\"\"";
 		public double cameraroll = 0;
+		public boolean BrotherOneIf = false;
+		public boolean BortherTwoif = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -766,9 +782,11 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("DomainClashGame", DomainClashGame);
 			nbt.putBoolean("DomainClashing", DomainClashing);
 			nbt.putDouble("StoryModeLevel", StoryModeLevel);
-			nbt.putString("TitleColor", TitleColor);
 			nbt.putString("Title", Title);
+			nbt.putString("TitleColor", TitleColor);
 			nbt.putDouble("cameraroll", cameraroll);
+			nbt.putBoolean("BrotherOneIf", BrotherOneIf);
+			nbt.putBoolean("BortherTwoif", BortherTwoif);
 			return nbt;
 		}
 
@@ -935,9 +953,11 @@ public class CraftKaisenModVariables {
 			DomainClashGame = nbt.getDouble("DomainClashGame");
 			DomainClashing = nbt.getBoolean("DomainClashing");
 			StoryModeLevel = nbt.getDouble("StoryModeLevel");
-			TitleColor = nbt.getString("TitleColor");
 			Title = nbt.getString("Title");
+			TitleColor = nbt.getString("TitleColor");
 			cameraroll = nbt.getDouble("cameraroll");
+			BrotherOneIf = nbt.getBoolean("BrotherOneIf");
+			BortherTwoif = nbt.getBoolean("BortherTwoif");
 		}
 	}
 
@@ -1123,9 +1143,11 @@ public class CraftKaisenModVariables {
 					variables.DomainClashGame = message.data.DomainClashGame;
 					variables.DomainClashing = message.data.DomainClashing;
 					variables.StoryModeLevel = message.data.StoryModeLevel;
-					variables.TitleColor = message.data.TitleColor;
 					variables.Title = message.data.Title;
+					variables.TitleColor = message.data.TitleColor;
 					variables.cameraroll = message.data.cameraroll;
+					variables.BrotherOneIf = message.data.BrotherOneIf;
+					variables.BortherTwoif = message.data.BortherTwoif;
 				}
 			});
 			context.setPacketHandled(true);
