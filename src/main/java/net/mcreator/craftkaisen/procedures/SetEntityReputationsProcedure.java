@@ -9,22 +9,35 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
 import net.mcreator.craftkaisen.entity.YujiItadoriEntity;
+import net.mcreator.craftkaisen.entity.YoshinobuGakuganjiEntity;
+import net.mcreator.craftkaisen.entity.UraumeEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
+import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
+import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.RugbyFieldCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.RoppongiCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.RikaEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
+import net.mcreator.craftkaisen.entity.NaobitoEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
+import net.mcreator.craftkaisen.entity.MegumiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
+import net.mcreator.craftkaisen.entity.KenjakuEntity;
+import net.mcreator.craftkaisen.entity.KasumiMiwaEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
+import net.mcreator.craftkaisen.entity.JinichiZeninEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
+import net.mcreator.craftkaisen.entity.FlyingCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.FingerBearerEntity;
 import net.mcreator.craftkaisen.entity.ChosoEntity;
+import net.mcreator.craftkaisen.entity.AwakenedMakiEntity;
+import net.mcreator.craftkaisen.entity.AoiTodoEntity;
 
 import javax.annotation.Nullable;
 
@@ -95,6 +108,48 @@ public class SetEntityReputationsProcedure {
 		}
 		if (entity instanceof MegunaEntity) {
 			entity.getPersistentData().putDouble("rep", (-500));
+		}
+		if (entity instanceof AoiTodoEntity) {
+			entity.getPersistentData().putDouble("rep", 90);
+		}
+		if (entity instanceof NaobitoEntity) {
+			entity.getPersistentData().putDouble("rep", 50);
+		}
+		if (entity instanceof JinichiZeninEntity) {
+			entity.getPersistentData().putDouble("rep", 40);
+		}
+		if (entity instanceof UraumeEntity) {
+			entity.getPersistentData().putDouble("rep", (-50));
+		}
+		if (entity instanceof KasumiMiwaEntity) {
+			entity.getPersistentData().putDouble("rep", 90);
+		}
+		if (entity instanceof YoshinobuGakuganjiEntity) {
+			entity.getPersistentData().putDouble("rep", 90);
+		}
+		if (entity instanceof AwakenedMakiEntity) {
+			entity.getPersistentData().putDouble("rep", 30);
+		}
+		if (entity instanceof ShinjukuGojoEntity) {
+			entity.getPersistentData().putDouble("rep", 100);
+		}
+		if (entity instanceof KenjakuEntity) {
+			entity.getPersistentData().putDouble("rep", (-100));
+		}
+		if (entity instanceof FingerBearerEntity) {
+			entity.getPersistentData().putDouble("rep", (-100));
+		}
+		if (entity instanceof MegumiFushiguroEntity) {
+			entity.getPersistentData().putDouble("rep", (-50));
+		}
+		if (entity instanceof SmallPoxDeityEntity) {
+			entity.getPersistentData().putDouble("rep", (-80));
+		}
+		if (entity instanceof FlyingCursedSpiritEntity) {
+			entity.getPersistentData().putDouble("rep", (-70));
+		}
+		if (entity instanceof TojiFushiguroEntity) {
+			entity.getPersistentData().putDouble("rep", (-100));
 		}
 	}
 }

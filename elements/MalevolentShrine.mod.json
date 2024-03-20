@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Malevolent Shrine",
     "mobLabel": "",
-    "mobModelName": "Modelmalevolentshrine",
-    "mobModelTexture": "shrinetextureeeeeeeee.png",
+    "mobModelName": "Modelmalevolent_kitchen",
+    "mobModelTexture": "malevolent_shrine.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

@@ -13,6 +13,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
 import net.mcreator.craftkaisen.entity.YujiItadoriEntity;
+import net.mcreator.craftkaisen.entity.YoshinobuGakuganjiEntity;
 import net.mcreator.craftkaisen.entity.UraumeEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
@@ -81,6 +82,12 @@ public class ResistanceSorcerersProcedure {
 		if (entity instanceof MergedBeastAgitoEntity) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 3, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 99999, 0, false, false));
+		}
+		if (entity instanceof YoshinobuGakuganjiEntity) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 99999, 1, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 99999, 0, false, false));
 		}

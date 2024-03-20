@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:choso_armor_chestplate"
+    },
+    "title": {
+      "translate": "advancements.older_brother.title"
+    },
+    "description": {
+      "translate": "advancements.older_brother.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "older_brother": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:deleted_mod_element"
+}

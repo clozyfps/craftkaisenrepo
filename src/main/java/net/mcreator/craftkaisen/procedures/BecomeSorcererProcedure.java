@@ -56,12 +56,22 @@ public class BecomeSorcererProcedure {
 							_player.getAdvancements().award(_adv, criteria);
 					}
 				}
-				{
-					String _setval = "Grade 4";
-					sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.Grade = _setval;
-						capability.syncPlayerVariables(sourceentity);
-					});
+				if (!((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Copy")) {
+					{
+						String _setval = "Grade 4";
+						sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.Grade = _setval;
+							capability.syncPlayerVariables(sourceentity);
+						});
+					}
+				} else {
+					{
+						String _setval = "Special Grade";
+						sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.Grade = _setval;
+							capability.syncPlayerVariables(sourceentity);
+						});
+					}
 				}
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.JUJUTSU_SORCERER_UNIFORM_CHESTPLATE.get()));

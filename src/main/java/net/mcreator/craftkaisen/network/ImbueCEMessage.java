@@ -10,7 +10,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 
-import net.mcreator.craftkaisen.procedures.ImbueCEOnKeyReleasedProcedure;
 import net.mcreator.craftkaisen.procedures.ImbueCEOnKeyPressedProcedure;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
@@ -54,10 +53,6 @@ public class ImbueCEMessage {
 		if (type == 0) {
 
 			ImbueCEOnKeyPressedProcedure.execute(entity);
-		}
-		if (type == 1) {
-
-			ImbueCEOnKeyReleasedProcedure.execute(entity);
 		}
 	}
 

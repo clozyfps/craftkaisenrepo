@@ -66,7 +66,7 @@ public class BlackFlashProcedure {
 						}
 						if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 3, false, false));
-						if (Math.random() < 0.0001) {
+						if (Math.random() < 0.0005) {
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:lightningflash")), SoundSource.NEUTRAL, 1, 1);

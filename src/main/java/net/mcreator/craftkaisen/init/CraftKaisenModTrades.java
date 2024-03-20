@@ -26,6 +26,9 @@ public class CraftKaisenModTrades {
 			event.getTrades().get(1).add(new BasicItemListing(new ItemStack(CraftKaisenModItems.CURSED_MASK.get()),
 
 					new ItemStack(CraftKaisenModItems.NAGINATA.get()), 10, 5, 0.05f));
+			event.getTrades().get(1).add(new BasicItemListing(new ItemStack(Items.DIAMOND, 25),
+
+					new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get()), 10, 5, 0.05f));
 		}
 	}
 }

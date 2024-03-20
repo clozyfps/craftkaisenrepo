@@ -17,8 +17,14 @@ import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
+import net.mcreator.craftkaisen.entity.KoGuyEntity;
+import net.mcreator.craftkaisen.entity.KenjakuEntity;
+import net.mcreator.craftkaisen.entity.KasumiMiwaEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
+import net.mcreator.craftkaisen.entity.HanamiEntity;
 import net.mcreator.craftkaisen.entity.EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity;
+import net.mcreator.craftkaisen.entity.ChosoEntity;
+import net.mcreator.craftkaisen.entity.AoiTodoEntity;
 
 import javax.annotation.Nullable;
 
@@ -126,6 +132,78 @@ public class AdvancementGiveProcedure {
 			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:the_sorcerer_killer"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
+				}
+			}
+		}
+		if (entity instanceof HanamiEntity) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+				if (sourceentity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:subjugation_of_hanami"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
+				}
+			}
+		}
+		if (entity instanceof AoiTodoEntity) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+				if (sourceentity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:elimination_of_aoi_todo"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
+				}
+			}
+		}
+		if (entity instanceof ChosoEntity) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+				if (sourceentity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:older_brother"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
+				}
+			}
+		}
+		if (entity instanceof KenjakuEntity) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+				if (sourceentity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:pseudo_geto"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
+				}
+			}
+		}
+		if (entity instanceof KasumiMiwaEntity) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+				if (sourceentity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:elimination_of_kasumi_miwa"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
+				}
+			}
+		}
+		if (entity instanceof KoGuyEntity) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+				if (sourceentity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:subjugation_of_ko_guy"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 					if (!_ap.isDone()) {
 						for (String criteria : _ap.getRemainingCriteria())

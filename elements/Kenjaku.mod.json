@@ -5,7 +5,7 @@
     "mobName": "Kenjaku",
     "mobLabel": "§6Kenjaku",
     "mobModelName": "Biped",
-    "mobModelTexture": "kenjaku-jogo-do-abate-minecraft-skin-on-planetminecraft-com.png",
+    "mobModelTexture": "kenjaku.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -38,7 +38,7 @@
     "creativeTab": {
       "value": "CUSTOM:CkMobs"
     },
-    "isBoss": true,
+    "isBoss": false,
     "bossBarColor": "YELLOW",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
@@ -51,13 +51,13 @@
       "value": ""
     },
     "equipmentBody": {
-      "value": ""
+      "value": "CUSTOM:GetoOutfit.body"
     },
     "equipmentLeggings": {
-      "value": ""
+      "value": "CUSTOM:GetoOutfit.legs"
     },
     "equipmentBoots": {
-      "value": ""
+      "value": "CUSTOM:GetoOutfit.boots"
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
@@ -117,6 +117,9 @@
     "entityDataEntries": [],
     "onRightClickedOn": {
       "name": "KenjakuRightClickedOnEntity"
+    },
+    "onMobTickUpdate": {
+      "name": "KenjakuOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",

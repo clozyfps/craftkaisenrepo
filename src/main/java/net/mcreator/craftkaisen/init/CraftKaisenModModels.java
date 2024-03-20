@@ -25,11 +25,16 @@ import net.mcreator.craftkaisen.client.model.Modelswordslice;
 import net.mcreator.craftkaisen.client.model.Modelsukunafit;
 import net.mcreator.craftkaisen.client.model.Modelsukunafightingchestplate;
 import net.mcreator.craftkaisen.client.model.Modelsorcerernew;
+import net.mcreator.craftkaisen.client.model.Modelshinjukufitnew;
+import net.mcreator.craftkaisen.client.model.Modelshinjukufitfinal;
+import net.mcreator.craftkaisen.client.model.Modelshinjukufit;
 import net.mcreator.craftkaisen.client.model.Modelserpentground;
 import net.mcreator.craftkaisen.client.model.Modelroppongicursedspirit;
 import net.mcreator.craftkaisen.client.model.Modelreversalred;
 import net.mcreator.craftkaisen.client.model.Modelrepelpink;
+import net.mcreator.craftkaisen.client.model.Modelprsealarmor;
 import net.mcreator.craftkaisen.client.model.Modelprisonbox;
+import net.mcreator.craftkaisen.client.model.Modelprison_realm_mob;
 import net.mcreator.craftkaisen.client.model.Modelpachinko_ball;
 import net.mcreator.craftkaisen.client.model.Modelnewmuzi;
 import net.mcreator.craftkaisen.client.model.Modelmouthcursedspirit;
@@ -37,6 +42,7 @@ import net.mcreator.craftkaisen.client.model.Modelmaximummeteornewwww;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephantnew;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephant;
 import net.mcreator.craftkaisen.client.model.Modelmalevolentshrine;
+import net.mcreator.craftkaisen.client.model.Modelmalevolent_kitchen;
 import net.mcreator.craftkaisen.client.model.Modelmahitooutfit;
 import net.mcreator.craftkaisen.client.model.Modelmahitodistorted;
 import net.mcreator.craftkaisen.client.model.Modelkashimooutfit;
@@ -62,6 +68,7 @@ import net.mcreator.craftkaisen.client.model.Modelbodyrepelpincer;
 import net.mcreator.craftkaisen.client.model.Modelbodyrepel1;
 import net.mcreator.craftkaisen.client.model.Modelblackblindfold;
 import net.mcreator.craftkaisen.client.model.Modelbeastsummonmask;
+import net.mcreator.craftkaisen.client.model.Modelbass_booster;
 import net.mcreator.craftkaisen.client.model.ModelYujikunaShirtless;
 import net.mcreator.craftkaisen.client.model.ModelYujikuna;
 import net.mcreator.craftkaisen.client.model.ModelVoidAccelerate;
@@ -100,12 +107,14 @@ public class CraftKaisenModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(ModelMahoraga.LAYER_LOCATION, ModelMahoraga::createBodyLayer);
+		event.registerLayerDefinition(Modelprison_realm_mob.LAYER_LOCATION, Modelprison_realm_mob::createBodyLayer);
 		event.registerLayerDefinition(Modelfist.LAYER_LOCATION, Modelfist::createBodyLayer);
 		event.registerLayerDefinition(ModelRoppongiCurse.LAYER_LOCATION, ModelRoppongiCurse::createBodyLayer);
 		event.registerLayerDefinition(Modelyutafitnew.LAYER_LOCATION, Modelyutafitnew::createBodyLayer);
 		event.registerLayerDefinition(ModelYujikunaShirtless.LAYER_LOCATION, ModelYujikunaShirtless::createBodyLayer);
 		event.registerLayerDefinition(ModelFrame.LAYER_LOCATION, ModelFrame::createBodyLayer);
 		event.registerLayerDefinition(Modelmalevolentshrine.LAYER_LOCATION, Modelmalevolentshrine::createBodyLayer);
+		event.registerLayerDefinition(Modelshinjukufitnew.LAYER_LOCATION, Modelshinjukufitnew::createBodyLayer);
 		event.registerLayerDefinition(Modelsukunafightingchestplate.LAYER_LOCATION, Modelsukunafightingchestplate::createBodyLayer);
 		event.registerLayerDefinition(ModelMergedBeastAgito.LAYER_LOCATION, ModelMergedBeastAgito::createBodyLayer);
 		event.registerLayerDefinition(Modeluniformdefault.LAYER_LOCATION, Modeluniformdefault::createBodyLayer);
@@ -119,6 +128,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelmaximumelephant.LAYER_LOCATION, Modelmaximumelephant::createBodyLayer);
 		event.registerLayerDefinition(Modelmahitooutfit.LAYER_LOCATION, Modelmahitooutfit::createBodyLayer);
 		event.registerLayerDefinition(ModelMahoragaChest.LAYER_LOCATION, ModelMahoragaChest::createBodyLayer);
+		event.registerLayerDefinition(Modelshinjukufitfinal.LAYER_LOCATION, Modelshinjukufitfinal::createBodyLayer);
 		event.registerLayerDefinition(Modelblackblindfold.LAYER_LOCATION, Modelblackblindfold::createBodyLayer);
 		event.registerLayerDefinition(ModelMahoragaWheel.LAYER_LOCATION, ModelMahoragaWheel::createBodyLayer);
 		event.registerLayerDefinition(Modeltoji_curse.LAYER_LOCATION, Modeltoji_curse::createBodyLayer);
@@ -137,6 +147,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelsukunafit.LAYER_LOCATION, Modelsukunafit::createBodyLayer);
 		event.registerLayerDefinition(ModelCrowProjectileFlying.LAYER_LOCATION, ModelCrowProjectileFlying::createBodyLayer);
 		event.registerLayerDefinition(Modelbeastsummonmask.LAYER_LOCATION, Modelbeastsummonmask::createBodyLayer);
+		event.registerLayerDefinition(Modelshinjukufit.LAYER_LOCATION, Modelshinjukufit::createBodyLayer);
 		event.registerLayerDefinition(Modelmahitodistorted.LAYER_LOCATION, Modelmahitodistorted::createBodyLayer);
 		event.registerLayerDefinition(ModelHakariDoorsClosed.LAYER_LOCATION, ModelHakariDoorsClosed::createBodyLayer);
 		event.registerLayerDefinition(Modelswordslice.LAYER_LOCATION, Modelswordslice::createBodyLayer);
@@ -158,6 +169,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modeltojipants.LAYER_LOCATION, Modeltojipants::createBodyLayer);
 		event.registerLayerDefinition(Modelchosodrip.LAYER_LOCATION, Modelchosodrip::createBodyLayer);
 		event.registerLayerDefinition(ModelFlyHead.LAYER_LOCATION, ModelFlyHead::createBodyLayer);
+		event.registerLayerDefinition(Modelmalevolent_kitchen.LAYER_LOCATION, Modelmalevolent_kitchen::createBodyLayer);
 		event.registerLayerDefinition(Modeljjkoutfiot.LAYER_LOCATION, Modeljjkoutfiot::createBodyLayer);
 		event.registerLayerDefinition(Modeltstoad.LAYER_LOCATION, Modeltstoad::createBodyLayer);
 		event.registerLayerDefinition(Modelroppongicursedspirit.LAYER_LOCATION, Modelroppongicursedspirit::createBodyLayer);
@@ -174,6 +186,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modelitadoriuniform.LAYER_LOCATION, Modelitadoriuniform::createBodyLayer);
 		event.registerLayerDefinition(ModeltpCircle.LAYER_LOCATION, ModeltpCircle::createBodyLayer);
 		event.registerLayerDefinition(ModelSorcererArmor.LAYER_LOCATION, ModelSorcererArmor::createBodyLayer);
+		event.registerLayerDefinition(Modelprsealarmor.LAYER_LOCATION, Modelprsealarmor::createBodyLayer);
 		event.registerLayerDefinition(Modelcustom_model.LAYER_LOCATION, Modelcustom_model::createBodyLayer);
 		event.registerLayerDefinition(Modelkashimooutfit.LAYER_LOCATION, Modelkashimooutfit::createBodyLayer);
 		event.registerLayerDefinition(Modelmouthcursedspirit.LAYER_LOCATION, Modelmouthcursedspirit::createBodyLayer);
@@ -184,5 +197,6 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modeldivinedog.LAYER_LOCATION, Modeldivinedog::createBodyLayer);
 		event.registerLayerDefinition(Modelmaximummeteornewwww.LAYER_LOCATION, Modelmaximummeteornewwww::createBodyLayer);
 		event.registerLayerDefinition(Modelnewmuzi.LAYER_LOCATION, Modelnewmuzi::createBodyLayer);
+		event.registerLayerDefinition(Modelbass_booster.LAYER_LOCATION, Modelbass_booster::createBodyLayer);
 	}
 }

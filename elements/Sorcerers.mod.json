@@ -8,9 +8,6 @@
     "functions": [],
     "entities": [
       {
-        "value": "CUSTOM:Rika"
-      },
-      {
         "value": "CUSTOM:SatoruGojo"
       },
       {
@@ -54,6 +51,12 @@
       },
       {
         "value": "CUSTOM:ShinjukuGojo"
+      },
+      {
+        "value": "CUSTOM:YoshinobuGakuganji"
+      },
+      {
+        "value": "CUSTOM:KasumiMiwa"
       }
     ],
     "biomes": [],

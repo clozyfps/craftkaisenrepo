@@ -58,6 +58,9 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.SHINJUKU_GOJO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.KENJAKU_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.NAOBITO_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.YOSHINOBU_GAKUGANJI_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.KASUMI_MIWA_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.NANAKO_HASABA_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {
@@ -78,6 +81,7 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.KAMUTOKE.get());
 					tabData.accept(CraftKaisenModItems.SWORD_OF_EXTERMINATION.get());
 					tabData.accept(CraftKaisenModItems.BATTLE_AXE.get());
+					tabData.accept(CraftKaisenModItems.ELECTRIC_GUITAR.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_armor"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_armor")).icon(() -> new ItemStack(CraftKaisenModItems.BANDAGE_BLIND_FOLD_HELMET.get())).displayItems((parameters, tabData) -> {
@@ -166,6 +170,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.CURSED_MASK.get());
 					tabData.accept(CraftKaisenModItems.CURSED_TOTEM.get());
 					tabData.accept(CraftKaisenModItems.REROLL_CT.get());
+					tabData.accept(CraftKaisenModItems.HUMAN_STORY_MODE.get());
+					tabData.accept(CraftKaisenModItems.TITLE_BOOK.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_blocks"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_blocks")).icon(() -> new ItemStack(CraftKaisenModBlocks.BARRIER_BLOCK.get())).displayItems((parameters, tabData) -> {

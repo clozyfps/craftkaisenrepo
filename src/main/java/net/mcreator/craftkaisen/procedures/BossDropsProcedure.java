@@ -7,8 +7,10 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModItems;
@@ -16,12 +18,13 @@ import net.mcreator.craftkaisen.init.CraftKaisenModGameRules;
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
+import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 import net.mcreator.craftkaisen.entity.NaobitoEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.MeiMeiEntity;
-import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
+import net.mcreator.craftkaisen.entity.KasumiMiwaEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
 import net.mcreator.craftkaisen.entity.AwakenedMakiEntity;
@@ -34,180 +37,189 @@ public class BossDropsProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
+			execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-		execute(null, world, x, y, z, entity);
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
+		execute(null, world, x, y, z, entity, sourceentity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
-		if (entity == null)
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
-		if (entity instanceof HeianEraSukunaEntity) {
-			if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.SMP_SETTING) == false) {
+		if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+			if (entity instanceof HeianEraSukunaEntity) {
+				if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.SMP_SETTING) == false) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.KAMUTOKE.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.HITEN.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+				}
+			}
+			if (entity instanceof AwakenedMakiEntity) {
 				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.KAMUTOKE.get()));
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.CURSED_GLASSES.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.HITEN.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
+				if (Math.random() < 0.2) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.SPLIT_SOUL_KATANA.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
 				}
 			}
-		}
-		if (entity instanceof AwakenedMakiEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.CURSED_GLASSES.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
-			}
-			if (Math.random() < 0.2) {
+			if (entity instanceof HajimeKashimoEntity) {
 				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.SPLIT_SOUL_KATANA.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-			}
-		}
-		if (entity instanceof HajimeKashimoEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NYOI_STAFF.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
-			}
-		}
-		if (entity instanceof NanamiKentoEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NANAMI_KNIFE.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
-			}
-		}
-		if (entity instanceof ResurrectedTojiEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
-			}
-		}
-		if (entity instanceof YutaOkkotsuEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.CURSED_RING.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
-			}
-		}
-		if (entity instanceof NanamiKentoEntity) {
-			if (Math.random() < 0.7) {
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NANAMI_OUTFIT_CHESTPLATE.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NANAMI_OUTFIT_LEGGINGS.get()));
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NYOI_STAFF.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
 			}
-		}
-		if (entity instanceof MahitoEntity) {
-			if (Math.random() < 0.7) {
+			if (entity instanceof NanamiKentoEntity) {
 				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.MAHITO_OUTFIT_CHESTPLATE.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.MAHITO_OUTFIT_LEGGINGS.get()));
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NANAMI_KNIFE.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
 			}
-		}
-		if (entity instanceof HajimeKashimoEntity) {
-			if (Math.random() < 0.7) {
+			if (entity instanceof ResurrectedTojiEntity) {
 				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.KASHIMO_OUTFIT_CHESTPLATE.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.KASHIMO_OUTFIT_LEGGINGS.get()));
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
 			}
-		}
-		if (entity instanceof MeiMeiEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.BATTLE_AXE.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof YutaOkkotsuEntity) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.CURSED_RING.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
-		}
-		if (entity instanceof TojiFushiguroEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.TOJI_OUTFIT_CHESTPLATE.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof NanamiKentoEntity) {
+				if (Math.random() < 0.7) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NANAMI_OUTFIT_CHESTPLATE.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NANAMI_OUTFIT_LEGGINGS.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+				}
 			}
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.TOJI_OUTFIT_LEGGINGS.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof MahitoEntity) {
+				if (Math.random() < 0.7) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.MAHITO_OUTFIT_CHESTPLATE.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.MAHITO_OUTFIT_LEGGINGS.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+				}
 			}
-		}
-		if (entity instanceof AoiTodoEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.TODO_OUTFIT_CHESTPLATE.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof HajimeKashimoEntity) {
+				if (Math.random() < 0.7) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.KASHIMO_OUTFIT_CHESTPLATE.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.KASHIMO_OUTFIT_LEGGINGS.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+				}
 			}
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.TODO_OUTFIT_LEGGINGS.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof MeiMeiEntity) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.BATTLE_AXE.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
-		}
-		if (entity instanceof NaobitoEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NAOBITO_OUTFIT_CHESTPLATE.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof TojiFushiguroEntity) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.TOJI_OUTFIT_CHESTPLATE.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.TOJI_OUTFIT_LEGGINGS.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NAOBITO_OUTFIT_LEGGINGS.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof AoiTodoEntity) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.TODO_OUTFIT_CHESTPLATE.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.TODO_OUTFIT_LEGGINGS.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
-		}
-		if (entity instanceof SatoruGojoEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.GOJO_OUTFIT_CHESTPLATE.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof NaobitoEntity) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NAOBITO_OUTFIT_CHESTPLATE.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.NAOBITO_OUTFIT_LEGGINGS.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.GOJO_OUTFIT_LEGGINGS.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof SatoruGojoEntity) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.GOJO_OUTFIT_CHESTPLATE.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.GOJO_OUTFIT_LEGGINGS.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
-		}
-		if (entity instanceof MegunaEntity) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.MEGUNA_OUTFIT_CHESTPLATE.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof RyomenSukunaEntity) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.SUKUNA_OUTFIT_CHESTPLATE.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.SUKUNA_OUTFIT_LEGGINGS.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.MEGUNA_OUTFIT_LEGGINGS.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
+			if (entity instanceof KasumiMiwaEntity) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(CraftKaisenModItems.MIWA_KATANA.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
 		}
 	}

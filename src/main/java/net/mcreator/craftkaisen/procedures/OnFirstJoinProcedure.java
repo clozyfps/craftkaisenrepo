@@ -5,11 +5,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
@@ -17,18 +20,20 @@ import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 
 import javax.annotation.Nullable;
 
+import java.util.ArrayList;
+
 @Mod.EventBusSubscriber
 public class OnFirstJoinProcedure {
 	@SubscribeEvent
 	public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-		execute(event, event.getEntity());
+		execute(event, event.getEntity().level, event.getEntity());
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		double randomnature = 0;
@@ -209,6 +214,41 @@ public class OnFirstJoinProcedure {
 				});
 			}
 			randomnature = Mth.nextInt(RandomSource.create(), 1, 100);
+			if (Mth.nextInt(RandomSource.create(), 1, 25) == 1) {
+				if (CraftKaisenModVariables.MapVariables.get(world).BrotherOne == false) {
+					CraftKaisenModVariables.MapVariables.get(world).BrotherOne = true;
+					CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+					{
+						boolean _setval = true;
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.BrotherOneIf = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					CraftKaisenModVariables.MapVariables.get(world).Brother1 = entity.getDisplayName().getString();
+					CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+				} else if (CraftKaisenModVariables.MapVariables.get(world).BrotherTwo == false) {
+					CraftKaisenModVariables.MapVariables.get(world).Brother2 = entity.getDisplayName().getString();
+					CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+					CraftKaisenModVariables.MapVariables.get(world).BrotherTwo = true;
+					CraftKaisenModVariables.MapVariables.get(world).syncData(world);
+					{
+						boolean _setval = true;
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.BortherTwoif = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal(("Your brother is " + CraftKaisenModVariables.MapVariables.get(world).Brother1)), false);
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).BrotherOneIf == true) {
+							if (entityiterator instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal(("Your brother is " + CraftKaisenModVariables.MapVariables.get(world).Brother2)), false);
+						}
+					}
+				}
+			}
 			if (randomnature <= 5) {
 				{
 					String _setval = "Rough";

@@ -18,6 +18,6 @@ public class KenjakuRenderer extends HumanoidMobRenderer<KenjakuEntity, Humanoid
 
 	@Override
 	public ResourceLocation getTextureLocation(KenjakuEntity entity) {
-		return new ResourceLocation("craft_kaisen:textures/entities/kenjaku-jogo-do-abate-minecraft-skin-on-planetminecraft-com.png");
+		return new ResourceLocation("craft_kaisen:textures/entities/kenjaku.png");
 	}
 }

@@ -105,8 +105,8 @@ public class HanamiEntity extends Monster {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
 		builder = builder.add(Attributes.MAX_HEALTH, 520);
-		builder = builder.add(Attributes.ARMOR, 0.4);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 38);
+		builder = builder.add(Attributes.ARMOR, 0.3);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 28);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.1);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);

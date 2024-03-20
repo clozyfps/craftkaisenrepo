@@ -1,5 +1,7 @@
 package net.mcreator.craftkaisen.procedures;
 
+import net.minecraftforge.items.ItemHandlerHelper;
+
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -150,8 +152,29 @@ public class RandomiseCursedTechniqueProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+		} else if (techniqueNumber == 15) {
+			{
+				String _setval = "Sound Amplification";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if (entity instanceof Player _player) {
+				ItemStack _setstack = new ItemStack(CraftKaisenModItems.ELECTRIC_GUITAR.get());
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+			}
+		} else if (techniqueNumber == 16) {
+			{
+				String _setval = "Camera";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.technique = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
-		if (Math.random() < 0.05) {
+		if (Math.random() < 0.02) {
 			restrictionNumber = Mth.nextInt(RandomSource.create(), 1, 2);
 			if (restrictionNumber == 1) {
 				{

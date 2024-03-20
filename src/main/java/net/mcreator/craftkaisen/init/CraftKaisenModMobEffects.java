@@ -13,6 +13,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.mcreator.craftkaisen.potion.ZoneMobEffect;
 import net.mcreator.craftkaisen.potion.WintryIcicleMobEffect;
 import net.mcreator.craftkaisen.potion.VesselPotionEffectMobEffect;
+import net.mcreator.craftkaisen.potion.UnstableMobEffect;
 import net.mcreator.craftkaisen.potion.UnlimitedVoidEffectMobEffect;
 import net.mcreator.craftkaisen.potion.TwistingMobEffect;
 import net.mcreator.craftkaisen.potion.TojiCooldownMobEffect;
@@ -34,10 +35,12 @@ import net.mcreator.craftkaisen.potion.RCTMobEffect;
 import net.mcreator.craftkaisen.potion.PureLovePreMobEffect;
 import net.mcreator.craftkaisen.potion.PureLoveActiveMobEffect;
 import net.mcreator.craftkaisen.potion.PunchBarragePotionMobEffect;
+import net.mcreator.craftkaisen.potion.PrisonBoxStunMobEffect;
 import net.mcreator.craftkaisen.potion.PreWorldCutMobEffect;
 import net.mcreator.craftkaisen.potion.PreRedMobEffect;
 import net.mcreator.craftkaisen.potion.PreFireArrowMobEffect;
 import net.mcreator.craftkaisen.potion.PiercingBloodMobEffect;
+import net.mcreator.craftkaisen.potion.PartialSummonRikaMobEffect;
 import net.mcreator.craftkaisen.potion.NueElectricityEffectMobEffect;
 import net.mcreator.craftkaisen.potion.LapseBlueControlMobEffect;
 import net.mcreator.craftkaisen.potion.LapseBlueControlGojoMobEffect;
@@ -118,4 +121,7 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> REVERSAL_RED_CONTROL = REGISTRY.register("reversal_red_control", () -> new ReversalRedControlMobEffect());
 	public static final RegistryObject<MobEffect> DOMAIN_CLASH_POTION = REGISTRY.register("domain_clash_potion", () -> new DomainClashPotionMobEffect());
 	public static final RegistryObject<MobEffect> JACKPOT = REGISTRY.register("jackpot", () -> new JackpotMobEffect());
+	public static final RegistryObject<MobEffect> PARTIAL_SUMMON_RIKA = REGISTRY.register("partial_summon_rika", () -> new PartialSummonRikaMobEffect());
+	public static final RegistryObject<MobEffect> UNSTABLE = REGISTRY.register("unstable", () -> new UnstableMobEffect());
+	public static final RegistryObject<MobEffect> PRISON_BOX_STUN = REGISTRY.register("prison_box_stun", () -> new PrisonBoxStunMobEffect());
 }

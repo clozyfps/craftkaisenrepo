@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:miwa_katana"
+    },
+    "title": {
+      "translate": "advancements.elimination_of_kasumi_miwa.title"
+    },
+    "description": {
+      "translate": "advancements.elimination_of_kasumi_miwa.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "elimination_of_kasumi_miwa": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:deleted_mod_element"
+}

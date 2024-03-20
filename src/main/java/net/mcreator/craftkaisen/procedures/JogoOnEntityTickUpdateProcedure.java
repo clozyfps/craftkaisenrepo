@@ -87,7 +87,7 @@ public class JogoOnEntityTickUpdateProcedure {
 						}
 					}
 				}
-				if (Math.random() < 0.0006) {
+				if (Math.random() < 0.0005) {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7l\u00A76Maximum....."), false);
 					if (world instanceof ServerLevel _level) {

@@ -21,25 +21,24 @@ import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.craftkaisen.procedures.KenjakuRightClickedOnEntityProcedure;
+import net.mcreator.craftkaisen.procedures.KenjakuOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.init.CraftKaisenModItems;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 public class KenjakuEntity extends Monster {
-	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.YELLOW, ServerBossEvent.BossBarOverlay.PROGRESS);
-
 	public KenjakuEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(CraftKaisenModEntities.KENJAKU.get(), world);
 	}
@@ -51,6 +50,9 @@ public class KenjakuEntity extends Monster {
 		setNoAi(false);
 		setCustomName(Component.literal("§6Kenjaku"));
 		setCustomNameVisible(true);
+		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(CraftKaisenModItems.GETO_OUTFIT_CHESTPLATE.get()));
+		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(CraftKaisenModItems.GETO_OUTFIT_LEGGINGS.get()));
+		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(CraftKaisenModItems.GETO_OUTFIT_BOOTS.get()));
 	}
 
 	@Override
@@ -109,26 +111,9 @@ public class KenjakuEntity extends Monster {
 	}
 
 	@Override
-	public boolean canChangeDimensions() {
-		return false;
-	}
-
-	@Override
-	public void startSeenByPlayer(ServerPlayer player) {
-		super.startSeenByPlayer(player);
-		this.bossInfo.addPlayer(player);
-	}
-
-	@Override
-	public void stopSeenByPlayer(ServerPlayer player) {
-		super.stopSeenByPlayer(player);
-		this.bossInfo.removePlayer(player);
-	}
-
-	@Override
-	public void customServerAiStep() {
-		super.customServerAiStep();
-		this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());
+	public void baseTick() {
+		super.baseTick();
+		KenjakuOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public static void init() {

@@ -1,0 +1,95 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 0,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "domainclashinggui.png",
+          "use1Xscale": false,
+          "x": 126,
+          "y": 37
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_domaiexpansionclickbutton",
+          "image": "domaiexpansionclickbutton.png",
+          "hoveredImage": "domainexpasionclickbuttonhover.png",
+          "onClick": {
+            "name": "DomainClashingClick"
+          },
+          "displayCondition": {
+            "name": "DomainClashButton1"
+          },
+          "x": 145,
+          "y": 65
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_domaiexpansionclickbutton1",
+          "image": "domaiexpansionclickbutton.png",
+          "hoveredImage": "domainexpasionclickbuttonhover.png",
+          "onClick": {
+            "name": "DomainClashingClick"
+          },
+          "displayCondition": {
+            "name": "DomainClashingButton4"
+          },
+          "x": 242,
+          "y": 151
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_domaiexpansionclickbutton2",
+          "image": "domaiexpansionclickbutton.png",
+          "hoveredImage": "domainexpasionclickbuttonhover.png",
+          "onClick": {
+            "name": "DomainClashingClick"
+          },
+          "displayCondition": {
+            "name": "DomainClashButton2"
+          },
+          "x": 242,
+          "y": 65
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_domaiexpansionclickbutton3",
+          "image": "domaiexpansionclickbutton.png",
+          "hoveredImage": "domainexpasionclickbuttonhover.png",
+          "onClick": {
+            "name": "DomainClashingClick"
+          },
+          "displayCondition": {
+            "name": "DomainClashingButton3"
+          },
+          "x": 144,
+          "y": 151
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

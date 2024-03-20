@@ -10,6 +10,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -20,6 +21,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.entity.RikaEntity;
 import net.mcreator.craftkaisen.entity.EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity;
 
 import javax.annotation.Nullable;
@@ -64,8 +66,10 @@ public class MobTargetProcedure {
 										return false;
 									}
 								}.checkGamemode(entityiterator))) {
-									if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
-										_entity.setTarget(_ent);
+									if (!(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
+										if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
+											_entity.setTarget(_ent);
+									}
 								}
 							}
 						}
@@ -79,7 +83,7 @@ public class MobTargetProcedure {
 					for (Entity entityiterator : _entfound) {
 						if (!(entity == entityiterator)) {
 							if (entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:sorcerers")))
-									|| entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:curse_user")))
+									|| entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:curse_user"))) || entityiterator instanceof RikaEntity
 									|| ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).race).equals("Human")) {
 								if (!(new Object() {
 									public boolean checkGamemode(Entity _ent) {
@@ -92,9 +96,11 @@ public class MobTargetProcedure {
 										return false;
 									}
 								}.checkGamemode(entityiterator))) {
-									if (!(entity.getPersistentData().getString("sukunatakeover")).equals(entityiterator.getDisplayName().getString())) {
-										if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
-											_entity.setTarget(_ent);
+									if (!(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
+										if (!(entity.getPersistentData().getString("sukunatakeover")).equals(entityiterator.getDisplayName().getString())) {
+											if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
+												_entity.setTarget(_ent);
+										}
 									}
 								}
 							}

@@ -17,6 +17,8 @@ public class MaxRedProcedureProcedure {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(CraftKaisenModMobEffects.REVERSAL_RED_CONTROL.get());
 			entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 200);
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 100, 0, false, false));
 		}
 	}
 }

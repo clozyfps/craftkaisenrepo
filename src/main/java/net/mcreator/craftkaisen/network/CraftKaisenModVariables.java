@@ -186,6 +186,19 @@ public class CraftKaisenModVariables {
 			clone.CsmSlot4Stack = original.CsmSlot4Stack;
 			clone.CsmSlot7Stack = original.CsmSlot7Stack;
 			clone.CsmSlot3Stack = original.CsmSlot3Stack;
+			clone.BrotherOneIf = original.BrotherOneIf;
+			clone.CountTick = original.CountTick;
+			clone.Title = original.Title;
+			clone.DomainClashWon = original.DomainClashWon;
+			clone.DomainClashAvalible = original.DomainClashAvalible;
+			clone.StoryModeLevel = original.StoryModeLevel;
+			clone.SuperJumpEnable = original.SuperJumpEnable;
+			clone.TitleColor = original.TitleColor;
+			clone.cameraroll = original.cameraroll;
+			clone.DomainClashGame = original.DomainClashGame;
+			clone.HRprogress = original.HRprogress;
+			clone.DomainClashing = original.DomainClashing;
+			clone.BortherTwoif = original.BortherTwoif;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -298,6 +311,10 @@ public class CraftKaisenModVariables {
 		public double neary = 0;
 		public double nearx = 0;
 		public double nearz = 0;
+		public String Brother1 = "\"\"";
+		public String Brother2 = "\"\"";
+		public boolean BrotherTwo = false;
+		public boolean BrotherOne = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -316,6 +333,10 @@ public class CraftKaisenModVariables {
 			neary = nbt.getDouble("neary");
 			nearx = nbt.getDouble("nearx");
 			nearz = nbt.getDouble("nearz");
+			Brother1 = nbt.getString("Brother1");
+			Brother2 = nbt.getString("Brother2");
+			BrotherTwo = nbt.getBoolean("BrotherTwo");
+			BrotherOne = nbt.getBoolean("BrotherOne");
 		}
 
 		@Override
@@ -330,6 +351,10 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("neary", neary);
 			nbt.putDouble("nearx", nearx);
 			nbt.putDouble("nearz", nearz);
+			nbt.putString("Brother1", Brother1);
+			nbt.putString("Brother2", Brother2);
+			nbt.putBoolean("BrotherTwo", BrotherTwo);
+			nbt.putBoolean("BrotherOne", BrotherOne);
 			return nbt;
 		}
 
@@ -575,6 +600,19 @@ public class CraftKaisenModVariables {
 		public double RolledStage = 0;
 		public boolean MiddleCard = false;
 		public double RollingTimer = 0;
+		public boolean BrotherOneIf = false;
+		public double CountTick = 0.0;
+		public String Title = "\"\"";
+		public boolean DomainClashWon = false;
+		public boolean DomainClashAvalible = false;
+		public double StoryModeLevel = 0;
+		public boolean SuperJumpEnable = false;
+		public String TitleColor = "\"\"";
+		public double cameraroll = 0;
+		public double DomainClashGame = 1.0;
+		public double HRprogress = 0;
+		public boolean DomainClashing = false;
+		public boolean BortherTwoif = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -736,6 +774,19 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("RolledStage", RolledStage);
 			nbt.putBoolean("MiddleCard", MiddleCard);
 			nbt.putDouble("RollingTimer", RollingTimer);
+			nbt.putBoolean("BrotherOneIf", BrotherOneIf);
+			nbt.putDouble("CountTick", CountTick);
+			nbt.putString("Title", Title);
+			nbt.putBoolean("DomainClashWon", DomainClashWon);
+			nbt.putBoolean("DomainClashAvalible", DomainClashAvalible);
+			nbt.putDouble("StoryModeLevel", StoryModeLevel);
+			nbt.putBoolean("SuperJumpEnable", SuperJumpEnable);
+			nbt.putString("TitleColor", TitleColor);
+			nbt.putDouble("cameraroll", cameraroll);
+			nbt.putDouble("DomainClashGame", DomainClashGame);
+			nbt.putDouble("HRprogress", HRprogress);
+			nbt.putBoolean("DomainClashing", DomainClashing);
+			nbt.putBoolean("BortherTwoif", BortherTwoif);
 			return nbt;
 		}
 
@@ -894,6 +945,19 @@ public class CraftKaisenModVariables {
 			RolledStage = nbt.getDouble("RolledStage");
 			MiddleCard = nbt.getBoolean("MiddleCard");
 			RollingTimer = nbt.getDouble("RollingTimer");
+			BrotherOneIf = nbt.getBoolean("BrotherOneIf");
+			CountTick = nbt.getDouble("CountTick");
+			Title = nbt.getString("Title");
+			DomainClashWon = nbt.getBoolean("DomainClashWon");
+			DomainClashAvalible = nbt.getBoolean("DomainClashAvalible");
+			StoryModeLevel = nbt.getDouble("StoryModeLevel");
+			SuperJumpEnable = nbt.getBoolean("SuperJumpEnable");
+			TitleColor = nbt.getString("TitleColor");
+			cameraroll = nbt.getDouble("cameraroll");
+			DomainClashGame = nbt.getDouble("DomainClashGame");
+			HRprogress = nbt.getDouble("HRprogress");
+			DomainClashing = nbt.getBoolean("DomainClashing");
+			BortherTwoif = nbt.getBoolean("BortherTwoif");
 		}
 	}
 
@@ -1071,6 +1135,19 @@ public class CraftKaisenModVariables {
 					variables.RolledStage = message.data.RolledStage;
 					variables.MiddleCard = message.data.MiddleCard;
 					variables.RollingTimer = message.data.RollingTimer;
+					variables.BrotherOneIf = message.data.BrotherOneIf;
+					variables.CountTick = message.data.CountTick;
+					variables.Title = message.data.Title;
+					variables.DomainClashWon = message.data.DomainClashWon;
+					variables.DomainClashAvalible = message.data.DomainClashAvalible;
+					variables.StoryModeLevel = message.data.StoryModeLevel;
+					variables.SuperJumpEnable = message.data.SuperJumpEnable;
+					variables.TitleColor = message.data.TitleColor;
+					variables.cameraroll = message.data.cameraroll;
+					variables.DomainClashGame = message.data.DomainClashGame;
+					variables.HRprogress = message.data.HRprogress;
+					variables.DomainClashing = message.data.DomainClashing;
+					variables.BortherTwoif = message.data.BortherTwoif;
 				}
 			});
 			context.setPacketHandled(true);

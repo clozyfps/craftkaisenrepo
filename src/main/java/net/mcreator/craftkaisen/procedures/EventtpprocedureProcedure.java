@@ -12,7 +12,7 @@ public class EventtpprocedureProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (CraftKaisenModVariables.MapVariables.get(world).WorldEventTimer <= 200) {
+		if (!(entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).InCombat) {
 			{
 				Entity _ent = entity;
 				_ent.teleportTo(CraftKaisenModVariables.MapVariables.get(world).nearx, CraftKaisenModVariables.MapVariables.get(world).neary, CraftKaisenModVariables.MapVariables.get(world).nearz);
@@ -22,7 +22,7 @@ public class EventtpprocedureProcedure {
 			}
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(Component.literal("No World Event Happening Right Now."), false);
+				_player.displayClientMessage(Component.literal("In Combat"), true);
 		}
 	}
 }

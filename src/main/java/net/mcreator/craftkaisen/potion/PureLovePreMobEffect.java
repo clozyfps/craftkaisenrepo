@@ -33,7 +33,7 @@ public class PureLovePreMobEffect extends MobEffect {
 	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		super.removeAttributeModifiers(entity, attributeMap, amplifier);
-		PureLovePreEffectExpiresProcedure.execute(entity);
+		PureLovePreEffectExpiresProcedure.execute(entity.level, entity);
 	}
 
 	@Override

@@ -184,7 +184,7 @@ public class MegumiFushiguroOnEntityTickUpdateProcedure {
 						}
 					}
 				}
-				if (Math.random() < 0.0001) {
+				if (Math.random() < 0.0007) {
 					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 50) {
 						if (!(!world.getEntitiesOfClass(EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty())) {
 							if (!(((Entity) world.getEntitiesOfClass(EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).stream().sorted(new Object() {
@@ -196,7 +196,7 @@ public class MegumiFushiguroOnEntityTickUpdateProcedure {
 									_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 250, false, false));
 								{
 									final Vec3 _center = new Vec3(x, y, z);
-									List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+									List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 											.collect(Collectors.toList());
 									for (Entity entityiterator : _entfound) {
 										if (entityiterator instanceof Player _player && !_player.level.isClientSide())

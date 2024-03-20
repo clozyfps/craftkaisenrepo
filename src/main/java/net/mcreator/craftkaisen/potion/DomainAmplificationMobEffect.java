@@ -10,6 +10,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
 
+import net.mcreator.craftkaisen.procedures.DomainAmplificationOnEffectActiveTickProcedure;
 import net.mcreator.craftkaisen.procedures.DomainAmplificationEffectStartedappliedProcedure;
 import net.mcreator.craftkaisen.procedures.DomainAmplificationEffectExpiresProcedure;
 
@@ -28,6 +29,11 @@ public class DomainAmplificationMobEffect extends MobEffect {
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		DomainAmplificationEffectStartedappliedProcedure.execute(entity);
+	}
+
+	@Override
+	public void applyEffectTick(LivingEntity entity, int amplifier) {
+		DomainAmplificationOnEffectActiveTickProcedure.execute(entity);
 	}
 
 	@Override
