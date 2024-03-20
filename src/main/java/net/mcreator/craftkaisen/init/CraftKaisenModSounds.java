@@ -47,4 +47,5 @@ public class CraftKaisenModSounds {
 	public static final RegistryObject<SoundEvent> DOMAIN_JACKPOT = REGISTRY.register("domain.jackpot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "domain.jackpot")));
 	public static final RegistryObject<SoundEvent> DOMAIN_SPIN = REGISTRY.register("domain.spin", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "domain.spin")));
 	public static final RegistryObject<SoundEvent> BELLS = REGISTRY.register("bells", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "bells")));
+	public static final RegistryObject<SoundEvent> PICTURETAKE = REGISTRY.register("picturetake", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("craft_kaisen", "picturetake")));
 }

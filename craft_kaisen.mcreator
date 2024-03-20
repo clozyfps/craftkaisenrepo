@@ -5216,22 +5216,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -12714,6 +12698,22 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -13617,6 +13617,9 @@
       "locked_code": false,
       "registry_name": "melee_moves",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MeleeMovesProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -20374,6 +20377,10 @@
             "type": "entity"
           },
           {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -22187,6 +22194,10 @@
         "dependencies": [
           {
             "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
             "type": "entity"
           },
           {
@@ -31900,18 +31911,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -32140,6 +32139,540 @@
         ]
       },
       "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "SubjugationOfKoGuy",
+      "type": "achievement",
+      "sortid": 1401,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "subjugation_of_ko_guy",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/subjugation_of_ko_guy.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "EliminationOfAoiTodo",
+      "type": "achievement",
+      "sortid": 1402,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "elimination_of_aoi_todo",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/elimination_of_aoi_todo.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "EliminationOfKasumiMiwa",
+      "type": "achievement",
+      "sortid": 1403,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "elimination_of_kasumi_miwa",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/elimination_of_kasumi_miwa.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "OlderBrother",
+      "type": "achievement",
+      "sortid": 1404,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "older_brother",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/older_brother.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "PseudoGeto",
+      "type": "achievement",
+      "sortid": 1405,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pseudo_geto",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/pseudo_geto.json"
+        ]
+      },
+      "path": "~/Advancement"
+    },
+    {
+      "name": "ElectricGuitar",
+      "type": "tool",
+      "sortid": 1406,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electric_guitar",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/electric_guitar.json",
+          "src/main/java/net/mcreator/craftkaisen/item/ElectricGuitarItem.java"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "BassBooster",
+      "type": "livingentity",
+      "sortid": 1407,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bass_booster",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BassBoosterRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/BassBoosterEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "GuitarBlastWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1408,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guitar_blast_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/GuitarBlastWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SoundAmp"
+    },
+    {
+      "name": "GuitarBlast",
+      "type": "projectile",
+      "sortid": 1409,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guitar_blast",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/GuitarBlastEntity.java"
+        ]
+      },
+      "path": "~/Abilities/SoundAmp"
+    },
+    {
+      "name": "GuitarBlastProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 1410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guitar_blast_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/GuitarBlastProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SoundAmp"
+    },
+    {
+      "name": "SoundAmplificationMoves",
+      "type": "procedure",
+      "sortid": 1411,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sound_amplification_moves",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SoundAmplificationMovesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/MoveUse"
+    },
+    {
+      "name": "YoshinobuGakuganjiOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1412,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yoshinobu_gakuganji_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/YoshinobuGakuganjiOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "YoshinobuGakuganji",
+      "type": "livingentity",
+      "sortid": 1413,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yoshinobu_gakuganji",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/YoshinobuGakuganjiRenderer.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/yoshinobu_gakuganji_biome_modifier.json",
+          "src/main/resources/assets/craft_kaisen/models/item/yoshinobu_gakuganji_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/YoshinobuGakuganjiEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "KasumiMiwa",
+      "type": "livingentity",
+      "sortid": 1414,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kasumi_miwa",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/KasumiMiwaEntity.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/kasumi_miwa_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/KasumiMiwaRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/kasumi_miwa_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "SetSoundAmp",
+      "type": "procedure",
+      "sortid": 1415,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_sound_amp",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetSoundAmpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "TitleBookItemInHandTick",
+      "type": "procedure",
+      "sortid": 1416,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "title_book_item_in_hand_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TitleBookItemInHandTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "TitleBookRightclicked",
+      "type": "procedure",
+      "sortid": 1417,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "title_book_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TitleBookRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "TitleBook",
+      "type": "item",
+      "sortid": 1418,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "title_book",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/TitleBookItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/title_book.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "TitleSentChat",
+      "type": "procedure",
+      "sortid": 1419,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "title_sent_chat",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TitleSentChatProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "CameraRayWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1420,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "camera_ray_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CameraRayWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Projectile/Procedures"
+    },
+    {
+      "name": "CameraRay",
+      "type": "projectile",
+      "sortid": 1421,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "camera_ray",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/CameraRayEntity.java"
+        ]
+      },
+      "path": "~/Projectile/Procedures"
+    },
+    {
+      "name": "CallPhoto",
+      "type": "procedure",
+      "sortid": 1422,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "call_photo",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CallPhotoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Camera"
+    },
+    {
+      "name": "SetCamera",
+      "type": "procedure",
+      "sortid": 1423,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_camera",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetCameraProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "NanakoHasabaOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1424,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nanako_hasaba_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/NanakoHasabaOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "NanakoHasaba",
+      "type": "livingentity",
+      "sortid": 1425,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nanako_hasaba",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/nanako_hasaba_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/NanakoHasabaRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/NanakoHasabaEntity.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/nanako_hasaba_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
     }
   ],
   "variable_elements": [
@@ -33168,6 +33701,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "TitleColor",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Title",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "cameraroll",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -33426,13 +33977,21 @@
       ],
       "category": "neutral",
       "subtitle": ""
+    },
+    {
+      "name": "picturetake",
+      "files": [
+        "audio_-_iphone_taking_picture_sound_effect_-_creator_store"
+      ],
+      "category": "neutral",
+      "subtitle": ""
     }
   ],
   "language_map": {
     "en_us": {
       "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-      "subtitles.sukuna": "sukuna talking",
       "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
+      "subtitles.sukuna": "sukuna talking",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
       "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
@@ -33466,16 +34025,17 @@
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
       "advancements.subjugation_of_hanami.title": "Subjugation Of Hanami",
-      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
+      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
-      "gui.craft_kaisen.main_menu.label_0": "0",
-      "advancements.special_grade.title": "Special Grade",
       "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
+      "advancements.special_grade.title": "Special Grade",
+      "gui.craft_kaisen.main_menu.label_0": "0",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
+      "entity.craft_kaisen.yoshinobu_gakuganji": "Yoshinobu Gakuganji",
       "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
       "entity.craft_kaisen.red_open_door": "Red Open Door",
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
@@ -33514,6 +34074,7 @@
       "item.craft_kaisen.choso_spawn_egg": "Choso Spawn Egg",
       "effect.craft_kaisen.pre_red": "PreRed",
       "entity.craft_kaisen.naobito": "Naobito",
+      "advancements.elimination_of_aoi_todo.descr": "Kill Aoi Todo",
       "entity.craft_kaisen.finger_bearer": "Finger Bearer",
       "gui.craft_kaisen.body_shape_overlay.label_alt": "ALT - Spike ",
       "block.craft_kaisen.sprinkler_on": "Sprinkler On",
@@ -33525,6 +34086,7 @@
       "item.craft_kaisen.kashimo_outfit_chestplate": "Kashimo Outfit",
       "item.craft_kaisen.mahoraga_outfit_leggings": "Mahoraga Outfit",
       "item.craft_kaisen.nail": "Nail",
+      "advancements.subjugation_of_ko_guy.descr": "Exorcise Ko Guy",
       "death.attack.soul_damage": "%1$s died",
       "block.craft_kaisen.domain_lava": "Domain Block",
       "gamerule.sMPSetting.description": "Sets the mod to smp settings",
@@ -33563,11 +34125,13 @@
       "advancements.clan_creator.title": "Head Of The Clan",
       "item.craft_kaisen.mahito_outfit_leggings": "Mahito Outfit",
       "item.craft_kaisen.maximum_elephant_spawn_egg": "Maximum Elephant Spawn Egg",
+      "item.craft_kaisen.yoshinobu_gakuganji_spawn_egg": "Yoshinobu Gakuganji Spawn Egg",
       "item.craft_kaisen.satoru_gojo_spawn_egg": "Satoru Gojo Spawn Egg",
       "item.craft_kaisen.sukuna_finger": "Sukuna Finger",
       "item.craft_kaisen.blood_spear": "Blood Spear",
       "entity.craft_kaisen.fire_arrow_storm": "Fire Arrow Storm",
       "entity.craft_kaisen.eight_handled_sword_divergent_sila_divine_general_mahoraga": "Eight Handled Sword Divergent Sila Divine General Mahoraga",
+      "item.craft_kaisen.nanako_hasaba_spawn_egg": "Nanako Hasaba Spawn Egg",
       "advancements.reversed_cursed_technique.title": "Reversed Cursed Technique",
       "advancements.cursed_spirit.title": "Cursed Spirit",
       "item.craft_kaisen.mei_mei_spawn_egg": "Mei Mei Spawn Egg",
@@ -33579,6 +34143,7 @@
       "death.attack.dismantle_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.shadow_frog": "Shadow Frog",
       "effect.craft_kaisen.constant_slice": "ConstantSlice",
+      "advancements.elimination_of_kasumi_miwa.title": "Elimination Of Kasumi Miwa",
       "advancements.the_honored_one.title": "The Honored One",
       "death.attack.malevolent_shrine_damage.player": "%1$s died whilst trying to escape the malevolent shrine",
       "effect.craft_kaisen.through_blocks": "Through Blocks",
@@ -33632,6 +34197,7 @@
       "item.craft_kaisen.mahoraga_outfit_chestplate": "Mahoraga Outfit",
       "death.attack.slashing_damage.player": "%1$s died whilst trying to escape %2$s",
       "advancements.the_sorcerer_killer.title": "The Sorcerer Killer",
+      "item.craft_kaisen.title_book": "Title Book",
       "gamerule.noOverwhelmingPressure": "No Overwhelming Pressure",
       "item.craft_kaisen.fire_arrow": "Fire Arrow",
       "advancements.fearsome_womb.title": "Fearsome Womb",
@@ -33651,6 +34217,7 @@
       "death.attack.reversal_red_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.flying_cursed_spirit": "Flying Cursed Spirit",
       "item.craft_kaisen.prison_box_spawn_egg": "Prison Box Spawn Egg",
+      "entity.craft_kaisen.nanako_hasaba": "Nanako Hasaba",
       "subtitles.unlimitedsplash": "",
       "advancements.shinjuku_showdown.title": "Shinjuku Showdown",
       "gui.craft_kaisen.main_menu.tooltip_increase_max_health": "increase max health",
@@ -33666,6 +34233,7 @@
       "effect.craft_kaisen.reiki": "Reiki",
       "entity.craft_kaisen.kenjaku": "Kenjaku",
       "entity.craft_kaisen.rainbow_closed_door": "Rainbow Closed Door",
+      "entity.craft_kaisen.bass_booster": "Bass Booster",
       "gui.craft_kaisen.domain_clash.label_press_the_button_as_many_times_a": "Press the button as many times as you can!",
       "item.craft_kaisen.nobara_outfit_leggings": "Female Jujutsu Sorcerer Outfit",
       "entity.craft_kaisen.yuji_itadori": "Yuji Itadori",
@@ -33684,11 +34252,13 @@
       "effect.craft_kaisen.simple_domain": "Simple Domain",
       "advancements.heian_era.descr": "Kill Awakened Sukuna",
       "item.craft_kaisen.blood_blade": "Blood Dagger",
+      "item.craft_kaisen.electric_guitar": "Electric Guitar",
       "itemGroup.tabck_items": "Ck Items",
       "effect.craft_kaisen.rikas_love": "Rika\u0027s Love",
       "death.attack.frost_calm_damage": "%1$s died to frost",
       "item.craft_kaisen.root_projectile": "Root Projectile",
       "gamerule.hardcoreLives": "Hardcore Lives",
+      "advancements.older_brother.title": "Older Brother",
       "advancements.semi_grade_2.descr": "Reach The Required Fame.",
       "gamerule.oPBlessedByTheSparks.description": "Makes Blessed By The Sparks Special extremely common and overpowered",
       "itemGroup.tabck_curses": "Craft Kaisen Curses",
@@ -33768,6 +34338,7 @@
       "entity.craft_kaisen.red_closed_door": "Red Closed Door",
       "gamerule.malevolentShrineBlockDamage": "malevolentshrineblockdamage",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_4": "Set Ability 4",
+      "advancements.elimination_of_kasumi_miwa.descr": "Kill Kasumi Miwa",
       "gui.craft_kaisen.lapse_blue_overlay.label_ctrl_move_away": "SNEAK - Push",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_3": "Set Ability 3",
       "effect.craft_kaisen.piercing_blood": "PiercingBlood",
@@ -33799,6 +34370,7 @@
       "item.craft_kaisen.geto_outfit_boots": "Geto Sandals",
       "advancements.cursed_spirit.descr": "Become a Cursed Spirit",
       "entity.craft_kaisen.riko_amanai": "Riko Amanai",
+      "entity.craft_kaisen.kasumi_miwa": "Kasumi Miwa",
       "advancements.special_grade.descr": "Reach The Required Fame.",
       "effect.craft_kaisen.body_shape_active": "BodyShape",
       "gui.craft_kaisen.start_screen.label_cursed_spirit": "Curse",
@@ -33872,6 +34444,7 @@
       "item.craft_kaisen.blood_axe": "Blood Axe",
       "advancements.divine_dog_totality.title": "Divine Dog Totality",
       "item.craft_kaisen.riko_amanai_spawn_egg": "Riko Amanai Spawn Egg",
+      "subtitles.picturetake": "",
       "item.craft_kaisen.nanami_kento_spawn_egg": "Nanami Kento Spawn Egg",
       "item.craft_kaisen.aoi_todo_spawn_egg": "Aoi Todo Spawn Egg",
       "advancements.nue_advancement.title": "Nue",
@@ -33886,6 +34459,7 @@
       "entity.craft_kaisen.ember_insect": "Ember Insect",
       "death.attack.cursed_energy_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.craft_kaisen.perk_gui.button_decline": "Decline",
+      "advancements.pseudo_geto.descr": "Kill Kenjaku",
       "item.craft_kaisen.jujutsu_sorcerer_uniform_chestplate": "Jujutsu Sorcerer Uniform",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_12": "Set Ability 11",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_13": "Set Ability 12",
@@ -33898,6 +34472,7 @@
       "item_group.craft_kaisen.ck_armor": "Ck Armor",
       "entity.craft_kaisen.uraume": "Uraume",
       "block.craft_kaisen.domain_magma": "Domain Block",
+      "advancements.older_brother.descr": "Kill Choso",
       "effect.craft_kaisen.flow": "Flow",
       "item.craft_kaisen.mouth_cursed_spirit_spawn_egg": "Mouth Cursed Spirit Spawn Egg",
       "entity.craft_kaisen.yuta_okkotsu": "Yuta Okkotsu",
@@ -33956,6 +34531,7 @@
       "advancements.great_serpent_advancement.title": "Great Serpent",
       "gui.craft_kaisen.domain_clash.button_x": "X",
       "effect.craft_kaisen.sukuna": "Sukuna",
+      "advancements.elimination_of_aoi_todo.title": "Elimination Of Aoi Todo",
       "gui.craft_kaisen.body_shape_overlay.label_shift_slicing": "SHIFT - Slicing",
       "entity.craft_kaisen.small_pox_deity": "Small Pox Deity",
       "gui.craft_kaisen.main_menu.tooltip_increase_energy_regen_rate_and_m": "increase energy regen rate and max output",
@@ -34066,12 +34642,15 @@
       "advancements.cursed_child.title": "Cursed Child",
       "effect.craft_kaisen.lapse_blue_control_gojo": "Lapse Blue Control Gojo",
       "block.craft_kaisen.domain_dripstone": "Domain Block",
+      "item.craft_kaisen.kasumi_miwa_spawn_egg": "Kasumi Miwa Spawn Egg",
       "key.craft_kaisen.charge_cursed_energy": "Charge Cursed Energy",
       "item.craft_kaisen.stronghit": "Stronghit",
       "gui.craft_kaisen.prestige_menu.tooltip_decline": "Decline",
       "death.attack.soul_damage.item": "%1$s was killed by %2$s using %3$s",
       "item.craft_kaisen.nanami_outfit_leggings": "Nanami Outfit ",
+      "advancements.subjugation_of_ko_guy.title": "Subjugation Of Ko Guy",
       "subtitles.domain.jackpot": "",
+      "advancements.pseudo_geto.title": "I will kill Kenjaku.",
       "effect.craft_kaisen.body_crushing": "Crushing",
       "advancements.round_deer_advancement.title": "Round Deer",
       "gui.craft_kaisen.phone_gui.button_place": "Place",
@@ -34226,6 +34805,14 @@
           },
           {
             "name": "Cursed Energy",
+            "children": []
+          },
+          {
+            "name": "SoundAmp",
+            "children": []
+          },
+          {
+            "name": "Camera",
             "children": []
           }
         ]

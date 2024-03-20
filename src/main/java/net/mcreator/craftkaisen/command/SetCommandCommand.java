@@ -20,6 +20,7 @@ import net.mcreator.craftkaisen.procedures.SetSukunaProcedure;
 import net.mcreator.craftkaisen.procedures.SetStrengthStatProcedure;
 import net.mcreator.craftkaisen.procedures.SetStrawDollProcedure;
 import net.mcreator.craftkaisen.procedures.SetSpeedStatProcedure;
+import net.mcreator.craftkaisen.procedures.SetSoundAmpProcedure;
 import net.mcreator.craftkaisen.procedures.SetSorcererProcedure;
 import net.mcreator.craftkaisen.procedures.SetSkillPointsProcedure;
 import net.mcreator.craftkaisen.procedures.SetSixEyesProcedure;
@@ -56,6 +57,7 @@ import net.mcreator.craftkaisen.procedures.SetCursedEnergyStatProcedure;
 import net.mcreator.craftkaisen.procedures.SetCurseUserProcedure;
 import net.mcreator.craftkaisen.procedures.SetCurseProcedure;
 import net.mcreator.craftkaisen.procedures.SetCopyProcedure;
+import net.mcreator.craftkaisen.procedures.SetCameraProcedure;
 import net.mcreator.craftkaisen.procedures.SetCSMProcedure;
 import net.mcreator.craftkaisen.procedures.SetBoogieWoogieProcedure;
 import net.mcreator.craftkaisen.procedures.SetBloodManipulationProcedure;
@@ -368,6 +370,34 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					SetBlackBirdManipulationProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("SoundAmplification").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetSoundAmpProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("Camera").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetCameraProcedure.execute(arguments);
 					return 0;
 				})))).then(Commands.literal("Race").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Human").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

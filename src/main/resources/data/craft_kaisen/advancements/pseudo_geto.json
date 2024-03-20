@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:geto_outfit_chestplate"
+    },
+    "title": {
+      "translate": "advancements.pseudo_geto.title"
+    },
+    "description": {
+      "translate": "advancements.pseudo_geto.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "pseudo_geto": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "craft_kaisen:older_brother"
+}

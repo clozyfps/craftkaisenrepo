@@ -18,6 +18,7 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
 import net.mcreator.craftkaisen.entity.YujiItadoriEntity;
+import net.mcreator.craftkaisen.entity.YoshinobuGakuganjiEntity;
 import net.mcreator.craftkaisen.entity.WorldCutDismantleEntity;
 import net.mcreator.craftkaisen.entity.WoodenBoxEntity;
 import net.mcreator.craftkaisen.entity.WhiteDivineDogEntity;
@@ -74,6 +75,7 @@ import net.mcreator.craftkaisen.entity.NueEntity;
 import net.mcreator.craftkaisen.entity.NobaraKugisakiEntity;
 import net.mcreator.craftkaisen.entity.NaobitoEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
+import net.mcreator.craftkaisen.entity.NanakoHasabaEntity;
 import net.mcreator.craftkaisen.entity.NailProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.MergedBeastAgitoEntity;
@@ -88,6 +90,7 @@ import net.mcreator.craftkaisen.entity.MahitoCloneEntity;
 import net.mcreator.craftkaisen.entity.LapseBlueRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.KoGuyEntity;
 import net.mcreator.craftkaisen.entity.KenjakuEntity;
+import net.mcreator.craftkaisen.entity.KasumiMiwaEntity;
 import net.mcreator.craftkaisen.entity.KaichiEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.JinichiZeninEntity;
@@ -101,6 +104,7 @@ import net.mcreator.craftkaisen.entity.HollowPurpleGojoEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
+import net.mcreator.craftkaisen.entity.GuitarBlastEntity;
 import net.mcreator.craftkaisen.entity.GreenPachinkoBallProjectileEntity;
 import net.mcreator.craftkaisen.entity.GreenOpenDoorEntity;
 import net.mcreator.craftkaisen.entity.GreenClosedDoorEntity;
@@ -137,6 +141,7 @@ import net.mcreator.craftkaisen.entity.CrowEntity;
 import net.mcreator.craftkaisen.entity.CoffinMountainEntity;
 import net.mcreator.craftkaisen.entity.ChosoEntity;
 import net.mcreator.craftkaisen.entity.ChimeraShadowGardenMobEntity;
+import net.mcreator.craftkaisen.entity.CameraRayEntity;
 import net.mcreator.craftkaisen.entity.BoogieWoogieProjectileEntity;
 import net.mcreator.craftkaisen.entity.BodyRepel3Entity;
 import net.mcreator.craftkaisen.entity.BodyRepel2Entity;
@@ -148,6 +153,7 @@ import net.mcreator.craftkaisen.entity.BlackMucusProjectileEntity;
 import net.mcreator.craftkaisen.entity.BlackDivineDogEntity;
 import net.mcreator.craftkaisen.entity.BlackBirdProjectileEntity;
 import net.mcreator.craftkaisen.entity.BindingIceBlockEntity;
+import net.mcreator.craftkaisen.entity.BassBoosterEntity;
 import net.mcreator.craftkaisen.entity.AwakenedMakiEntity;
 import net.mcreator.craftkaisen.entity.AoiTodoEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
@@ -587,6 +593,24 @@ public class CraftKaisenModEntities {
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<PrisonBoxEntity>> PRISON_BOX = register("prison_box", EntityType.Builder.<PrisonBoxEntity>of(PrisonBoxEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 			.setUpdateInterval(3).setCustomClientFactory(PrisonBoxEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<BassBoosterEntity>> BASS_BOOSTER = register("bass_booster", EntityType.Builder.<BassBoosterEntity>of(BassBoosterEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BassBoosterEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<GuitarBlastEntity>> GUITAR_BLAST = register("projectile_guitar_blast",
+			EntityType.Builder.<GuitarBlastEntity>of(GuitarBlastEntity::new, MobCategory.MISC).setCustomClientFactory(GuitarBlastEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<YoshinobuGakuganjiEntity>> YOSHINOBU_GAKUGANJI = register("yoshinobu_gakuganji",
+			EntityType.Builder.<YoshinobuGakuganjiEntity>of(YoshinobuGakuganjiEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(YoshinobuGakuganjiEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<KasumiMiwaEntity>> KASUMI_MIWA = register("kasumi_miwa",
+			EntityType.Builder.<KasumiMiwaEntity>of(KasumiMiwaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KasumiMiwaEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<CameraRayEntity>> CAMERA_RAY = register("projectile_camera_ray",
+			EntityType.Builder.<CameraRayEntity>of(CameraRayEntity::new, MobCategory.MISC).setCustomClientFactory(CameraRayEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<NanakoHasabaEntity>> NANAKO_HASABA = register("nanako_hasaba",
+			EntityType.Builder.<NanakoHasabaEntity>of(NanakoHasabaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NanakoHasabaEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -683,6 +707,10 @@ public class CraftKaisenModEntities {
 			RikaEntity.init();
 			OpenPrisonBoxEntity.init();
 			PrisonBoxEntity.init();
+			BassBoosterEntity.init();
+			YoshinobuGakuganjiEntity.init();
+			KasumiMiwaEntity.init();
+			NanakoHasabaEntity.init();
 		});
 	}
 
@@ -776,5 +804,9 @@ public class CraftKaisenModEntities {
 		event.put(RIKA.get(), RikaEntity.createAttributes().build());
 		event.put(OPEN_PRISON_BOX.get(), OpenPrisonBoxEntity.createAttributes().build());
 		event.put(PRISON_BOX.get(), PrisonBoxEntity.createAttributes().build());
+		event.put(BASS_BOOSTER.get(), BassBoosterEntity.createAttributes().build());
+		event.put(YOSHINOBU_GAKUGANJI.get(), YoshinobuGakuganjiEntity.createAttributes().build());
+		event.put(KASUMI_MIWA.get(), KasumiMiwaEntity.createAttributes().build());
+		event.put(NANAKO_HASABA.get(), NanakoHasabaEntity.createAttributes().build());
 	}
 }

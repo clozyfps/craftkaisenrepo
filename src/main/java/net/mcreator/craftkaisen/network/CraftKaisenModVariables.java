@@ -194,6 +194,9 @@ public class CraftKaisenModVariables {
 			clone.DomainClashGame = original.DomainClashGame;
 			clone.DomainClashing = original.DomainClashing;
 			clone.StoryModeLevel = original.StoryModeLevel;
+			clone.TitleColor = original.TitleColor;
+			clone.Title = original.Title;
+			clone.cameraroll = original.cameraroll;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -591,6 +594,9 @@ public class CraftKaisenModVariables {
 		public double DomainClashGame = 1.0;
 		public boolean DomainClashing = false;
 		public double StoryModeLevel = 0;
+		public String TitleColor = "\"\"";
+		public String Title = "\"\"";
+		public double cameraroll = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -760,6 +766,9 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("DomainClashGame", DomainClashGame);
 			nbt.putBoolean("DomainClashing", DomainClashing);
 			nbt.putDouble("StoryModeLevel", StoryModeLevel);
+			nbt.putString("TitleColor", TitleColor);
+			nbt.putString("Title", Title);
+			nbt.putDouble("cameraroll", cameraroll);
 			return nbt;
 		}
 
@@ -926,6 +935,9 @@ public class CraftKaisenModVariables {
 			DomainClashGame = nbt.getDouble("DomainClashGame");
 			DomainClashing = nbt.getBoolean("DomainClashing");
 			StoryModeLevel = nbt.getDouble("StoryModeLevel");
+			TitleColor = nbt.getString("TitleColor");
+			Title = nbt.getString("Title");
+			cameraroll = nbt.getDouble("cameraroll");
 		}
 	}
 
@@ -1111,6 +1123,9 @@ public class CraftKaisenModVariables {
 					variables.DomainClashGame = message.data.DomainClashGame;
 					variables.DomainClashing = message.data.DomainClashing;
 					variables.StoryModeLevel = message.data.StoryModeLevel;
+					variables.TitleColor = message.data.TitleColor;
+					variables.Title = message.data.Title;
+					variables.cameraroll = message.data.cameraroll;
 				}
 			});
 			context.setPacketHandled(true);

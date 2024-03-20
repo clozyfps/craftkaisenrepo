@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craft_kaisen:ko_guy_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.subjugation_of_ko_guy.title"
+    },
+    "description": {
+      "translate": "advancements.subjugation_of_ko_guy.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "subjugation_of_ko_guy": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 2
+  },
+  "parent": "craft_kaisen:subjugation_of_hanami"
+}

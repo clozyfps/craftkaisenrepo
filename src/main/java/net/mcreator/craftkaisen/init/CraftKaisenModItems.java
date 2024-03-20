@@ -21,6 +21,7 @@ import net.mcreator.craftkaisen.item.TwistRangedItem;
 import net.mcreator.craftkaisen.item.TojiOutfitItem;
 import net.mcreator.craftkaisen.item.TojiCurseArmorItem;
 import net.mcreator.craftkaisen.item.TodoOutfitItem;
+import net.mcreator.craftkaisen.item.TitleBookItem;
 import net.mcreator.craftkaisen.item.TestItem;
 import net.mcreator.craftkaisen.item.SwordOfExterminationItem;
 import net.mcreator.craftkaisen.item.SukunaOutfitItem;
@@ -75,6 +76,7 @@ import net.mcreator.craftkaisen.item.FireArrowItem;
 import net.mcreator.craftkaisen.item.FindBlueLocationItem;
 import net.mcreator.craftkaisen.item.ExplodeRangedItem;
 import net.mcreator.craftkaisen.item.EmberInsectProjectileItem;
+import net.mcreator.craftkaisen.item.ElectricGuitarItem;
 import net.mcreator.craftkaisen.item.DragonBoneItem;
 import net.mcreator.craftkaisen.item.DontMoveRangedItem;
 import net.mcreator.craftkaisen.item.DistortedBodyItem;
@@ -298,6 +300,11 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> HUMAN_STORY_MODE = REGISTRY.register("human_story_mode", () -> new HumanStoryModeItem());
 	public static final RegistryObject<Item> PRISON_REALM_SEAL_CHESTPLATE = REGISTRY.register("prison_realm_seal_chestplate", () -> new PrisonRealmSealItem.Chestplate());
 	public static final RegistryObject<Item> PRISON_BOX_SPAWN_EGG = REGISTRY.register("prison_box_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.PRISON_BOX, -11004160, -1, new Item.Properties()));
+	public static final RegistryObject<Item> ELECTRIC_GUITAR = REGISTRY.register("electric_guitar", () -> new ElectricGuitarItem());
+	public static final RegistryObject<Item> YOSHINOBU_GAKUGANJI_SPAWN_EGG = REGISTRY.register("yoshinobu_gakuganji_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.YOSHINOBU_GAKUGANJI, -1, -13159, new Item.Properties()));
+	public static final RegistryObject<Item> KASUMI_MIWA_SPAWN_EGG = REGISTRY.register("kasumi_miwa_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.KASUMI_MIWA, -16777216, -13382401, new Item.Properties()));
+	public static final RegistryObject<Item> TITLE_BOOK = REGISTRY.register("title_book", () -> new TitleBookItem());
+	public static final RegistryObject<Item> NANAKO_HASABA_SPAWN_EGG = REGISTRY.register("nanako_hasaba_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.NANAKO_HASABA, -5659046, -2056352, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

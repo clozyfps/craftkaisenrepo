@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "gakuganji_guitar"
+      },
+      "name": "default"
+    }
+  }
+}

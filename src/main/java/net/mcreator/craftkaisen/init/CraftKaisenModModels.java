@@ -42,6 +42,7 @@ import net.mcreator.craftkaisen.client.model.Modelmaximummeteornewwww;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephantnew;
 import net.mcreator.craftkaisen.client.model.Modelmaximumelephant;
 import net.mcreator.craftkaisen.client.model.Modelmalevolentshrine;
+import net.mcreator.craftkaisen.client.model.Modelmalevolent_kitchen;
 import net.mcreator.craftkaisen.client.model.Modelmahitooutfit;
 import net.mcreator.craftkaisen.client.model.Modelmahitodistorted;
 import net.mcreator.craftkaisen.client.model.Modelkashimooutfit;
@@ -67,6 +68,7 @@ import net.mcreator.craftkaisen.client.model.Modelbodyrepelpincer;
 import net.mcreator.craftkaisen.client.model.Modelbodyrepel1;
 import net.mcreator.craftkaisen.client.model.Modelblackblindfold;
 import net.mcreator.craftkaisen.client.model.Modelbeastsummonmask;
+import net.mcreator.craftkaisen.client.model.Modelbass_booster;
 import net.mcreator.craftkaisen.client.model.ModelYujikunaShirtless;
 import net.mcreator.craftkaisen.client.model.ModelYujikuna;
 import net.mcreator.craftkaisen.client.model.ModelVoidAccelerate;
@@ -167,6 +169,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modeltojipants.LAYER_LOCATION, Modeltojipants::createBodyLayer);
 		event.registerLayerDefinition(Modelchosodrip.LAYER_LOCATION, Modelchosodrip::createBodyLayer);
 		event.registerLayerDefinition(ModelFlyHead.LAYER_LOCATION, ModelFlyHead::createBodyLayer);
+		event.registerLayerDefinition(Modelmalevolent_kitchen.LAYER_LOCATION, Modelmalevolent_kitchen::createBodyLayer);
 		event.registerLayerDefinition(Modeljjkoutfiot.LAYER_LOCATION, Modeljjkoutfiot::createBodyLayer);
 		event.registerLayerDefinition(Modeltstoad.LAYER_LOCATION, Modeltstoad::createBodyLayer);
 		event.registerLayerDefinition(Modelroppongicursedspirit.LAYER_LOCATION, Modelroppongicursedspirit::createBodyLayer);
@@ -194,5 +197,6 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modeldivinedog.LAYER_LOCATION, Modeldivinedog::createBodyLayer);
 		event.registerLayerDefinition(Modelmaximummeteornewwww.LAYER_LOCATION, Modelmaximummeteornewwww::createBodyLayer);
 		event.registerLayerDefinition(Modelnewmuzi.LAYER_LOCATION, Modelnewmuzi::createBodyLayer);
+		event.registerLayerDefinition(Modelbass_booster.LAYER_LOCATION, Modelbass_booster::createBodyLayer);
 	}
 }

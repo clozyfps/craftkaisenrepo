@@ -13,6 +13,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
 import net.mcreator.craftkaisen.client.renderer.YutaOkkotsuRenderer;
 import net.mcreator.craftkaisen.client.renderer.YujiItadoriRenderer;
+import net.mcreator.craftkaisen.client.renderer.YoshinobuGakuganjiRenderer;
 import net.mcreator.craftkaisen.client.renderer.WoodenBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.WhiteDivineDogRenderer;
 import net.mcreator.craftkaisen.client.renderer.UraumeRenderer;
@@ -55,6 +56,7 @@ import net.mcreator.craftkaisen.client.renderer.NueRenderer;
 import net.mcreator.craftkaisen.client.renderer.NobaraKugisakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.NaobitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.NanamiKentoRenderer;
+import net.mcreator.craftkaisen.client.renderer.NanakoHasabaRenderer;
 import net.mcreator.craftkaisen.client.renderer.MouthCursedSpiritRenderer;
 import net.mcreator.craftkaisen.client.renderer.MergedBeastAgitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MeiMeiRenderer;
@@ -67,6 +69,7 @@ import net.mcreator.craftkaisen.client.renderer.MahitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MahitoCloneRenderer;
 import net.mcreator.craftkaisen.client.renderer.KoGuyRenderer;
 import net.mcreator.craftkaisen.client.renderer.KenjakuRenderer;
+import net.mcreator.craftkaisen.client.renderer.KasumiMiwaRenderer;
 import net.mcreator.craftkaisen.client.renderer.JogoRenderer;
 import net.mcreator.craftkaisen.client.renderer.JinichiZeninRenderer;
 import net.mcreator.craftkaisen.client.renderer.InventoryCurseMobRenderer;
@@ -105,6 +108,7 @@ import net.mcreator.craftkaisen.client.renderer.BlueEntityRenderer;
 import net.mcreator.craftkaisen.client.renderer.BlackDivineDogRenderer;
 import net.mcreator.craftkaisen.client.renderer.BlackBirdProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.BindingIceBlockRenderer;
+import net.mcreator.craftkaisen.client.renderer.BassBoosterRenderer;
 import net.mcreator.craftkaisen.client.renderer.AwakenedMakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.AoiTodoRenderer;
 
@@ -246,5 +250,11 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.BOOGIE_WOOGIE_PROJECTILE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.OPEN_PRISON_BOX.get(), OpenPrisonBoxRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.PRISON_BOX.get(), PrisonBoxRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.BASS_BOOSTER.get(), BassBoosterRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.GUITAR_BLAST.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.YOSHINOBU_GAKUGANJI.get(), YoshinobuGakuganjiRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.KASUMI_MIWA.get(), KasumiMiwaRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.CAMERA_RAY.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.NANAKO_HASABA.get(), NanakoHasabaRenderer::new);
 	}
 }
