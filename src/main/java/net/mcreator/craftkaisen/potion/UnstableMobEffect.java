@@ -1,9 +1,6 @@
 
 package net.mcreator.craftkaisen.potion;
 
-import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffect;
-
 public class UnstableMobEffect extends MobEffect {
 	public UnstableMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -1);

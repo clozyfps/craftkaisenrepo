@@ -1,28 +1,11 @@
 
 package net.mcreator.craftkaisen.client.renderer;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.Minecraft;
-
-import net.mcreator.craftkaisen.procedures.YujiItadoriDisplayConditionProcedure;
-import net.mcreator.craftkaisen.entity.YujiItadoriEntity;
-import net.mcreator.craftkaisen.client.model.ModelYujikuna;
-import net.mcreator.craftkaisen.client.model.ModelItadoriYuji;
-
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.blaze3d.vertex.PoseStack;
-
 public class YujiItadoriRenderer extends MobRenderer<YujiItadoriEntity, ModelItadoriYuji<YujiItadoriEntity>> {
+
 	public YujiItadoriRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelItadoriYuji(context.bakeLayer(ModelItadoriYuji.LAYER_LOCATION)), 0.5f);
+
 		this.addLayer(new RenderLayer<YujiItadoriEntity, ModelItadoriYuji<YujiItadoriEntity>>(this) {
 			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("craft_kaisen:textures/entities/yujikunatexture.png");
 
@@ -48,4 +31,5 @@ public class YujiItadoriRenderer extends MobRenderer<YujiItadoriEntity, ModelIta
 	public ResourceLocation getTextureLocation(YujiItadoriEntity entity) {
 		return new ResourceLocation("craft_kaisen:textures/entities/itadoriyujitexture.png");
 	}
+
 }

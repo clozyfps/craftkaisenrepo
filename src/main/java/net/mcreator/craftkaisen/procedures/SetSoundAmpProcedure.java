@@ -1,18 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.commands.CommandSourceStack;
-
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
-import net.mcreator.craftkaisen.init.CraftKaisenModItems;
-
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.context.CommandContext;
+import javax.annotation.Nullable;
 
 public class SetSoundAmpProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments) {

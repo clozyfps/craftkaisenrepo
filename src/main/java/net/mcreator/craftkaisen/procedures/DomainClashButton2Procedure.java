@@ -1,16 +1,14 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.entity.Entity;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import javax.annotation.Nullable;
 
 public class DomainClashButton2Procedure {
-	public static boolean execute(Entity entity) {
-		if (entity == null)
-			return false;
-		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).DomainClashGame == 2) {
-			return true;
-		}
-		return false;
-	}
+public static boolean execute(
+) {
+if (==2) {return
+true;}return
+false;
+}
 }

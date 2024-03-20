@@ -1,37 +1,12 @@
 
 package net.mcreator.craftkaisen.item;
 
-import net.minecraftforge.client.extensions.common.IClientItemExtensions;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.network.chat.Component;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.Minecraft;
-
-import net.mcreator.craftkaisen.client.model.Modelgetosandalsnew;
-import net.mcreator.craftkaisen.client.model.Modelgetorobes;
-import net.mcreator.craftkaisen.client.model.Modelgetolegs;
-
 import java.util.function.Consumer;
-import java.util.Map;
-import java.util.List;
-import java.util.Collections;
+import net.minecraft.client.model.Model;
 
 public abstract class GetoOutfitItem extends ArmorItem {
+
 	public GetoOutfitItem(ArmorItem.Type type, Item.Properties properties) {
 		super(new ArmorMaterial() {
 			@Override
@@ -77,6 +52,7 @@ public abstract class GetoOutfitItem extends ArmorItem {
 	}
 
 	public static class Chestplate extends GetoOutfitItem {
+
 		public Chestplate() {
 			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
 		}
@@ -108,9 +84,11 @@ public abstract class GetoOutfitItem extends ArmorItem {
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "craft_kaisen:textures/entities/getochestplate__layer_1.png";
 		}
+
 	}
 
 	public static class Leggings extends GetoOutfitItem {
+
 		public Leggings() {
 			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
 		}
@@ -143,9 +121,11 @@ public abstract class GetoOutfitItem extends ArmorItem {
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "craft_kaisen:textures/entities/getolegs__layer_1.png";
 		}
+
 	}
 
 	public static class Boots extends GetoOutfitItem {
+
 		public Boots() {
 			super(ArmorItem.Type.BOOTS, new Item.Properties());
 		}
@@ -178,5 +158,7 @@ public abstract class GetoOutfitItem extends ArmorItem {
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "craft_kaisen:textures/entities/getosandalsnew.png";
 		}
+
 	}
+
 }
