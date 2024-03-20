@@ -382,6 +382,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -874,8 +878,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/client/gui/StartScreenScreen.java",
-          "src/main/java/net/mcreator/craftkaisen/network/StartScreenButtonMessage.java",
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/StartScreenMenu.java"
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/StartScreenMenu.java",
+          "src/main/java/net/mcreator/craftkaisen/network/StartScreenButtonMessage.java"
         ]
       },
       "path": "~/GUI"
@@ -1019,8 +1023,8 @@
       "registry_name": "reversal_red_entity",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/ReversalRedEntityEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/ReversalRedEntityRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/ReversalRedEntityRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/ReversalRedEntityEntity.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -1330,8 +1334,8 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/entity/SatoruGojoEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/SatoruGojoRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/satoru_gojo_spawn_egg.json",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/satoru_gojo_biome_modifier.json"
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/satoru_gojo_biome_modifier.json",
+          "src/main/resources/assets/craft_kaisen/models/item/satoru_gojo_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -2428,9 +2432,9 @@
       "registry_name": "main_menu",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/gui/MainMenuScreen.java",
           "src/main/java/net/mcreator/craftkaisen/world/inventory/MainMenuMenu.java",
-          "src/main/java/net/mcreator/craftkaisen/network/MainMenuButtonMessage.java"
+          "src/main/java/net/mcreator/craftkaisen/network/MainMenuButtonMessage.java",
+          "src/main/java/net/mcreator/craftkaisen/client/gui/MainMenuScreen.java"
         ]
       },
       "path": "~/GUI"
@@ -2732,8 +2736,8 @@
       "registry_name": "blue_particle",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/BlueParticleParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/blue_particle.json"
+          "src/main/resources/assets/craft_kaisen/particles/blue_particle.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/BlueParticleParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -3253,8 +3257,8 @@
       "registry_name": "black_blind_fold",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/BlackBlindFoldItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/black_blind_fold_helmet.json"
+          "src/main/resources/assets/craft_kaisen/models/item/black_blind_fold_helmet.json",
+          "src/main/java/net/mcreator/craftkaisen/item/BlackBlindFoldItem.java"
         ]
       },
       "path": "~/Armor"
@@ -3280,8 +3284,8 @@
       "registry_name": "bandage_blind_fold",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/bandage_blind_fold_helmet.json",
-          "src/main/java/net/mcreator/craftkaisen/item/BandageBlindFoldItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/BandageBlindFoldItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/bandage_blind_fold_helmet.json"
         ]
       },
       "path": "~/Armor"
@@ -3295,8 +3299,8 @@
       "registry_name": "split_soul_katana",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/SplitSoulKatanaItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/split_soul_katana.json"
+          "src/main/resources/assets/craft_kaisen/models/item/split_soul_katana.json",
+          "src/main/java/net/mcreator/craftkaisen/item/SplitSoulKatanaItem.java"
         ]
       },
       "path": "~/Weapons"
@@ -3310,9 +3314,9 @@
       "registry_name": "jujutsu_sorcerer_uniform",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/jujutsu_sorcerer_uniform_leggings.json",
           "src/main/resources/assets/craft_kaisen/models/item/jujutsu_sorcerer_uniform_chestplate.json",
-          "src/main/java/net/mcreator/craftkaisen/item/JujutsuSorcererUniformItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/JujutsuSorcererUniformItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/jujutsu_sorcerer_uniform_leggings.json"
         ]
       },
       "path": "~/Armor"
@@ -3608,9 +3612,9 @@
       "registry_name": "yuji_itadori",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/YujiItadoriEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/yuji_itadori_spawn_egg.json",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/yuji_itadori_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/YujiItadoriEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/YujiItadoriRenderer.java"
         ]
       },
@@ -3625,9 +3629,9 @@
       "registry_name": "sukuna_outfit",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/sukuna_outfit_leggings.json",
+          "src/main/java/net/mcreator/craftkaisen/item/SukunaOutfitItem.java",
           "src/main/resources/assets/craft_kaisen/models/item/sukuna_outfit_chestplate.json",
-          "src/main/java/net/mcreator/craftkaisen/item/SukunaOutfitItem.java"
+          "src/main/resources/assets/craft_kaisen/models/item/sukuna_outfit_leggings.json"
         ]
       },
       "path": "~/Armor"
@@ -3641,10 +3645,10 @@
       "registry_name": "ryomen_sukuna",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/RyomenSukunaEntity.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/ryomen_sukuna_biome_modifier.json",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/RyomenSukunaRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/ryomen_sukuna_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/RyomenSukunaEntity.java"
+          "src/main/resources/assets/craft_kaisen/models/item/ryomen_sukuna_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -3673,10 +3677,10 @@
       "registry_name": "roppongi_cursed_spirit",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/RoppongiCursedSpiritEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/RoppongiCursedSpiritRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/roppongi_cursed_spirit_biome_modifier.json",
-          "src/main/resources/assets/craft_kaisen/models/item/roppongi_cursed_spirit_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/RoppongiCursedSpiritEntity.java"
+          "src/main/resources/assets/craft_kaisen/models/item/roppongi_cursed_spirit_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -3756,8 +3760,8 @@
       "registry_name": "fire_arrow_particle",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/FireArrowParticleParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/fire_arrow_particle.json"
+          "src/main/resources/assets/craft_kaisen/particles/fire_arrow_particle.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/FireArrowParticleParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -3997,10 +4001,10 @@
       "registry_name": "yuta_okkotsu",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/YutaOkkotsuRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/yuta_okkotsu_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/YutaOkkotsuEntity.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/yuta_okkotsu_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/YutaOkkotsuRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/YutaOkkotsuEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -4466,8 +4470,8 @@
       "registry_name": "great_serpent",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/GreatSerpentRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/GreatSerpentEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GreatSerpentRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/great_serpent_spawn_egg.json"
         ]
       },
@@ -4826,10 +4830,10 @@
       "registry_name": "rugby_field_cursed_spirit",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/rugby_field_cursed_spirit_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/RugbyFieldCursedSpiritEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/RugbyFieldCursedSpiritRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/rugby_field_cursed_spirit_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/RugbyFieldCursedSpiritEntity.java"
+          "src/main/resources/assets/craft_kaisen/models/item/rugby_field_cursed_spirit_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -4844,9 +4848,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/craft_kaisen/models/item/ko_guy_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/KoGuyEntity.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/ko_guy_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/KoGuyRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/KoGuyEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/KoGuyRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -4860,8 +4864,8 @@
       "registry_name": "nue_electricity",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/nue_electricity.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/NueElectricityParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/NueElectricityParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/nue_electricity.json"
         ]
       },
       "path": "~/Particles"
@@ -5033,8 +5037,8 @@
       "registry_name": "toji_curse_armor",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/toji_curse_armor_chestplate.json",
-          "src/main/java/net/mcreator/craftkaisen/item/TojiCurseArmorItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/TojiCurseArmorItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/toji_curse_armor_chestplate.json"
         ]
       },
       "path": "~/Armor"
@@ -5048,8 +5052,8 @@
       "registry_name": "unlimited_void_mob",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/UnlimitedVoidMobEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/UnlimitedVoidMobRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/UnlimitedVoidMobRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/UnlimitedVoidMobEntity.java"
         ]
       },
       "path": "~/Mobs/Domain"
@@ -5063,8 +5067,8 @@
       "registry_name": "heian_era_sukuna",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/HeianEraSukunaEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/heian_era_sukuna_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/HeianEraSukunaEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/HeianEraSukunaRenderer.java"
         ]
       },
@@ -5149,11 +5153,11 @@
       "registry_name": "domain_block",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_block.json",
           "src/main/java/net/mcreator/craftkaisen/block/DomainBlockBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_block.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_block.json",
           "src/main/resources/assets/craft_kaisen/models/block/domain_block.json",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlockBlockEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_block.json"
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlockBlockEntity.java"
         ]
       },
       "path": "~/Blocks"
@@ -5216,22 +5220,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -5246,8 +5234,8 @@
       "registry_name": "test",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/TestItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/test.json"
+          "src/main/resources/assets/craft_kaisen/models/item/test.json",
+          "src/main/java/net/mcreator/craftkaisen/item/TestItem.java"
         ]
       },
       "path": "~/Items"
@@ -5857,8 +5845,8 @@
       "registry_name": "punch_impact",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/PunchImpactParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/punch_impact.json"
+          "src/main/resources/assets/craft_kaisen/particles/punch_impact.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/PunchImpactParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -5998,10 +5986,10 @@
       "registry_name": "sprinkler",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/blockstates/sprinkler.json",
-          "src/main/resources/assets/craft_kaisen/models/block/sprinkler.json",
+          "src/main/java/net/mcreator/craftkaisen/block/SprinklerBlock.java",
           "src/main/resources/assets/craft_kaisen/models/item/sprinkler.json",
-          "src/main/java/net/mcreator/craftkaisen/block/SprinklerBlock.java"
+          "src/main/resources/assets/craft_kaisen/models/block/sprinkler.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/sprinkler.json"
         ]
       },
       "path": "~/Blocks"
@@ -6047,10 +6035,10 @@
       "registry_name": "sprinkler_on",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/SprinklerOnBlock.java",
-          "src/main/resources/assets/craft_kaisen/blockstates/sprinkler_on.json",
           "src/main/resources/assets/craft_kaisen/models/block/sprinkler_on.json",
-          "src/main/resources/assets/craft_kaisen/models/item/sprinkler_on.json"
+          "src/main/java/net/mcreator/craftkaisen/block/SprinklerOnBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/item/sprinkler_on.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/sprinkler_on.json"
         ]
       },
       "path": "~/Blocks"
@@ -6097,8 +6085,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/item/ChosoArmorItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/choso_armor_leggings.json",
-          "src/main/resources/assets/craft_kaisen/models/item/choso_armor_chestplate.json"
+          "src/main/resources/assets/craft_kaisen/models/item/choso_armor_chestplate.json",
+          "src/main/resources/assets/craft_kaisen/models/item/choso_armor_leggings.json"
         ]
       },
       "path": "~/Armor"
@@ -6113,9 +6101,9 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/client/renderer/ChosoRenderer.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/choso_biome_modifier.json",
           "src/main/resources/assets/craft_kaisen/models/item/choso_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/ChosoEntity.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/choso_biome_modifier.json"
+          "src/main/java/net/mcreator/craftkaisen/entity/ChosoEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -6129,10 +6117,10 @@
       "registry_name": "mouth_cursed_spirit",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/MouthCursedSpiritEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/mouth_cursed_spirit_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/MouthCursedSpiritRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/mouth_cursed_spirit_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/MouthCursedSpiritEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MouthCursedSpiritRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -6146,10 +6134,10 @@
       "registry_name": "geto_outfit",
       "metadata": {
         "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/geto_outfit_leggings.json",
           "src/main/resources/assets/craft_kaisen/models/item/geto_outfit_boots.json",
           "src/main/resources/assets/craft_kaisen/models/item/geto_outfit_chestplate.json",
-          "src/main/java/net/mcreator/craftkaisen/item/GetoOutfitItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/geto_outfit_leggings.json"
+          "src/main/java/net/mcreator/craftkaisen/item/GetoOutfitItem.java"
         ]
       },
       "path": "~/Armor"
@@ -6163,10 +6151,10 @@
       "registry_name": "mahito",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/MahitoRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/mahito_biome_modifier.json",
           "src/main/resources/assets/craft_kaisen/models/item/mahito_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/MahitoEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/MahitoEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MahitoRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -6239,10 +6227,10 @@
       "registry_name": "nanami_kento",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/NanamiKentoRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/nanami_kento_biome_modifier.json",
-          "src/main/resources/assets/craft_kaisen/models/item/nanami_kento_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/entity/NanamiKentoEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/NanamiKentoRenderer.java"
+          "src/main/resources/assets/craft_kaisen/models/item/nanami_kento_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -6256,8 +6244,8 @@
       "registry_name": "blood_splash",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/BloodSplashParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/blood_splash.json"
+          "src/main/resources/assets/craft_kaisen/particles/blood_splash.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/BloodSplashParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -6738,10 +6726,10 @@
       "registry_name": "hanami",
       "metadata": {
         "files": [
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/hanami_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/HanamiRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/hanami_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/entity/HanamiEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/HanamiRenderer.java"
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/hanami_biome_modifier.json"
         ]
       },
       "path": "~/Mobs"
@@ -6755,10 +6743,10 @@
       "registry_name": "jogo",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/jogo_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/JogoRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/JogoEntity.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/jogo_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/JogoRenderer.java"
+          "src/main/resources/assets/craft_kaisen/models/item/jogo_spawn_egg.json",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/jogo_biome_modifier.json"
         ]
       },
       "path": "~/Mobs"
@@ -6840,10 +6828,10 @@
       "registry_name": "round_deer",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/RoundDeerRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/round_deer_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/entity/RoundDeerEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/model/RoundDeerModel.java",
-          "src/main/resources/assets/craft_kaisen/models/item/round_deer_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RoundDeerRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/model/RoundDeerModel.java"
         ]
       },
       "path": "~/Mobs"
@@ -7093,9 +7081,9 @@
       "registry_name": "resurrected_toji",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/resurrected_toji_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/ResurrectedTojiRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/ResurrectedTojiEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/ResurrectedTojiRenderer.java"
+          "src/main/resources/assets/craft_kaisen/models/item/resurrected_toji_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -7167,10 +7155,10 @@
       "registry_name": "talisman_block",
       "metadata": {
         "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/talisman_block.json",
           "src/main/java/net/mcreator/craftkaisen/block/TalismanBlockBlock.java",
-          "src/main/resources/assets/craft_kaisen/blockstates/talisman_block.json",
           "src/main/resources/assets/craft_kaisen/models/block/talisman_block.json",
-          "src/main/resources/assets/craft_kaisen/models/item/talisman_block.json"
+          "src/main/resources/assets/craft_kaisen/blockstates/talisman_block.json"
         ]
       },
       "path": "~/Blocks"
@@ -7185,8 +7173,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/block/ShibuyaGatesBlock.java",
-          "src/main/resources/assets/craft_kaisen/models/item/shibuya_gates.json",
           "src/main/resources/assets/craft_kaisen/blockstates/shibuya_gates.json",
+          "src/main/resources/assets/craft_kaisen/models/item/shibuya_gates.json",
           "src/main/resources/assets/craft_kaisen/models/block/shibuya_gates.json"
         ]
       },
@@ -7533,9 +7521,9 @@
       "registry_name": "maximum_elephant",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MaximumElephantRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/MaximumElephantEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/maximum_elephant_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/MaximumElephantRenderer.java"
+          "src/main/resources/assets/craft_kaisen/models/item/maximum_elephant_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -7641,9 +7629,9 @@
       "registry_name": "ten_shadow_rabbit",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/TenShadowRabbitEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/ten_shadow_rabbit_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/TenShadowRabbitRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/ten_shadow_rabbit_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/entity/TenShadowRabbitEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -7765,9 +7753,9 @@
       "registry_name": "white_divine_dog",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/WhiteDivineDogRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/WhiteDivineDogEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/white_divine_dog_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/WhiteDivineDogRenderer.java"
+          "src/main/resources/assets/craft_kaisen/models/item/white_divine_dog_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -7969,8 +7957,8 @@
       "registry_name": "shadow_frog",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/ShadowFrogEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/ShadowFrogRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/ShadowFrogRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/ShadowFrogEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -8020,9 +8008,9 @@
       "registry_name": "black_divine_dog",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BlackDivineDogRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/black_divine_dog_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/BlackDivineDogEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/BlackDivineDogRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/BlackDivineDogEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -8370,9 +8358,9 @@
       "registry_name": "yuta_outfit",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/item/YutaOutfitItem.java",
           "src/main/resources/assets/craft_kaisen/models/item/yuta_outfit_chestplate.json",
-          "src/main/resources/assets/craft_kaisen/models/item/yuta_outfit_leggings.json",
-          "src/main/java/net/mcreator/craftkaisen/item/YutaOutfitItem.java"
+          "src/main/resources/assets/craft_kaisen/models/item/yuta_outfit_leggings.json"
         ]
       },
       "path": "~/Armor"
@@ -8387,8 +8375,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/entity/NobaraKugisakiEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/nobara_kugisaki_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/NobaraKugisakiRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/nobara_kugisaki_spawn_egg.json",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/nobara_kugisaki_biome_modifier.json"
         ]
       },
@@ -8466,8 +8454,8 @@
       "registry_name": "nail",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/NailItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/nail.json"
+          "src/main/resources/assets/craft_kaisen/models/item/nail.json",
+          "src/main/java/net/mcreator/craftkaisen/item/NailItem.java"
         ]
       },
       "path": "~/Items"
@@ -8531,8 +8519,8 @@
       "registry_name": "evade_particle",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/evade_particle.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/EvadeParticleParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/EvadeParticleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/evade_particle.json"
         ]
       },
       "path": "~/Particles"
@@ -9006,8 +8994,8 @@
       "registry_name": "lapse_particle",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/lapse_particle.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/LapseParticleParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/LapseParticleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/lapse_particle.json"
         ]
       },
       "path": "~/Particles"
@@ -9325,8 +9313,8 @@
       "registry_name": "purple_electricity_particle",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/purple_electricity_particle.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/PurpleElectricityParticleParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/PurpleElectricityParticleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/purple_electricity_particle.json"
         ]
       },
       "path": "~/Particles"
@@ -9971,11 +9959,11 @@
       "registry_name": "barrier_block",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/barrier_block.json",
           "src/main/resources/assets/craft_kaisen/models/block/barrier_block.json",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/BarrierBlockBlockEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/block/BarrierBlockBlock.java",
           "src/main/resources/assets/craft_kaisen/blockstates/barrier_block.json",
-          "src/main/java/net/mcreator/craftkaisen/block/BarrierBlockBlock.java"
+          "src/main/resources/assets/craft_kaisen/models/item/barrier_block.json",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/BarrierBlockBlockEntity.java"
         ]
       },
       "path": "~/Blocks"
@@ -10075,10 +10063,10 @@
       "registry_name": "quest_board",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/quest_board.json",
+          "src/main/resources/assets/craft_kaisen/models/block/quest_board.json",
           "src/main/java/net/mcreator/craftkaisen/block/QuestBoardBlock.java",
           "src/main/resources/assets/craft_kaisen/blockstates/quest_board.json",
-          "src/main/resources/assets/craft_kaisen/models/block/quest_board.json"
+          "src/main/resources/assets/craft_kaisen/models/item/quest_board.json"
         ]
       },
       "path": "~/Blocks"
@@ -10276,9 +10264,9 @@
       "registry_name": "ember_insect",
       "metadata": {
         "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/ember_insect_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/entity/EmberInsectEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/EmberInsectRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/ember_insect_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/EmberInsectRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -10835,9 +10823,9 @@
       "registry_name": "domain_clash",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/DomainClashMenu.java",
           "src/main/java/net/mcreator/craftkaisen/client/gui/DomainClashScreen.java",
-          "src/main/java/net/mcreator/craftkaisen/network/DomainClashButtonMessage.java"
+          "src/main/java/net/mcreator/craftkaisen/network/DomainClashButtonMessage.java",
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/DomainClashMenu.java"
         ]
       },
       "path": "~/GUI/Procedures/Value"
@@ -11055,10 +11043,10 @@
       "registry_name": "inventory_curse_mob",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/InventoryCurseMobEntity.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/inventory_curse_mob_biome_modifier.json",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/InventoryCurseMobRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/inventory_curse_mob_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/entity/InventoryCurseMobEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/inventory_curse_mob_spawn_egg.json",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/inventory_curse_mob_biome_modifier.json"
         ]
       },
       "path": "~/Mobs"
@@ -11411,10 +11399,10 @@
       "registry_name": "finger_bearer",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/FingerBearerEntity.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/finger_bearer_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/FingerBearerRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/finger_bearer_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/entity/FingerBearerEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/finger_bearer_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FingerBearerRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -11953,8 +11941,8 @@
       "registry_name": "small_pox_domain_spawner",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/SmallPoxDomainSpawnerEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/SmallPoxDomainSpawnerRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/SmallPoxDomainSpawnerRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/SmallPoxDomainSpawnerEntity.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -11968,8 +11956,8 @@
       "registry_name": "csmgui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/CSMGUIMenu.java",
           "src/main/java/net/mcreator/craftkaisen/network/CSMGUIButtonMessage.java",
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/CSMGUIMenu.java",
           "src/main/java/net/mcreator/craftkaisen/client/gui/CSMGUIScreen.java"
         ]
       },
@@ -11984,8 +11972,8 @@
       "registry_name": "cursed_spirit_orb",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/CursedSpiritOrbItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/cursed_spirit_orb.json"
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_spirit_orb.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CursedSpiritOrbItem.java"
         ]
       },
       "path": "~/Items"
@@ -12202,11 +12190,11 @@
       "registry_name": "rainbow_dragon",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/model/RainbowDragonModel.java",
           "src/main/java/net/mcreator/craftkaisen/entity/RainbowDragonEntity.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/rainbow_dragon_biome_modifier.json",
-          "src/main/resources/assets/craft_kaisen/models/item/rainbow_dragon_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/RainbowDragonRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RainbowDragonRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/model/RainbowDragonModel.java",
+          "src/main/resources/assets/craft_kaisen/models/item/rainbow_dragon_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -12312,10 +12300,10 @@
       "registry_name": "small_pox_deity",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/SmallPoxDeityRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/model/SmallPoxDeityModel.java",
           "src/main/java/net/mcreator/craftkaisen/entity/SmallPoxDeityEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/small_pox_deity_spawn_egg.json"
+          "src/main/resources/assets/craft_kaisen/models/item/small_pox_deity_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/model/SmallPoxDeityModel.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/SmallPoxDeityRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -12714,6 +12702,22 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -12839,9 +12843,9 @@
       "registry_name": "small_pox_domain_dimension",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/world/dimension/SmallPoxDomainDimensionDimension.java",
           "src/main/resources/data/craft_kaisen/dimension_type/small_pox_domain_dimension.json",
-          "src/main/resources/data/craft_kaisen/dimension/small_pox_domain_dimension.json",
-          "src/main/java/net/mcreator/craftkaisen/world/dimension/SmallPoxDomainDimensionDimension.java"
+          "src/main/resources/data/craft_kaisen/dimension/small_pox_domain_dimension.json"
         ]
       },
       "path": "~/Dimensions"
@@ -13617,6 +13621,9 @@
       "locked_code": false,
       "registry_name": "melee_moves",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MeleeMovesProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -14085,8 +14092,8 @@
       "registry_name": "black_flash_lightning",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/BlackFlashLightningParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/black_flash_lightning.json"
+          "src/main/resources/assets/craft_kaisen/particles/black_flash_lightning.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/BlackFlashLightningParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -14534,8 +14541,8 @@
       "registry_name": "cursed_ring",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/CursedRingItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/cursed_ring.json"
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_ring.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CursedRingItem.java"
         ]
       },
       "path": "~/Items"
@@ -14549,8 +14556,8 @@
       "registry_name": "cursed_womb_death_painting",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/cursed_womb_death_painting.json",
-          "src/main/java/net/mcreator/craftkaisen/item/CursedWombDeathPaintingItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/CursedWombDeathPaintingItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_womb_death_painting.json"
         ]
       },
       "path": "~/Items"
@@ -15417,9 +15424,9 @@
       "registry_name": "fly_head",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/FlyHeadRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/fly_head_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/FlyHeadEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/FlyHeadEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FlyHeadRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -15532,9 +15539,9 @@
       "registry_name": "phone_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/PhoneGUIMenu.java",
+          "src/main/java/net/mcreator/craftkaisen/network/PhoneGUIButtonMessage.java",
           "src/main/java/net/mcreator/craftkaisen/client/gui/PhoneGUIScreen.java",
-          "src/main/java/net/mcreator/craftkaisen/network/PhoneGUIButtonMessage.java"
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/PhoneGUIMenu.java"
         ]
       },
       "path": "~/GUI"
@@ -15708,10 +15715,10 @@
       "registry_name": "old_lady",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/OldLadyRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/OldLadyEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/old_lady_spawn_egg.json",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/old_lady_biome_modifier.json",
-          "src/main/resources/assets/craft_kaisen/models/item/old_lady_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/OldLadyRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -15745,8 +15752,8 @@
       "registry_name": "medicine",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/MedicineItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/medicine.json"
+          "src/main/resources/assets/craft_kaisen/models/item/medicine.json",
+          "src/main/java/net/mcreator/craftkaisen/item/MedicineItem.java"
         ]
       },
       "path": "~/Items"
@@ -15822,9 +15829,9 @@
       "registry_name": "riko_amanai",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/riko_amanai_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RikoAmanaiRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/RikoAmanaiEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/RikoAmanaiRenderer.java"
+          "src/main/resources/assets/craft_kaisen/models/item/riko_amanai_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -15970,8 +15977,8 @@
       "registry_name": "red_particle_big",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/RedParticleBigParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/red_particle_big.json"
+          "src/main/resources/assets/craft_kaisen/particles/red_particle_big.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/RedParticleBigParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -16294,8 +16301,8 @@
       "registry_name": "reversal_red_projectile",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/ReversalRedProjectileItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/reversal_red_projectile.json"
+          "src/main/resources/assets/craft_kaisen/models/item/reversal_red_projectile.json",
+          "src/main/java/net/mcreator/craftkaisen/item/ReversalRedProjectileItem.java"
         ]
       },
       "path": "~/Projectile"
@@ -16352,8 +16359,8 @@
       "registry_name": "dont_move_ranged",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/dont_move_ranged.json",
-          "src/main/java/net/mcreator/craftkaisen/item/DontMoveRangedItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/DontMoveRangedItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/dont_move_ranged.json"
         ]
       },
       "path": "~/Projectile"
@@ -16381,8 +16388,8 @@
       "registry_name": "blast_away_ranged",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/BlastAwayRangedItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/blast_away_ranged.json"
+          "src/main/resources/assets/craft_kaisen/models/item/blast_away_ranged.json",
+          "src/main/java/net/mcreator/craftkaisen/item/BlastAwayRangedItem.java"
         ]
       },
       "path": "~/Projectile"
@@ -16410,8 +16417,8 @@
       "registry_name": "crumble_away_ranged",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/CrumbleAwayRangedItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/crumble_away_ranged.json"
+          "src/main/resources/assets/craft_kaisen/models/item/crumble_away_ranged.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CrumbleAwayRangedItem.java"
         ]
       },
       "path": "~/Projectile"
@@ -16439,8 +16446,8 @@
       "registry_name": "crushed_ranged",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/crushed_ranged.json",
-          "src/main/java/net/mcreator/craftkaisen/item/CrushedRangedItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/CrushedRangedItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/crushed_ranged.json"
         ]
       },
       "path": "~/Projectile"
@@ -16468,8 +16475,8 @@
       "registry_name": "sleep_ranged",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/SleepRangedItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/sleep_ranged.json"
+          "src/main/resources/assets/craft_kaisen/models/item/sleep_ranged.json",
+          "src/main/java/net/mcreator/craftkaisen/item/SleepRangedItem.java"
         ]
       },
       "path": "~/Projectile"
@@ -16526,8 +16533,8 @@
       "registry_name": "twist_ranged",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/twist_ranged.json",
-          "src/main/java/net/mcreator/craftkaisen/item/TwistRangedItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/TwistRangedItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/twist_ranged.json"
         ]
       },
       "path": "~/Projectile"
@@ -16555,8 +16562,8 @@
       "registry_name": "fire_arrow",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/FireArrowItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/fire_arrow.json"
+          "src/main/resources/assets/craft_kaisen/models/item/fire_arrow.json",
+          "src/main/java/net/mcreator/craftkaisen/item/FireArrowItem.java"
         ]
       },
       "path": "~/Projectile"
@@ -16584,8 +16591,8 @@
       "registry_name": "fire_arrow_mob",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/fire_arrow_mob.json",
-          "src/main/java/net/mcreator/craftkaisen/item/FireArrowMobItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/FireArrowMobItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/fire_arrow_mob.json"
         ]
       },
       "path": "~/Projectile"
@@ -16700,8 +16707,8 @@
       "registry_name": "blood_meteorite",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/blood_meteorite.json",
-          "src/main/java/net/mcreator/craftkaisen/item/BloodMeteoriteItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/BloodMeteoriteItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/blood_meteorite.json"
         ]
       },
       "path": "~/Projectile"
@@ -16758,8 +16765,8 @@
       "registry_name": "reversal_red",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/ReversalRedItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/reversal_red.json"
+          "src/main/resources/assets/craft_kaisen/models/item/reversal_red.json",
+          "src/main/java/net/mcreator/craftkaisen/item/ReversalRedItem.java"
         ]
       },
       "path": "~/Projectile"
@@ -16787,8 +16794,8 @@
       "registry_name": "water_maximum_elephant",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/WaterMaximumElephantItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/water_maximum_elephant.json"
+          "src/main/resources/assets/craft_kaisen/models/item/water_maximum_elephant.json",
+          "src/main/java/net/mcreator/craftkaisen/item/WaterMaximumElephantItem.java"
         ]
       },
       "path": "~/Projectile"
@@ -16816,8 +16823,8 @@
       "registry_name": "nail_projectile",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/nail_projectile.json",
-          "src/main/java/net/mcreator/craftkaisen/item/NailProjectileItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/NailProjectileItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/nail_projectile.json"
         ]
       },
       "path": "~/Projectile"
@@ -16845,8 +16852,8 @@
       "registry_name": "disaster_flame_ranged",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/DisasterFlameRangedItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/disaster_flame_ranged.json"
+          "src/main/resources/assets/craft_kaisen/models/item/disaster_flame_ranged.json",
+          "src/main/java/net/mcreator/craftkaisen/item/DisasterFlameRangedItem.java"
         ]
       },
       "path": "~/Projectile"
@@ -16874,8 +16881,8 @@
       "registry_name": "volcanic_eruption",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/volcanic_eruption.json",
-          "src/main/java/net/mcreator/craftkaisen/item/VolcanicEruptionItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/VolcanicEruptionItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/volcanic_eruption.json"
         ]
       },
       "path": "~/Projectile"
@@ -16903,8 +16910,8 @@
       "registry_name": "flower_projectile",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/flower_projectile.json",
-          "src/main/java/net/mcreator/craftkaisen/item/FlowerProjectileItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/FlowerProjectileItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/flower_projectile.json"
         ]
       },
       "path": "~/Projectile"
@@ -16962,8 +16969,8 @@
       "registry_name": "ember_insect_projectile",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/ember_insect_projectile.json",
-          "src/main/java/net/mcreator/craftkaisen/item/EmberInsectProjectileItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/EmberInsectProjectileItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/ember_insect_projectile.json"
         ]
       },
       "path": "~/Projectile"
@@ -17157,8 +17164,8 @@
       "registry_name": "ratio_particle",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/RatioParticleParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/ratio_particle.json"
+          "src/main/resources/assets/craft_kaisen/particles/ratio_particle.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/RatioParticleParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -18167,9 +18174,9 @@
       "registry_name": "self_vow_gui",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/SelfVowGUIMenu.java",
           "src/main/java/net/mcreator/craftkaisen/client/gui/SelfVowGUIScreen.java",
-          "src/main/java/net/mcreator/craftkaisen/network/SelfVowGUIButtonMessage.java",
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/SelfVowGUIMenu.java"
+          "src/main/java/net/mcreator/craftkaisen/network/SelfVowGUIButtonMessage.java"
         ]
       },
       "path": "~/GUI"
@@ -18234,9 +18241,9 @@
       "registry_name": "awakened_maki",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/AwakenedMakiRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/awakened_maki_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/entity/AwakenedMakiEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/AwakenedMakiRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/awakened_maki_biome_modifier.json"
         ]
       },
@@ -18286,8 +18293,8 @@
       "registry_name": "body_repel_2",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/BodyRepel2Renderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/BodyRepel2Entity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/BodyRepel2Entity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BodyRepel2Renderer.java"
         ]
       },
       "path": "~/Abilities/IdleTransfiguration"
@@ -18301,10 +18308,10 @@
       "registry_name": "hajime_kashimo",
       "metadata": {
         "files": [
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/hajime_kashimo_biome_modifier.json",
           "src/main/java/net/mcreator/craftkaisen/entity/HajimeKashimoEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/HajimeKashimoRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/hajime_kashimo_spawn_egg.json"
+          "src/main/resources/assets/craft_kaisen/models/item/hajime_kashimo_spawn_egg.json",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/hajime_kashimo_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/HajimeKashimoRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -18380,9 +18387,9 @@
       "registry_name": "perk_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/network/PerkGuiButtonMessage.java",
+          "src/main/java/net/mcreator/craftkaisen/client/gui/PerkGuiScreen.java",
           "src/main/java/net/mcreator/craftkaisen/world/inventory/PerkGuiMenu.java",
-          "src/main/java/net/mcreator/craftkaisen/client/gui/PerkGuiScreen.java"
+          "src/main/java/net/mcreator/craftkaisen/network/PerkGuiButtonMessage.java"
         ]
       },
       "path": "~/GUI"
@@ -18396,8 +18403,8 @@
       "registry_name": "rope_mob",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/RopeMobRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/RopeMobEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/RopeMobEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RopeMobRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -18447,8 +18454,8 @@
       "registry_name": "itadori_outfit",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/itadori_outfit_leggings.json",
           "src/main/java/net/mcreator/craftkaisen/item/ItadoriOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/itadori_outfit_leggings.json",
           "src/main/resources/assets/craft_kaisen/models/item/itadori_outfit_chestplate.json"
         ]
       },
@@ -18559,8 +18566,8 @@
       "registry_name": "body_repel_1",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/BodyRepel1Renderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/BodyRepel1Entity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/BodyRepel1Entity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BodyRepel1Renderer.java"
         ]
       },
       "path": "~/Abilities/IdleTransfiguration"
@@ -18760,8 +18767,8 @@
       "registry_name": "suguru_geto",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/SuguruGetoEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/suguru_geto_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/SuguruGetoEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/SuguruGetoRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/suguru_geto_biome_modifier.json"
         ]
@@ -19181,8 +19188,8 @@
       "registry_name": "nyoi_staff",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/NyoiStaffItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/nyoi_staff.json"
+          "src/main/resources/assets/craft_kaisen/models/item/nyoi_staff.json",
+          "src/main/java/net/mcreator/craftkaisen/item/NyoiStaffItem.java"
         ]
       },
       "path": "~/Weapons"
@@ -19450,10 +19457,10 @@
       "registry_name": "distorted_body",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/distorted_body_helmet.json",
           "src/main/resources/assets/craft_kaisen/models/item/distorted_body_chestplate.json",
+          "src/main/java/net/mcreator/craftkaisen/item/DistortedBodyItem.java",
           "src/main/resources/assets/craft_kaisen/models/item/distorted_body_leggings.json",
-          "src/main/java/net/mcreator/craftkaisen/item/DistortedBodyItem.java"
+          "src/main/resources/assets/craft_kaisen/models/item/distorted_body_helmet.json"
         ]
       },
       "path": "~/Armor"
@@ -19757,9 +19764,9 @@
       "registry_name": "meguna",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/meguna_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/MegunaEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/MegunaRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/MegunaEntity.java"
+          "src/main/resources/assets/craft_kaisen/models/item/meguna_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -19913,8 +19920,8 @@
       "registry_name": "takada",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/TakadaEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/takada_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/TakadaEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/TakadaRenderer.java"
         ]
       },
@@ -20190,10 +20197,10 @@
       "registry_name": "aoi_todo",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/AoiTodoRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/AoiTodoEntity.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/aoi_todo_biome_modifier.json",
           "src/main/resources/assets/craft_kaisen/models/item/aoi_todo_spawn_egg.json",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/aoi_todo_biome_modifier.json"
+          "src/main/java/net/mcreator/craftkaisen/entity/AoiTodoEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/AoiTodoRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -20374,6 +20381,10 @@
             "type": "entity"
           },
           {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -20416,10 +20427,10 @@
       "registry_name": "toge_inumaki",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/toge_inumaki_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/TogeInumakiRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/TogeInumakiEntity.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/toge_inumaki_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/TogeInumakiEntity.java"
+          "src/main/resources/assets/craft_kaisen/models/item/toge_inumaki_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -20505,8 +20516,8 @@
       "registry_name": "cursed_doll",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/cursed_doll.json",
-          "src/main/java/net/mcreator/craftkaisen/item/CursedDollItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/CursedDollItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_doll.json"
         ]
       },
       "path": "~/Items"
@@ -20580,9 +20591,9 @@
       "registry_name": "merged_beast_agito",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/MergedBeastAgitoRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/merged_beast_agito_spawn_egg.json",
           "src/main/java/net/mcreator/craftkaisen/entity/MergedBeastAgitoEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/merged_beast_agito_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MergedBeastAgitoRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -20596,8 +20607,8 @@
       "registry_name": "cursed_necklace",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/cursed_necklace.json",
-          "src/main/java/net/mcreator/craftkaisen/item/CursedNecklaceItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/CursedNecklaceItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_necklace.json"
         ]
       },
       "path": "~/Items"
@@ -20794,8 +20805,8 @@
       "registry_name": "shrine_slice_1",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/ShrineSlice1Particle.java",
-          "src/main/resources/assets/craft_kaisen/particles/shrine_slice_1.json"
+          "src/main/resources/assets/craft_kaisen/particles/shrine_slice_1.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/ShrineSlice1Particle.java"
         ]
       },
       "path": "~/Particles"
@@ -21343,8 +21354,8 @@
       "registry_name": "ski_mask",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/ski_mask_helmet.json",
-          "src/main/java/net/mcreator/craftkaisen/item/SkiMaskItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/SkiMaskItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/ski_mask_helmet.json"
         ]
       },
       "path": "~/Armor"
@@ -21408,8 +21419,8 @@
       "registry_name": "cursed_glasses",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/CursedGlassesItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/cursed_glasses.json"
+          "src/main/resources/assets/craft_kaisen/models/item/cursed_glasses.json",
+          "src/main/java/net/mcreator/craftkaisen/item/CursedGlassesItem.java"
         ]
       },
       "path": "~/Items"
@@ -21650,9 +21661,9 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/entity/MegumiFushiguroEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/megumi_fushiguro_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MegumiFushiguroRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/megumi_fushiguro_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/MegumiFushiguroRenderer.java"
+          "src/main/resources/assets/craft_kaisen/models/item/megumi_fushiguro_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -22084,8 +22095,8 @@
       "registry_name": "black_lightning",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/BlackLightningParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/black_lightning.json"
+          "src/main/resources/assets/craft_kaisen/particles/black_lightning.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/BlackLightningParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -22099,8 +22110,8 @@
       "registry_name": "hiten",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/HitenItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/hiten.json"
+          "src/main/resources/assets/craft_kaisen/models/item/hiten.json",
+          "src/main/java/net/mcreator/craftkaisen/item/HitenItem.java"
         ]
       },
       "path": "~/Weapons"
@@ -22187,6 +22198,10 @@
         "dependencies": [
           {
             "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
             "type": "entity"
           },
           {
@@ -22293,9 +22308,9 @@
       "registry_name": "ct_move_gui",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/CTMoveGUIMenu.java",
           "src/main/java/net/mcreator/craftkaisen/network/CTMoveGUIButtonMessage.java",
-          "src/main/java/net/mcreator/craftkaisen/client/gui/CTMoveGUIScreen.java",
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/CTMoveGUIMenu.java"
+          "src/main/java/net/mcreator/craftkaisen/client/gui/CTMoveGUIScreen.java"
         ]
       },
       "path": "~/GUI"
@@ -22797,8 +22812,8 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/craft_kaisen/models/item/kashimo_outfit_chestplate.json",
-          "src/main/resources/assets/craft_kaisen/models/item/kashimo_outfit_leggings.json",
-          "src/main/java/net/mcreator/craftkaisen/item/KashimoOutfitItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/KashimoOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/kashimo_outfit_leggings.json"
         ]
       },
       "path": "~/Armor"
@@ -23111,8 +23126,8 @@
       "registry_name": "gold_open_door",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/GoldOpenDoorRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/GoldOpenDoorEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/GoldOpenDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GoldOpenDoorRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -23207,8 +23222,8 @@
       "registry_name": "gold_closed_door",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/GoldClosedDoorRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/GoldClosedDoorEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/GoldClosedDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GoldClosedDoorRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -23514,9 +23529,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/craft_kaisen/models/item/uraume_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/UraumeEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/UraumeRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/uraume_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/UraumeRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/UraumeEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -23572,8 +23587,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/item/NanamiOutfitItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/nanami_outfit_chestplate.json",
-          "src/main/resources/assets/craft_kaisen/models/item/nanami_outfit_leggings.json"
+          "src/main/resources/assets/craft_kaisen/models/item/nanami_outfit_leggings.json",
+          "src/main/resources/assets/craft_kaisen/models/item/nanami_outfit_chestplate.json"
         ]
       },
       "path": "~/Armor"
@@ -23663,8 +23678,8 @@
       "registry_name": "rainbow_open_door",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/RainbowOpenDoorRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/RainbowOpenDoorEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/RainbowOpenDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RainbowOpenDoorRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -23702,8 +23717,8 @@
       "registry_name": "fire_arrow_storm",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/FireArrowStormRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/FireArrowStormEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/FireArrowStormEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FireArrowStormRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -23908,8 +23923,8 @@
       "registry_name": "green_closed_door",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/GreenClosedDoorRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/GreenClosedDoorEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/GreenClosedDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GreenClosedDoorRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -24183,8 +24198,8 @@
       "registry_name": "mastery_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/MasteryGUIMenu.java",
-          "src/main/java/net/mcreator/craftkaisen/client/gui/MasteryGUIScreen.java"
+          "src/main/java/net/mcreator/craftkaisen/client/gui/MasteryGUIScreen.java",
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/MasteryGUIMenu.java"
         ]
       },
       "path": "~/GUI"
@@ -24198,8 +24213,8 @@
       "registry_name": "hundred_demons_tick",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/HundredDemonsTickRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/HundredDemonsTickEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/HundredDemonsTickEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/HundredDemonsTickRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -24213,8 +24228,8 @@
       "registry_name": "green_open_door",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/GreenOpenDoorRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/GreenOpenDoorEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/GreenOpenDoorEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GreenOpenDoorRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -24228,8 +24243,8 @@
       "registry_name": "gifted_give",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/item/GiftedGiveItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/gifted_give.json"
+          "src/main/resources/assets/craft_kaisen/models/item/gifted_give.json",
+          "src/main/java/net/mcreator/craftkaisen/item/GiftedGiveItem.java"
         ]
       },
       "path": "~/Items"
@@ -24319,9 +24334,9 @@
       "registry_name": "kenjaku_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/gui/KenjakuGUIScreen.java",
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/KenjakuGUIMenu.java",
           "src/main/java/net/mcreator/craftkaisen/network/KenjakuGUIButtonMessage.java",
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/KenjakuGUIMenu.java"
+          "src/main/java/net/mcreator/craftkaisen/client/gui/KenjakuGUIScreen.java"
         ]
       },
       "path": "~/GUI"
@@ -24464,9 +24479,9 @@
       "registry_name": "rainbow_closed_door",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/rainbow_closed_door_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RainbowClosedDoorRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/RainbowClosedDoorEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/RainbowClosedDoorRenderer.java"
+          "src/main/resources/assets/craft_kaisen/models/item/rainbow_closed_door_spawn_egg.json"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -24661,9 +24676,9 @@
       "metadata": {
         "files": [
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/jinichi_zenin_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/JinichiZeninRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/JinichiZeninEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/jinichi_zenin_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/JinichiZeninEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/JinichiZeninRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -25238,10 +25253,10 @@
       "registry_name": "flying_cursed_spirit",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/FlyingCursedSpiritRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/FlyingCursedSpiritEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/flying_cursed_spirit_spawn_egg.json",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/flying_cursed_spirit_biome_modifier.json",
-          "src/main/resources/assets/craft_kaisen/models/item/flying_cursed_spirit_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FlyingCursedSpiritRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/FlyingCursedSpiritEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -25300,8 +25315,8 @@
       "registry_name": "frame_mob",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/FrameMobRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/FrameMobEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/FrameMobEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FrameMobRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -25429,8 +25444,8 @@
       "registry_name": "frozen_frame",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/FrozenFrameRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/FrozenFrameEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/FrozenFrameEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/FrozenFrameRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -25613,8 +25628,8 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/craft_kaisen/models/item/mahoraga_outfit_leggings.json",
-          "src/main/resources/assets/craft_kaisen/models/item/mahoraga_outfit_chestplate.json",
-          "src/main/java/net/mcreator/craftkaisen/item/MahoragaOutfitItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/MahoragaOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/mahoraga_outfit_chestplate.json"
         ]
       },
       "path": "~/Armor"
@@ -25709,10 +25724,10 @@
       "registry_name": "mei_mei",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/MeiMeiEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/MeiMeiRenderer.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/mei_mei_biome_modifier.json",
           "src/main/resources/assets/craft_kaisen/models/item/mei_mei_spawn_egg.json",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/mei_mei_biome_modifier.json"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MeiMeiRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/MeiMeiEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -25794,8 +25809,8 @@
       "registry_name": "black_bird_projectile",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/BlackBirdProjectileEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/BlackBirdProjectileRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BlackBirdProjectileRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/BlackBirdProjectileEntity.java"
         ]
       },
       "path": "~/Abilities/BlackBirdManipulation"
@@ -25936,8 +25951,8 @@
       "registry_name": "scouter_crow_projectile",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/ScouterCrowProjectileEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/ScouterCrowProjectileRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/ScouterCrowProjectileRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/ScouterCrowProjectileEntity.java"
         ]
       },
       "path": "~/Abilities/BlackBirdManipulation"
@@ -25987,8 +26002,8 @@
       "registry_name": "crow_mei_mei",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/CrowMeiMeiRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/CrowMeiMeiEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/CrowMeiMeiEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/CrowMeiMeiRenderer.java"
         ]
       },
       "path": "~/Abilities/BlackBirdManipulation"
@@ -26682,8 +26697,8 @@
       "registry_name": "shinjuku_gojo",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/ShinjukuGojoRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/shinjuku_gojo_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/ShinjukuGojoRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/ShinjukuGojoEntity.java"
         ]
       },
@@ -26698,11 +26713,11 @@
       "registry_name": "domain_air_block",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainAirBlockBlockEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/domain_air_block.json",
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_air_block.json",
           "src/main/resources/assets/craft_kaisen/models/block/domain_air_block.json",
-          "src/main/java/net/mcreator/craftkaisen/block/DomainAirBlockBlock.java",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainAirBlockBlockEntity.java"
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_air_block.json",
+          "src/main/java/net/mcreator/craftkaisen/block/DomainAirBlockBlock.java"
         ]
       },
       "path": "~/Blocks"
@@ -26796,8 +26811,8 @@
       "registry_name": "kenjaku",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/KenjakuRenderer.java",
           "src/main/java/net/mcreator/craftkaisen/entity/KenjakuEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/KenjakuRenderer.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/kenjaku_biome_modifier.json",
           "src/main/resources/assets/craft_kaisen/models/item/kenjaku_spawn_egg.json"
         ]
@@ -26827,10 +26842,10 @@
       "registry_name": "ice_domain_floor",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/IceDomainFloorBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/block/ice_domain_floor.json",
           "src/main/resources/assets/craft_kaisen/models/item/ice_domain_floor.json",
           "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_floor.json",
-          "src/main/resources/assets/craft_kaisen/models/block/ice_domain_floor.json"
+          "src/main/java/net/mcreator/craftkaisen/block/IceDomainFloorBlock.java"
         ]
       },
       "path": "~/Blocks"
@@ -26844,10 +26859,10 @@
       "registry_name": "ice_domain_wall",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/IceDomainWallBlock.java",
           "src/main/resources/assets/craft_kaisen/models/block/ice_domain_wall.json",
-          "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_wall.json",
-          "src/main/resources/assets/craft_kaisen/models/item/ice_domain_wall.json"
+          "src/main/java/net/mcreator/craftkaisen/block/IceDomainWallBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/item/ice_domain_wall.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/ice_domain_wall.json"
         ]
       },
       "path": "~/Blocks"
@@ -26941,8 +26956,8 @@
       "registry_name": "binding_ice_block",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/BindingIceBlockEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/BindingIceBlockRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/BindingIceBlockRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/BindingIceBlockEntity.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -26990,8 +27005,8 @@
       "registry_name": "ice_cloud",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/ice_cloud.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/IceCloudParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/IceCloudParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/ice_cloud.json"
         ]
       },
       "path": "~/Particles"
@@ -27199,11 +27214,11 @@
       "registry_name": "magma_domain_floor",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/magma_domain_floor.json",
-          "src/main/resources/assets/craft_kaisen/blockstates/magma_domain_floor.json",
           "src/main/resources/assets/craft_kaisen/models/block/magma_domain_floor.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/magma_domain_floor.json",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/MagmaDomainFloorBlockEntity.java",
           "src/main/java/net/mcreator/craftkaisen/block/MagmaDomainFloorBlock.java",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/MagmaDomainFloorBlockEntity.java"
+          "src/main/resources/assets/craft_kaisen/models/item/magma_domain_floor.json"
         ]
       },
       "path": "~/Blocks"
@@ -27303,11 +27318,11 @@
       "registry_name": "magma_domain_wall",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/block/magma_domain_wall.json",
-          "src/main/resources/assets/craft_kaisen/models/item/magma_domain_wall.json",
-          "src/main/java/net/mcreator/craftkaisen/block/MagmaDomainWallBlock.java",
           "src/main/resources/assets/craft_kaisen/blockstates/magma_domain_wall.json",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/MagmaDomainWallBlockEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/block/MagmaDomainWallBlock.java",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/MagmaDomainWallBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/magma_domain_wall.json",
+          "src/main/resources/assets/craft_kaisen/models/block/magma_domain_wall.json"
         ]
       },
       "path": "~/Blocks"
@@ -27459,9 +27474,9 @@
       "registry_name": "naobito_outfit",
       "metadata": {
         "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/naobito_outfit_leggings.json",
           "src/main/resources/assets/craft_kaisen/models/item/naobito_outfit_chestplate.json",
-          "src/main/java/net/mcreator/craftkaisen/item/NaobitoOutfitItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/naobito_outfit_leggings.json"
+          "src/main/java/net/mcreator/craftkaisen/item/NaobitoOutfitItem.java"
         ]
       },
       "path": "~/Armor"
@@ -27475,8 +27490,8 @@
       "registry_name": "naobito",
       "metadata": {
         "files": [
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/naobito_biome_modifier.json",
           "src/main/java/net/mcreator/craftkaisen/entity/NaobitoEntity.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/naobito_biome_modifier.json",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/NaobitoRenderer.java",
           "src/main/resources/assets/craft_kaisen/models/item/naobito_spawn_egg.json"
         ]
@@ -27572,8 +27587,8 @@
       "registry_name": "todo_outfit",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/todo_outfit_chestplate.json",
           "src/main/java/net/mcreator/craftkaisen/item/TodoOutfitItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/todo_outfit_chestplate.json",
           "src/main/resources/assets/craft_kaisen/models/item/todo_outfit_leggings.json"
         ]
       },
@@ -27642,9 +27657,9 @@
       "registry_name": "gojo_outfit",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/gojo_outfit_leggings.json",
           "src/main/java/net/mcreator/craftkaisen/item/GojoOutfitItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/gojo_outfit_chestplate.json"
+          "src/main/resources/assets/craft_kaisen/models/item/gojo_outfit_chestplate.json",
+          "src/main/resources/assets/craft_kaisen/models/item/gojo_outfit_leggings.json"
         ]
       },
       "path": "~/Armor"
@@ -27774,8 +27789,8 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainSmoothBasaltBlockEntity.java",
           "src/main/resources/assets/craft_kaisen/blockstates/domain_smooth_basalt.json",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_smooth_basalt.json",
           "src/main/resources/assets/craft_kaisen/models/block/domain_smooth_basalt.json",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_smooth_basalt.json",
           "src/main/java/net/mcreator/craftkaisen/block/DomainSmoothBasaltBlock.java"
         ]
       },
@@ -27790,11 +27805,11 @@
       "registry_name": "domain_lava",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/DomainLavaBlock.java",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_lava.json",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainLavaBlockEntity.java",
           "src/main/resources/assets/craft_kaisen/models/block/domain_lava.json",
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_lava.json"
+          "src/main/java/net/mcreator/craftkaisen/block/DomainLavaBlock.java",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainLavaBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_lava.json",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_lava.json"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -27808,11 +27823,11 @@
       "registry_name": "domain_ice_stalagmite_tall",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_ice_stalagmite_tall.json",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_ice_stalagmite_tall.json",
-          "src/main/resources/assets/craft_kaisen/models/block/domain_ice_stalagmite_tall.json",
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainIceStalagmiteTallBlockEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/block/DomainIceStalagmiteTallBlock.java"
+          "src/main/java/net/mcreator/craftkaisen/block/DomainIceStalagmiteTallBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_ice_stalagmite_tall.json",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_ice_stalagmite_tall.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_ice_stalagmite_tall.json"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -27828,9 +27843,9 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/block/DomainPackedIceBlock.java",
           "src/main/resources/assets/craft_kaisen/models/block/domain_packed_ice.json",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainPackedIceBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_packed_ice.json",
           "src/main/resources/assets/craft_kaisen/models/item/domain_packed_ice.json",
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_packed_ice.json"
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainPackedIceBlockEntity.java"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -27876,11 +27891,11 @@
       "registry_name": "domain_basalt",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBasaltBlockEntity.java",
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_basalt.json",
           "src/main/java/net/mcreator/craftkaisen/block/DomainBasaltBlock.java",
           "src/main/resources/assets/craft_kaisen/models/item/domain_basalt.json",
-          "src/main/resources/assets/craft_kaisen/models/block/domain_basalt.json"
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_basalt.json",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_basalt.json",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBasaltBlockEntity.java"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -27926,11 +27941,11 @@
       "registry_name": "domain_mini_volcano",
       "metadata": {
         "files": [
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_mini_volcano.json",
           "src/main/resources/assets/craft_kaisen/models/block/domain_mini_volcano.json",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_mini_volcano.json",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainMiniVolcanoBlockEntity.java",
           "src/main/java/net/mcreator/craftkaisen/block/DomainMiniVolcanoBlock.java",
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_mini_volcano.json"
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainMiniVolcanoBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_mini_volcano.json"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -27944,11 +27959,11 @@
       "registry_name": "domain_blackstone",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlackstoneBlockEntity.java",
           "src/main/resources/assets/craft_kaisen/blockstates/domain_blackstone.json",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_blackstone.json",
           "src/main/resources/assets/craft_kaisen/models/block/domain_blackstone.json",
-          "src/main/java/net/mcreator/craftkaisen/block/DomainBlackstoneBlock.java"
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlackstoneBlockEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/block/DomainBlackstoneBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_blackstone.json"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -27962,11 +27977,11 @@
       "registry_name": "domain_blue_ice",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/block/domain_blue_ice.json",
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlueIceBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_blue_ice.json",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_blue_ice.json",
           "src/main/resources/assets/craft_kaisen/blockstates/domain_blue_ice.json",
-          "src/main/java/net/mcreator/craftkaisen/block/DomainBlueIceBlock.java",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_blue_ice.json"
+          "src/main/java/net/mcreator/craftkaisen/block/DomainBlueIceBlock.java"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -27980,10 +27995,10 @@
       "registry_name": "domain_star_block",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/DomainStarBlockBlock.java",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainStarBlockBlockEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/block/domain_star_block.json",
           "src/main/resources/assets/craft_kaisen/blockstates/domain_star_block.json",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_star_block.json",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainStarBlockBlockEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/block/DomainStarBlockBlock.java",
           "src/main/resources/assets/craft_kaisen/models/item/domain_star_block.json"
         ]
       },
@@ -27998,11 +28013,11 @@
       "registry_name": "domain_blackstone_stalagmite_tall",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlackstoneStalagmiteTallBlockEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/domain_blackstone_stalagmite_tall.json",
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlackstoneStalagmiteTallBlockEntity.java",
           "src/main/java/net/mcreator/craftkaisen/block/DomainBlackstoneStalagmiteTallBlock.java",
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_blackstone_stalagmite_tall.json",
-          "src/main/resources/assets/craft_kaisen/models/block/domain_blackstone_stalagmite_tall.json"
+          "src/main/resources/assets/craft_kaisen/models/block/domain_blackstone_stalagmite_tall.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_blackstone_stalagmite_tall.json"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -28048,10 +28063,10 @@
       "registry_name": "domain_magma",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainMagmaBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_magma.json",
           "src/main/java/net/mcreator/craftkaisen/block/DomainMagmaBlock.java",
           "src/main/resources/assets/craft_kaisen/models/block/domain_magma.json",
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_magma.json",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainMagmaBlockEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/domain_magma.json"
         ]
       },
@@ -28066,11 +28081,11 @@
       "registry_name": "domain_ice_stalagmite",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/domain_ice_stalagmite.json",
-          "src/main/java/net/mcreator/craftkaisen/block/DomainIceStalagmiteBlock.java",
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainIceStalagmiteBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_ice_stalagmite.json",
+          "src/main/java/net/mcreator/craftkaisen/block/DomainIceStalagmiteBlock.java",
           "src/main/resources/assets/craft_kaisen/blockstates/domain_ice_stalagmite.json",
-          "src/main/resources/assets/craft_kaisen/models/block/domain_ice_stalagmite.json"
+          "src/main/resources/assets/craft_kaisen/models/item/domain_ice_stalagmite.json"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -28085,10 +28100,10 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/block/DomainIceBlockBlock.java",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_ice_block.json",
-          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainIceBlockBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_ice_block.json",
           "src/main/resources/assets/craft_kaisen/blockstates/domain_ice_block.json",
-          "src/main/resources/assets/craft_kaisen/models/block/domain_ice_block.json"
+          "src/main/java/net/mcreator/craftkaisen/block/entity/DomainIceBlockBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_ice_block.json"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -28103,9 +28118,9 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/craft_kaisen/models/block/domain_blackstone_stalagmite.json",
-          "src/main/java/net/mcreator/craftkaisen/block/DomainBlackstoneStalagmiteBlock.java",
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainBlackstoneStalagmiteBlockEntity.java",
           "src/main/resources/assets/craft_kaisen/models/item/domain_blackstone_stalagmite.json",
+          "src/main/java/net/mcreator/craftkaisen/block/DomainBlackstoneStalagmiteBlock.java",
           "src/main/resources/assets/craft_kaisen/blockstates/domain_blackstone_stalagmite.json"
         ]
       },
@@ -28120,11 +28135,11 @@
       "registry_name": "domain_dripstone",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/DomainDripstoneBlock.java",
           "src/main/java/net/mcreator/craftkaisen/block/entity/DomainDripstoneBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_dripstone.json",
           "src/main/resources/assets/craft_kaisen/models/block/domain_dripstone.json",
-          "src/main/resources/assets/craft_kaisen/models/item/domain_dripstone.json",
-          "src/main/resources/assets/craft_kaisen/blockstates/domain_dripstone.json"
+          "src/main/java/net/mcreator/craftkaisen/block/DomainDripstoneBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_dripstone.json"
         ]
       },
       "path": "~/Blocks/Domain Blocks"
@@ -28153,8 +28168,8 @@
       "registry_name": "unlimitedblackhole",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/unlimitedblackhole.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedblackholeParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedblackholeParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/unlimitedblackhole.json"
         ]
       },
       "path": "~/Particles"
@@ -28168,8 +28183,8 @@
       "registry_name": "unlimited_void_splash_1",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash1Particle.java",
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_1.json"
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_1.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash1Particle.java"
         ]
       },
       "path": "~/Particles"
@@ -28183,8 +28198,8 @@
       "registry_name": "unlimited_void_splash_2",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash2Particle.java",
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_2.json"
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_2.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash2Particle.java"
         ]
       },
       "path": "~/Particles"
@@ -28198,8 +28213,8 @@
       "registry_name": "unlimited_void_splash_3",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash3Particle.java",
-          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_3.json"
+          "src/main/resources/assets/craft_kaisen/particles/unlimited_void_splash_3.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/UnlimitedVoidSplash3Particle.java"
         ]
       },
       "path": "~/Particles"
@@ -28415,9 +28430,9 @@
       "registry_name": "meguna_outfit",
       "metadata": {
         "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/meguna_outfit_chestplate.json",
           "src/main/resources/assets/craft_kaisen/models/item/meguna_outfit_leggings.json",
-          "src/main/java/net/mcreator/craftkaisen/item/MegunaOutfitItem.java",
-          "src/main/resources/assets/craft_kaisen/models/item/meguna_outfit_chestplate.json"
+          "src/main/java/net/mcreator/craftkaisen/item/MegunaOutfitItem.java"
         ]
       },
       "path": "~/Armor"
@@ -28503,8 +28518,8 @@
       "registry_name": "fire_particle",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/particles/fire_particle.json",
-          "src/main/java/net/mcreator/craftkaisen/client/particle/FireParticleParticle.java"
+          "src/main/java/net/mcreator/craftkaisen/client/particle/FireParticleParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/fire_particle.json"
         ]
       },
       "path": "~/Particles"
@@ -28688,8 +28703,8 @@
       "registry_name": "throw_player_mob",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/ThrowPlayerMobRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/ThrowPlayerMobEntity.java"
+          "src/main/java/net/mcreator/craftkaisen/entity/ThrowPlayerMobEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/ThrowPlayerMobRenderer.java"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -30338,8 +30353,8 @@
       "registry_name": "gold_pachinko_ball_projectile",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/GoldPachinkoBallProjectileEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/GoldPachinkoBallProjectileRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/GoldPachinkoBallProjectileRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/GoldPachinkoBallProjectileEntity.java"
         ]
       },
       "path": "~/Projectile"
@@ -30416,10 +30431,10 @@
       "registry_name": "pplt_domain_floor",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/pplt_domain_floor.json",
           "src/main/resources/assets/craft_kaisen/blockstates/pplt_domain_floor.json",
-          "src/main/resources/assets/craft_kaisen/models/block/pplt_domain_floor.json",
           "src/main/java/net/mcreator/craftkaisen/block/entity/PPLTDomainFloorBlockEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/pplt_domain_floor.json",
+          "src/main/resources/assets/craft_kaisen/models/block/pplt_domain_floor.json",
           "src/main/java/net/mcreator/craftkaisen/block/PPLTDomainFloorBlock.java"
         ]
       },
@@ -31061,8 +31076,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/entity/RikaEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/rika_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/RikaRenderer.java"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/RikaRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/rika_spawn_egg.json"
         ]
       },
       "path": "~/Mobs"
@@ -31182,8 +31197,8 @@
       "registry_name": "pure_love_pulse",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/particle/PureLovePulseParticle.java",
-          "src/main/resources/assets/craft_kaisen/particles/pure_love_pulse.json"
+          "src/main/resources/assets/craft_kaisen/particles/pure_love_pulse.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/PureLovePulseParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -31743,9 +31758,9 @@
       "registry_name": "domain_clashing_gui",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/world/inventory/DomainClashingGUIMenu.java",
           "src/main/java/net/mcreator/craftkaisen/client/gui/DomainClashingGUIScreen.java",
-          "src/main/java/net/mcreator/craftkaisen/network/DomainClashingGUIButtonMessage.java",
-          "src/main/java/net/mcreator/craftkaisen/world/inventory/DomainClashingGUIMenu.java"
+          "src/main/java/net/mcreator/craftkaisen/network/DomainClashingGUIButtonMessage.java"
         ]
       },
       "path": "~/GUI"
@@ -31900,18 +31915,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -31962,8 +31965,8 @@
       "registry_name": "prison_realm_seal",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/prison_realm_seal_chestplate.json",
-          "src/main/java/net/mcreator/craftkaisen/item/PrisonRealmSealItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/PrisonRealmSealItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/prison_realm_seal_chestplate.json"
         ]
       },
       "path": "~/Armor"
@@ -32134,9 +32137,9 @@
       "registry_name": "prison_box",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/PrisonBoxEntity.java",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/PrisonBoxRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/prison_box_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/PrisonBoxEntity.java"
+          "src/main/resources/assets/craft_kaisen/models/item/prison_box_spawn_egg.json"
         ]
       },
       "path": "~/Mobs/Abilities"
@@ -32164,10 +32167,10 @@
       "registry_name": "kasumi_miwa",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/KasumiMiwaEntity.java",
           "src/main/resources/data/craft_kaisen/forge/biome_modifier/kasumi_miwa_biome_modifier.json",
           "src/main/java/net/mcreator/craftkaisen/client/renderer/KasumiMiwaRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/kasumi_miwa_spawn_egg.json"
+          "src/main/resources/assets/craft_kaisen/models/item/kasumi_miwa_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/KasumiMiwaEntity.java"
         ]
       },
       "path": "~/Mobs"
@@ -32283,10 +32286,10 @@
       "registry_name": "nanako_hasaba",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/nanako_hasaba_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/NanakoHasabaRenderer.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/nanako_hasaba_biome_modifier.json",
           "src/main/java/net/mcreator/craftkaisen/entity/NanakoHasabaEntity.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/nanako_hasaba_biome_modifier.json"
+          "src/main/resources/assets/craft_kaisen/models/item/nanako_hasaba_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/NanakoHasabaRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -32324,7 +32327,7 @@
       "name": "CameraRayWhileProjectileFlyingTick",
       "type": "procedure",
       "sortid": 1420,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "camera_ray_while_projectile_flying_tick",
       "metadata": {
@@ -32398,8 +32401,8 @@
       "registry_name": "electric_guitar",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/electric_guitar.json",
-          "src/main/java/net/mcreator/craftkaisen/item/ElectricGuitarItem.java"
+          "src/main/java/net/mcreator/craftkaisen/item/ElectricGuitarItem.java",
+          "src/main/resources/assets/craft_kaisen/models/item/electric_guitar.json"
         ]
       },
       "path": "~/Weapons"
@@ -32453,10 +32456,10 @@
       "registry_name": "yoshinobu_gakuganji",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/YoshinobuGakuganjiRenderer.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/yoshinobu_gakuganji_biome_modifier.json",
           "src/main/resources/assets/craft_kaisen/models/item/yoshinobu_gakuganji_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/YoshinobuGakuganjiEntity.java"
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/yoshinobu_gakuganji_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/YoshinobuGakuganjiEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/YoshinobuGakuganjiRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -32479,7 +32482,7 @@
       "name": "CallPhoto",
       "type": "procedure",
       "sortid": 1422,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "call_photo",
       "metadata": {
@@ -32515,7 +32518,7 @@
       "name": "TitleSentChat",
       "type": "procedure",
       "sortid": 1419,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "title_sent_chat",
       "metadata": {
@@ -32688,6 +32691,10 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -32699,7 +32706,7 @@
       "name": "BrotherTick",
       "type": "procedure",
       "sortid": 1401,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "brother_tick",
       "metadata": {
@@ -32735,7 +32742,7 @@
       "name": "SetBrotherTwo2",
       "type": "procedure",
       "sortid": 1404,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "set_brother_two_2",
       "metadata": {
@@ -32744,8 +32751,8 @@
         ],
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "arguments",
+            "type": "cmdcontext"
           },
           {
             "name": "world",
@@ -32759,7 +32766,7 @@
       "name": "SetBrotherOne",
       "type": "procedure",
       "sortid": 1402,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "set_brother_one",
       "metadata": {
@@ -32768,8 +32775,8 @@
         ],
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "arguments",
+            "type": "cmdcontext"
           },
           {
             "name": "world",
@@ -34131,8 +34138,8 @@
   "language_map": {
     "en_us": {
       "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-      "subtitles.sukuna": "sukuna talking",
       "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
+      "subtitles.sukuna": "sukuna talking",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
       "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
@@ -34166,16 +34173,17 @@
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
       "advancements.subjugation_of_hanami.title": "Subjugation Of Hanami",
-      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
+      "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
-      "gui.craft_kaisen.main_menu.label_0": "0",
-      "advancements.special_grade.title": "Special Grade",
       "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
+      "advancements.special_grade.title": "Special Grade",
+      "gui.craft_kaisen.main_menu.label_0": "0",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
+      "entity.craft_kaisen.yoshinobu_gakuganji": "Yoshinobu Gakuganji",
       "advancements.the_sorcerer_killer.descr": "Kill Toji Fushiguro",
       "entity.craft_kaisen.red_open_door": "Red Open Door",
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
@@ -34214,6 +34222,7 @@
       "item.craft_kaisen.choso_spawn_egg": "Choso Spawn Egg",
       "effect.craft_kaisen.pre_red": "PreRed",
       "entity.craft_kaisen.naobito": "Naobito",
+      "advancements.elimination_of_aoi_todo.descr": "Kill Aoi Todo",
       "entity.craft_kaisen.finger_bearer": "Finger Bearer",
       "gui.craft_kaisen.body_shape_overlay.label_alt": "ALT - Spike ",
       "block.craft_kaisen.sprinkler_on": "Sprinkler On",
@@ -34225,6 +34234,7 @@
       "item.craft_kaisen.kashimo_outfit_chestplate": "Kashimo Outfit",
       "item.craft_kaisen.mahoraga_outfit_leggings": "Mahoraga Outfit",
       "item.craft_kaisen.nail": "Nail",
+      "advancements.subjugation_of_ko_guy.descr": "Exorcise Ko Guy",
       "death.attack.soul_damage": "%1$s died",
       "block.craft_kaisen.domain_lava": "Domain Block",
       "gamerule.sMPSetting.description": "Sets the mod to smp settings",
@@ -34263,11 +34273,13 @@
       "advancements.clan_creator.title": "Head Of The Clan",
       "item.craft_kaisen.mahito_outfit_leggings": "Mahito Outfit",
       "item.craft_kaisen.maximum_elephant_spawn_egg": "Maximum Elephant Spawn Egg",
+      "item.craft_kaisen.yoshinobu_gakuganji_spawn_egg": "Yoshinobu Gakuganji Spawn Egg",
       "item.craft_kaisen.satoru_gojo_spawn_egg": "Satoru Gojo Spawn Egg",
       "item.craft_kaisen.sukuna_finger": "Sukuna Finger",
       "item.craft_kaisen.blood_spear": "Blood Spear",
       "entity.craft_kaisen.fire_arrow_storm": "Fire Arrow Storm",
       "entity.craft_kaisen.eight_handled_sword_divergent_sila_divine_general_mahoraga": "Eight Handled Sword Divergent Sila Divine General Mahoraga",
+      "item.craft_kaisen.nanako_hasaba_spawn_egg": "Nanako Hasaba Spawn Egg",
       "advancements.reversed_cursed_technique.title": "Reversed Cursed Technique",
       "advancements.cursed_spirit.title": "Cursed Spirit",
       "item.craft_kaisen.mei_mei_spawn_egg": "Mei Mei Spawn Egg",
@@ -34279,6 +34291,7 @@
       "death.attack.dismantle_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.shadow_frog": "Shadow Frog",
       "effect.craft_kaisen.constant_slice": "ConstantSlice",
+      "advancements.elimination_of_kasumi_miwa.title": "Elimination Of Kasumi Miwa",
       "advancements.the_honored_one.title": "The Honored One",
       "death.attack.malevolent_shrine_damage.player": "%1$s died whilst trying to escape the malevolent shrine",
       "effect.craft_kaisen.through_blocks": "Through Blocks",
@@ -34332,6 +34345,7 @@
       "item.craft_kaisen.mahoraga_outfit_chestplate": "Mahoraga Outfit",
       "death.attack.slashing_damage.player": "%1$s died whilst trying to escape %2$s",
       "advancements.the_sorcerer_killer.title": "The Sorcerer Killer",
+      "item.craft_kaisen.title_book": "Title Book",
       "gamerule.noOverwhelmingPressure": "No Overwhelming Pressure",
       "item.craft_kaisen.fire_arrow": "Fire Arrow",
       "advancements.fearsome_womb.title": "Fearsome Womb",
@@ -34351,6 +34365,7 @@
       "death.attack.reversal_red_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.flying_cursed_spirit": "Flying Cursed Spirit",
       "item.craft_kaisen.prison_box_spawn_egg": "Prison Box Spawn Egg",
+      "entity.craft_kaisen.nanako_hasaba": "Nanako Hasaba",
       "subtitles.unlimitedsplash": "",
       "advancements.shinjuku_showdown.title": "Shinjuku Showdown",
       "gui.craft_kaisen.main_menu.tooltip_increase_max_health": "increase max health",
@@ -34366,6 +34381,7 @@
       "effect.craft_kaisen.reiki": "Reiki",
       "entity.craft_kaisen.kenjaku": "Kenjaku",
       "entity.craft_kaisen.rainbow_closed_door": "Rainbow Closed Door",
+      "entity.craft_kaisen.bass_booster": "Bass Booster",
       "gui.craft_kaisen.domain_clash.label_press_the_button_as_many_times_a": "Press the button as many times as you can!",
       "item.craft_kaisen.nobara_outfit_leggings": "Female Jujutsu Sorcerer Outfit",
       "entity.craft_kaisen.yuji_itadori": "Yuji Itadori",
@@ -34384,11 +34400,13 @@
       "effect.craft_kaisen.simple_domain": "Simple Domain",
       "advancements.heian_era.descr": "Kill Awakened Sukuna",
       "item.craft_kaisen.blood_blade": "Blood Dagger",
+      "item.craft_kaisen.electric_guitar": "Electric Guitar",
       "itemGroup.tabck_items": "Ck Items",
       "effect.craft_kaisen.rikas_love": "Rika\u0027s Love",
       "death.attack.frost_calm_damage": "%1$s died to frost",
       "item.craft_kaisen.root_projectile": "Root Projectile",
       "gamerule.hardcoreLives": "Hardcore Lives",
+      "advancements.older_brother.title": "Older Brother",
       "advancements.semi_grade_2.descr": "Reach The Required Fame.",
       "gamerule.oPBlessedByTheSparks.description": "Makes Blessed By The Sparks Special extremely common and overpowered",
       "itemGroup.tabck_curses": "Craft Kaisen Curses",
@@ -34468,6 +34486,7 @@
       "entity.craft_kaisen.red_closed_door": "Red Closed Door",
       "gamerule.malevolentShrineBlockDamage": "malevolentshrineblockdamage",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_4": "Set Ability 4",
+      "advancements.elimination_of_kasumi_miwa.descr": "Kill Kasumi Miwa",
       "gui.craft_kaisen.lapse_blue_overlay.label_ctrl_move_away": "SNEAK - Push",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_3": "Set Ability 3",
       "effect.craft_kaisen.piercing_blood": "PiercingBlood",
@@ -34499,6 +34518,7 @@
       "item.craft_kaisen.geto_outfit_boots": "Geto Sandals",
       "advancements.cursed_spirit.descr": "Become a Cursed Spirit",
       "entity.craft_kaisen.riko_amanai": "Riko Amanai",
+      "entity.craft_kaisen.kasumi_miwa": "Kasumi Miwa",
       "advancements.special_grade.descr": "Reach The Required Fame.",
       "effect.craft_kaisen.body_shape_active": "BodyShape",
       "gui.craft_kaisen.start_screen.label_cursed_spirit": "Curse",
@@ -34587,6 +34607,7 @@
       "entity.craft_kaisen.ember_insect": "Ember Insect",
       "death.attack.cursed_energy_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.craft_kaisen.perk_gui.button_decline": "Decline",
+      "advancements.pseudo_geto.descr": "Kill Kenjaku",
       "item.craft_kaisen.jujutsu_sorcerer_uniform_chestplate": "Jujutsu Sorcerer Uniform",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_12": "Set Ability 11",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_13": "Set Ability 12",
@@ -34599,6 +34620,7 @@
       "item_group.craft_kaisen.ck_armor": "Ck Armor",
       "entity.craft_kaisen.uraume": "Uraume",
       "block.craft_kaisen.domain_magma": "Domain Block",
+      "advancements.older_brother.descr": "Kill Choso",
       "effect.craft_kaisen.flow": "Flow",
       "item.craft_kaisen.mouth_cursed_spirit_spawn_egg": "Mouth Cursed Spirit Spawn Egg",
       "entity.craft_kaisen.yuta_okkotsu": "Yuta Okkotsu",
@@ -34657,6 +34679,7 @@
       "advancements.great_serpent_advancement.title": "Great Serpent",
       "gui.craft_kaisen.domain_clash.button_x": "X",
       "effect.craft_kaisen.sukuna": "Sukuna",
+      "advancements.elimination_of_aoi_todo.title": "Elimination Of Aoi Todo",
       "gui.craft_kaisen.body_shape_overlay.label_shift_slicing": "SHIFT - Slicing",
       "entity.craft_kaisen.small_pox_deity": "Small Pox Deity",
       "gui.craft_kaisen.main_menu.tooltip_increase_energy_regen_rate_and_m": "increase energy regen rate and max output",
@@ -34767,12 +34790,15 @@
       "advancements.cursed_child.title": "Cursed Child",
       "effect.craft_kaisen.lapse_blue_control_gojo": "Lapse Blue Control Gojo",
       "block.craft_kaisen.domain_dripstone": "Domain Block",
+      "item.craft_kaisen.kasumi_miwa_spawn_egg": "Kasumi Miwa Spawn Egg",
       "key.craft_kaisen.charge_cursed_energy": "Charge Cursed Energy",
       "item.craft_kaisen.stronghit": "Stronghit",
       "gui.craft_kaisen.prestige_menu.tooltip_decline": "Decline",
       "death.attack.soul_damage.item": "%1$s was killed by %2$s using %3$s",
       "item.craft_kaisen.nanami_outfit_leggings": "Nanami Outfit ",
+      "advancements.subjugation_of_ko_guy.title": "Subjugation Of Ko Guy",
       "subtitles.domain.jackpot": "",
+      "advancements.pseudo_geto.title": "I will kill Kenjaku.",
       "effect.craft_kaisen.body_crushing": "Crushing",
       "advancements.round_deer_advancement.title": "Round Deer",
       "gui.craft_kaisen.phone_gui.button_place": "Place",
