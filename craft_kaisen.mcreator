@@ -31699,7 +31699,7 @@
       "name": "DomainClashingButton4",
       "type": "procedure",
       "sortid": 1388,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clashing_button_4",
       "metadata": {
@@ -31720,7 +31720,7 @@
       "name": "DomainClashingButton3",
       "type": "procedure",
       "sortid": 1387,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clashing_button_3",
       "metadata": {
@@ -31777,7 +31777,7 @@
       "name": "DomainClashUnlimitedVoid",
       "type": "procedure",
       "sortid": 1383,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clash_unlimited_void",
       "metadata": {
@@ -31833,7 +31833,7 @@
       "name": "DomainClashButton2",
       "type": "procedure",
       "sortid": 1386,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clash_button_2",
       "metadata": {
@@ -31854,7 +31854,7 @@
       "name": "DomainClashButton1",
       "type": "procedure",
       "sortid": 1385,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "domain_clash_button_1",
       "metadata": {
@@ -32315,7 +32315,7 @@
       "name": "CameraRayWhileProjectileFlyingTick",
       "type": "procedure",
       "sortid": 1420,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "camera_ray_while_projectile_flying_tick",
       "metadata": {
@@ -32470,7 +32470,7 @@
       "name": "CallPhoto",
       "type": "procedure",
       "sortid": 1422,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "call_photo",
       "metadata": {
@@ -32506,7 +32506,7 @@
       "name": "TitleSentChat",
       "type": "procedure",
       "sortid": 1419,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "title_sent_chat",
       "metadata": {
@@ -32690,7 +32690,7 @@
       "name": "BrotherTick",
       "type": "procedure",
       "sortid": 1401,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "brother_tick",
       "metadata": {
@@ -32726,7 +32726,7 @@
       "name": "SetBrotherTwo2",
       "type": "procedure",
       "sortid": 1404,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "set_brother_two_2",
       "metadata": {
@@ -32750,7 +32750,7 @@
       "name": "SetBrotherOne",
       "type": "procedure",
       "sortid": 1402,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "set_brother_one",
       "metadata": {
@@ -34122,8 +34122,8 @@
   "language_map": {
     "en_us": {
       "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-      "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "subtitles.sukuna": "sukuna talking",
+      "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
       "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
@@ -34156,13 +34156,13 @@
       "advancements.divine_general_mahoraga.descr": "Tame Mahoraga",
       "item.craft_kaisen.distorted_body_leggings": "Distorted Body Legs",
       "item.craft_kaisen.toge_inumaki_spawn_egg": "Toge Inumaki Spawn Egg",
-      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_alt_soul_isomer": "ALT - Soul Isomer",
+      "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
-      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
-      "advancements.special_grade.title": "Special Grade",
       "gui.craft_kaisen.main_menu.label_0": "0",
+      "advancements.special_grade.title": "Special Grade",
+      "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
       "advancements.history_of_jujutsu.descr": "Find a Jujutsu History Book",
       "item.craft_kaisen.takada_spawn_egg": "Takada Spawn Egg",
       "item_group.craft_kaisen.ck_weapons": "Ck Weapons",
