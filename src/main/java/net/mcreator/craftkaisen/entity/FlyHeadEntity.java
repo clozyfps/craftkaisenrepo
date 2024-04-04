@@ -1,17 +1,43 @@
 
 package net.mcreator.craftkaisen.entity;
 
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.nbt.Tag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.control.FlyingMoveControl;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.procedures.FlyHeadOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+
+import java.util.EnumSet;
 
 public class FlyHeadEntity extends Monster {
-
 	public FlyHeadEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(CraftKaisenModEntities.FLY_HEAD.get(), world);
 	}
@@ -21,9 +47,7 @@ public class FlyHeadEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
-
 		this.moveControl = new FlyingMoveControl(this, 10, true);
-
 	}
 
 	@Override
@@ -39,9 +63,7 @@ public class FlyHeadEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-
 		this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1.7, 20) {
-
 			@Override
 			protected Vec3 getPosition() {
 				RandomSource random = FlyHeadEntity.this.getRandom();
@@ -50,7 +72,6 @@ public class FlyHeadEntity extends Monster {
 				double dir_z = FlyHeadEntity.this.getZ() + ((random.nextFloat() * 2 - 1) * 16);
 				return new Vec3(dir_x, dir_y, dir_z);
 			}
-
 		});
 		this.goalSelector.addGoal(2, new Goal() {
 			{
@@ -92,18 +113,15 @@ public class FlyHeadEntity extends Monster {
 			}
 		});
 		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.8, true) {
-
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
-
 		});
 		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 2));
 		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(7, new FloatGoal(this));
-
 	}
 
 	@Override
@@ -123,7 +141,6 @@ public class FlyHeadEntity extends Monster {
 
 	@Override
 	public boolean causeFallDamage(float l, float d, DamageSource source) {
-
 		return false;
 	}
 
@@ -144,12 +161,10 @@ public class FlyHeadEntity extends Monster {
 
 	public void aiStep() {
 		super.aiStep();
-
 		this.setNoGravity(true);
 	}
 
 	public static void init() {
-
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -159,10 +174,7 @@ public class FlyHeadEntity extends Monster {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 1000);
-
 		builder = builder.add(Attributes.FLYING_SPEED, 0.6);
-
 		return builder;
 	}
-
 }

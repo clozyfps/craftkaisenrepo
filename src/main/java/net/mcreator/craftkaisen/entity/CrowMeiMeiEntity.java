@@ -1,17 +1,51 @@
 
 package net.mcreator.craftkaisen.entity;
 
-import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
+
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.nbt.Tag;
-import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.procedures.CrowOnEntityTickUpdateProcedure;
+import net.mcreator.craftkaisen.procedures.CrowMeiMeiOnInitialEntitySpawnProcedure;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 
 import javax.annotation.Nullable;
 
-public class CrowMeiMeiEntity extends Monster {
+import java.util.EnumSet;
 
+public class CrowMeiMeiEntity extends Monster {
 	public CrowMeiMeiEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(CraftKaisenModEntities.CROW_MEI_MEI.get(), world);
 	}
@@ -21,9 +55,7 @@ public class CrowMeiMeiEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
-
 		this.moveControl = new FlyingMoveControl(this, 10, true);
-
 	}
 
 	@Override
@@ -39,7 +71,6 @@ public class CrowMeiMeiEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-
 		this.goalSelector.addGoal(1, new Goal() {
 			{
 				this.setFlags(EnumSet.of(Goal.Flag.MOVE));
@@ -80,7 +111,6 @@ public class CrowMeiMeiEntity extends Monster {
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 2.5, 20) {
-
 			@Override
 			protected Vec3 getPosition() {
 				RandomSource random = CrowMeiMeiEntity.this.getRandom();
@@ -89,20 +119,16 @@ public class CrowMeiMeiEntity extends Monster {
 				double dir_z = CrowMeiMeiEntity.this.getZ() + ((random.nextFloat() * 2 - 1) * 16);
 				return new Vec3(dir_x, dir_y, dir_z);
 			}
-
 		});
 		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, false) {
-
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
-
 		});
 		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(6, new FloatGoal(this));
-
 	}
 
 	@Override
@@ -122,7 +148,6 @@ public class CrowMeiMeiEntity extends Monster {
 
 	@Override
 	public boolean causeFallDamage(float l, float d, DamageSource source) {
-
 		return false;
 	}
 
@@ -150,12 +175,10 @@ public class CrowMeiMeiEntity extends Monster {
 
 	public void aiStep() {
 		super.aiStep();
-
 		this.setNoGravity(true);
 	}
 
 	public static void init() {
-
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -165,10 +188,7 @@ public class CrowMeiMeiEntity extends Monster {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 5);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);
-
 		builder = builder.add(Attributes.FLYING_SPEED, 0.3);
-
 		return builder;
 	}
-
 }

@@ -47,6 +47,8 @@ public class BindingIceProcedure {
 			entity.getPersistentData().putDouble("domainx", (entity.getX()));
 			entity.getPersistentData().putDouble("domainy", (entity.getY()));
 			entity.getPersistentData().putDouble("domainz", (entity.getZ()));
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.BINDING_ICE_EFFECT_FIX.get(), 9999999, 0, false, false));
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 						"particle craft_kaisen:ice_cloud ^ ^ ^ 20 1 20 0.1 300 force @a");
@@ -189,8 +191,8 @@ public class BindingIceProcedure {
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity) && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
 							&& !(entityiterator instanceof BindingIceBlockEntity)) {
-						if (!(entityiterator instanceof LivingEntity _livEnt142 && _livEnt142.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
-								|| !(entityiterator instanceof LivingEntity _livEnt143 && _livEnt143.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
+						if (!(entityiterator instanceof LivingEntity _livEnt143 && _livEnt143.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+								|| !(entityiterator instanceof LivingEntity _livEnt144 && _livEnt144.hasEffect(CraftKaisenModMobEffects.DOMAIN_AMPLIFICATION.get()))) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.FROZEN_SOLID.get(), 150, 0, false, false));
 						}
@@ -222,6 +224,8 @@ public class BindingIceProcedure {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.UNSTABLE.get(),
 						(int) (1600 - (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).level * 3), 0, false, false));
+			if (entity instanceof LivingEntity _entity)
+				_entity.removeEffect(CraftKaisenModMobEffects.BINDING_ICE_EFFECT_FIX.get());
 		}
 	}
 }
