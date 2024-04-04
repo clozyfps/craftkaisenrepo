@@ -32799,6 +32799,56 @@
         ]
       },
       "path": "~/Potions"
+    },
+    {
+      "name": "Grab",
+      "type": "potioneffect",
+      "sortid": 1427,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grab",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/GrabMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "GrabOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1428,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grab_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/GrabOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
     }
   ],
   "variable_elements": [
@@ -34456,6 +34506,7 @@
       "effect.craft_kaisen.jackpot": "Jackpot",
       "gui.craft_kaisen.main_menu.tooltip_increase_movement_speed": "increase movement speed",
       "subtitles.magichit": "",
+      "effect.craft_kaisen.grab": "Grab",
       "gui.craft_kaisen.csmgui.button_10": "10",
       "item.craft_kaisen.ko_guy_spawn_egg": "Ko-Guy Spawn Egg",
       "item.craft_kaisen.crushed_ranged": "Crushed Ranged",

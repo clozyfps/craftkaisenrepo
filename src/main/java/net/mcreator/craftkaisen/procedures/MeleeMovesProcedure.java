@@ -5,27 +5,22 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.server.level.ServerPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.StronghitProjectileEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import javax.annotation.Nullable;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class MeleeMovesProcedure {
@@ -74,21 +69,8 @@ public class MeleeMovesProcedure {
 				});
 			}
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Grab")) {
-			{
-				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-						.collect(Collectors.toList());
-				for (Entity entityiterator : _entfound) {
-					if (!(entity == entityiterator)) {
-						{
-							Entity _ent = entityiterator;
-							_ent.teleportTo((entity.getY()), (entity.getX()), (entity.getZ()));
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport((entity.getY()), (entity.getX()), (entity.getZ()), _ent.getYRot(), _ent.getXRot());
-						}
-					}
-				}
-			}
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.GRAB.get(), 60, 0, false, false));
 			entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 50);
 			{
 				String _setval = "";
