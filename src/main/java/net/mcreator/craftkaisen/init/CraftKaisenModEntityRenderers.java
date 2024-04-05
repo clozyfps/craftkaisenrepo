@@ -15,6 +15,7 @@ import net.mcreator.craftkaisen.client.renderer.YutaOkkotsuRenderer;
 import net.mcreator.craftkaisen.client.renderer.YujiItadoriRenderer;
 import net.mcreator.craftkaisen.client.renderer.YoshinobuGakuganjiRenderer;
 import net.mcreator.craftkaisen.client.renderer.WoodenBoxRenderer;
+import net.mcreator.craftkaisen.client.renderer.WombDagonRenderer;
 import net.mcreator.craftkaisen.client.renderer.WhiteDivineDogRenderer;
 import net.mcreator.craftkaisen.client.renderer.UraumeRenderer;
 import net.mcreator.craftkaisen.client.renderer.UnlimitedVoidMobRenderer;
@@ -96,6 +97,10 @@ import net.mcreator.craftkaisen.client.renderer.FingerBearerRenderer;
 import net.mcreator.craftkaisen.client.renderer.EmberInsectRenderer;
 import net.mcreator.craftkaisen.client.renderer.EmberInsectProjectileProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.EightHandledSwordDivergentSilaDivineGeneralMahoragaRenderer;
+import net.mcreator.craftkaisen.client.renderer.DeathWarm2Renderer;
+import net.mcreator.craftkaisen.client.renderer.DeathSwarm3Renderer;
+import net.mcreator.craftkaisen.client.renderer.DeathSwarm1Renderer;
+import net.mcreator.craftkaisen.client.renderer.DagonRenderer;
 import net.mcreator.craftkaisen.client.renderer.CrowRenderer;
 import net.mcreator.craftkaisen.client.renderer.CrowMeiMeiRenderer;
 import net.mcreator.craftkaisen.client.renderer.CoffinMountainRenderer;
@@ -256,5 +261,10 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.KASUMI_MIWA.get(), KasumiMiwaRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.CAMERA_RAY.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.NANAKO_HASABA.get(), NanakoHasabaRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.WOMB_DAGON.get(), WombDagonRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.DAGON.get(), DagonRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_SWARM_1.get(), DeathSwarm1Renderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_WARM_2.get(), DeathWarm2Renderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_SWARM_3.get(), DeathSwarm3Renderer::new);
 	}
 }

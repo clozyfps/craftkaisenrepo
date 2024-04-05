@@ -56,6 +56,7 @@ import net.mcreator.craftkaisen.potion.DomainClashPotionMobEffect;
 import net.mcreator.craftkaisen.potion.DomainAmplificationMobEffect;
 import net.mcreator.craftkaisen.potion.DivergentFistPotionMobEffect;
 import net.mcreator.craftkaisen.potion.DistortedBodyKillingMobEffect;
+import net.mcreator.craftkaisen.potion.DeathSwarmMobEffect;
 import net.mcreator.craftkaisen.potion.CooldownMobEffect;
 import net.mcreator.craftkaisen.potion.ConstantSliceMobEffect;
 import net.mcreator.craftkaisen.potion.CleaveMobEffect;
@@ -124,4 +125,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> PARTIAL_SUMMON_RIKA = REGISTRY.register("partial_summon_rika", () -> new PartialSummonRikaMobEffect());
 	public static final RegistryObject<MobEffect> UNSTABLE = REGISTRY.register("unstable", () -> new UnstableMobEffect());
 	public static final RegistryObject<MobEffect> PRISON_BOX_STUN = REGISTRY.register("prison_box_stun", () -> new PrisonBoxStunMobEffect());
+	public static final RegistryObject<MobEffect> DEATH_SWARM = REGISTRY.register("death_swarm", () -> new DeathSwarmMobEffect());
 }

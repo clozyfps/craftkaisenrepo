@@ -21,6 +21,7 @@ import net.mcreator.craftkaisen.entity.YujiItadoriEntity;
 import net.mcreator.craftkaisen.entity.YoshinobuGakuganjiEntity;
 import net.mcreator.craftkaisen.entity.WorldCutDismantleEntity;
 import net.mcreator.craftkaisen.entity.WoodenBoxEntity;
+import net.mcreator.craftkaisen.entity.WombDagonEntity;
 import net.mcreator.craftkaisen.entity.WhiteDivineDogEntity;
 import net.mcreator.craftkaisen.entity.WaterMaximumElephantProjectileEntity;
 import net.mcreator.craftkaisen.entity.VolcanicEruptionProjectileEntity;
@@ -134,6 +135,10 @@ import net.mcreator.craftkaisen.entity.DontMoveRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.DismantleProjectileEntity;
 import net.mcreator.craftkaisen.entity.DismantlePrEntity;
 import net.mcreator.craftkaisen.entity.DisasterFlameRangedProjectileEntity;
+import net.mcreator.craftkaisen.entity.DeathWarm2Entity;
+import net.mcreator.craftkaisen.entity.DeathSwarm3Entity;
+import net.mcreator.craftkaisen.entity.DeathSwarm1Entity;
+import net.mcreator.craftkaisen.entity.DagonEntity;
 import net.mcreator.craftkaisen.entity.CrushedRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CrumbleAwayRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CrowMeiMeiEntity;
@@ -611,6 +616,20 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<NanakoHasabaEntity>of(NanakoHasabaEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NanakoHasabaEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<WombDagonEntity>> WOMB_DAGON = register("womb_dagon",
+			EntityType.Builder.<WombDagonEntity>of(WombDagonEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WombDagonEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<DagonEntity>> DAGON = register("dagon",
+			EntityType.Builder.<DagonEntity>of(DagonEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DagonEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<DeathSwarm1Entity>> DEATH_SWARM_1 = register("death_swarm_1", EntityType.Builder.<DeathSwarm1Entity>of(DeathSwarm1Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathSwarm1Entity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<DeathWarm2Entity>> DEATH_WARM_2 = register("death_warm_2", EntityType.Builder.<DeathWarm2Entity>of(DeathWarm2Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathWarm2Entity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<DeathSwarm3Entity>> DEATH_SWARM_3 = register("death_swarm_3", EntityType.Builder.<DeathSwarm3Entity>of(DeathSwarm3Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathSwarm3Entity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -711,6 +730,11 @@ public class CraftKaisenModEntities {
 			YoshinobuGakuganjiEntity.init();
 			KasumiMiwaEntity.init();
 			NanakoHasabaEntity.init();
+			WombDagonEntity.init();
+			DagonEntity.init();
+			DeathSwarm1Entity.init();
+			DeathWarm2Entity.init();
+			DeathSwarm3Entity.init();
 		});
 	}
 
@@ -808,5 +832,10 @@ public class CraftKaisenModEntities {
 		event.put(YOSHINOBU_GAKUGANJI.get(), YoshinobuGakuganjiEntity.createAttributes().build());
 		event.put(KASUMI_MIWA.get(), KasumiMiwaEntity.createAttributes().build());
 		event.put(NANAKO_HASABA.get(), NanakoHasabaEntity.createAttributes().build());
+		event.put(WOMB_DAGON.get(), WombDagonEntity.createAttributes().build());
+		event.put(DAGON.get(), DagonEntity.createAttributes().build());
+		event.put(DEATH_SWARM_1.get(), DeathSwarm1Entity.createAttributes().build());
+		event.put(DEATH_WARM_2.get(), DeathWarm2Entity.createAttributes().build());
+		event.put(DEATH_SWARM_3.get(), DeathSwarm3Entity.createAttributes().build());
 	}
 }

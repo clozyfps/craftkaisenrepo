@@ -382,6 +382,25 @@ public class SetMovesProcedure {
 					entity.getPersistentData().putDouble("moveCost", 7);
 				}
 			}
+			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Disaster Tides")) {
+				entity.getPersistentData().putDouble("maxMoves", 4);
+				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
+					entity.getPersistentData().putString("moveDisplay", "Tides");
+					entity.getPersistentData().putDouble("moveCost", 5);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
+					entity.getPersistentData().putString("moveDisplay", "Fishes");
+					entity.getPersistentData().putDouble("moveCost", 10);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
+					entity.getPersistentData().putString("moveDisplay", "Death Swarm");
+					entity.getPersistentData().putDouble("moveCost", 7);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 4) {
+					entity.getPersistentData().putString("moveDisplay", "Horizon of the Captivating Skandha (WIP)");
+					entity.getPersistentData().putDouble("moveCost", 7);
+				}
+			}
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Cursed Energy")) {
 			CursedEnergySwitchProcedure.execute(entity);
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Melee")) {
