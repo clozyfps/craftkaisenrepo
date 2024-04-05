@@ -32787,23 +32787,6 @@
       "path": "~/Commands/Procedures"
     },
     {
-      "name": "WombDagon",
-      "type": "livingentity",
-      "sortid": 1426,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "womb_dagon",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/womb_dagon_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/WombDagonEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/WombDagonRenderer.java",
-          "src/main/resources/assets/craft_kaisen/models/item/womb_dagon_spawn_egg.json"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
       "name": "Dagon",
       "type": "livingentity",
       "sortid": 1427,
@@ -32821,51 +32804,6 @@
       "path": "~/Mobs"
     },
     {
-      "name": "DeathSwarm1",
-      "type": "livingentity",
-      "sortid": 1428,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "death_swarm_1",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/DeathSwarm1Renderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/DeathSwarm1Entity.java"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
-      "name": "DeathWarm2",
-      "type": "livingentity",
-      "sortid": 1429,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "death_warm_2",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/entity/DeathWarm2Entity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/DeathWarm2Renderer.java"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
-      "name": "DeathSwarm3",
-      "type": "livingentity",
-      "sortid": 1430,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "death_swarm_3",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/DeathSwarm3Renderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/DeathSwarm3Entity.java"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
       "name": "DeathSwarm",
       "type": "potioneffect",
       "sortid": 1431,
@@ -32878,6 +32816,42 @@
         ]
       },
       "path": "~/Potions"
+    },
+    {
+      "name": "DeathSwarmEffectExpires",
+      "type": "procedure",
+      "sortid": 1434,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "death_swarm_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DeathSwarmEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
     },
     {
       "name": "DeathSwarmTiktok",
@@ -32916,6 +32890,68 @@
       "path": "~/Procedures"
     },
     {
+      "name": "DeathSwarm1",
+      "type": "livingentity",
+      "sortid": 1428,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "death_swarm_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/DeathSwarm1Renderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/DeathSwarm1Entity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "DeathSwarm3",
+      "type": "livingentity",
+      "sortid": 1430,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "death_swarm_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/DeathSwarm3Renderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/DeathSwarm3Entity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "WombDagon",
+      "type": "livingentity",
+      "sortid": 1426,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "womb_dagon",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/womb_dagon_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/WombDagonEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/WombDagonRenderer.java",
+          "src/main/resources/assets/craft_kaisen/models/item/womb_dagon_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "DeathWarm2",
+      "type": "livingentity",
+      "sortid": 1429,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "death_warm_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/DeathWarm2Entity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/DeathWarm2Renderer.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
       "name": "DeathSwarmOnEffectActiveTick",
       "type": "procedure",
       "sortid": 1433,
@@ -32952,15 +32988,29 @@
       "path": "~/Potions/Procedures"
     },
     {
-      "name": "DeathSwarmEffectExpires",
-      "type": "procedure",
-      "sortid": 1434,
+      "name": "BindingIceEffectFix",
+      "type": "potioneffect",
+      "sortid": 1426,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "death_swarm_effect_expires",
+      "registry_name": "binding_ice_effect_fix",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/procedures/DeathSwarmEffectExpiresProcedure.java"
+          "src/main/java/net/mcreator/craftkaisen/potion/BindingIceEffectFixMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "GrabOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1428,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grab_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/GrabOnEffectActiveTickProcedure.java"
         ],
         "dependencies": [
           {
@@ -32986,6 +33036,20 @@
         ]
       },
       "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "Grab",
+      "type": "potioneffect",
+      "sortid": 1427,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grab",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/GrabMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
     }
   ],
   "variable_elements": [

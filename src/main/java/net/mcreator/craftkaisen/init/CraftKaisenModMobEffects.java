@@ -46,6 +46,7 @@ import net.mcreator.craftkaisen.potion.LapseBlueControlMobEffect;
 import net.mcreator.craftkaisen.potion.LapseBlueControlGojoMobEffect;
 import net.mcreator.craftkaisen.potion.JackpotMobEffect;
 import net.mcreator.craftkaisen.potion.HeianSlicesMobEffect;
+import net.mcreator.craftkaisen.potion.GrabMobEffect;
 import net.mcreator.craftkaisen.potion.FrozenSolidMobEffect;
 import net.mcreator.craftkaisen.potion.FrameOnMobEffect;
 import net.mcreator.craftkaisen.potion.FrameEnableMobEffect;
@@ -66,6 +67,7 @@ import net.mcreator.craftkaisen.potion.BodyShapeCooldownMobEffect;
 import net.mcreator.craftkaisen.potion.BodyShapeActiveMobEffect;
 import net.mcreator.craftkaisen.potion.BodyCrushingMobEffect;
 import net.mcreator.craftkaisen.potion.BloodWaveMobEffect;
+import net.mcreator.craftkaisen.potion.BindingIceEffectFixMobEffect;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 public class CraftKaisenModMobEffects {
@@ -125,5 +127,7 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> PARTIAL_SUMMON_RIKA = REGISTRY.register("partial_summon_rika", () -> new PartialSummonRikaMobEffect());
 	public static final RegistryObject<MobEffect> UNSTABLE = REGISTRY.register("unstable", () -> new UnstableMobEffect());
 	public static final RegistryObject<MobEffect> PRISON_BOX_STUN = REGISTRY.register("prison_box_stun", () -> new PrisonBoxStunMobEffect());
+	public static final RegistryObject<MobEffect> BINDING_ICE_EFFECT_FIX = REGISTRY.register("binding_ice_effect_fix", () -> new BindingIceEffectFixMobEffect());
+	public static final RegistryObject<MobEffect> GRAB = REGISTRY.register("grab", () -> new GrabMobEffect());
 	public static final RegistryObject<MobEffect> DEATH_SWARM = REGISTRY.register("death_swarm", () -> new DeathSwarmMobEffect());
 }

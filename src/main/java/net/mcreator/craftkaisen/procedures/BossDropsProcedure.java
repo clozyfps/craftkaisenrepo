@@ -1,34 +1,6 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-
-import net.mcreator.craftkaisen.init.CraftKaisenModItems;
-import net.mcreator.craftkaisen.init.CraftKaisenModGameRules;
-import net.mcreator.craftkaisen.entity.YutaOkkotsuEntity;
-import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
-import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
-import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
-import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
-import net.mcreator.craftkaisen.entity.NaobitoEntity;
-import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
-import net.mcreator.craftkaisen.entity.MeiMeiEntity;
-import net.mcreator.craftkaisen.entity.MahitoEntity;
-import net.mcreator.craftkaisen.entity.KasumiMiwaEntity;
-import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
-import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
-import net.mcreator.craftkaisen.entity.AwakenedMakiEntity;
-import net.mcreator.craftkaisen.entity.AoiTodoEntity;
 
 import javax.annotation.Nullable;
 
