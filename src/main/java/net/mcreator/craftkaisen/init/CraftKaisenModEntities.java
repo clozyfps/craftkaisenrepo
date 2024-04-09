@@ -623,7 +623,7 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<DagonEntity>> DAGON = register("dagon",
 			EntityType.Builder.<DagonEntity>of(DagonEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DagonEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.8f, 3f));
 	public static final RegistryObject<EntityType<DeathSwarm1Entity>> DEATH_SWARM_1 = register("death_swarm_1", EntityType.Builder.<DeathSwarm1Entity>of(DeathSwarm1Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathSwarm1Entity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<DeathWarm2Entity>> DEATH_WARM_2 = register("death_warm_2", EntityType.Builder.<DeathWarm2Entity>of(DeathWarm2Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
