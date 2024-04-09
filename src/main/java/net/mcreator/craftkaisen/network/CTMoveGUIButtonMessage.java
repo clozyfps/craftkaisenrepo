@@ -108,23 +108,23 @@ public class CTMoveGUIButtonMessage {
 		}
 		if (buttonID == 8) {
 
-			SetAbility2Procedure.execute(entity);
+			SetAbility2Procedure.execute(world, entity);
 		}
 		if (buttonID == 9) {
 
-			SetAbility3Procedure.execute(entity);
+			SetAbility3Procedure.execute(world, entity);
 		}
 		if (buttonID == 10) {
 
-			SetAbility4Procedure.execute(entity);
+			SetAbility4Procedure.execute(world, entity);
 		}
 		if (buttonID == 11) {
 
-			SetAbility5Procedure.execute(entity);
+			SetAbility5Procedure.execute(world, entity);
 		}
 		if (buttonID == 12) {
 
-			SetAbility6Procedure.execute(entity);
+			SetAbility6Procedure.execute(world, entity);
 		}
 	}
 
