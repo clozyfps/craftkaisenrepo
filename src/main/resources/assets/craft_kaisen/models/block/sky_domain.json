@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "craft_kaisen:block/aquaskydomainblock",
+    "up": "craft_kaisen:block/aquaskydomainblock",
+    "north": "craft_kaisen:block/aquaskydomainblock",
+    "east": "craft_kaisen:block/aquaskydomainblock",
+    "south": "craft_kaisen:block/aquaskydomainblock",
+    "west": "craft_kaisen:block/aquaskydomainblock",
+    "particle": "craft_kaisen:block/aquaskydomainblock"
+  },
+  "render_type": "solid"
+}

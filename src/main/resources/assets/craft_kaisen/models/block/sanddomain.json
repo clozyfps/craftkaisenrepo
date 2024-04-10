@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "craft_kaisen:block/sandomain",
+    "up": "craft_kaisen:block/sandomain",
+    "north": "craft_kaisen:block/sandomain",
+    "east": "craft_kaisen:block/sandomain",
+    "south": "craft_kaisen:block/sandomain",
+    "west": "craft_kaisen:block/sandomain",
+    "particle": "craft_kaisen:block/sandomain"
+  },
+  "render_type": "solid"
+}

@@ -5244,6 +5244,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -33594,6 +33610,108 @@
         ]
       },
       "path": "~/Procedures"
+    },
+    {
+      "name": "DisasterTidesDomainExpasion",
+      "type": "procedure",
+      "sortid": 1458,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster_tides_domain_expasion",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisasterTidesDomainExpasionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/DisasterTides"
+    },
+    {
+      "name": "DisasterTidesDomainRemove",
+      "type": "procedure",
+      "sortid": 1459,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster_tides_domain_remove",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisasterTidesDomainRemoveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/DisasterTides"
+    },
+    {
+      "name": "Sanddomain",
+      "type": "block",
+      "sortid": 1457,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sanddomain",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/block/SanddomainBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/item/sanddomain.json",
+          "src/main/resources/assets/craft_kaisen/models/block/sanddomain.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/sanddomain.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "SkyDomain",
+      "type": "block",
+      "sortid": 1460,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sky_domain",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/sky_domain.json",
+          "src/main/java/net/mcreator/craftkaisen/block/SkyDomainBlock.java",
+          "src/main/resources/assets/craft_kaisen/blockstates/sky_domain.json",
+          "src/main/resources/assets/craft_kaisen/models/block/sky_domain.json"
+        ]
+      },
+      "path": "~/Blocks"
     }
   ],
   "variable_elements": [
@@ -35182,6 +35300,7 @@
       "item.craft_kaisen.prison_box_spawn_egg": "Prison Box Spawn Egg",
       "entity.craft_kaisen.nanako_hasaba": "Nanako Hasaba",
       "subtitles.unlimitedsplash": "",
+      "block.craft_kaisen.sanddomain": "Sand Domain ",
       "advancements.shinjuku_showdown.title": "Shinjuku Showdown",
       "gui.craft_kaisen.main_menu.tooltip_increase_max_health": "increase max health",
       "item.craft_kaisen.cursed_teddy_bear": "Cursed Teddy Bear",
@@ -35299,6 +35418,7 @@
       "gui.craft_kaisen.ct_move_gui.button_set_ability_41": "Foward Page \u003e\u003e",
       "entity.craft_kaisen.ko_guy": "Ko-Guy",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_42": "Unlock",
+      "block.craft_kaisen.sky_domain": "Ice Domain Wall",
       "entity.craft_kaisen.death_swarm_3": "Death Swarm 3",
       "entity.craft_kaisen.red_closed_door": "Red Closed Door",
       "entity.craft_kaisen.death_swarm_1": "Death Swarm 1",
@@ -35780,6 +35900,10 @@
           },
           {
             "name": "Cursed Energy",
+            "children": []
+          },
+          {
+            "name": "DisasterTides",
             "children": []
           }
         ]
