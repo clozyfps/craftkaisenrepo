@@ -13,9 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.mcreator.craftkaisen.block.TalismanBlockBlock;
 import net.mcreator.craftkaisen.block.SprinklerOnBlock;
 import net.mcreator.craftkaisen.block.SprinklerBlock;
-import net.mcreator.craftkaisen.block.SkyDomainBlock;
 import net.mcreator.craftkaisen.block.ShibuyaGatesBlock;
-import net.mcreator.craftkaisen.block.SanddomainBlock;
 import net.mcreator.craftkaisen.block.QuestBoardBlock;
 import net.mcreator.craftkaisen.block.PPLTDomainFloorBlock;
 import net.mcreator.craftkaisen.block.MagmaDomainWallBlock;
@@ -24,6 +22,8 @@ import net.mcreator.craftkaisen.block.IceDomainWallBlock;
 import net.mcreator.craftkaisen.block.IceDomainFloorBlock;
 import net.mcreator.craftkaisen.block.DomainStarBlockBlock;
 import net.mcreator.craftkaisen.block.DomainSmoothBasaltBlock;
+import net.mcreator.craftkaisen.block.DomainSkyBlock;
+import net.mcreator.craftkaisen.block.DomainSandBlock;
 import net.mcreator.craftkaisen.block.DomainPackedIceBlock;
 import net.mcreator.craftkaisen.block.DomainMiniVolcanoBlock;
 import net.mcreator.craftkaisen.block.DomainMagmaBlock;
@@ -72,6 +72,6 @@ public class CraftKaisenModBlocks {
 	public static final RegistryObject<Block> ICE_DOMAIN_FLOOR = REGISTRY.register("ice_domain_floor", () -> new IceDomainFloorBlock());
 	public static final RegistryObject<Block> ICE_DOMAIN_WALL = REGISTRY.register("ice_domain_wall", () -> new IceDomainWallBlock());
 	public static final RegistryObject<Block> PPLT_DOMAIN_FLOOR = REGISTRY.register("pplt_domain_floor", () -> new PPLTDomainFloorBlock());
-	public static final RegistryObject<Block> SANDDOMAIN = REGISTRY.register("sanddomain", () -> new SanddomainBlock());
-	public static final RegistryObject<Block> SKY_DOMAIN = REGISTRY.register("sky_domain", () -> new SkyDomainBlock());
+	public static final RegistryObject<Block> DOMAIN_SKY = REGISTRY.register("domain_sky", () -> new DomainSkyBlock());
+	public static final RegistryObject<Block> DOMAIN_SAND = REGISTRY.register("domain_sand", () -> new DomainSandBlock());
 }

@@ -33680,38 +33680,241 @@
       "path": "~/Abilities/DisasterTides"
     },
     {
-      "name": "Sanddomain",
+      "name": "DomainSky",
       "type": "block",
-      "sortid": 1457,
+      "sortid": 1461,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "sanddomain",
+      "registry_name": "domain_sky",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/block/SanddomainBlock.java",
-          "src/main/resources/assets/craft_kaisen/models/item/sanddomain.json",
-          "src/main/resources/assets/craft_kaisen/models/block/sanddomain.json",
-          "src/main/resources/assets/craft_kaisen/blockstates/sanddomain.json"
+          "src/main/java/net/mcreator/craftkaisen/block/DomainSkyBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_sky.json",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_sky.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_sky.json"
         ]
       },
-      "path": "~/Blocks"
+      "path": "~/Blocks/Domain Blocks"
     },
     {
-      "name": "SkyDomain",
+      "name": "DomainSand",
       "type": "block",
-      "sortid": 1460,
+      "sortid": 1462,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "sky_domain",
+      "registry_name": "domain_sand",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/sky_domain.json",
-          "src/main/java/net/mcreator/craftkaisen/block/SkyDomainBlock.java",
-          "src/main/resources/assets/craft_kaisen/blockstates/sky_domain.json",
-          "src/main/resources/assets/craft_kaisen/models/block/sky_domain.json"
+          "src/main/java/net/mcreator/craftkaisen/block/DomainSandBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_sand.json",
+          "src/main/resources/assets/craft_kaisen/models/item/domain_sand.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_sand.json"
         ]
       },
-      "path": "~/Blocks"
+      "path": "~/Blocks/Domain Blocks"
+    },
+    {
+      "name": "DisasterTidesMoveUse",
+      "type": "procedure",
+      "sortid": 1463,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster_tides_move_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisasterTidesMoveUseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/MoveUse"
+    },
+    {
+      "name": "SetTides",
+      "type": "procedure",
+      "sortid": 1464,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_tides",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetTidesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "TidesTre",
+      "type": "livingentity",
+      "sortid": 1465,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tides_tre",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/tides_tre_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/TidesTreEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/TidesTreRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Domain"
+    },
+    {
+      "name": "DomainSandBlockAdded",
+      "type": "procedure",
+      "sortid": 1466,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_sand_block_added",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DomainSandBlockAddedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Blocks/Procedure"
+    },
+    {
+      "name": "TidesTreEntityIsHurt",
+      "type": "procedure",
+      "sortid": 1467,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tides_tre_entity_is_hurt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TidesTreEntityIsHurtProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Domain"
+    },
+    {
+      "name": "SetupAnimations",
+      "type": "procedure",
+      "sortid": 1468,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setup_animations",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetupAnimationsProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "FugaEffect",
+      "type": "procedure",
+      "sortid": 1469,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fuga_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FugaEffectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "FugaArrow",
+      "type": "function",
+      "sortid": 1470,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fuga_arrow",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/fuga_arrow.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "FugaArrowArrow",
+      "type": "function",
+      "sortid": 1471,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fuga_arrow_arrow",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/fuga_arrow_arrow.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
     }
   ],
   "variable_elements": [
@@ -35060,13 +35263,21 @@
       ],
       "category": "neutral",
       "subtitle": ""
+    },
+    {
+      "name": "domainexpasiontides",
+      "files": [
+        "tidesdomainsound"
+      ],
+      "category": "player",
+      "subtitle": ""
     }
   ],
   "language_map": {
     "en_us": {
       "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-      "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "subtitles.sukuna": "sukuna talking",
+      "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
       "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
@@ -35149,6 +35360,7 @@
       "block.craft_kaisen.domain_air_block": "Domain Air Block",
       "item.craft_kaisen.yuta_outfit_leggings": "Yuta Pants",
       "item.craft_kaisen.choso_spawn_egg": "Choso Spawn Egg",
+      "subtitles.domainexpasiontides": "",
       "effect.craft_kaisen.pre_red": "PreRed",
       "entity.craft_kaisen.naobito": "Naobito",
       "advancements.elimination_of_aoi_todo.descr": "Kill Aoi Todo",
@@ -35300,7 +35512,6 @@
       "item.craft_kaisen.prison_box_spawn_egg": "Prison Box Spawn Egg",
       "entity.craft_kaisen.nanako_hasaba": "Nanako Hasaba",
       "subtitles.unlimitedsplash": "",
-      "block.craft_kaisen.sanddomain": "Sand Domain ",
       "advancements.shinjuku_showdown.title": "Shinjuku Showdown",
       "gui.craft_kaisen.main_menu.tooltip_increase_max_health": "increase max health",
       "item.craft_kaisen.cursed_teddy_bear": "Cursed Teddy Bear",
@@ -35393,6 +35604,7 @@
       "advancements.jujutsu_kaisen.title": "Jujutsu Kaisen",
       "advancements.maximum_elephant_advancement.descr": "Tame Maximum Elephant",
       "key.craft_kaisen.output": "Output",
+      "entity.craft_kaisen.tides_tre": "Tides Tree",
       "gui.craft_kaisen.move_gui.button_4": "4",
       "gui.craft_kaisen.csmgui.button_1": "1",
       "gui.craft_kaisen.move_gui.button_3": "3",
@@ -35418,7 +35630,6 @@
       "gui.craft_kaisen.ct_move_gui.button_set_ability_41": "Foward Page \u003e\u003e",
       "entity.craft_kaisen.ko_guy": "Ko-Guy",
       "gui.craft_kaisen.ct_move_gui.button_set_ability_42": "Unlock",
-      "block.craft_kaisen.sky_domain": "Ice Domain Wall",
       "entity.craft_kaisen.death_swarm_3": "Death Swarm 3",
       "entity.craft_kaisen.red_closed_door": "Red Closed Door",
       "entity.craft_kaisen.death_swarm_1": "Death Swarm 1",
@@ -35560,6 +35771,7 @@
       "entity.craft_kaisen.uraume": "Uraume",
       "block.craft_kaisen.domain_magma": "Domain Block",
       "advancements.older_brother.descr": "Kill Choso",
+      "block.craft_kaisen.domain_sand": "Domain Sand",
       "effect.craft_kaisen.flow": "Flow",
       "item.craft_kaisen.mouth_cursed_spirit_spawn_egg": "Mouth Cursed Spirit Spawn Egg",
       "entity.craft_kaisen.yuta_okkotsu": "Yuta Okkotsu",
@@ -35619,6 +35831,7 @@
       "gui.craft_kaisen.domain_clash.button_x": "X",
       "effect.craft_kaisen.sukuna": "Sukuna",
       "advancements.elimination_of_aoi_todo.title": "Elimination Of Aoi Todo",
+      "block.craft_kaisen.domain_sky": "Domain Sky",
       "gui.craft_kaisen.body_shape_overlay.label_shift_slicing": "SHIFT - Slicing",
       "entity.craft_kaisen.small_pox_deity": "Small Pox Deity",
       "gui.craft_kaisen.main_menu.tooltip_increase_energy_regen_rate_and_m": "increase energy regen rate and max output",
@@ -35640,6 +35853,7 @@
       "effect.craft_kaisen.prison_box_stun": "PrisonBoxStun",
       "advancements.blessed_by_the_sparks_advancement.descr": "Your chances for landing a black flash are significantly increased.",
       "advancements.rabbit_escape.title": "Rabbit Escape",
+      "item.craft_kaisen.tides_tre_spawn_egg": "Tides Tree Spawn Egg",
       "entity.craft_kaisen.nanami_kento": "Nanami Kento",
       "advancements.perception_of_the_soul.title": "Perception Of The Soul",
       "item.craft_kaisen.roppongi_cursed_spirit_spawn_egg": "Roppongi Cursed Spirit Spawn Egg",

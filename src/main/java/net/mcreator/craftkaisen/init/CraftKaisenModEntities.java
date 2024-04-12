@@ -32,6 +32,7 @@ import net.mcreator.craftkaisen.entity.TwistRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.TogeInumakiEntity;
 import net.mcreator.craftkaisen.entity.ToadEntity;
+import net.mcreator.craftkaisen.entity.TidesTreEntity;
 import net.mcreator.craftkaisen.entity.ThrowPlayerMobEntity;
 import net.mcreator.craftkaisen.entity.TenShadowRabbitEntity;
 import net.mcreator.craftkaisen.entity.TakadaEntity;
@@ -630,6 +631,8 @@ public class CraftKaisenModEntities {
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathWarm2Entity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<DeathSwarm3Entity>> DEATH_SWARM_3 = register("death_swarm_3", EntityType.Builder.<DeathSwarm3Entity>of(DeathSwarm3Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathSwarm3Entity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<TidesTreEntity>> TIDES_TRE = register("tides_tre",
+			EntityType.Builder.<TidesTreEntity>of(TidesTreEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TidesTreEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -735,6 +738,7 @@ public class CraftKaisenModEntities {
 			DeathSwarm1Entity.init();
 			DeathWarm2Entity.init();
 			DeathSwarm3Entity.init();
+			TidesTreEntity.init();
 		});
 	}
 
@@ -837,5 +841,6 @@ public class CraftKaisenModEntities {
 		event.put(DEATH_SWARM_1.get(), DeathSwarm1Entity.createAttributes().build());
 		event.put(DEATH_WARM_2.get(), DeathWarm2Entity.createAttributes().build());
 		event.put(DEATH_SWARM_3.get(), DeathSwarm3Entity.createAttributes().build());
+		event.put(TIDES_TRE.get(), TidesTreEntity.createAttributes().build());
 	}
 }

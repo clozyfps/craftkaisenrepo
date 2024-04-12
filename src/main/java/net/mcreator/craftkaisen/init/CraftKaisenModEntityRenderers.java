@@ -23,6 +23,7 @@ import net.mcreator.craftkaisen.client.renderer.UnlimitedVoidAccelerateRenderer;
 import net.mcreator.craftkaisen.client.renderer.TojiFushiguroRenderer;
 import net.mcreator.craftkaisen.client.renderer.TogeInumakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.ToadRenderer;
+import net.mcreator.craftkaisen.client.renderer.TidesTreRenderer;
 import net.mcreator.craftkaisen.client.renderer.ThrowPlayerMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.TenShadowRabbitRenderer;
 import net.mcreator.craftkaisen.client.renderer.TakadaRenderer;
@@ -266,5 +267,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_SWARM_1.get(), DeathSwarm1Renderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_WARM_2.get(), DeathWarm2Renderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_SWARM_3.get(), DeathSwarm3Renderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.TIDES_TRE.get(), TidesTreRenderer::new);
 	}
 }

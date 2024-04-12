@@ -1,5 +1,5 @@
 {
-  "parent": "craft_kaisen:block/sky_domain",
+  "parent": "craft_kaisen:block/domain_sand",
   "display": {
     "thirdperson": {
       "rotation": [

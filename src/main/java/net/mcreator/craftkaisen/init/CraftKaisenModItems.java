@@ -307,8 +307,9 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> NANAKO_HASABA_SPAWN_EGG = REGISTRY.register("nanako_hasaba_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.NANAKO_HASABA, -5659046, -2056352, new Item.Properties()));
 	public static final RegistryObject<Item> WOMB_DAGON_SPAWN_EGG = REGISTRY.register("womb_dagon_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.WOMB_DAGON, -7019, -1966080, new Item.Properties()));
 	public static final RegistryObject<Item> DAGON_SPAWN_EGG = REGISTRY.register("dagon_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.DAGON, -3407821, -6320305, new Item.Properties()));
-	public static final RegistryObject<Item> SANDDOMAIN = block(CraftKaisenModBlocks.SANDDOMAIN);
-	public static final RegistryObject<Item> SKY_DOMAIN = block(CraftKaisenModBlocks.SKY_DOMAIN);
+	public static final RegistryObject<Item> DOMAIN_SKY = block(CraftKaisenModBlocks.DOMAIN_SKY);
+	public static final RegistryObject<Item> DOMAIN_SAND = block(CraftKaisenModBlocks.DOMAIN_SAND);
+	public static final RegistryObject<Item> TIDES_TRE_SPAWN_EGG = REGISTRY.register("tides_tre_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.TIDES_TRE, -1, -1, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

@@ -2,17 +2,17 @@
   "_fv": 57,
   "_type": "block",
   "definition": {
-    "texture": "sandomain",
-    "textureTop": "sandomain",
-    "textureLeft": "sandomain",
-    "textureFront": "sandomain",
-    "textureRight": "sandomain",
-    "textureBack": "sandomain",
+    "texture": "aquaskydomainblock",
+    "textureTop": "aquaskydomainblock",
+    "textureLeft": "aquaskydomainblock",
+    "textureFront": "aquaskydomainblock",
+    "textureRight": "aquaskydomainblock",
+    "textureBack": "aquaskydomainblock",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
     "enablePitch": false,
-    "emissiveRendering": false,
+    "emissiveRendering": true,
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "",
@@ -33,12 +33,12 @@
         "subtract": false
       }
     ],
-    "name": "Sand Domain ",
+    "name": "Domain Sky",
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 9000.0,
-    "resistance": 9000.0,
+    "hardness": 4500.0,
+    "resistance": 4500.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
@@ -56,7 +56,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 15,
     "material": {
-      "value": "SAND"
+      "value": "GLASS"
     },
     "tickRate": 0,
     "tickRandomly": false,
@@ -98,7 +98,7 @@
     "stepSound": {
       "value": ""
     },
-    "luminance": 0,
+    "luminance": 3,
     "unbreakable": true,
     "breakHarvestLevel": 1,
     "isBonemealable": false,
@@ -119,6 +119,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "DomainBlockDecay"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [],

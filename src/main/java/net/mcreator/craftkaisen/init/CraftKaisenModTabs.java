@@ -28,6 +28,10 @@ public class CraftKaisenModTabs {
 			tabData.accept(CraftKaisenModItems.DISASTER_FLAME_RANGED.get());
 			tabData.accept(CraftKaisenModItems.FLOWER_PROJECTILE.get());
 		}
+
+		if (tabData.getTab() == CreativeModeTabs.SPAWN_EGGS) {
+			tabData.accept(CraftKaisenModItems.TIDES_TRE_SPAWN_EGG.get());
+		}
 	}
 
 	@SubscribeEvent

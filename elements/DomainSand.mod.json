@@ -2,17 +2,17 @@
   "_fv": 57,
   "_type": "block",
   "definition": {
-    "texture": "aquaskydomainblock",
-    "textureTop": "aquaskydomainblock",
-    "textureLeft": "aquaskydomainblock",
-    "textureFront": "aquaskydomainblock",
-    "textureRight": "aquaskydomainblock",
-    "textureBack": "aquaskydomainblock",
+    "texture": "sandomain",
+    "textureTop": "sandomain",
+    "textureLeft": "sandomain",
+    "textureFront": "sandomain",
+    "textureRight": "sandomain",
+    "textureBack": "sandomain",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
     "enablePitch": false,
-    "emissiveRendering": true,
+    "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "",
@@ -33,12 +33,12 @@
         "subtract": false
       }
     ],
-    "name": "Ice Domain Wall",
+    "name": "Domain Sand",
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 9000.0,
-    "resistance": 9000.0,
+    "hardness": 4500.0,
+    "resistance": 4500.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
@@ -56,7 +56,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 15,
     "material": {
-      "value": "GLASS"
+      "value": "SAND"
     },
     "tickRate": 0,
     "tickRandomly": false,
@@ -98,7 +98,7 @@
     "stepSound": {
       "value": ""
     },
-    "luminance": 3,
+    "luminance": 0,
     "unbreakable": true,
     "breakHarvestLevel": 1,
     "isBonemealable": false,
@@ -119,6 +119,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "DomainBlockDecay"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [],

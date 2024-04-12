@@ -15,6 +15,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.Commands;
 
+import net.mcreator.craftkaisen.procedures.SetTidesProcedure;
 import net.mcreator.craftkaisen.procedures.SetTenShadowsProcedure;
 import net.mcreator.craftkaisen.procedures.SetSukunaProcedure;
 import net.mcreator.craftkaisen.procedures.SetStrengthStatProcedure;
@@ -400,6 +401,20 @@ public class SetCommandCommand {
 						direction = entity.getDirection();
 
 					SetCameraProcedure.execute(arguments);
+					return 0;
+				})).then(Commands.literal("DisasterTides").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetTidesProcedure.execute(arguments);
 					return 0;
 				})))).then(Commands.literal("Race").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Human").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
