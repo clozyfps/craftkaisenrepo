@@ -2,6 +2,8 @@ package net.mcreator.craftkaisen.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
@@ -18,6 +20,8 @@ import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
@@ -149,6 +153,12 @@ public class DisasterTidesDomainExpasionProcedure {
 							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 						_level.addFreshEntity(entityToSpawn);
 					}
+				}
+				for (int index1 = 0; index1 < 10; index1++) {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								("/execute at " + entity.getDisplayName().getString() + " run fill ^" + Mth.nextInt(RandomSource.create(), -8, 8) + " ^ ^5 ^" + Mth.nextInt(RandomSource.create(), 5, 14) + " ^"
+										+ Mth.nextInt(RandomSource.create(), -8, 8) + " ^-5 ^" + Mth.nextInt(RandomSource.create(), 5, 14) + " water replace craft_kaisen:domain_sand"));
 				}
 			});
 			CraftKaisenMod.queueServerWork(1190, () -> {

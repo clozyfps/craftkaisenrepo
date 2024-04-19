@@ -368,13 +368,6 @@ public class FugaEffectProcedure {
 																				_level.getServer().getCommands().performPrefixedCommand(
 																						new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 																						("execute at " + entity.getDisplayName().getString() + " rotated ~ 0 run particle minecraft:flame " + "^-0.05 ^1.14 ^0.2"));
-																			for (int index0 = 0; index0 < 3; index0++) {
-																				if (world instanceof ServerLevel _level)
-																					_level.getServer().getCommands().performPrefixedCommand(
-																							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
-																									.withSuppressedOutput(),
-																							("execute at " + entity.getDisplayName().getString() + " rotated ~90 0 facing ^ ^ ^1 positioned ^0.35 ^1.4 ^-0.1 run function craft_kaisen:fuga_arrow"));
-																			}
 																		});
 																	});
 																});

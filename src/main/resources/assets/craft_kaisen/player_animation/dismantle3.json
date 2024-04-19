@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"dismantle3": {
+			"animation_length": 0.29167,
+			"bones": {
+				"right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-30, 0, 87.5]
+						},
+						"0.125": {
+							"vector": [-143.84198, -13.31791, 98.95696]
+						},
+						"0.1667": {
+							"vector": [-141.34198, -13.31791, 98.95696]
+						}
+					},
+					"position": {
+						"vector": [0, -1, 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
