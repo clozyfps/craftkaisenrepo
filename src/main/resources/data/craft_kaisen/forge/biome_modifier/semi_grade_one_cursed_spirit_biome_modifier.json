@@ -4,7 +4,7 @@
     "type": "forge:any"
   },
   "spawners": {
-    "type": "craft_kaisen:dagon",
+    "type": "craft_kaisen:semi_grade_one_cursed_spirit",
     "weight": 1,
     "minCount": 1,
     "maxCount": 1
