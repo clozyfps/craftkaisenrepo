@@ -23,6 +23,7 @@ import net.mcreator.craftkaisen.client.renderer.UnlimitedVoidAccelerateRenderer;
 import net.mcreator.craftkaisen.client.renderer.TojiFushiguroRenderer;
 import net.mcreator.craftkaisen.client.renderer.TogeInumakiRenderer;
 import net.mcreator.craftkaisen.client.renderer.ToadRenderer;
+import net.mcreator.craftkaisen.client.renderer.TidesTreRenderer;
 import net.mcreator.craftkaisen.client.renderer.ThrowPlayerMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.TenShadowRabbitRenderer;
 import net.mcreator.craftkaisen.client.renderer.TakadaRenderer;
@@ -272,5 +273,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.SEMI_GRADE_ONE_CURSED_SPIRIT.get(), SemiGradeOneCursedSpiritRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.PILLAR_OF_LIGHT.get(), PillarOfLightRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.MOON_DREG.get(), MoonDregRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.TIDES_TRE.get(), TidesTreRenderer::new);
 	}
 }

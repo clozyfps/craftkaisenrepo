@@ -32,6 +32,7 @@ import net.mcreator.craftkaisen.entity.TwistRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.TogeInumakiEntity;
 import net.mcreator.craftkaisen.entity.ToadEntity;
+import net.mcreator.craftkaisen.entity.TidesTreEntity;
 import net.mcreator.craftkaisen.entity.ThrowPlayerMobEntity;
 import net.mcreator.craftkaisen.entity.TenShadowRabbitEntity;
 import net.mcreator.craftkaisen.entity.TakadaEntity;
@@ -626,7 +627,7 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<DagonEntity>> DAGON = register("dagon",
 			EntityType.Builder.<DagonEntity>of(DagonEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DagonEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.8f, 3f));
 	public static final RegistryObject<EntityType<DeathSwarm1Entity>> DEATH_SWARM_1 = register("death_swarm_1", EntityType.Builder.<DeathSwarm1Entity>of(DeathSwarm1Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathSwarm1Entity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<DeathWarm2Entity>> DEATH_WARM_2 = register("death_warm_2", EntityType.Builder.<DeathWarm2Entity>of(DeathWarm2Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
@@ -646,6 +647,8 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<MoonDregEntity>of(MoonDregEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MoonDregEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<TidesTreEntity>> TIDES_TRE = register("tides_tre",
+			EntityType.Builder.<TidesTreEntity>of(TidesTreEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TidesTreEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -754,6 +757,7 @@ public class CraftKaisenModEntities {
 			SemiGradeOneCursedSpiritEntity.init();
 			PillarOfLightEntity.init();
 			MoonDregEntity.init();
+			TidesTreEntity.init();
 		});
 	}
 
@@ -859,5 +863,6 @@ public class CraftKaisenModEntities {
 		event.put(SEMI_GRADE_ONE_CURSED_SPIRIT.get(), SemiGradeOneCursedSpiritEntity.createAttributes().build());
 		event.put(PILLAR_OF_LIGHT.get(), PillarOfLightEntity.createAttributes().build());
 		event.put(MOON_DREG.get(), MoonDregEntity.createAttributes().build());
+		event.put(TIDES_TRE.get(), TidesTreEntity.createAttributes().build());
 	}
 }

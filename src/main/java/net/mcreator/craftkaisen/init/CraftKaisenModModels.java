@@ -20,6 +20,7 @@ import net.mcreator.craftkaisen.client.model.ModeltpCircle;
 import net.mcreator.craftkaisen.client.model.Modeltojishirt;
 import net.mcreator.craftkaisen.client.model.Modeltojipants;
 import net.mcreator.craftkaisen.client.model.Modeltoji_curse;
+import net.mcreator.craftkaisen.client.model.Modeltidestree;
 import net.mcreator.craftkaisen.client.model.Modeltenshadowsgreatserpent;
 import net.mcreator.craftkaisen.client.model.Modelswordslice;
 import net.mcreator.craftkaisen.client.model.Modelsukunafit;
@@ -147,6 +148,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(ModelYujikuna.LAYER_LOCATION, ModelYujikuna::createBodyLayer);
 		event.registerLayerDefinition(Modelserpentground.LAYER_LOCATION, Modelserpentground::createBodyLayer);
 		event.registerLayerDefinition(ModelCrowProjectile.LAYER_LOCATION, ModelCrowProjectile::createBodyLayer);
+		event.registerLayerDefinition(Modeltidestree.LAYER_LOCATION, Modeltidestree::createBodyLayer);
 		event.registerLayerDefinition(ModelDagon.LAYER_LOCATION, ModelDagon::createBodyLayer);
 		event.registerLayerDefinition(Modelpachinko_ball.LAYER_LOCATION, Modelpachinko_ball::createBodyLayer);
 		event.registerLayerDefinition(Modeltojishirt.LAYER_LOCATION, Modeltojishirt::createBodyLayer);

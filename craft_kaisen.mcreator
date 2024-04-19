@@ -32755,8 +32755,8 @@
         ],
         "dependencies": [
           {
-            "name": "arguments",
-            "type": "cmdcontext"
+            "name": "entity",
+            "type": "entity"
           },
           {
             "name": "world",
@@ -32779,8 +32779,8 @@
         ],
         "dependencies": [
           {
-            "name": "arguments",
-            "type": "cmdcontext"
+            "name": "entity",
+            "type": "entity"
           },
           {
             "name": "world",
@@ -33054,21 +33054,19 @@
       "path": "~/Potions"
     },
     {
-      "name": "SemiGradeOneCursedSpirit",
+      "name": "PillarOfLight",
       "type": "livingentity",
-      "sortid": 1435,
+      "sortid": 1437,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "semi_grade_one_cursed_spirit",
+      "registry_name": "pillar_of_light",
       "metadata": {
         "files": [
-          "src/main/resources/assets/craft_kaisen/models/item/semi_grade_one_cursed_spirit_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/entity/SemiGradeOneCursedSpiritEntity.java",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/SemiGradeOneCursedSpiritRenderer.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/semi_grade_one_cursed_spirit_biome_modifier.json"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/PillarOfLightRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/PillarOfLightEntity.java"
         ]
       },
-      "path": "~/Mobs"
+      "path": "~/Mobs/Abilities"
     },
     {
       "name": "PillarOfLightOnEntityTickUpdate",
@@ -33107,19 +33105,38 @@
       "path": "~/Mobs/Abilities"
     },
     {
-      "name": "PillarOfLight",
+      "name": "MoonDreg",
       "type": "livingentity",
-      "sortid": 1437,
+      "sortid": 1439,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "pillar_of_light",
+      "registry_name": "moon_dreg",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/PillarOfLightRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/PillarOfLightEntity.java"
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/moon_dreg_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MoonDregRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/MoonDregEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/moon_dreg_spawn_egg.json"
         ]
       },
-      "path": "~/Mobs/Abilities"
+      "path": "~/Mobs"
+    },
+    {
+      "name": "SemiGradeOneCursedSpirit",
+      "type": "livingentity",
+      "sortid": 1435,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "semi_grade_one_cursed_spirit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/semi_grade_one_cursed_spirit_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/SemiGradeOneCursedSpiritEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/SemiGradeOneCursedSpiritRenderer.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/semi_grade_one_cursed_spirit_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
     },
     {
       "name": "SemiGradeOneCursedSpiritOnEntityTickUpdate",
@@ -33158,21 +33175,829 @@
       "path": "~/Mobs/Procedure"
     },
     {
-      "name": "MoonDreg",
-      "type": "livingentity",
+      "name": "SetTides",
+      "type": "procedure",
+      "sortid": 1464,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_tides",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetTidesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands/Procedures"
+    },
+    {
+      "name": "BoogieWoogieIcons",
+      "type": "procedure",
+      "sortid": 1445,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boogie_woogie_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BoogieWoogieIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/BoogieWoogie"
+    },
+    {
+      "name": "OnWorldStart",
+      "type": "procedure",
+      "sortid": 1435,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_world_start",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OnWorldStartProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "ProjectionIcons",
+      "type": "procedure",
+      "sortid": 1441,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "projection_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ProjectionIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/ProjectionSorcery"
+    },
+    {
+      "name": "MissleFirstsIcons",
+      "type": "procedure",
+      "sortid": 1442,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "missle_firsts_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MissleFirstsIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/MissileFists"
+    },
+    {
+      "name": "DomainSky",
+      "type": "block",
+      "sortid": 1461,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_sky",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/domain_sky.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_sky.json",
+          "src/main/java/net/mcreator/craftkaisen/block/DomainSkyBlock.java",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_sky.json"
+        ]
+      },
+      "path": "~/Blocks/Domain Blocks"
+    },
+    {
+      "name": "FugaEffect",
+      "type": "procedure",
+      "sortid": 1469,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fuga_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/FugaEffectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "DisasterTidesDomainRemove",
+      "type": "procedure",
+      "sortid": 1459,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster_tides_domain_remove",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisasterTidesDomainRemoveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/DisasterTides"
+    },
+    {
+      "name": "DisasterTidesMoveUse",
+      "type": "procedure",
+      "sortid": 1463,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster_tides_move_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisasterTidesMoveUseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/MoveUse"
+    },
+    {
+      "name": "CursedSpeachIcons",
+      "type": "procedure",
+      "sortid": 1446,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_speach_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CursedSpeachIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/CursedSpeech/Procedures"
+    },
+    {
+      "name": "DisasterTidesDomainExpasion",
+      "type": "procedure",
+      "sortid": 1458,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster_tides_domain_expasion",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisasterTidesDomainExpasionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/DisasterTides"
+    },
+    {
+      "name": "MeleeIcons",
+      "type": "procedure",
+      "sortid": 1437,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "melee_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MeleeIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Melee"
+    },
+    {
+      "name": "TenShadowsIcons",
+      "type": "procedure",
+      "sortid": 1453,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ten_shadows_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TenShadowsIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/TenShadows"
+    },
+    {
+      "name": "FugaArrow",
+      "type": "function",
+      "sortid": 1470,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fuga_arrow",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/fuga_arrow.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "SoundAmpIcons",
+      "type": "procedure",
+      "sortid": 1452,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sound_amp_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SoundAmpIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SoundAmp"
+    },
+    {
+      "name": "FugaArrowArrow",
+      "type": "function",
+      "sortid": 1471,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fuga_arrow_arrow",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/fuga_arrow_arrow.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "DisaterFlamesIcons",
+      "type": "procedure",
+      "sortid": 1450,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disater_flames_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisaterFlamesIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Disaster Flames"
+    },
+    {
+      "name": "RestrictedIcons",
+      "type": "procedure",
+      "sortid": 1456,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "restricted_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RestrictedIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SukunaIcons",
+      "type": "procedure",
       "sortid": 1439,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "moon_dreg",
+      "registry_name": "sukuna_icons",
       "metadata": {
         "files": [
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/moon_dreg_biome_modifier.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/MoonDregRenderer.java",
-          "src/main/java/net/mcreator/craftkaisen/entity/MoonDregEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/moon_dreg_spawn_egg.json"
+          "src/main/java/net/mcreator/craftkaisen/procedures/SukunaIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
         ]
       },
-      "path": "~/Mobs"
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "TidesTreEntityIsHurt",
+      "type": "procedure",
+      "sortid": 1467,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tides_tre_entity_is_hurt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/TidesTreEntityIsHurtProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Domain"
+    },
+    {
+      "name": "BlackCrowManipulationIcons",
+      "type": "procedure",
+      "sortid": 1448,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_crow_manipulation_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BlackCrowManipulationIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/BlackBirdManipulation"
+    },
+    {
+      "name": "IceIcons",
+      "type": "procedure",
+      "sortid": 1443,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IceIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/IceFormation"
+    },
+    {
+      "name": "DomainSand",
+      "type": "block",
+      "sortid": 1462,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_sand",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/domain_sand.json",
+          "src/main/resources/assets/craft_kaisen/blockstates/domain_sand.json",
+          "src/main/resources/assets/craft_kaisen/models/block/domain_sand.json",
+          "src/main/java/net/mcreator/craftkaisen/block/DomainSandBlock.java"
+        ]
+      },
+      "path": "~/Blocks/Domain Blocks"
+    },
+    {
+      "name": "DomainSandBlockAdded",
+      "type": "procedure",
+      "sortid": 1466,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_sand_block_added",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DomainSandBlockAddedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Blocks/Procedure"
+    },
+    {
+      "name": "RatioIcons",
+      "type": "procedure",
+      "sortid": 1440,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RatioIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Ratio"
+    },
+    {
+      "name": "SetupAnimations",
+      "type": "procedure",
+      "sortid": 1468,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "setup_animations",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetupAnimationsProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "TidesTre",
+      "type": "livingentity",
+      "sortid": 1465,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tides_tre",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/TidesTreEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/tides_tre_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/TidesTreRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Domain"
+    },
+    {
+      "name": "AuspiciousBeastsSummonIcons",
+      "type": "procedure",
+      "sortid": 1444,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "auspicious_beasts_summon_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AuspiciousBeastsSummonIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/AuspiciousBeastsSummon"
+    },
+    {
+      "name": "LimitLessIcons",
+      "type": "procedure",
+      "sortid": 1436,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "limit_less_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/LimitLessIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Limitless"
+    },
+    {
+      "name": "CursedEnergyIcons",
+      "type": "procedure",
+      "sortid": 1454,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_energy_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CursedEnergyIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "CopyIcons",
+      "type": "procedure",
+      "sortid": 1447,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "copy_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CopyIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Copy"
+    },
+    {
+      "name": "RevertTick",
+      "type": "procedure",
+      "sortid": 1438,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "revert_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RevertTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "BloodIcons",
+      "type": "procedure",
+      "sortid": 1449,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blood_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/BloodIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/BloodManipulation"
+    },
+    {
+      "name": "Weaponicons",
+      "type": "procedure",
+      "sortid": 1455,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weaponicons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/WeaponiconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "DisasterPlantsIcons",
+      "type": "procedure",
+      "sortid": 1451,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disaster_plants_icons",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DisasterPlantsIconsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/DisasterPlants"
     }
   ],
   "variable_elements": [
@@ -34521,6 +35346,14 @@
       ],
       "category": "neutral",
       "subtitle": ""
+    },
+    {
+      "name": "domainexpasiontides",
+      "files": [
+        "tidesdomainsound"
+      ],
+      "category": "player",
+      "subtitle": ""
     }
   ],
   "language_map": {
@@ -35253,6 +36086,10 @@
           },
           {
             "name": "Ratio",
+            "children": []
+          },
+          {
+            "name": "DisasterTides",
             "children": []
           },
           {

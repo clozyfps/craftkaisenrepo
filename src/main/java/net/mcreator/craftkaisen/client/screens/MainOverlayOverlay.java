@@ -72,7 +72,7 @@ public class MainOverlayOverlay {
 		if (true) {
 			if (DisplayBarEmptyProcedure.execute(entity)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/cebarlayer12.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h / 2 + -119, 0, 0, 427, 240, 427, 240);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h / 2 + -120, 0, 0, 427, 240, 427, 240);
 			}
 			if (DisplayBar1Procedure.execute(entity)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/cebarlayer11.png"));
@@ -170,6 +170,21 @@ public class MainOverlayOverlay {
 
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/emptyslot1.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 4, h / 2 + -70, 0, 0, 8, 8, 8, 8);
+
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/emptyslot2.png"));
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), 4, h / 2 + -58, 0, 0, 8, 8, 8, 8);
+
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/emptyslot3.png"));
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), 4, h / 2 + -46, 0, 0, 8, 8, 8, 8);
+
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/emptyslot4.png"));
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), 4, h / 2 + -34, 0, 0, 8, 8, 8, 8);
+
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/emptyslot5.png"));
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), 4, h / 2 + -22, 0, 0, 8, 8, 8, 8);
+
+			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/emptyslot6.png"));
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), 4, h / 2 + -10, 0, 0, 8, 8, 8, 8);
 
 			if (DisplayBar12Procedure.execute(entity))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),

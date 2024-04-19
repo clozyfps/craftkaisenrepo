@@ -394,11 +394,11 @@ public class SetMovesProcedure {
 				}
 				if (entity.getPersistentData().getDouble("moveNumber") == 3) {
 					entity.getPersistentData().putString("moveDisplay", "Death Swarm");
-					entity.getPersistentData().putDouble("moveCost", 7);
+					entity.getPersistentData().putDouble("moveCost", 15);
 				}
 				if (entity.getPersistentData().getDouble("moveNumber") == 4) {
-					entity.getPersistentData().putString("moveDisplay", "Horizon of the Captivating Skandha (WIP)");
-					entity.getPersistentData().putDouble("moveCost", 7);
+					entity.getPersistentData().putString("moveDisplay", "Horizon of the Captivating Skandha");
+					entity.getPersistentData().putDouble("moveCost", 70);
 				}
 			}
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).Page).equals("Cursed Energy")) {

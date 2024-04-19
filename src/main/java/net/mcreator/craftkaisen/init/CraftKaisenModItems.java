@@ -309,6 +309,9 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> SEMI_GRADE_ONE_CURSED_SPIRIT_SPAWN_EGG = REGISTRY.register("semi_grade_one_cursed_spirit_spawn_egg",
 			() -> new ForgeSpawnEggItem(CraftKaisenModEntities.SEMI_GRADE_ONE_CURSED_SPIRIT, -13369396, -13210, new Item.Properties()));
 	public static final RegistryObject<Item> MOON_DREG_SPAWN_EGG = REGISTRY.register("moon_dreg_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MOON_DREG, -10040065, -13312, new Item.Properties()));
+	public static final RegistryObject<Item> DOMAIN_SKY = block(CraftKaisenModBlocks.DOMAIN_SKY);
+	public static final RegistryObject<Item> DOMAIN_SAND = block(CraftKaisenModBlocks.DOMAIN_SAND);
+	public static final RegistryObject<Item> TIDES_TRE_SPAWN_EGG = REGISTRY.register("tides_tre_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.TIDES_TRE, -1, -1, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

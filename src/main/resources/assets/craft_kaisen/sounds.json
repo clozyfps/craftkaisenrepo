@@ -273,5 +273,13 @@
         "stream": false
       }
     ]
+  },
+  "domainexpasiontides": {
+    "sounds": [
+      {
+        "name": "craft_kaisen:tidesdomainsound",
+        "stream": false
+      }
+    ]
   }
 }

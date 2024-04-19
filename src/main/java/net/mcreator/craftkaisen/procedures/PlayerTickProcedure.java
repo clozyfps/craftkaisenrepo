@@ -8,6 +8,8 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
@@ -61,5 +63,63 @@ public class PlayerTickProcedure {
 		BeginRollingProcedure.execute(world, x, y, z, entity);
 		CountTickProcedure.execute(entity);
 		BrotherTickProcedure.execute(world, x, y, z, entity);
+		MeleeIconsProcedure.execute(world, entity);
+		CursedEnergyIconsProcedure.execute(world, entity);
+		WeaponiconsProcedure.execute(world, entity);
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Limitless")) {
+			LimitLessIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Sukuna Vessel")) {
+			SukunaIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ratio")) {
+			RatioIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Projection Sorcery")) {
+			ProjectionIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Missile Fists")) {
+			MissleFirstsIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ice Formation")) {
+			IceIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Auspicious Beasts Summon")) {
+			AuspiciousBeastsSummonIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Auspicious Beasts Summon")) {
+			AuspiciousBeastsSummonIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Boogie Woogie")) {
+			BoogieWoogieIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Cursed Speech")) {
+			CursedSpeachIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Copy")) {
+			CopyIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Black Bird Manipulation")) {
+			BlackCrowManipulationIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Blood Manipulation")) {
+			BloodIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Disaster Flames")) {
+			DisaterFlamesIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Disaster Plants")) {
+			DisasterPlantsIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Sound Amplification")) {
+			SoundAmpIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ten Shadows")) {
+			TenShadowsIconsProcedure.execute(world, entity);
+		}
+		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("No Energy")
+				|| ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
+			RestrictedIconsProcedure.execute(world, entity);
+		}
 	}
 }
