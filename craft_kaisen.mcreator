@@ -1412,6 +1412,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -32751,8 +32755,8 @@
         ],
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "arguments",
+            "type": "cmdcontext"
           },
           {
             "name": "world",
@@ -32775,8 +32779,8 @@
         ],
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "arguments",
+            "type": "cmdcontext"
           },
           {
             "name": "world",
@@ -32796,9 +32800,7 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/craftkaisen/entity/DagonEntity.java",
-          "src/main/resources/assets/craft_kaisen/models/item/dagon_spawn_egg.json",
-          "src/main/java/net/mcreator/craftkaisen/client/renderer/DagonRenderer.java",
-          "src/main/resources/data/craft_kaisen/forge/biome_modifier/dagon_biome_modifier.json"
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/DagonRenderer.java"
         ]
       },
       "path": "~/Mobs"
@@ -33050,6 +33052,127 @@
         ]
       },
       "path": "~/Potions"
+    },
+    {
+      "name": "SemiGradeOneCursedSpirit",
+      "type": "livingentity",
+      "sortid": 1435,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "semi_grade_one_cursed_spirit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/semi_grade_one_cursed_spirit_spawn_egg.json",
+          "src/main/java/net/mcreator/craftkaisen/entity/SemiGradeOneCursedSpiritEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/SemiGradeOneCursedSpiritRenderer.java",
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/semi_grade_one_cursed_spirit_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "PillarOfLightOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1436,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pillar_of_light_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PillarOfLightOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "PillarOfLight",
+      "type": "livingentity",
+      "sortid": 1437,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pillar_of_light",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/PillarOfLightRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/PillarOfLightEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "SemiGradeOneCursedSpiritOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1438,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "semi_grade_one_cursed_spirit_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SemiGradeOneCursedSpiritOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Procedure"
+    },
+    {
+      "name": "MoonDreg",
+      "type": "livingentity",
+      "sortid": 1439,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "moon_dreg",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/forge/biome_modifier/moon_dreg_biome_modifier.json",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MoonDregRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/MoonDregEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/moon_dreg_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
     }
   ],
   "variable_elements": [
@@ -34453,6 +34576,7 @@
       "key.craft_kaisen.reverse_cursed_technique": "Reverse Cursed Technique",
       "entity.craft_kaisen.red_open_door": "Red Open Door",
       "entity.craft_kaisen.death_warm_2": "Death Warm 2",
+      "item.craft_kaisen.moon_dreg_spawn_egg": "Moon Dreg Spawn Egg",
       "entity.craft_kaisen.mei_mei": "Mei Mei",
       "death.attack.crushing_damage.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.repelling_damage": "%1$s died to repulsion",
@@ -34532,11 +34656,13 @@
       "item.craft_kaisen.todo_outfit_leggings": "Todo Outfit ",
       "item.craft_kaisen.ten_shadow_rabbit_spawn_egg": "Ten Shadow Rabbit Spawn Egg",
       "item.craft_kaisen.resurrected_toji_spawn_egg": "Resurrected Toji Spawn Egg",
+      "entity.craft_kaisen.moon_dreg": "Moon Dreg",
       "block.craft_kaisen.shibuya_gates": "Shibuya Gates",
       "advancements.heian_era.title": "Heian Era",
       "gui.craft_kaisen.soul_multiplicity_overlay.label_ctrl_body_repel": "CTRL - Body Repel",
       "death.attack.cursed_energy_damage": "%1$s died to cursed energy",
       "entity.craft_kaisen.resurrected_toji": "Resurrected Toji",
+      "entity.craft_kaisen.pillar_of_light": "Pillar Of Light",
       "advancements.clan_creator.title": "Head Of The Clan",
       "item.craft_kaisen.mahito_outfit_leggings": "Mahito Outfit",
       "item.craft_kaisen.maximum_elephant_spawn_egg": "Maximum Elephant Spawn Egg",
@@ -34592,7 +34718,6 @@
       "gui.craft_kaisen.main_menu.button_mastery": "Mastery",
       "item.craft_kaisen.nobara_outfit_chestplate": "Female Jujutsu Sorcerer Outfit",
       "effect.craft_kaisen.pure_love_pre": "PureLove",
-      "item.craft_kaisen.dagon_spawn_egg": "Dagon Spawn Egg",
       "item.craft_kaisen.dragon_bone": "Dragon Bone",
       "entity.craft_kaisen.merged_beast_agito": "Merged Beast Agito",
       "item.craft_kaisen.sukuna_give": "Sukuna Give",
@@ -34633,6 +34758,7 @@
       "item.craft_kaisen.itadori_outfit_chestplate": "Itadori Uniform ",
       "subtitles.hit": "strong hit",
       "death.attack.reversal_red_damage.item": "%1$s was killed by %2$s using %3$s",
+      "effect.craft_kaisen.binding_ice_effect_fix": "BindingIceEffect",
       "entity.craft_kaisen.flying_cursed_spirit": "Flying Cursed Spirit",
       "item.craft_kaisen.prison_box_spawn_egg": "Prison Box Spawn Egg",
       "entity.craft_kaisen.nanako_hasaba": "Nanako Hasaba",
@@ -34711,6 +34837,7 @@
       "effect.craft_kaisen.jackpot": "Jackpot",
       "gui.craft_kaisen.main_menu.tooltip_increase_movement_speed": "increase movement speed",
       "subtitles.magichit": "",
+      "effect.craft_kaisen.grab": "Grab",
       "gui.craft_kaisen.csmgui.button_10": "10",
       "item.craft_kaisen.ko_guy_spawn_egg": "Ko-Guy Spawn Egg",
       "item.craft_kaisen.crushed_ranged": "Crushed Ranged",
@@ -34849,6 +34976,7 @@
       "item.craft_kaisen.meguna_outfit_leggings": "Meguna Outfit",
       "item.craft_kaisen.bandage_blind_fold_helmet": "Bandage Blind Fold",
       "item.craft_kaisen.cursed_glasses": "Cursed Glasses",
+      "item.craft_kaisen.semi_grade_one_cursed_spirit_spawn_egg": "Semi Grade 1 Cursed Spirit Spawn Egg",
       "advancements.grade_3.descr": "Reach The Required Fame.",
       "advancements.jujutsu_sorcerer.title": "Jujutsu Sorcerer",
       "block.craft_kaisen.barrier_block": "Barrier Block",
@@ -34948,6 +35076,7 @@
       "item.craft_kaisen.run_away_ranged": "Run Away Ranged",
       "item.craft_kaisen.heian_era_sukuna_spawn_egg": "Heian Era Sukuna Spawn Egg",
       "item.craft_kaisen.meguna_outfit_chestplate": "Meguna Outfit",
+      "entity.craft_kaisen.semi_grade_one_cursed_spirit": "Semi Grade 1 Cursed Spirit",
       "item.craft_kaisen.hajime_kashimo_spawn_egg": "\"The God of Lightning\" Hajime Kashimo Spawn Egg",
       "advancements.great_serpent_advancement.title": "Great Serpent",
       "gui.craft_kaisen.domain_clash.button_x": "X",

@@ -61,7 +61,6 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.YOSHINOBU_GAKUGANJI_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.KASUMI_MIWA_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.NANAKO_HASABA_SPAWN_EGG.get());
-					tabData.accept(CraftKaisenModItems.DAGON_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_weapons"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_weapons")).icon(() -> new ItemStack(CraftKaisenModItems.PLAYFUL_CLOUD.get())).displayItems((parameters, tabData) -> {
@@ -154,6 +153,8 @@ public class CraftKaisenModTabs {
 					tabData.accept(CraftKaisenModItems.MERGED_BEAST_AGITO_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.FLYING_CURSED_SPIRIT_SPAWN_EGG.get());
 					tabData.accept(CraftKaisenModItems.WOMB_DAGON_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.SEMI_GRADE_ONE_CURSED_SPIRIT_SPAWN_EGG.get());
+					tabData.accept(CraftKaisenModItems.MOON_DREG_SPAWN_EGG.get());
 				}).withSearchBar());
 		event.registerCreativeModeTab(new ResourceLocation("craft_kaisen", "ck_items"),
 				builder -> builder.title(Component.translatable("item_group.craft_kaisen.ck_items")).icon(() -> new ItemStack(CraftKaisenModItems.NAIL.get())).displayItems((parameters, tabData) -> {

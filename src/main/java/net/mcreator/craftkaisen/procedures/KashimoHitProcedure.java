@@ -20,6 +20,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
+import net.mcreator.craftkaisen.entity.MoonDregEntity;
 import net.mcreator.craftkaisen.entity.JogoEntity;
 import net.mcreator.craftkaisen.entity.HajimeKashimoEntity;
 
@@ -71,6 +72,10 @@ public class KashimoHitProcedure {
 				}
 				entity.setSecondsOnFire(10);
 			}
+		}
+		if (sourceentity instanceof MoonDregEntity) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 1, false, true));
 		}
 		if (entity instanceof HajimeKashimoEntity) {
 			if (Math.random() < 0.1) {

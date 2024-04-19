@@ -31,6 +31,7 @@ import net.mcreator.craftkaisen.client.renderer.SmallPoxDomainSpawnerRenderer;
 import net.mcreator.craftkaisen.client.renderer.SmallPoxDeityRenderer;
 import net.mcreator.craftkaisen.client.renderer.ShinjukuGojoRenderer;
 import net.mcreator.craftkaisen.client.renderer.ShadowFrogRenderer;
+import net.mcreator.craftkaisen.client.renderer.SemiGradeOneCursedSpiritRenderer;
 import net.mcreator.craftkaisen.client.renderer.ScouterCrowProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.SatoruGojoRenderer;
 import net.mcreator.craftkaisen.client.renderer.RyomenSukunaRenderer;
@@ -51,6 +52,7 @@ import net.mcreator.craftkaisen.client.renderer.RainbowDragonRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowClosedDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.PrisonBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.PoxDeityDomainRenderer;
+import net.mcreator.craftkaisen.client.renderer.PillarOfLightRenderer;
 import net.mcreator.craftkaisen.client.renderer.OpenPrisonBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.OldLadyRenderer;
 import net.mcreator.craftkaisen.client.renderer.NueRenderer;
@@ -59,6 +61,7 @@ import net.mcreator.craftkaisen.client.renderer.NaobitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.NanamiKentoRenderer;
 import net.mcreator.craftkaisen.client.renderer.NanakoHasabaRenderer;
 import net.mcreator.craftkaisen.client.renderer.MouthCursedSpiritRenderer;
+import net.mcreator.craftkaisen.client.renderer.MoonDregRenderer;
 import net.mcreator.craftkaisen.client.renderer.MergedBeastAgitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MeiMeiRenderer;
 import net.mcreator.craftkaisen.client.renderer.MegunaRenderer;
@@ -266,5 +269,8 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_SWARM_1.get(), DeathSwarm1Renderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_WARM_2.get(), DeathWarm2Renderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.DEATH_SWARM_3.get(), DeathSwarm3Renderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.SEMI_GRADE_ONE_CURSED_SPIRIT.get(), SemiGradeOneCursedSpiritRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.PILLAR_OF_LIGHT.get(), PillarOfLightRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.MOON_DREG.get(), MoonDregRenderer::new);
 	}
 }

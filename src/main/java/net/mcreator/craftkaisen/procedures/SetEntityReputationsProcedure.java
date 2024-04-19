@@ -14,6 +14,7 @@ import net.mcreator.craftkaisen.entity.UraumeEntity;
 import net.mcreator.craftkaisen.entity.TojiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
 import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
+import net.mcreator.craftkaisen.entity.SemiGradeOneCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
 import net.mcreator.craftkaisen.entity.RugbyFieldCursedSpiritEntity;
@@ -23,6 +24,7 @@ import net.mcreator.craftkaisen.entity.ResurrectedTojiEntity;
 import net.mcreator.craftkaisen.entity.NaobitoEntity;
 import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.MoonDregEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MegumiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
@@ -150,6 +152,12 @@ public class SetEntityReputationsProcedure {
 		}
 		if (entity instanceof TojiFushiguroEntity) {
 			entity.getPersistentData().putDouble("rep", (-100));
+		}
+		if (entity instanceof SemiGradeOneCursedSpiritEntity) {
+			entity.getPersistentData().putDouble("rep", (-40));
+		}
+		if (entity instanceof MoonDregEntity) {
+			entity.getPersistentData().putDouble("rep", (-60));
 		}
 	}
 }

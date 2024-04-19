@@ -306,7 +306,9 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> TITLE_BOOK = REGISTRY.register("title_book", () -> new TitleBookItem());
 	public static final RegistryObject<Item> NANAKO_HASABA_SPAWN_EGG = REGISTRY.register("nanako_hasaba_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.NANAKO_HASABA, -5659046, -2056352, new Item.Properties()));
 	public static final RegistryObject<Item> WOMB_DAGON_SPAWN_EGG = REGISTRY.register("womb_dagon_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.WOMB_DAGON, -7019, -1966080, new Item.Properties()));
-	public static final RegistryObject<Item> DAGON_SPAWN_EGG = REGISTRY.register("dagon_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.DAGON, -3407821, -6320305, new Item.Properties()));
+	public static final RegistryObject<Item> SEMI_GRADE_ONE_CURSED_SPIRIT_SPAWN_EGG = REGISTRY.register("semi_grade_one_cursed_spirit_spawn_egg",
+			() -> new ForgeSpawnEggItem(CraftKaisenModEntities.SEMI_GRADE_ONE_CURSED_SPIRIT, -13369396, -13210, new Item.Properties()));
+	public static final RegistryObject<Item> MOON_DREG_SPAWN_EGG = REGISTRY.register("moon_dreg_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.MOON_DREG, -10040065, -13312, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

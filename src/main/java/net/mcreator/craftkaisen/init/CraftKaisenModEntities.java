@@ -44,6 +44,7 @@ import net.mcreator.craftkaisen.entity.SlicingExcorismProjectileEntity;
 import net.mcreator.craftkaisen.entity.SleepRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.ShinjukuGojoEntity;
 import net.mcreator.craftkaisen.entity.ShadowFrogEntity;
+import net.mcreator.craftkaisen.entity.SemiGradeOneCursedSpiritEntity;
 import net.mcreator.craftkaisen.entity.ScouterCrowProjectileEntity;
 import net.mcreator.craftkaisen.entity.SatoruGojoEntity;
 import net.mcreator.craftkaisen.entity.RyomenSukunaEntity;
@@ -69,6 +70,7 @@ import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.PureLoveBeamRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.PrisonBoxEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
+import net.mcreator.craftkaisen.entity.PillarOfLightEntity;
 import net.mcreator.craftkaisen.entity.PiercingBloodProjectileEntity;
 import net.mcreator.craftkaisen.entity.OpenPrisonBoxEntity;
 import net.mcreator.craftkaisen.entity.OldLadyEntity;
@@ -79,6 +81,7 @@ import net.mcreator.craftkaisen.entity.NanamiKentoEntity;
 import net.mcreator.craftkaisen.entity.NanakoHasabaEntity;
 import net.mcreator.craftkaisen.entity.NailProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.MouthCursedSpiritEntity;
+import net.mcreator.craftkaisen.entity.MoonDregEntity;
 import net.mcreator.craftkaisen.entity.MergedBeastAgitoEntity;
 import net.mcreator.craftkaisen.entity.MeiMeiEntity;
 import net.mcreator.craftkaisen.entity.MegunaEntity;
@@ -630,6 +633,19 @@ public class CraftKaisenModEntities {
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathWarm2Entity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<DeathSwarm3Entity>> DEATH_SWARM_3 = register("death_swarm_3", EntityType.Builder.<DeathSwarm3Entity>of(DeathSwarm3Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DeathSwarm3Entity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<SemiGradeOneCursedSpiritEntity>> SEMI_GRADE_ONE_CURSED_SPIRIT = register("semi_grade_one_cursed_spirit",
+			EntityType.Builder.<SemiGradeOneCursedSpiritEntity>of(SemiGradeOneCursedSpiritEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+					.setCustomClientFactory(SemiGradeOneCursedSpiritEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<PillarOfLightEntity>> PILLAR_OF_LIGHT = register("pillar_of_light",
+			EntityType.Builder.<PillarOfLightEntity>of(PillarOfLightEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PillarOfLightEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MoonDregEntity>> MOON_DREG = register("moon_dreg",
+			EntityType.Builder.<MoonDregEntity>of(MoonDregEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MoonDregEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -735,6 +751,9 @@ public class CraftKaisenModEntities {
 			DeathSwarm1Entity.init();
 			DeathWarm2Entity.init();
 			DeathSwarm3Entity.init();
+			SemiGradeOneCursedSpiritEntity.init();
+			PillarOfLightEntity.init();
+			MoonDregEntity.init();
 		});
 	}
 
@@ -837,5 +856,8 @@ public class CraftKaisenModEntities {
 		event.put(DEATH_SWARM_1.get(), DeathSwarm1Entity.createAttributes().build());
 		event.put(DEATH_WARM_2.get(), DeathWarm2Entity.createAttributes().build());
 		event.put(DEATH_SWARM_3.get(), DeathSwarm3Entity.createAttributes().build());
+		event.put(SEMI_GRADE_ONE_CURSED_SPIRIT.get(), SemiGradeOneCursedSpiritEntity.createAttributes().build());
+		event.put(PILLAR_OF_LIGHT.get(), PillarOfLightEntity.createAttributes().build());
+		event.put(MOON_DREG.get(), MoonDregEntity.createAttributes().build());
 	}
 }

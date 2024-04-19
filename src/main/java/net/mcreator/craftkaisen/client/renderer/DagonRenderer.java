@@ -1,18 +1,20 @@
 
 package net.mcreator.craftkaisen.client.renderer;
 
-public class DagonRenderer extends HumanoidMobRenderer<DagonEntity, HumanoidModel<DagonEntity>> {
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
+import net.mcreator.craftkaisen.entity.DagonEntity;
+import net.mcreator.craftkaisen.client.model.ModelDagon;
+
+public class DagonRenderer extends MobRenderer<DagonEntity, ModelDagon<DagonEntity>> {
 	public DagonRenderer(EntityRendererProvider.Context context) {
-		super(context, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
-
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR)), context.getModelManager()));
-
+		super(context, new ModelDagon(context.bakeLayer(ModelDagon.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(DagonEntity entity) {
 		return new ResourceLocation("craft_kaisen:textures/entities/dagontexture.png");
 	}
-
 }
