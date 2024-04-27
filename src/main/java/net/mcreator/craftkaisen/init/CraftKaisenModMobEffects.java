@@ -31,6 +31,7 @@ import net.mcreator.craftkaisen.potion.RikasLoveMobEffect;
 import net.mcreator.craftkaisen.potion.RikaStatusMobEffect;
 import net.mcreator.craftkaisen.potion.ReversalRedControlMobEffect;
 import net.mcreator.craftkaisen.potion.ReikiMobEffect;
+import net.mcreator.craftkaisen.potion.RedFogMobEffect;
 import net.mcreator.craftkaisen.potion.RCTMobEffect;
 import net.mcreator.craftkaisen.potion.PureLovePreMobEffect;
 import net.mcreator.craftkaisen.potion.PureLoveActiveMobEffect;
@@ -134,4 +135,5 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> DEATH_SWARM = REGISTRY.register("death_swarm", () -> new DeathSwarmMobEffect());
 	public static final RegistryObject<MobEffect> DISMATLE = REGISTRY.register("dismatle", () -> new DismatleMobEffect());
 	public static final RegistryObject<MobEffect> PLAY_ANIMATION_POTION = REGISTRY.register("play_animation_potion", () -> new PlayAnimationPotionMobEffect());
+	public static final RegistryObject<MobEffect> RED_FOG = REGISTRY.register("red_fog", () -> new RedFogMobEffect());
 }

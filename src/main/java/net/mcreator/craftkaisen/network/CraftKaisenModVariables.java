@@ -201,6 +201,7 @@ public class CraftKaisenModVariables {
 			clone.BortherTwoif = original.BortherTwoif;
 			clone.Dismantleactivated = original.Dismantleactivated;
 			clone.AnimationToPlay = original.AnimationToPlay;
+			clone.sixeyes = original.sixeyes;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -617,6 +618,7 @@ public class CraftKaisenModVariables {
 		public boolean BortherTwoif = false;
 		public boolean Dismantleactivated = false;
 		public String AnimationToPlay = "empty";
+		public boolean sixeyes = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -793,6 +795,7 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("BortherTwoif", BortherTwoif);
 			nbt.putBoolean("Dismantleactivated", Dismantleactivated);
 			nbt.putString("AnimationToPlay", AnimationToPlay);
+			nbt.putBoolean("sixeyes", sixeyes);
 			return nbt;
 		}
 
@@ -966,6 +969,7 @@ public class CraftKaisenModVariables {
 			BortherTwoif = nbt.getBoolean("BortherTwoif");
 			Dismantleactivated = nbt.getBoolean("Dismantleactivated");
 			AnimationToPlay = nbt.getString("AnimationToPlay");
+			sixeyes = nbt.getBoolean("sixeyes");
 		}
 	}
 
@@ -1158,6 +1162,7 @@ public class CraftKaisenModVariables {
 					variables.BortherTwoif = message.data.BortherTwoif;
 					variables.Dismantleactivated = message.data.Dismantleactivated;
 					variables.AnimationToPlay = message.data.AnimationToPlay;
+					variables.sixeyes = message.data.sixeyes;
 				}
 			});
 			context.setPacketHandled(true);

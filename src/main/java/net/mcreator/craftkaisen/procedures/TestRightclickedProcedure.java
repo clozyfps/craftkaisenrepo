@@ -34,7 +34,6 @@ public class TestRightclickedProcedure {
 			}
 		} else {
 			VoidRemoveProcedure.execute(world, x, y, z);
-			DisasterTidesDomainExpasionProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

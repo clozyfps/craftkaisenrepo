@@ -135,6 +135,7 @@ public class DisasterTidesMoveUseProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						DisasterTidesDoamainExpasionProcedure.execute(world, x, y, z, entity);
 						if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 99, false, false));
 						if (world instanceof Level _level) {
@@ -167,7 +168,6 @@ public class DisasterTidesMoveUseProcedure {
 									}
 								}
 							}
-							DisasterTidesDomainExpasionProcedure.execute(world, x, y, z, entity);
 							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
 						});
 					} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 500) {

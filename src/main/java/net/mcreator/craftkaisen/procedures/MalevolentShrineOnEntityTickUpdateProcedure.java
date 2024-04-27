@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
@@ -81,8 +82,10 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(100 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
+				if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.RED_FOG.get(), 5, 1, false, false));
 				if (!(entity == entityiterator) && !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
-						&& !(entityiterator instanceof LivingEntity _livEnt37 && _livEnt37.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+						&& !(entityiterator instanceof LivingEntity _livEnt38 && _livEnt38.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
 						&& !(entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
 					if (entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
 						if (world instanceof ServerLevel _level)
@@ -102,14 +105,14 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:slashing_damage"))),
 							(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null)), 50);
-				} else if (entityiterator instanceof LivingEntity _livEnt58 && _livEnt58.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()) && !(entity == entityiterator)
+				} else if (entityiterator instanceof LivingEntity _livEnt59 && _livEnt59.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()) && !(entity == entityiterator)
 						&& !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 					if (Math.random() < 0.01) {
 						entityiterator.getPersistentData().putDouble("simpledomainlevel", (entityiterator.getPersistentData().getDouble("simpledomainlevel") - 0.1));
 					}
 				}
 				if ((entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
-					if (entityiterator instanceof LivingEntity _livEnt65 && _livEnt65.hasEffect(CraftKaisenModMobEffects.DISMATLE.get())) {
+					if (entityiterator instanceof LivingEntity _livEnt66 && _livEnt66.hasEffect(CraftKaisenModMobEffects.DISMATLE.get())) {
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), x, y, z, 25, 45, 10, 45, 0.2);
 						if (world instanceof ServerLevel _level)

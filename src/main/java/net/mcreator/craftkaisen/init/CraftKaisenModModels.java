@@ -26,6 +26,7 @@ import net.mcreator.craftkaisen.client.model.Modelswordslice;
 import net.mcreator.craftkaisen.client.model.Modelsukunafit;
 import net.mcreator.craftkaisen.client.model.Modelsukunafightingchestplate;
 import net.mcreator.craftkaisen.client.model.Modelsorcerernew;
+import net.mcreator.craftkaisen.client.model.Modelsixeyesmodel;
 import net.mcreator.craftkaisen.client.model.Modelshinjukufitnew;
 import net.mcreator.craftkaisen.client.model.Modelshinjukufitfinal;
 import net.mcreator.craftkaisen.client.model.Modelshinjukufit;
@@ -151,6 +152,7 @@ public class CraftKaisenModModels {
 		event.registerLayerDefinition(Modeltidestree.LAYER_LOCATION, Modeltidestree::createBodyLayer);
 		event.registerLayerDefinition(ModelDagon.LAYER_LOCATION, ModelDagon::createBodyLayer);
 		event.registerLayerDefinition(Modelpachinko_ball.LAYER_LOCATION, Modelpachinko_ball::createBodyLayer);
+		event.registerLayerDefinition(Modelsixeyesmodel.LAYER_LOCATION, Modelsixeyesmodel::createBodyLayer);
 		event.registerLayerDefinition(Modeltojishirt.LAYER_LOCATION, Modeltojishirt::createBodyLayer);
 		event.registerLayerDefinition(Modelhanami.LAYER_LOCATION, Modelhanami::createBodyLayer);
 		event.registerLayerDefinition(Modelsukunafit.LAYER_LOCATION, Modelsukunafit::createBodyLayer);
