@@ -8,36 +8,31 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.particles.SimpleParticleType;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
-import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
-import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
-import dev.kosmx.playerAnim.api.layered.ModifierLayer;
-import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
-import dev.kosmx.playerAnim.api.layered.IAnimation;
-
 public class CleaveProcedureProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15, 4, false, false));
-		if (world.isClientSide()) {
-			if (entity instanceof AbstractClientPlayer player) {
-				var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-				if (animation != null && !animation.isActive()) {
-					animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "cleave"))));
-				}
-			}
+		{
+			String _setval = "cleave";
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.AnimationToPlay = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
+		PlayAnimationProcedure.execute(world, x, y, z, entity);
 		CraftKaisenMod.queueServerWork(5, () -> {
 			{
 				final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * (2 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 5)),
@@ -50,7 +45,19 @@ public class CleaveProcedureProcedure {
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator)) {
 						if (!((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).special).equals("Physically Gifted")) {
-							if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).maxCursedEnergy > 0
+							if (((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).maxCursedEnergy > 0
+									|| entityiterator.getPersistentData().getDouble("ce") > 0) && entity.getPersistentData().getBoolean("domain") == true) {
+								entity.getPersistentData().putDouble("cleaveTime", (13 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 3));
+								entityiterator.getPersistentData().putString("cleaveSource", (entity.getDisplayName().getString()));
+								if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+									_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 2, false, false));
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_1.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 15, 0, 0, 0, 0);
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 15, 0, 0, 0, 0);
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_3.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 15, 0, 0, 0, 0);
+							} else if ((entityiterator.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).maxCursedEnergy > 0
 									|| entityiterator.getPersistentData().getDouble("ce") > 0) {
 								entity.getPersistentData().putDouble("cleaveTime", (10 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 3));
 								entityiterator.getPersistentData().putString("cleaveSource", (entity.getDisplayName().getString()));

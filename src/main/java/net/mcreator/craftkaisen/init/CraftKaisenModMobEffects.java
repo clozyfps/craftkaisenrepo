@@ -39,6 +39,7 @@ import net.mcreator.craftkaisen.potion.PrisonBoxStunMobEffect;
 import net.mcreator.craftkaisen.potion.PreWorldCutMobEffect;
 import net.mcreator.craftkaisen.potion.PreRedMobEffect;
 import net.mcreator.craftkaisen.potion.PreFireArrowMobEffect;
+import net.mcreator.craftkaisen.potion.PlayAnimationPotionMobEffect;
 import net.mcreator.craftkaisen.potion.PiercingBloodMobEffect;
 import net.mcreator.craftkaisen.potion.PartialSummonRikaMobEffect;
 import net.mcreator.craftkaisen.potion.NueElectricityEffectMobEffect;
@@ -57,6 +58,7 @@ import net.mcreator.craftkaisen.potion.DomainClashPotionMobEffect;
 import net.mcreator.craftkaisen.potion.DomainAmplificationMobEffect;
 import net.mcreator.craftkaisen.potion.DivergentFistPotionMobEffect;
 import net.mcreator.craftkaisen.potion.DistortedBodyKillingMobEffect;
+import net.mcreator.craftkaisen.potion.DismatleMobEffect;
 import net.mcreator.craftkaisen.potion.DeathSwarmMobEffect;
 import net.mcreator.craftkaisen.potion.CooldownMobEffect;
 import net.mcreator.craftkaisen.potion.ConstantSliceMobEffect;
@@ -130,4 +132,6 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> BINDING_ICE_EFFECT_FIX = REGISTRY.register("binding_ice_effect_fix", () -> new BindingIceEffectFixMobEffect());
 	public static final RegistryObject<MobEffect> GRAB = REGISTRY.register("grab", () -> new GrabMobEffect());
 	public static final RegistryObject<MobEffect> DEATH_SWARM = REGISTRY.register("death_swarm", () -> new DeathSwarmMobEffect());
+	public static final RegistryObject<MobEffect> DISMATLE = REGISTRY.register("dismatle", () -> new DismatleMobEffect());
+	public static final RegistryObject<MobEffect> PLAY_ANIMATION_POTION = REGISTRY.register("play_animation_potion", () -> new PlayAnimationPotionMobEffect());
 }

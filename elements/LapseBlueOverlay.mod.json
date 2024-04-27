@@ -9,14 +9,14 @@
         "data": {
           "name": "label_ctrl_move_away",
           "text": {
-            "fixedValue": "SNEAK - Push"
+            "fixedValue": "SNEAK = Push"
           },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
           "anchorPoint": "CENTER",
-          "x": 335,
+          "x": 311,
           "y": 10
         }
       },
@@ -25,15 +25,15 @@
         "data": {
           "name": "label_alt_move_closer",
           "text": {
-            "fixedValue": "CTRL - Pull"
+            "fixedValue": "SNEAK + CHARGE = Pull"
           },
           "color": {
             "value": -1,
             "falpha": 0.0
           },
           "anchorPoint": "CENTER",
-          "x": 335,
-          "y": 23
+          "x": 311,
+          "y": 21
         }
       }
     ],

@@ -30,6 +30,7 @@ import net.mcreator.craftkaisen.client.particle.PureLovePulseParticle;
 import net.mcreator.craftkaisen.client.particle.PunchImpactParticle;
 import net.mcreator.craftkaisen.client.particle.NueElectricityParticle;
 import net.mcreator.craftkaisen.client.particle.MistPurpleParticle;
+import net.mcreator.craftkaisen.client.particle.MeleeParticleParticle;
 import net.mcreator.craftkaisen.client.particle.LapseParticleParticle;
 import net.mcreator.craftkaisen.client.particle.InfinityParticleParticle;
 import net.mcreator.craftkaisen.client.particle.IceCloudParticle;
@@ -84,5 +85,6 @@ public class CraftKaisenModParticles {
 		event.registerSpriteSet(CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_3.get(), UnlimitedVoidSplash3Particle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.FIRE_PARTICLE.get(), FireParticleParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.PURE_LOVE_PULSE.get(), PureLovePulseParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.MELEE_PARTICLE.get(), MeleeParticleParticle::provider);
 	}
 }

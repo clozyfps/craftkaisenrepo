@@ -25,7 +25,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
-import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
@@ -35,17 +35,31 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
+
 public class LapseBlueControlOnEffectActiveTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.isShiftKeyDown()) {
+		if (world.isClientSide()) {
+			if (entity instanceof AbstractClientPlayer player) {
+				var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+				if (animation != null) {
+					animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "ao"))));
+				}
+			}
+		}
+		if (entity.isShiftKeyDown() && entity.getPersistentData().getBoolean("charging") == true) {
 			if (entity.getPersistentData().getDouble("bluex") < 15) {
 				entity.getPersistentData().putDouble("bluex", (entity.getPersistentData().getDouble("bluex") + 1));
 				entity.getPersistentData().putDouble("bluez", (entity.getPersistentData().getDouble("bluez") + 1));
 				entity.getPersistentData().putDouble("bluey", (entity.getPersistentData().getDouble("bluey") + 1));
 			}
-		} else if (Screen.hasControlDown()) {
+		} else if (entity.isShiftKeyDown()) {
 			if (entity.getPersistentData().getDouble("bluex") > 0) {
 				entity.getPersistentData().putDouble("bluex", (entity.getPersistentData().getDouble("bluex") - 1));
 				entity.getPersistentData().putDouble("bluez", (entity.getPersistentData().getDouble("bluez") - 1));
@@ -134,8 +148,8 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 					}
 				}
 				if (entityiterator instanceof ReversalRedProjectileProjectileEntity) {
-					if (entity instanceof ServerPlayer _plr50 && _plr50.level instanceof ServerLevel
-							&& _plr50.getAdvancements().getOrStartProgress(_plr50.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
+					if (entity instanceof ServerPlayer _plr52 && _plr52.level instanceof ServerLevel
+							&& _plr52.getAdvancements().getOrStartProgress(_plr52.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
 							&& (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput >= 100) {
 						if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 4, false, false));
@@ -193,7 +207,7 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(CraftKaisenModMobEffects.LAPSE_BLUE_CONTROL.get());
 		}
-		if (entity instanceof ServerPlayer _plr73 && _plr73.level instanceof ServerLevel && _plr73.getAdvancements().getOrStartProgress(_plr73.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
+		if (entity instanceof ServerPlayer _plr75 && _plr75.level instanceof ServerLevel && _plr75.getAdvancements().getOrStartProgress(_plr75.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
 				&& (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput >= 100) {
 			BlueTickProcedure.execute(world,
 					(entity.level

@@ -108,20 +108,31 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 						entityiterator.getPersistentData().putDouble("simpledomainlevel", (entityiterator.getPersistentData().getDouble("simpledomainlevel") - 0.1));
 					}
 				}
+				if ((entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
+					if (entityiterator instanceof LivingEntity _livEnt65 && _livEnt65.hasEffect(CraftKaisenModMobEffects.DISMATLE.get())) {
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), x, y, z, 25, 45, 10, 45, 0.2);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_1.get()), x, y, z, 25, 45, 10, 45, 0.2);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_3.get()), x, y, z, 25, 45, 10, 45, 0.2);
+						MalevolentShrineTwoProcedure.execute(world, x, y, z, entity);
+					}
+				}
 			}
 		}
 		entity.getPersistentData().putDouble("slicerandom", (Mth.nextInt(RandomSource.create(), 1, 3)));
 		if (entity.getPersistentData().getDouble("slicerandom") == 1) {
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_1.get()), x, y, z, 25, 50, 10, 50, 0.2);
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_1.get()), x, y, z, 25, 45, 10, 45, 0.2);
 		}
 		if (entity.getPersistentData().getDouble("slicerandom") == 2) {
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), x, y, z, 25, 50, 10, 50, 0.2);
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), x, y, z, 25, 45, 10, 45, 0.2);
 		}
 		if (entity.getPersistentData().getDouble("slicerandom") == 3) {
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_3.get()), x, y, z, 25, 50, 10, 50, 0.2);
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_3.get()), x, y, z, 25, 45, 10, 45, 0.2);
 		}
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.POOF, x, y, z, 25, 25, 10, 25, 0.3);

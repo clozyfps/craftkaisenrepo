@@ -19,6 +19,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
@@ -32,6 +33,12 @@ import javax.annotation.Nullable;
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
+
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 @Mod.EventBusSubscriber
 public class IceMovesProcedure {
@@ -61,6 +68,14 @@ public class IceMovesProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.WINTRY_ICICLE.get(), 35, 1, false, false));
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "icefall"))));
+							}
+						}
+					}
 					entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 100);
 				} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 50) {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
@@ -84,6 +99,14 @@ public class IceMovesProcedure {
 							capability.currentCursedEnergy = _setval;
 							capability.syncPlayerVariables(entity);
 						});
+					}
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "sliceingexorisim"))));
+							}
+						}
 					}
 					{
 						Entity _shootFrom = entity;
@@ -130,6 +153,14 @@ public class IceMovesProcedure {
 							capability.currentCursedEnergy = _setval;
 							capability.syncPlayerVariables(entity);
 						});
+					}
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "point"))));
+							}
+						}
 					}
 					{
 						Entity _shootFrom = entity;
@@ -190,6 +221,14 @@ public class IceMovesProcedure {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
 								_level.playSound(null, x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:freezingwind")), SoundSource.NEUTRAL, 1, 1);
+							}
+						}
+						if (world.isClientSide()) {
+							if (entity instanceof AbstractClientPlayer player) {
+								var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+								if (animation != null && !animation.isActive()) {
+									animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "mavshirine"))));
+								}
 							}
 						}
 						if (world instanceof Level _level) {

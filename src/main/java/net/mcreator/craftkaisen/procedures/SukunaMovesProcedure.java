@@ -56,7 +56,7 @@ public class SukunaMovesProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						DismantleProcedureProcedure.execute(world, entity);
+						DismantleProcedureProcedure.execute(world, x, y, z, entity);
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal("Dismantle."), true);
 						entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 30);
@@ -91,7 +91,7 @@ public class SukunaMovesProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						CleaveProcedureProcedure.execute(world, entity);
+						CleaveProcedureProcedure.execute(world, x, y, z, entity);
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal("Cleave."), true);
 						entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 90);

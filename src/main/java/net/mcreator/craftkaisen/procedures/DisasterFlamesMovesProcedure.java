@@ -14,10 +14,13 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
@@ -28,6 +31,12 @@ import javax.annotation.Nullable;
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
+
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 @Mod.EventBusSubscriber
 public class DisasterFlamesMovesProcedure {
@@ -56,6 +65,14 @@ public class DisasterFlamesMovesProcedure {
 							capability.currentCursedEnergy = _setval;
 							capability.syncPlayerVariables(entity);
 						});
+					}
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "shotwith1hand"))));
+							}
+						}
 					}
 					DisasterFlamesProcedureProcedure.execute(world, entity);
 					if (entity instanceof Player _player && !_player.level.isClientSide())
@@ -86,6 +103,14 @@ public class DisasterFlamesMovesProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "shotwith1hand"))));
+							}
+						}
+					}
 					EmberInsectProcedureProcedure.execute(world, entity);
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("Ember Insects!"), true);
@@ -114,6 +139,34 @@ public class DisasterFlamesMovesProcedure {
 							capability.currentCursedEnergy = _setval;
 							capability.syncPlayerVariables(entity);
 						});
+					}
+					if (Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
+						if (world.isClientSide()) {
+							if (entity instanceof AbstractClientPlayer player) {
+								var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+								if (animation != null && !animation.isActive()) {
+									animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "dismantle1"))));
+								}
+							}
+						}
+					} else if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+						if (world.isClientSide()) {
+							if (entity instanceof AbstractClientPlayer player) {
+								var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+								if (animation != null && !animation.isActive()) {
+									animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "dismantle2"))));
+								}
+							}
+						}
+					} else {
+						if (world.isClientSide()) {
+							if (entity instanceof AbstractClientPlayer player) {
+								var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+								if (animation != null && !animation.isActive()) {
+									animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "dismantle3"))));
+								}
+							}
+						}
 					}
 					{
 						Entity _shootFrom = entity;
@@ -197,6 +250,14 @@ public class DisasterFlamesMovesProcedure {
 							for (Entity entityiterator : _entfound) {
 								if (!(entity == entityiterator)) {
 									entityiterator.getPersistentData().putBoolean("domain", false);
+								}
+							}
+						}
+						if (world.isClientSide()) {
+							if (entity instanceof AbstractClientPlayer player) {
+								var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+								if (animation != null && !animation.isActive()) {
+									animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "mavshirine"))));
 								}
 							}
 						}

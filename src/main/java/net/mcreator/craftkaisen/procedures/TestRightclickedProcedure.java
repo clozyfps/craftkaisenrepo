@@ -28,11 +28,10 @@ public class TestRightclickedProcedure {
 				if (entity instanceof AbstractClientPlayer player) {
 					var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
 					if (animation != null) {
-						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "fuga1"))));
+						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "hollowpurplehu"))));
 					}
 				}
 			}
-			FugaEffectProcedure.execute(world, x, y, z, entity);
 		} else {
 			VoidRemoveProcedure.execute(world, x, y, z);
 			DisasterTidesDomainExpasionProcedure.execute(world, x, y, z, entity);

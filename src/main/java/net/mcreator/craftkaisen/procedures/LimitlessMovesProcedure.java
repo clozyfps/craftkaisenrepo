@@ -15,6 +15,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
@@ -24,6 +25,12 @@ import javax.annotation.Nullable;
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
+
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 @Mod.EventBusSubscriber
 public class LimitlessMovesProcedure {
@@ -59,9 +66,9 @@ public class LimitlessMovesProcedure {
 											capability.syncPlayerVariables(entity);
 										});
 									}
-									ReversalRedProceduresProcedure.execute(entity);
 									if (entity instanceof Player _player && !_player.level.isClientSide())
 										_player.displayClientMessage(Component.literal("Aka."), true);
+									ReversalRedProceduresProcedure.execute(world, entity);
 									entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 100);
 								} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 50
 										* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
@@ -158,7 +165,7 @@ public class LimitlessMovesProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							PurpleProcedureProcedure.execute(world, entity);
+							PurpleProcedureProcedure.execute(entity);
 							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 900);
 						} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 190
 								* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
@@ -201,6 +208,14 @@ public class LimitlessMovesProcedure {
 									capability.currentCursedEnergy = _setval;
 									capability.syncPlayerVariables(entity);
 								});
+							}
+							if (world.isClientSide()) {
+								if (entity instanceof AbstractClientPlayer player) {
+									var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+									if (animation != null) {
+										animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "unlimitedvoid"))));
+									}
+								}
 							}
 							VoidRemoveProcedure.execute(world, x, y, z);
 							{

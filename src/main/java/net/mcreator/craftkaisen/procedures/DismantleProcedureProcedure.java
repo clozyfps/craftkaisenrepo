@@ -6,58 +6,67 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.DismantleProjectileEntity;
 import net.mcreator.craftkaisen.entity.DismantlePrEntity;
 
-import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
-import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
-import dev.kosmx.playerAnim.api.layered.ModifierLayer;
-import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
-import dev.kosmx.playerAnim.api.layered.IAnimation;
-
 public class DismantleProcedureProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (Mth.nextInt(RandomSource.create(), 1, 3) == 1) {
-			if (world.isClientSide()) {
-				if (entity instanceof AbstractClientPlayer player) {
-					var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-					if (animation != null && !animation.isActive()) {
-						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "dismantle1"))));
-					}
-				}
+			{
+				String _setval = "dismantle1";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.AnimationToPlay = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
+			PlayAnimationProcedure.execute(world, x, y, z, entity);
 		} else if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
-			if (world.isClientSide()) {
-				if (entity instanceof AbstractClientPlayer player) {
-					var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-					if (animation != null && !animation.isActive()) {
-						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "dismantle2"))));
-					}
-				}
+			{
+				String _setval = "dismantle2";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.AnimationToPlay = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
+			PlayAnimationProcedure.execute(world, x, y, z, entity);
 		} else {
-			if (world.isClientSide()) {
-				if (entity instanceof AbstractClientPlayer player) {
-					var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
-					if (animation != null && !animation.isActive()) {
-						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "dismantle3"))));
-					}
-				}
+			{
+				String _setval = "dismantle3";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.AnimationToPlay = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
+			PlayAnimationProcedure.execute(world, x, y, z, entity);
 		}
 		if (entity instanceof LivingEntity _entity)
 			_entity.swing(InteractionHand.MAIN_HAND, true);
-		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput >= 120) {
+		if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput >= 120 && entity.getPersistentData().getBoolean("domain") == true
+				&& (entity.getPersistentData().getString("domaintype")).equals("Malevolent Shrine")) {
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DISMATLE.get(), 65, 1, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 65, 99, false, false));
+			{
+				String _setval = "mavshirine";
+				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.AnimationToPlay = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			PlayAnimationProcedure.execute(world, x, y, z, entity);
+		} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput >= 120) {
 			{
 				Entity _shootFrom = entity;
 				Level projectileLevel = _shootFrom.level;

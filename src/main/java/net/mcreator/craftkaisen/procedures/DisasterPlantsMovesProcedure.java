@@ -13,7 +13,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
@@ -21,6 +23,12 @@ import net.mcreator.craftkaisen.entity.RootProjectileProjectileEntity;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import javax.annotation.Nullable;
+
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 @Mod.EventBusSubscriber
 public class DisasterPlantsMovesProcedure {
@@ -52,6 +60,14 @@ public class DisasterPlantsMovesProcedure {
 					}
 					if (entity instanceof LivingEntity _entity)
 						_entity.swing(InteractionHand.MAIN_HAND, true);
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "shotwith1hand"))));
+							}
+						}
+					}
 					{
 						Entity _shootFrom = entity;
 						Level projectileLevel = _shootFrom.level;
@@ -99,6 +115,14 @@ public class DisasterPlantsMovesProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "shotwith1hand"))));
+							}
+						}
+					}
 					FlowerFieldProcedureProcedure.execute(entity);
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("Flower Field!"), true);
@@ -145,6 +169,14 @@ public class DisasterPlantsMovesProcedure {
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 4, 0);
 							projectileLevel.addFreshEntity(_entityToSpawn);
+						}
+					}
+					if (world.isClientSide()) {
+						if (entity instanceof AbstractClientPlayer player) {
+							var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+							if (animation != null && !animation.isActive()) {
+								animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "sliceingexorisim"))));
+							}
 						}
 					}
 					CraftKaisenMod.queueServerWork(5, () -> {

@@ -1,0 +1,33 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"point": {
+			"animation_length": 0.54167,
+			"bones": {
+				"body": {
+					"rotation": {
+						"vector": [0, -82.5, 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [0, 77.5, 0]
+					}
+				},
+				"right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.2083": {
+							"vector": [0, 0, 95]
+						},
+						"0.5": {
+							"vector": [0, 0, 95]
+						}
+					}
+				}
+			}
+		}
+	}
+}

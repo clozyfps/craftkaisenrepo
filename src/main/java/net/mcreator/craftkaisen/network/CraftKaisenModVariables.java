@@ -199,6 +199,8 @@ public class CraftKaisenModVariables {
 			clone.cameraroll = original.cameraroll;
 			clone.BrotherOneIf = original.BrotherOneIf;
 			clone.BortherTwoif = original.BortherTwoif;
+			clone.Dismantleactivated = original.Dismantleactivated;
+			clone.AnimationToPlay = original.AnimationToPlay;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -613,6 +615,8 @@ public class CraftKaisenModVariables {
 		public double cameraroll = 0;
 		public boolean BrotherOneIf = false;
 		public boolean BortherTwoif = false;
+		public boolean Dismantleactivated = false;
+		public String AnimationToPlay = "empty";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -787,6 +791,8 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("cameraroll", cameraroll);
 			nbt.putBoolean("BrotherOneIf", BrotherOneIf);
 			nbt.putBoolean("BortherTwoif", BortherTwoif);
+			nbt.putBoolean("Dismantleactivated", Dismantleactivated);
+			nbt.putString("AnimationToPlay", AnimationToPlay);
 			return nbt;
 		}
 
@@ -958,6 +964,8 @@ public class CraftKaisenModVariables {
 			cameraroll = nbt.getDouble("cameraroll");
 			BrotherOneIf = nbt.getBoolean("BrotherOneIf");
 			BortherTwoif = nbt.getBoolean("BortherTwoif");
+			Dismantleactivated = nbt.getBoolean("Dismantleactivated");
+			AnimationToPlay = nbt.getString("AnimationToPlay");
 		}
 	}
 
@@ -1148,6 +1156,8 @@ public class CraftKaisenModVariables {
 					variables.cameraroll = message.data.cameraroll;
 					variables.BrotherOneIf = message.data.BrotherOneIf;
 					variables.BortherTwoif = message.data.BortherTwoif;
+					variables.Dismantleactivated = message.data.Dismantleactivated;
+					variables.AnimationToPlay = message.data.AnimationToPlay;
 				}
 			});
 			context.setPacketHandled(true);

@@ -8,13 +8,21 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
+import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 public class ReikiOnEffectActiveTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -24,6 +32,14 @@ public class ReikiOnEffectActiveTickProcedure {
 			_level.getServer().getCommands().performPrefixedCommand(
 					new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getBbHeight()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 					"particle minecraft:dust 0.24 0.65 0.87 1 ^0 ^0 ^0 0.6 1.2 0.6 0 6");
+		if (world.isClientSide()) {
+			if (entity instanceof AbstractClientPlayer player) {
+				var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+				if (animation != null) {
+					animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "reiki"))));
+				}
+			}
+		}
 		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 5, 0, false, false));
 		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())

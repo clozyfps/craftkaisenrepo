@@ -147,6 +147,14 @@ public class AuspicousBeastSummonMovesProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						if (world.isClientSide()) {
+							if (entity instanceof AbstractClientPlayer player) {
+								var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("craft_kaisen", "player_animation"));
+								if (animation != null) {
+									animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("craft_kaisen", "ryu"))));
+								}
+							}
+						}
 						RyuProcedureProcedure.execute(world, x, y, z, entity);
 						if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.COOLDOWN.get(), 80, 0, false, false));

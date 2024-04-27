@@ -1,23 +1,93 @@
 
 package net.mcreator.craftkaisen.command;
 
+import org.checkerframework.checker.units.qual.s;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.common.util.FakePlayerFactory;
+
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.Direction;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.commands.Commands;
+
+import net.mcreator.craftkaisen.procedures.SetTidesProcedure;
+import net.mcreator.craftkaisen.procedures.SetTenShadowsProcedure;
+import net.mcreator.craftkaisen.procedures.SetSukunaProcedure;
+import net.mcreator.craftkaisen.procedures.SetStrengthStatProcedure;
+import net.mcreator.craftkaisen.procedures.SetStrawDollProcedure;
+import net.mcreator.craftkaisen.procedures.SetSpeedStatProcedure;
+import net.mcreator.craftkaisen.procedures.SetSoundAmpProcedure;
+import net.mcreator.craftkaisen.procedures.SetSorcererProcedure;
+import net.mcreator.craftkaisen.procedures.SetSkillPointsProcedure;
+import net.mcreator.craftkaisen.procedures.SetSixEyesProcedure;
+import net.mcreator.craftkaisen.procedures.SetSafeFarmingProcedure;
+import net.mcreator.craftkaisen.procedures.SetRyomenProcedure;
+import net.mcreator.craftkaisen.procedures.SetRoughProcedure;
+import net.mcreator.craftkaisen.procedures.SetRegainerProcedure;
+import net.mcreator.craftkaisen.procedures.SetRatioProcedure;
+import net.mcreator.craftkaisen.procedures.SetProjectionSorceryProcedure;
+import net.mcreator.craftkaisen.procedures.SetPrestigeLevelProcedure;
+import net.mcreator.craftkaisen.procedures.SetPhysicallyGiftedProcedure;
+import net.mcreator.craftkaisen.procedures.SetPPLTProcedure;
+import net.mcreator.craftkaisen.procedures.SetNoEnergyProcedure;
+import net.mcreator.craftkaisen.procedures.SetMissileFistsProcedure;
+import net.mcreator.craftkaisen.procedures.SetMiracleProcedure;
+import net.mcreator.craftkaisen.procedures.SetLimitlessProcedure;
+import net.mcreator.craftkaisen.procedures.SetLevelProcedure;
+import net.mcreator.craftkaisen.procedures.SetInverseProcedure;
+import net.mcreator.craftkaisen.procedures.SetIceProcedure;
+import net.mcreator.craftkaisen.procedures.SetHumanProcedure;
+import net.mcreator.craftkaisen.procedures.SetHealthStatProcedure;
+import net.mcreator.craftkaisen.procedures.SetGojoProcedure;
+import net.mcreator.craftkaisen.procedures.SetFrostProcedure;
+import net.mcreator.craftkaisen.procedures.SetFragileBodyProcedure;
+import net.mcreator.craftkaisen.procedures.SetFlameProcedure;
+import net.mcreator.craftkaisen.procedures.SetFearmongerProcedure;
+import net.mcreator.craftkaisen.procedures.SetExpProcedure;
+import net.mcreator.craftkaisen.procedures.SetEnergyControlProcedure;
+import net.mcreator.craftkaisen.procedures.SetElectricityProcedure;
+import net.mcreator.craftkaisen.procedures.SetDisasterPlantsProcedure;
+import net.mcreator.craftkaisen.procedures.SetDisasterFlamesProcedure;
+import net.mcreator.craftkaisen.procedures.SetCursedSpeechProcedure;
+import net.mcreator.craftkaisen.procedures.SetCursedEnergyStatProcedure;
+import net.mcreator.craftkaisen.procedures.SetCurseUserProcedure;
+import net.mcreator.craftkaisen.procedures.SetCurseProcedure;
+import net.mcreator.craftkaisen.procedures.SetCopyProcedure;
+import net.mcreator.craftkaisen.procedures.SetCameraProcedure;
+import net.mcreator.craftkaisen.procedures.SetCSMProcedure;
+import net.mcreator.craftkaisen.procedures.SetBrotherTwo2Procedure;
+import net.mcreator.craftkaisen.procedures.SetBrotherOneProcedure;
+import net.mcreator.craftkaisen.procedures.SetBoogieWoogieProcedure;
+import net.mcreator.craftkaisen.procedures.SetBloodManipulationProcedure;
+import net.mcreator.craftkaisen.procedures.SetBlessedByTheSparksProcedure;
+import net.mcreator.craftkaisen.procedures.SetBlackBirdManipulationProcedure;
+import net.mcreator.craftkaisen.procedures.SetBasicProcedure;
+import net.mcreator.craftkaisen.procedures.SetAuspiciousBeastsSummonProcedure;
+import net.mcreator.craftkaisen.procedures.SetAdaptionProcedure;
+import net.mcreator.craftkaisen.procedures.ResetButtonProcedure;
+import net.mcreator.craftkaisen.procedures.RctsetProcedure;
+import net.mcreator.craftkaisen.procedures.RctMasterySetProcedure;
+
+import com.mojang.brigadier.arguments.DoubleArgumentType;
+
 @Mod.EventBusSubscriber
 public class SetCommandCommand {
-
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
 		event.getDispatcher()
 				.register(Commands.literal("craftKaisen").requires(s -> s.hasPermission(1)).then(Commands.literal("Technique").then(Commands.argument("name", EntityArgument.players()).then(Commands.literal("Limitless").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -26,15 +96,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("CursedSpeech").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -43,15 +110,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Sukuna").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -60,15 +124,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Copy").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -77,15 +138,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("BloodManipulation").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -94,15 +152,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Miracle").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -111,15 +166,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Inverse").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -128,15 +180,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("TenShadows").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -145,15 +194,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("StrawDollWIP").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -162,15 +208,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("DisasterFlames").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -179,15 +222,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("DisasterPlants").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -196,15 +236,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("CursedSpiritManipulationWIP").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -213,15 +250,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("BoogieWoogie").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -230,15 +264,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Ratio").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -247,15 +278,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("AuspiciousBeastsSummon").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -264,15 +292,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("IceFormation").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -281,15 +306,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("PrivatePureLoveTrainWIP").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -298,15 +320,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("MissileFists").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -315,15 +334,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Adaption").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -332,15 +348,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("ProjectionSorcery").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -349,15 +362,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("BlackBirdManipulation").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -366,15 +376,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("SoundAmplification").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -383,32 +390,40 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Camera").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
 
 					SetCameraProcedure.execute(arguments);
 					return 0;
-				})).then(Commands.literal("DisasterTides")))).then(Commands.literal("Race").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Human").executes(arguments -> {
+				})).then(Commands.literal("DisasterTides").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
 
+					SetTidesProcedure.execute(arguments);
+					return 0;
+				})))).then(Commands.literal("Race").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Human").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -417,15 +432,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Curse").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -434,15 +446,12 @@ public class SetCommandCommand {
 					return 0;
 				})))).then(Commands.literal("Mastery").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("RCT").then(Commands.argument("number", DoubleArgumentType.doubleArg(1, 10)).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -451,15 +460,12 @@ public class SetCommandCommand {
 					return 0;
 				}))))).then(Commands.literal("Character").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Gojo").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -468,15 +474,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Sukuna").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -485,15 +488,12 @@ public class SetCommandCommand {
 					return 0;
 				})))).then(Commands.literal("Stat").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("CursedEnergy").then(Commands.argument("cursedEnergy", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -502,15 +502,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("Strength").then(Commands.argument("strength", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -519,15 +516,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("Speed").then(Commands.argument("speed", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -536,15 +530,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("Health").then(Commands.argument("health", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -553,15 +544,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("EnergyControl").then(Commands.argument("energyControl", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -570,15 +558,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("SkillPoints").then(Commands.argument("skillPoints", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -587,15 +572,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("Level").then(Commands.argument("Level", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -604,15 +586,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("Experience").then(Commands.argument("Exp", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -621,15 +600,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("Prestige").then(Commands.argument("level", DoubleArgumentType.doubleArg(0, 4)).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -638,15 +614,12 @@ public class SetCommandCommand {
 					return 0;
 				}))))).then(Commands.literal("Special").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("SixEyes").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -655,15 +628,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("PhysicallyGifted").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -672,15 +642,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("NoEnergy").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -689,15 +656,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("FragileBody").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -706,15 +670,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("BlessedBySparks").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -723,15 +684,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("RCT").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -740,15 +698,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("BrotherOne").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -757,15 +712,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("BrotherTwo").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -774,15 +726,12 @@ public class SetCommandCommand {
 					return 0;
 				})))).then(Commands.literal("Affiliation").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Sorcerer").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -791,15 +740,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("CurseUser").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -808,15 +754,12 @@ public class SetCommandCommand {
 					return 0;
 				})))).then(Commands.literal("Reset").then(Commands.argument("name", EntityArgument.player()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -825,15 +768,12 @@ public class SetCommandCommand {
 					return 0;
 				}))).then(Commands.literal("Perk").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Regainer").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -842,15 +782,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("SafeFarming").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -859,15 +796,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Fearmonger").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -876,15 +810,12 @@ public class SetCommandCommand {
 					return 0;
 				})))).then(Commands.literal("CETrait").then(Commands.argument("name", EntityArgument.player()).then(Commands.literal("Basic").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -893,15 +824,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Flame").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -910,15 +838,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Electricity").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -927,15 +852,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Frost").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -944,15 +866,12 @@ public class SetCommandCommand {
 					return 0;
 				})).then(Commands.literal("Rough").executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
-
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
 					double z = arguments.getSource().getPosition().z();
-
 					Entity entity = arguments.getSource().getEntity();
 					if (entity == null && world instanceof ServerLevel _servLevel)
 						entity = FakePlayerFactory.getMinecraft(_servLevel);
-
 					Direction direction = Direction.DOWN;
 					if (entity != null)
 						direction = entity.getDirection();
@@ -961,5 +880,4 @@ public class SetCommandCommand {
 					return 0;
 				})))));
 	}
-
 }
