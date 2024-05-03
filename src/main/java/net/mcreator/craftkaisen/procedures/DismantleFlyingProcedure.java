@@ -108,8 +108,8 @@ public class DismantleFlyingProcedure {
 					}
 				}
 			}
-			int horizontalRadiusSphere = (int) 2 - 1;
-			int verticalRadiusSphere = (int) 4 - 1;
+			int horizontalRadiusSphere = (int) 4 - 1;
+			int verticalRadiusSphere = (int) 6 - 1;
 			int yIterationsSphere = verticalRadiusSphere;
 			for (int i = -yIterationsSphere; i <= yIterationsSphere; i++) {
 				for (int xi = -horizontalRadiusSphere; xi <= horizontalRadiusSphere; xi++) {

@@ -84,8 +84,16 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
 					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.RED_FOG.get(), 5, 1, false, false));
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.sweep")), SoundSource.NEUTRAL,
+								1, 1);
+					} else {
+						_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.sweep")), SoundSource.NEUTRAL, 1, 1, false);
+					}
+				}
 				if (!(entity == entityiterator) && !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
-						&& !(entityiterator instanceof LivingEntity _livEnt38 && _livEnt38.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
+						&& !(entityiterator instanceof LivingEntity _livEnt42 && _livEnt42.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()))
 						&& !(entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
 					if (entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("craft_kaisen:cursed_spirits")))) {
 						if (world instanceof ServerLevel _level)
@@ -105,14 +113,14 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:slashing_damage"))),
 							(entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null)), 50);
-				} else if (entityiterator instanceof LivingEntity _livEnt59 && _livEnt59.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()) && !(entity == entityiterator)
+				} else if (entityiterator instanceof LivingEntity _livEnt63 && _livEnt63.hasEffect(CraftKaisenModMobEffects.SIMPLE_DOMAIN.get()) && !(entity == entityiterator)
 						&& !(entity instanceof TamableAnimal _tamIsTamedBy && entityiterator instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 					if (Math.random() < 0.01) {
 						entityiterator.getPersistentData().putDouble("simpledomainlevel", (entityiterator.getPersistentData().getDouble("simpledomainlevel") - 0.1));
 					}
 				}
 				if ((entity.getPersistentData().getString("tamer")).equals(entityiterator.getDisplayName().getString())) {
-					if (entityiterator instanceof LivingEntity _livEnt66 && _livEnt66.hasEffect(CraftKaisenModMobEffects.DISMATLE.get())) {
+					if (entityiterator instanceof LivingEntity _livEnt70 && _livEnt70.hasEffect(CraftKaisenModMobEffects.DISMATLE.get())) {
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), x, y, z, 25, 45, 10, 45, 0.2);
 						if (world instanceof ServerLevel _level)
@@ -127,15 +135,21 @@ public class MalevolentShrineOnEntityTickUpdateProcedure {
 		entity.getPersistentData().putDouble("slicerandom", (Mth.nextInt(RandomSource.create(), 1, 3)));
 		if (entity.getPersistentData().getDouble("slicerandom") == 1) {
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_1.get()), x, y, z, 25, 45, 10, 45, 0.2);
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_1.get()), x, y, z, 55, 45, 10, 45, 0.7);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_1RED.get()), x, y, z, 55, 45, 10, 45, 0.7);
 		}
 		if (entity.getPersistentData().getDouble("slicerandom") == 2) {
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), x, y, z, 25, 45, 10, 45, 0.2);
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_2.get()), x, y, z, 55, 45, 10, 45, 0.7);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_2RED.get()), x, y, z, 55, 45, 10, 45, 0.7);
 		}
 		if (entity.getPersistentData().getDouble("slicerandom") == 3) {
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_3.get()), x, y, z, 25, 45, 10, 45, 0.2);
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_SLICE_3.get()), x, y, z, 55, 45, 10, 45, 0.7);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.SHRINE_3RED.get()), x, y, z, 55, 45, 10, 45, 0.7);
 		}
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.POOF, x, y, z, 25, 25, 10, 25, 0.3);

@@ -10,7 +10,13 @@ public class DomainClashingClickProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		entity.getPersistentData().putDouble("DomainClashPoints", (entity.getPersistentData().getDouble("DomainClashPoints") + 1));
+		{
+			double _setval = (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).DomainClashClick + 1;
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.DomainClashClick = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
 		{
 			double _setval = Mth.nextInt(RandomSource.create(), 1, 4);
 			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

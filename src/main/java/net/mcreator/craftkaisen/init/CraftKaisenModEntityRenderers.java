@@ -52,6 +52,7 @@ import net.mcreator.craftkaisen.client.renderer.RainbowOpenDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowDragonRenderer;
 import net.mcreator.craftkaisen.client.renderer.RainbowClosedDoorRenderer;
 import net.mcreator.craftkaisen.client.renderer.PrisonBoxRenderer;
+import net.mcreator.craftkaisen.client.renderer.PreDomainMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.PoxDeityDomainRenderer;
 import net.mcreator.craftkaisen.client.renderer.PillarOfLightRenderer;
 import net.mcreator.craftkaisen.client.renderer.OpenPrisonBoxRenderer;
@@ -101,6 +102,7 @@ import net.mcreator.craftkaisen.client.renderer.FingerBearerRenderer;
 import net.mcreator.craftkaisen.client.renderer.EmberInsectRenderer;
 import net.mcreator.craftkaisen.client.renderer.EmberInsectProjectileProjectileRenderer;
 import net.mcreator.craftkaisen.client.renderer.EightHandledSwordDivergentSilaDivineGeneralMahoragaRenderer;
+import net.mcreator.craftkaisen.client.renderer.EffectFugaRenderer;
 import net.mcreator.craftkaisen.client.renderer.DeathWarm2Renderer;
 import net.mcreator.craftkaisen.client.renderer.DeathSwarm3Renderer;
 import net.mcreator.craftkaisen.client.renderer.DeathSwarm1Renderer;
@@ -274,5 +276,7 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.PILLAR_OF_LIGHT.get(), PillarOfLightRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.MOON_DREG.get(), MoonDregRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.TIDES_TRE.get(), TidesTreRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.PRE_DOMAIN_MOB.get(), PreDomainMobRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.EFFECT_FUGA.get(), EffectFugaRenderer::new);
 	}
 }

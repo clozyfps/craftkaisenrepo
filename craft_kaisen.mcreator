@@ -34347,6 +34347,413 @@
         ]
       },
       "path": "~/Abilities/DisasterTides"
+    },
+    {
+      "name": "IframeEffectOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1484,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iframe_effect_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IframeEffectOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "IframeEffect",
+      "type": "potioneffect",
+      "sortid": 1485,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iframe_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/IframeEffectMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "ShadersTick",
+      "type": "procedure",
+      "sortid": 1486,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shaders_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/ShadersTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SetFOV",
+      "type": "procedure",
+      "sortid": 1487,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_fov",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SetFOVProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "IframeEffectEffectStartedapplied",
+      "type": "procedure",
+      "sortid": 1488,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iframe_effect_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/IframeEffectEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "MeleeEffect",
+      "type": "particle",
+      "sortid": 1489,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "melee_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/MeleeEffectParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/melee_effect.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "Shrine1red",
+      "type": "particle",
+      "sortid": 1490,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shrine_1red",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/shrine_1red.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/Shrine1redParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "Shrine2red",
+      "type": "particle",
+      "sortid": 1491,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shrine_2red",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/particle/Shrine2redParticle.java",
+          "src/main/resources/assets/craft_kaisen/particles/shrine_2red.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "Shrine3red",
+      "type": "particle",
+      "sortid": 1492,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shrine_3red",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/particles/shrine_3red.json",
+          "src/main/java/net/mcreator/craftkaisen/client/particle/Shrine3redParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "PreDomain",
+      "type": "potioneffect",
+      "sortid": 1493,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pre_domain",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/PreDomainMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "StopDomain",
+      "type": "potioneffect",
+      "sortid": 1494,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stop_domain",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/StopDomainMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "PreDomainEffectStartedapplied",
+      "type": "procedure",
+      "sortid": 1495,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pre_domain_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PreDomainEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "PreDomainEffectExpires",
+      "type": "procedure",
+      "sortid": 1496,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pre_domain_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PreDomainEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "PreDomainMobOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1497,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pre_domain_mob_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PreDomainMobOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Domain"
+    },
+    {
+      "name": "PreDomainMob",
+      "type": "livingentity",
+      "sortid": 1498,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pre_domain_mob",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/PreDomainMobRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/PreDomainMobEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "PreDomainOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1499,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pre_domain_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/PreDomainOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "DomainFixEffect",
+      "type": "potioneffect",
+      "sortid": 1500,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_fix_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/DomainFixEffectMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "EffectFugaOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1501,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "effect_fuga_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/EffectFugaOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "EffectFuga",
+      "type": "animatedentity",
+      "sortid": 1502,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "effect_fuga",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/model/EffectFugaModel.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/EffectFugaRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/EffectFugaEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/layer/EffectFugaLayer.java"
+        ]
+      },
+      "path": "~/Abilities/SukunaVessel"
     }
   ],
   "variable_elements": [
@@ -35447,6 +35854,36 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "bluepostionx",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "bluepostiony",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "bluepostionz",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DomainClashClick",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "ControlVaribleDomainClash",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -35742,6 +36179,7 @@
       "item.craft_kaisen.megumi_fushiguro_spawn_egg": "Megumi Fushiguro Spawn Egg",
       "advancements.death_painting.descr": "WIP",
       "entity.craft_kaisen.mouth_cursed_spirit": "Mouth Cursed Spirit",
+      "effect.craft_kaisen.iframe_effect": "Iframe",
       "entity.craft_kaisen.black_divine_dog": "Black Divine Dog",
       "entity.craft_kaisen.toji_fushiguro": "Toji Fushiguro",
       "item.craft_kaisen.mahoraga_wheel_helmet": "Mahoraga Wheel",
@@ -35873,6 +36311,7 @@
       "item.craft_kaisen.blood_spear": "Blood Spear",
       "entity.craft_kaisen.fire_arrow_storm": "Fire Arrow Storm",
       "entity.craft_kaisen.eight_handled_sword_divergent_sila_divine_general_mahoraga": "Eight Handled Sword Divergent Sila Divine General Mahoraga",
+      "effect.craft_kaisen.domain_fix_effect": "Domain Fix",
       "item.craft_kaisen.nanako_hasaba_spawn_egg": "Nanako Hasaba Spawn Egg",
       "advancements.reversed_cursed_technique.title": "Reversed Cursed Technique",
       "advancements.cursed_spirit.title": "Cursed Spirit",
@@ -35955,6 +36394,7 @@
       "item.craft_kaisen.yuta_okkotsu_spawn_egg": "Yuta Okkotsu Spawn Egg",
       "gamerule.malevolentShrineBlockDamage.description": "toggle if malevolent shrine should damage blocks",
       "item.craft_kaisen.kamutoke": "\"Supreme Martial Solution\" Kamutoke",
+      "entity.craft_kaisen.effect_fuga": "Effect Fuga",
       "advancements.simple_domain_learned.descr": "Learn Simple Domain",
       "gui.craft_kaisen.perk_gui.button_accept": "Accept",
       "item.craft_kaisen.itadori_outfit_chestplate": "Itadori Uniform ",
@@ -36016,6 +36456,7 @@
       "death.attack.ratio_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.craft_kaisen.main_menu.label_ii": "I",
       "item.craft_kaisen.cursed_spirit_orb": "Cursed Spirit Orb",
+      "entity.craft_kaisen.pre_domain_mob": "Pre Domain Mob",
       "item.craft_kaisen.inverted_spear": "Inverted Spear",
       "item.craft_kaisen.fire_arrow_mob": "Fire Arrow Mob",
       "death.attack.electric_damage.item": "%1$s was killed by %2$s using %3$s",
@@ -36112,8 +36553,10 @@
       "gui.craft_kaisen.mastery_gui.label_masterty_menu": "Mastery Menu",
       "block.craft_kaisen.domain_basalt": "Domain Block",
       "entity.craft_kaisen.frame_mob": "Frame Mob",
+      "item.craft_kaisen.effect_fuga_spawn_egg": "Effect Fuga Spawn Egg",
       "item_group.craft_kaisen.ck_mobs": "Craft Kaisen Humans",
       "gamerule.maximumSukunaVesselPlayers": "MaximumSukunaVesselPlayers (singeplayer)",
+      "effect.craft_kaisen.stop_domain": "Stop Domain",
       "item.craft_kaisen.kenjaku_spawn_egg": "Kenjaku Spawn Egg",
       "itemGroup.tabck_mobs": "Craft Kaisen Humans",
       "block.craft_kaisen.ice_domain_floor": "Ice Domain Floor",
@@ -36176,6 +36619,7 @@
       "gui.craft_kaisen.start_screen.label_human": "Human",
       "entity.craft_kaisen.malevolent_shrine": "Malevolent Shrine",
       "item.craft_kaisen.toji_outfit_leggings": "Toji Pants",
+      "gui.craft_kaisen.domain_clashing_gui.label_click_the_buttons": "Click The Button",
       "entity.craft_kaisen.mahito_clone": "Mahito Clone",
       "item.craft_kaisen.meguna_outfit_leggings": "Meguna Outfit",
       "item.craft_kaisen.bandage_blind_fold_helmet": "Bandage Blind Fold",
@@ -36308,6 +36752,7 @@
       "entity.craft_kaisen.throw_player_mob": "Throw Player Mob",
       "effect.craft_kaisen.prison_box_stun": "PrisonBoxStun",
       "advancements.blessed_by_the_sparks_advancement.descr": "Your chances for landing a black flash are significantly increased.",
+      "effect.craft_kaisen.pre_domain": "PreDomain",
       "advancements.rabbit_escape.title": "Rabbit Escape",
       "item.craft_kaisen.tides_tre_spawn_egg": "Tides Tree Spawn Egg",
       "entity.craft_kaisen.nanami_kento": "Nanami Kento",

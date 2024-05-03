@@ -202,6 +202,11 @@ public class CraftKaisenModVariables {
 			clone.Dismantleactivated = original.Dismantleactivated;
 			clone.AnimationToPlay = original.AnimationToPlay;
 			clone.sixeyes = original.sixeyes;
+			clone.bluepostionx = original.bluepostionx;
+			clone.bluepostiony = original.bluepostiony;
+			clone.bluepostionz = original.bluepostionz;
+			clone.DomainClashClick = original.DomainClashClick;
+			clone.ControlVaribleDomainClash = original.ControlVaribleDomainClash;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -619,6 +624,11 @@ public class CraftKaisenModVariables {
 		public boolean Dismantleactivated = false;
 		public String AnimationToPlay = "empty";
 		public boolean sixeyes = false;
+		public double bluepostionx = 0;
+		public double bluepostiony = 0;
+		public double bluepostionz = 0;
+		public double DomainClashClick = 0;
+		public boolean ControlVaribleDomainClash = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -796,6 +806,11 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("Dismantleactivated", Dismantleactivated);
 			nbt.putString("AnimationToPlay", AnimationToPlay);
 			nbt.putBoolean("sixeyes", sixeyes);
+			nbt.putDouble("bluepostionx", bluepostionx);
+			nbt.putDouble("bluepostiony", bluepostiony);
+			nbt.putDouble("bluepostionz", bluepostionz);
+			nbt.putDouble("DomainClashClick", DomainClashClick);
+			nbt.putBoolean("ControlVaribleDomainClash", ControlVaribleDomainClash);
 			return nbt;
 		}
 
@@ -970,6 +985,11 @@ public class CraftKaisenModVariables {
 			Dismantleactivated = nbt.getBoolean("Dismantleactivated");
 			AnimationToPlay = nbt.getString("AnimationToPlay");
 			sixeyes = nbt.getBoolean("sixeyes");
+			bluepostionx = nbt.getDouble("bluepostionx");
+			bluepostiony = nbt.getDouble("bluepostiony");
+			bluepostionz = nbt.getDouble("bluepostionz");
+			DomainClashClick = nbt.getDouble("DomainClashClick");
+			ControlVaribleDomainClash = nbt.getBoolean("ControlVaribleDomainClash");
 		}
 	}
 
@@ -1163,6 +1183,11 @@ public class CraftKaisenModVariables {
 					variables.Dismantleactivated = message.data.Dismantleactivated;
 					variables.AnimationToPlay = message.data.AnimationToPlay;
 					variables.sixeyes = message.data.sixeyes;
+					variables.bluepostionx = message.data.bluepostionx;
+					variables.bluepostiony = message.data.bluepostiony;
+					variables.bluepostionz = message.data.bluepostionz;
+					variables.DomainClashClick = message.data.DomainClashClick;
+					variables.ControlVaribleDomainClash = message.data.ControlVaribleDomainClash;
 				}
 			});
 			context.setPacketHandled(true);

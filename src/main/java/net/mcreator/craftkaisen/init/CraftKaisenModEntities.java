@@ -70,6 +70,7 @@ import net.mcreator.craftkaisen.entity.RainbowDragonEntity;
 import net.mcreator.craftkaisen.entity.RainbowClosedDoorEntity;
 import net.mcreator.craftkaisen.entity.PureLoveBeamRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.PrisonBoxEntity;
+import net.mcreator.craftkaisen.entity.PreDomainMobEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
 import net.mcreator.craftkaisen.entity.PillarOfLightEntity;
 import net.mcreator.craftkaisen.entity.PiercingBloodProjectileEntity;
@@ -134,6 +135,7 @@ import net.mcreator.craftkaisen.entity.ExplodeRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.EmberInsectProjectileProjectileEntity;
 import net.mcreator.craftkaisen.entity.EmberInsectEntity;
 import net.mcreator.craftkaisen.entity.EightHandledSwordDivergentSilaDivineGeneralMahoragaEntity;
+import net.mcreator.craftkaisen.entity.EffectFugaEntity;
 import net.mcreator.craftkaisen.entity.DoorsCheckerEntity;
 import net.mcreator.craftkaisen.entity.DontMoveRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.DismantleProjectileEntity;
@@ -241,7 +243,7 @@ public class CraftKaisenModEntities {
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<MalevolentShrineEntity>> MALEVOLENT_SHRINE = register("malevolent_shrine", EntityType.Builder.<MalevolentShrineEntity>of(MalevolentShrineEntity::new, MobCategory.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(500).setUpdateInterval(3).setCustomClientFactory(MalevolentShrineEntity::new).fireImmune().sized(0.6f, 1.8f));
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(500).setUpdateInterval(3).setCustomClientFactory(MalevolentShrineEntity::new).fireImmune().sized(1f, 3f));
 	public static final RegistryObject<EntityType<HanamiEntity>> HANAMI = register("hanami",
 			EntityType.Builder.<HanamiEntity>of(HanamiEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HanamiEntity::new)
 
@@ -649,6 +651,10 @@ public class CraftKaisenModEntities {
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<TidesTreEntity>> TIDES_TRE = register("tides_tre",
 			EntityType.Builder.<TidesTreEntity>of(TidesTreEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TidesTreEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<PreDomainMobEntity>> PRE_DOMAIN_MOB = register("pre_domain_mob", EntityType.Builder.<PreDomainMobEntity>of(PreDomainMobEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PreDomainMobEntity::new).fireImmune().sized(0.1f, 0.1f));
+	public static final RegistryObject<EntityType<EffectFugaEntity>> EFFECT_FUGA = register("effect_fuga", EntityType.Builder.<EffectFugaEntity>of(EffectFugaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+			.setUpdateInterval(3).setCustomClientFactory(EffectFugaEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -758,6 +764,8 @@ public class CraftKaisenModEntities {
 			PillarOfLightEntity.init();
 			MoonDregEntity.init();
 			TidesTreEntity.init();
+			PreDomainMobEntity.init();
+			EffectFugaEntity.init();
 		});
 	}
 
@@ -864,5 +872,7 @@ public class CraftKaisenModEntities {
 		event.put(PILLAR_OF_LIGHT.get(), PillarOfLightEntity.createAttributes().build());
 		event.put(MOON_DREG.get(), MoonDregEntity.createAttributes().build());
 		event.put(TIDES_TRE.get(), TidesTreEntity.createAttributes().build());
+		event.put(PRE_DOMAIN_MOB.get(), PreDomainMobEntity.createAttributes().build());
+		event.put(EFFECT_FUGA.get(), EffectFugaEntity.createAttributes().build());
 	}
 }

@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -22,6 +23,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
@@ -73,6 +76,9 @@ public class MeleeMovesProcedure {
 					projectileLevel.addFreshEntity(_entityToSpawn);
 				}
 			}
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6"));
 			entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
 			{
 				String _setval = "";
@@ -112,6 +118,9 @@ public class MeleeMovesProcedure {
 					projectileLevel.addFreshEntity(_entityToSpawn);
 				}
 			}
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 			if (entity instanceof LivingEntity _entity)
 				_entity.swing(InteractionHand.MAIN_HAND, true);
 			CraftKaisenMod.queueServerWork(5, () -> {
@@ -136,6 +145,9 @@ public class MeleeMovesProcedure {
 				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.swing(InteractionHand.MAIN_HAND, true);
+				if (world instanceof ServerLevel _level)
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 				CraftKaisenMod.queueServerWork(5, () -> {
 					{
 						Entity _shootFrom = entity;
@@ -158,6 +170,9 @@ public class MeleeMovesProcedure {
 					}
 					if (entity instanceof LivingEntity _entity)
 						_entity.swing(InteractionHand.MAIN_HAND, true);
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 					CraftKaisenMod.queueServerWork(5, () -> {
 						{
 							Entity _shootFrom = entity;
@@ -180,6 +195,9 @@ public class MeleeMovesProcedure {
 						}
 						if (entity instanceof LivingEntity _entity)
 							_entity.swing(InteractionHand.MAIN_HAND, true);
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 						CraftKaisenMod.queueServerWork(5, () -> {
 							{
 								Entity _shootFrom = entity;
@@ -202,6 +220,9 @@ public class MeleeMovesProcedure {
 							}
 							if (entity instanceof LivingEntity _entity)
 								_entity.swing(InteractionHand.MAIN_HAND, true);
+							if (world instanceof ServerLevel _level)
+								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 							CraftKaisenMod.queueServerWork(5, () -> {
 								{
 									Entity _shootFrom = entity;
@@ -224,6 +245,10 @@ public class MeleeMovesProcedure {
 								}
 								if (entity instanceof LivingEntity _entity)
 									_entity.swing(InteractionHand.MAIN_HAND, true);
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+											("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 								CraftKaisenMod.queueServerWork(5, () -> {
 									{
 										Entity _shootFrom = entity;
@@ -246,6 +271,10 @@ public class MeleeMovesProcedure {
 									}
 									if (entity instanceof LivingEntity _entity)
 										_entity.swing(InteractionHand.MAIN_HAND, true);
+									if (world instanceof ServerLevel _level)
+										_level.getServer().getCommands().performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+												("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 								});
 							});
 						});
@@ -323,6 +352,8 @@ public class MeleeMovesProcedure {
 							if (entity instanceof Player _player && !_player.level.isClientSide())
 								_player.displayClientMessage(Component.literal("-No Target Found-"), true);
 						} else {
+							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.IFRAME_EFFECT.get(), 4, 1, false, false));
 							{
 								Entity _shootFrom = entity;
 								Level projectileLevel = _shootFrom.level;
