@@ -20,22 +20,22 @@ public class CursedEnergySwitchProcedure {
 				entity.getPersistentData().putDouble("moveCost", 0);
 			}
 		} else if (entity.getPersistentData().getDouble("moveNumber") == 2) {
-			entity.getPersistentData().putString("moveDisplay", "Domain Amplification");
+			entity.getPersistentData().putString("moveDisplay", "Flow");
 			if (entity instanceof ServerPlayer _plr9 && _plr9.level instanceof ServerLevel
-					&& _plr9.getAdvancements().getOrStartProgress(_plr9.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:domain_amplification_learned"))).isDone()) {
+					&& _plr9.getAdvancements().getOrStartProgress(_plr9.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_energy_flow"))).isDone()) {
 				entity.getPersistentData().putDouble("moveCost", 0);
 			} else if (!(entity instanceof ServerPlayer _plr11 && _plr11.level instanceof ServerLevel
-					&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:domain_amplification_learned"))).isDone())) {
-				entity.getPersistentData().putDouble("moveCost", 65);
+					&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_energy_flow"))).isDone())) {
+				entity.getPersistentData().putDouble("moveCost", 50);
 			}
 		} else if (entity.getPersistentData().getDouble("moveNumber") == 3) {
-			entity.getPersistentData().putString("moveDisplay", "Flow");
+			entity.getPersistentData().putString("moveDisplay", "Domain Amplification");
 			if (entity instanceof ServerPlayer _plr15 && _plr15.level instanceof ServerLevel
-					&& _plr15.getAdvancements().getOrStartProgress(_plr15.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_energy_flow"))).isDone()) {
+					&& _plr15.getAdvancements().getOrStartProgress(_plr15.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:domain_amplification_learned"))).isDone()) {
 				entity.getPersistentData().putDouble("moveCost", 0);
 			} else if (!(entity instanceof ServerPlayer _plr17 && _plr17.level instanceof ServerLevel
-					&& _plr17.getAdvancements().getOrStartProgress(_plr17.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:cursed_energy_flow"))).isDone())) {
-				entity.getPersistentData().putDouble("moveCost", 50);
+					&& _plr17.getAdvancements().getOrStartProgress(_plr17.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:domain_amplification_learned"))).isDone())) {
+				entity.getPersistentData().putDouble("moveCost", 65);
 			}
 		}
 	}

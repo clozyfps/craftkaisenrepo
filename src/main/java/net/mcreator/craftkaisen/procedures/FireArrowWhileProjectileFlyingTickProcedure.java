@@ -92,17 +92,17 @@ public class FireArrowWhileProjectileFlyingTickProcedure {
 				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.firecharge.use")), SoundSource.NEUTRAL, 1, 1, false);
 			}
 		}
+		if (world instanceof ServerLevel _level) {
+			Entity entityToSpawn = new EffectFugaEntity(CraftKaisenModEntities.EFFECT_FUGA.get(), _level);
+			entityToSpawn.moveTo(x, y, z, 0, 0);
+			entityToSpawn.setYBodyRot(0);
+			entityToSpawn.setYHeadRot(0);
+			entityToSpawn.setDeltaMovement(0, 0, 0);
+			if (entityToSpawn instanceof Mob _mobToSpawn)
+				_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+			_level.addFreshEntity(entityToSpawn);
+		}
 		CraftKaisenMod.queueServerWork(40, () -> {
-			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = new EffectFugaEntity(CraftKaisenModEntities.EFFECT_FUGA.get(), _level);
-				entityToSpawn.moveTo(x, y, z, 0, 0);
-				entityToSpawn.setYBodyRot(0);
-				entityToSpawn.setYHeadRot(0);
-				entityToSpawn.setDeltaMovement(0, 0, 0);
-				if (entityToSpawn instanceof Mob _mobToSpawn)
-					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-				_level.addFreshEntity(entityToSpawn);
-			}
 			if (!immediatesourceentity.level.isClientSide())
 				immediatesourceentity.discard();
 		});

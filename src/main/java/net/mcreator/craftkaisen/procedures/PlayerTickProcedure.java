@@ -41,7 +41,7 @@ public class PlayerTickProcedure {
 		BloodEdgeTickProcedure.execute(entity);
 		StopPlayerTickProcedure.execute(entity);
 		MeleeMovesProcedure.execute(world, x, y, z, entity);
-		WeaponMovesProcedure.execute(entity);
+		WeaponMovesProcedure.execute(world, x, y, z, entity);
 		RestrictedMovesProcedure.execute(world, x, y, z, entity);
 		StarPlasmaVesselQuestProcedure.execute(world, x, y, z, entity);
 		SixEyesTickProcedure.execute(world, entity);
@@ -61,7 +61,7 @@ public class PlayerTickProcedure {
 		RoundBeginsProcedure.execute(world, x, y, z, entity);
 		RoundGameChoiceTimerProcedure.execute(world, x, y, z, entity);
 		BeginRollingProcedure.execute(world, x, y, z, entity);
-		CountTickProcedure.execute(entity);
+		CountTickProcedure.execute(world, x, y, z, entity);
 		BrotherTickProcedure.execute(world, x, y, z, entity);
 		MeleeIconsProcedure.execute(world, entity);
 		CursedEnergyIconsProcedure.execute(world, entity);

@@ -5280,22 +5280,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -16090,6 +16074,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -31856,6 +31856,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -32304,6 +32320,18 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           },
           {
             "name": "world",
@@ -34754,6 +34782,682 @@
         ]
       },
       "path": "~/Abilities/SukunaVessel"
+    },
+    {
+      "name": "CursedBudEffectOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1503,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_bud_effect_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CursedBudEffectOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/DisasterPlants"
+    },
+    {
+      "name": "CursedBudEffect",
+      "type": "potioneffect",
+      "sortid": 1504,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_bud_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/CursedBudEffectMobEffect.java"
+        ]
+      },
+      "path": "~/Abilities/DisasterPlants"
+    },
+    {
+      "name": "CursedBudProjectileHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 1505,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_bud_projectile_hits_living_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/CursedBudProjectileHitsLivingEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/DisasterPlants"
+    },
+    {
+      "name": "CursedBud",
+      "type": "projectile",
+      "sortid": 1506,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_bud",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/CursedBudRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/CursedBudEntity.java"
+        ]
+      },
+      "path": "~/Abilities/DisasterPlants"
+    },
+    {
+      "name": "Guard",
+      "type": "potioneffect",
+      "sortid": 1507,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guard",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/GuardMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "SoundWaveFunction",
+      "type": "function",
+      "sortid": 1508,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sound_wave_function",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/functions/sound_wave_function.mcfunction"
+        ]
+      },
+      "path": "~/Functions"
+    },
+    {
+      "name": "SoundWavesWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1509,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sound_waves_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SoundWavesWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/SoundAmp"
+    },
+    {
+      "name": "SoundWaves",
+      "type": "projectile",
+      "sortid": 1510,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sound_waves",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/SoundWavesEntity.java"
+        ]
+      },
+      "path": "~/Abilities/SoundAmp"
+    },
+    {
+      "name": "DomainSpamFix",
+      "type": "potioneffect",
+      "sortid": 1511,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_spam_fix",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/DomainSpamFixMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "SoundWavesProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 1512,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sound_waves_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SoundWavesProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/SoundAmp"
+    },
+    {
+      "name": "Overtime",
+      "type": "animatedentity",
+      "sortid": 1513,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "overtime",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/layer/OvertimeLayer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/model/OvertimeModel.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/OvertimeRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/OvertimeEntity.java",
+          "src/main/resources/assets/craft_kaisen/models/item/overtime_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "OverTimeEffectEffectStartedapplied",
+      "type": "procedure",
+      "sortid": 1514,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "over_time_effect_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OverTimeEffectEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "OverTimeEffectEffectExpires",
+      "type": "procedure",
+      "sortid": 1515,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "over_time_effect_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OverTimeEffectEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "OverTimeEffectOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1516,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "over_time_effect_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OverTimeEffectOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "OverTimeEffect",
+      "type": "potioneffect",
+      "sortid": 1517,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "over_time_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/OverTimeEffectMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "CoolDown2",
+      "type": "potioneffect",
+      "sortid": 1518,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cool_down_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/CoolDown2MobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "OverTimeEffect2",
+      "type": "potioneffect",
+      "sortid": 1519,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "over_time_effect_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/OverTimeEffect2MobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "OverTimeRender",
+      "type": "procedure",
+      "sortid": 1520,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "over_time_render",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OverTimeRenderProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Abilities/Ratio"
+    },
+    {
+      "name": "OverTimeEffect2OnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1521,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "over_time_effect_2_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OverTimeEffect2OnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "OverTimeEffect2EffectExpires",
+      "type": "procedure",
+      "sortid": 1522,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "over_time_effect_2_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/OverTimeEffect2EffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Potions/Procedures"
+    },
+    {
+      "name": "SwapProcedure",
+      "type": "procedure",
+      "sortid": 1523,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "swap_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/SwapProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/BoogieWoogie"
+    },
+    {
+      "name": "VrMode",
+      "type": "gamerule",
+      "sortid": 1524,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vr_mode",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      },
+      "path": "~/Gamerules"
+    },
+    {
+      "name": "VrModeAbilitySwich",
+      "type": "keybind",
+      "sortid": 1525,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vr_mode_ability_swich",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/network/VrModeAbilitySwichMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "VrModeAbilitySwichOnKeyPressed",
+      "type": "procedure",
+      "sortid": 1526,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vr_mode_ability_swich_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/VrModeAbilitySwichOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Keybinds/Procedures"
+    },
+    {
+      "name": "VrModeAbilityUseOnKeyPressed",
+      "type": "procedure",
+      "sortid": 1527,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vr_mode_ability_use_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/VrModeAbilityUseOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Keybinds/Procedures"
+    },
+    {
+      "name": "VrModeAbilityUse",
+      "type": "keybind",
+      "sortid": 1528,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vr_mode_ability_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/network/VrModeAbilityUseMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "Ability1return",
+      "type": "procedure",
+      "sortid": 1529,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_1return",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Ability1returnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "Ability2return",
+      "type": "procedure",
+      "sortid": 1530,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_2return",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Ability2returnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "Ability3return",
+      "type": "procedure",
+      "sortid": 1531,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_3return",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Ability3returnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "Ability4return",
+      "type": "procedure",
+      "sortid": 1532,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_4return",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Ability4returnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "Ability5return",
+      "type": "procedure",
+      "sortid": 1533,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_5return",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Ability5returnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "Ability6return",
+      "type": "procedure",
+      "sortid": 1534,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_6return",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/Ability6returnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
     }
   ],
   "variable_elements": [
@@ -35884,6 +36588,30 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "OverTimeNBT",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "ChargeKeyDown",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "VrModeAbilitySwich",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "FirstJoined",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -36163,8 +36891,8 @@
   "language_map": {
     "en_us": {
       "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-      "subtitles.sukuna": "sukuna talking",
       "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
+      "subtitles.sukuna": "sukuna talking",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
       "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
@@ -36178,6 +36906,7 @@
       "advancements.sacred_treasure.descr": "Kill Mahoraga",
       "item.craft_kaisen.megumi_fushiguro_spawn_egg": "Megumi Fushiguro Spawn Egg",
       "advancements.death_painting.descr": "WIP",
+      "key.craft_kaisen.vr_mode_ability_use": "Vr Mode Ability Use",
       "entity.craft_kaisen.mouth_cursed_spirit": "Mouth Cursed Spirit",
       "effect.craft_kaisen.iframe_effect": "Iframe",
       "entity.craft_kaisen.black_divine_dog": "Black Divine Dog",
@@ -36306,6 +37035,7 @@
       "item.craft_kaisen.mahito_outfit_leggings": "Mahito Outfit",
       "item.craft_kaisen.maximum_elephant_spawn_egg": "Maximum Elephant Spawn Egg",
       "item.craft_kaisen.yoshinobu_gakuganji_spawn_egg": "Yoshinobu Gakuganji Spawn Egg",
+      "entity.craft_kaisen.overtime": "Overtime",
       "item.craft_kaisen.satoru_gojo_spawn_egg": "Satoru Gojo Spawn Egg",
       "item.craft_kaisen.sukuna_finger": "Sukuna Finger",
       "item.craft_kaisen.blood_spear": "Blood Spear",
@@ -36324,6 +37054,7 @@
       "death.attack.dismantle_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.craft_kaisen.shadow_frog": "Shadow Frog",
       "item.craft_kaisen.womb_dagon_spawn_egg": "Womb Dagon Spawn Egg",
+      "item.craft_kaisen.overtime_spawn_egg": "Overtime Spawn Egg",
       "effect.craft_kaisen.constant_slice": "ConstantSlice",
       "advancements.elimination_of_kasumi_miwa.title": "Elimination Of Kasumi Miwa",
       "advancements.the_honored_one.title": "The Honored One",
@@ -36442,6 +37173,7 @@
       "itemGroup.tabck_items": "Ck Items",
       "effect.craft_kaisen.rikas_love": "Rika\u0027s Love",
       "death.attack.frost_calm_damage": "%1$s died to frost",
+      "gamerule.vrMode.description": "This allows for vr players to play Craft Kaisen",
       "item.craft_kaisen.root_projectile": "Root Projectile",
       "gamerule.hardcoreLives": "Hardcore Lives",
       "advancements.older_brother.title": "Older Brother",
@@ -36509,6 +37241,7 @@
       "death.attack.slashing_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.craft_kaisen.csmgui.button_2": "2",
       "gui.craft_kaisen.move_gui.button_5": "5",
+      "gamerule.vrMode": "Vr Mode",
       "item.craft_kaisen.yuji_itadori_spawn_egg": "Yuji Itadori Spawn Egg",
       "gui.craft_kaisen.csmgui.button_5": "5",
       "gui.craft_kaisen.csmgui.button_4": "4",
@@ -36589,6 +37322,7 @@
       "entity.craft_kaisen.wooden_box": "Wooden Box",
       "advancements.merged_beast_agito_advancement.title": "Merged Beast Agito",
       "effect.craft_kaisen.reversal_red_control": "Reversal Red",
+      "key.craft_kaisen.vr_mode_ability_swich": "Vr Mode Ability Swich",
       "gui.craft_kaisen.main_menu.label_empty6": "+",
       "entity.craft_kaisen.old_lady": "Old Lady",
       "entity.craft_kaisen.ryomen_sukuna": "Ryomen Sukuna",
@@ -36710,6 +37444,7 @@
       "item.craft_kaisen.water_maximum_elephant": "Water Maximum Elephant",
       "entity.craft_kaisen.great_serpent": "Great Serpent",
       "death.attack.ratio_damage": "%1$s was hit by a ratio",
+      "effect.craft_kaisen.over_time_effect": "Over Time",
       "item.craft_kaisen.dont_move_ranged": "Dont Move Ranged",
       "effect.craft_kaisen.simple_domain_cooldown": "Simple Domain Cooldown",
       "advancements.stand_proud_you_are_strong.descr": "Get Sukuna To Atleast Half Health And Lose To Him",
@@ -36717,6 +37452,7 @@
       "block.craft_kaisen.domain_blackstone": "Domain Block",
       "item.craft_kaisen.disaster_flame_ranged": "Disaster Flame Ranged",
       "effect.craft_kaisen.partial_summon_rika": "PartialRikaSummon",
+      "effect.craft_kaisen.domain_spam_fix": "Domain",
       "item.craft_kaisen.merged_beast_agito_spawn_egg": "Merged Beast Agito Spawn Egg",
       "gui.craft_kaisen.main_menu.label_ii1": "II",
       "effect.craft_kaisen.rct": "Reversed Cursed Energy",
@@ -36729,6 +37465,7 @@
       "item.craft_kaisen.hajime_kashimo_spawn_egg": "\"The God of Lightning\" Hajime Kashimo Spawn Egg",
       "advancements.great_serpent_advancement.title": "Great Serpent",
       "gui.craft_kaisen.domain_clash.button_x": "X",
+      "effect.craft_kaisen.cool_down_2": "CoolDown",
       "effect.craft_kaisen.sukuna": "Sukuna",
       "advancements.elimination_of_aoi_todo.title": "Elimination Of Aoi Todo",
       "block.craft_kaisen.domain_sky": "Domain Sky",
@@ -36738,6 +37475,7 @@
       "advancements.six_eyes_advancement.descr": "You passively regenerate cursed energy at a rapid rate,  you can also see others cursed energy and health.",
       "gamerule.noOverwhelmingPressure.description": "Removes Pressure From Cursed Energy Flow",
       "block.craft_kaisen.domain_ice_stalagmite_tall": "Domain Block",
+      "effect.craft_kaisen.cursed_bud_effect": "Cursed Bud",
       "advancements.grade_3.title": "Grade 3",
       "entity.craft_kaisen.aoi_todo": "Aoi Todo",
       "item.craft_kaisen.blood_meteorite": "Blood Meteorite",
@@ -36761,8 +37499,10 @@
       "advancements.grade_1.descr": "Reach The Required Fame.",
       "gui.craft_kaisen.main_menu.tooltip_open_mastery": "Open Mastery",
       "advancements.cursed_womb.descr": "Be Born as a Cursed Womb Death Painting",
+      "effect.craft_kaisen.guard": "Guard",
       "advancements.heavenly_restriction_awakening.title": "Heavenly Restriction Awakening",
       "key.categories.craft_kaisen": "Craft Kaisen",
+      "effect.craft_kaisen.over_time_effect_2": "Over Time",
       "entity.craft_kaisen.heian_era_sukuna": "Heian Era Sukuna",
       "gamerule.sukunaVesselMode": "SukunaVesselMultiplayer",
       "subtitles.voidsplash": "",

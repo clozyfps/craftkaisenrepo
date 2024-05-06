@@ -13,8 +13,8 @@
             "name": "DisplayBarEmpty"
           },
           "anchorPoint": "CENTER_LEFT",
-          "x": 0,
-          "y": 0
+          "x": -61,
+          "y": 2
         }
       },
       {
@@ -659,6 +659,84 @@
           "use1Xscale": true,
           "anchorPoint": "CENTER_LEFT",
           "x": 4,
+          "y": 110
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityselected.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Ability1return"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 5,
+          "y": 50
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityselected.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Ability2return"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 5,
+          "y": 62
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityselected.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Ability3return"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 5,
+          "y": 74
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityselected.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Ability4return"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 5,
+          "y": 86
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityselected.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Ability5return"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 5,
+          "y": 98
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abilityselected.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Ability6return"
+          },
+          "anchorPoint": "CENTER_LEFT",
+          "x": 5,
           "y": 110
         }
       }

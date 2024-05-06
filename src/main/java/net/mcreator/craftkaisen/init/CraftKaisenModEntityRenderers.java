@@ -55,6 +55,7 @@ import net.mcreator.craftkaisen.client.renderer.PrisonBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.PreDomainMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.PoxDeityDomainRenderer;
 import net.mcreator.craftkaisen.client.renderer.PillarOfLightRenderer;
+import net.mcreator.craftkaisen.client.renderer.OvertimeRenderer;
 import net.mcreator.craftkaisen.client.renderer.OpenPrisonBoxRenderer;
 import net.mcreator.craftkaisen.client.renderer.OldLadyRenderer;
 import net.mcreator.craftkaisen.client.renderer.NueRenderer;
@@ -107,6 +108,7 @@ import net.mcreator.craftkaisen.client.renderer.DeathWarm2Renderer;
 import net.mcreator.craftkaisen.client.renderer.DeathSwarm3Renderer;
 import net.mcreator.craftkaisen.client.renderer.DeathSwarm1Renderer;
 import net.mcreator.craftkaisen.client.renderer.DagonRenderer;
+import net.mcreator.craftkaisen.client.renderer.CursedBudRenderer;
 import net.mcreator.craftkaisen.client.renderer.CrowRenderer;
 import net.mcreator.craftkaisen.client.renderer.CrowMeiMeiRenderer;
 import net.mcreator.craftkaisen.client.renderer.CoffinMountainRenderer;
@@ -278,5 +280,8 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.TIDES_TRE.get(), TidesTreRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.PRE_DOMAIN_MOB.get(), PreDomainMobRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.EFFECT_FUGA.get(), EffectFugaRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.CURSED_BUD.get(), CursedBudRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.SOUND_WAVES.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.OVERTIME.get(), OvertimeRenderer::new);
 	}
 }

@@ -54,7 +54,7 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 				}
 			}
 		}
-		if (entity.isShiftKeyDown() && entity.getPersistentData().getBoolean("charging") == true) {
+		if (entity.isShiftKeyDown() && (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ChargeKeyDown == true) {
 			if (entity.getPersistentData().getDouble("bluex") < 15) {
 				entity.getPersistentData().putDouble("bluex", (entity.getPersistentData().getDouble("bluex") + 1));
 				entity.getPersistentData().putDouble("bluez", (entity.getPersistentData().getDouble("bluez") + 1));
@@ -149,8 +149,8 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 					}
 				}
 				if (entityiterator instanceof ReversalRedProjectileProjectileEntity) {
-					if (entity instanceof ServerPlayer _plr52 && _plr52.level instanceof ServerLevel
-							&& _plr52.getAdvancements().getOrStartProgress(_plr52.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
+					if (entity instanceof ServerPlayer _plr51 && _plr51.level instanceof ServerLevel
+							&& _plr51.getAdvancements().getOrStartProgress(_plr51.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
 							&& (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput >= 100) {
 						if (entity.getPersistentData().getDouble("hollownukecooldown") <= 0) {
 							{
@@ -328,7 +328,7 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 				_entity.removeEffect(CraftKaisenModMobEffects.LAPSE_BLUE_CONTROL.get());
 		}
 		entity.getPersistentData().putDouble("hollownukecooldown", (entity.getPersistentData().getDouble("hollownukecooldown") - 1));
-		if (entity instanceof ServerPlayer _plr108 && _plr108.level instanceof ServerLevel && _plr108.getAdvancements().getOrStartProgress(_plr108.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
+		if (entity instanceof ServerPlayer _plr107 && _plr107.level instanceof ServerLevel && _plr107.getAdvancements().getOrStartProgress(_plr107.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
 				&& (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput >= 100) {
 			BlueTickProcedure.execute(world,
 					(entity.level

@@ -39,6 +39,7 @@ import net.mcreator.craftkaisen.entity.TakadaEntity;
 import net.mcreator.craftkaisen.entity.SuguruGetoEntity;
 import net.mcreator.craftkaisen.entity.StronghitProjectileEntity;
 import net.mcreator.craftkaisen.entity.StrongPunchEntity;
+import net.mcreator.craftkaisen.entity.SoundWavesEntity;
 import net.mcreator.craftkaisen.entity.SmallPoxDomainSpawnerEntity;
 import net.mcreator.craftkaisen.entity.SmallPoxDeityEntity;
 import net.mcreator.craftkaisen.entity.SlicingExcorismProjectileEntity;
@@ -74,6 +75,7 @@ import net.mcreator.craftkaisen.entity.PreDomainMobEntity;
 import net.mcreator.craftkaisen.entity.PoxDeityDomainEntity;
 import net.mcreator.craftkaisen.entity.PillarOfLightEntity;
 import net.mcreator.craftkaisen.entity.PiercingBloodProjectileEntity;
+import net.mcreator.craftkaisen.entity.OvertimeEntity;
 import net.mcreator.craftkaisen.entity.OpenPrisonBoxEntity;
 import net.mcreator.craftkaisen.entity.OldLadyEntity;
 import net.mcreator.craftkaisen.entity.NueEntity;
@@ -145,6 +147,7 @@ import net.mcreator.craftkaisen.entity.DeathWarm2Entity;
 import net.mcreator.craftkaisen.entity.DeathSwarm3Entity;
 import net.mcreator.craftkaisen.entity.DeathSwarm1Entity;
 import net.mcreator.craftkaisen.entity.DagonEntity;
+import net.mcreator.craftkaisen.entity.CursedBudEntity;
 import net.mcreator.craftkaisen.entity.CrushedRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CrumbleAwayRangedProjectileEntity;
 import net.mcreator.craftkaisen.entity.CrowMeiMeiEntity;
@@ -654,7 +657,13 @@ public class CraftKaisenModEntities {
 	public static final RegistryObject<EntityType<PreDomainMobEntity>> PRE_DOMAIN_MOB = register("pre_domain_mob", EntityType.Builder.<PreDomainMobEntity>of(PreDomainMobEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PreDomainMobEntity::new).fireImmune().sized(0.1f, 0.1f));
 	public static final RegistryObject<EntityType<EffectFugaEntity>> EFFECT_FUGA = register("effect_fuga", EntityType.Builder.<EffectFugaEntity>of(EffectFugaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-			.setUpdateInterval(3).setCustomClientFactory(EffectFugaEntity::new).fireImmune().sized(0.6f, 1.8f));
+			.setUpdateInterval(3).setCustomClientFactory(EffectFugaEntity::new).fireImmune().sized(0.6f, 15f));
+	public static final RegistryObject<EntityType<CursedBudEntity>> CURSED_BUD = register("projectile_cursed_bud",
+			EntityType.Builder.<CursedBudEntity>of(CursedBudEntity::new, MobCategory.MISC).setCustomClientFactory(CursedBudEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<SoundWavesEntity>> SOUND_WAVES = register("projectile_sound_waves",
+			EntityType.Builder.<SoundWavesEntity>of(SoundWavesEntity::new, MobCategory.MISC).setCustomClientFactory(SoundWavesEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<OvertimeEntity>> OVERTIME = register("overtime",
+			EntityType.Builder.<OvertimeEntity>of(OvertimeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OvertimeEntity::new).fireImmune().sized(0.1f, 3f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -766,6 +775,7 @@ public class CraftKaisenModEntities {
 			TidesTreEntity.init();
 			PreDomainMobEntity.init();
 			EffectFugaEntity.init();
+			OvertimeEntity.init();
 		});
 	}
 
@@ -874,5 +884,6 @@ public class CraftKaisenModEntities {
 		event.put(TIDES_TRE.get(), TidesTreEntity.createAttributes().build());
 		event.put(PRE_DOMAIN_MOB.get(), PreDomainMobEntity.createAttributes().build());
 		event.put(EFFECT_FUGA.get(), EffectFugaEntity.createAttributes().build());
+		event.put(OVERTIME.get(), OvertimeEntity.createAttributes().build());
 	}
 }

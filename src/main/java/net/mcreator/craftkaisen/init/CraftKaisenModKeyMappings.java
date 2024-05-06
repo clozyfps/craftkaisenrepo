@@ -15,6 +15,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
+import net.mcreator.craftkaisen.network.VrModeAbilityUseMessage;
+import net.mcreator.craftkaisen.network.VrModeAbilitySwichMessage;
 import net.mcreator.craftkaisen.network.ToggleSecondMovesetMessage;
 import net.mcreator.craftkaisen.network.ToggleCTSpecialMessage;
 import net.mcreator.craftkaisen.network.ReverseCursedTechniqueMessage;
@@ -216,6 +218,32 @@ public class CraftKaisenModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping VR_MODE_ABILITY_SWICH = new KeyMapping("key.craft_kaisen.vr_mode_ability_swich", GLFW.GLFW_KEY_UNKNOWN, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				CraftKaisenMod.PACKET_HANDLER.sendToServer(new VrModeAbilitySwichMessage(0, 0));
+				VrModeAbilitySwichMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
+	public static final KeyMapping VR_MODE_ABILITY_USE = new KeyMapping("key.craft_kaisen.vr_mode_ability_use", GLFW.GLFW_KEY_UNKNOWN, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				CraftKaisenMod.PACKET_HANDLER.sendToServer(new VrModeAbilityUseMessage(0, 0));
+				VrModeAbilityUseMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 	private static long CHARGE_CURSED_ENERGY_LASTPRESS = 0;
 	private static long REVERSE_CURSED_TECHNIQUE_LASTPRESS = 0;
 	private static long TOGGLE_SECOND_MOVESET_LASTPRESS = 0;
@@ -235,6 +263,8 @@ public class CraftKaisenModKeyMappings {
 		event.register(REVERSE_CURSED_TECHNIQUE);
 		event.register(IMBUE_CE);
 		event.register(TOGGLE_SECOND_MOVESET);
+		event.register(VR_MODE_ABILITY_SWICH);
+		event.register(VR_MODE_ABILITY_USE);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -255,6 +285,8 @@ public class CraftKaisenModKeyMappings {
 				REVERSE_CURSED_TECHNIQUE.consumeClick();
 				IMBUE_CE.consumeClick();
 				TOGGLE_SECOND_MOVESET.consumeClick();
+				VR_MODE_ABILITY_SWICH.consumeClick();
+				VR_MODE_ABILITY_USE.consumeClick();
 			}
 		}
 	}

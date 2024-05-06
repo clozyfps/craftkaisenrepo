@@ -58,7 +58,7 @@ public class ReversalRedControlOnEffectActiveTickProcedure {
 							.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("redz")))), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
 							.getBlockPos().getZ()),
 					2, 1, 3, 1, 0.2);
-		if (entity.isShiftKeyDown() || entity.getPersistentData().getBoolean("charging") == true) {
+		if (entity.isShiftKeyDown() || (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).ChargeKeyDown == true) {
 			if (entity.getPersistentData().getDouble("redx") < 15) {
 				entity.getPersistentData().putDouble("redx", (entity.getPersistentData().getDouble("redx") + 1));
 				entity.getPersistentData().putDouble("redz", (entity.getPersistentData().getDouble("redz") + 1));

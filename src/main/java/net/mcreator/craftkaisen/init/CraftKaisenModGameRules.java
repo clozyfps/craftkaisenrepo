@@ -19,4 +19,5 @@ public class CraftKaisenModGameRules {
 	public static final GameRules.Key<GameRules.BooleanValue> OP_BLESSED_BY_THE_SPARKS = GameRules.register("oPBlessedByTheSparks", GameRules.Category.PLAYER, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> NO_OVERWHELMING_PRESSURE = GameRules.register("noOverwhelmingPressure", GameRules.Category.PLAYER, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> SUKUNA_LITERAL_TAKEOVER = GameRules.register("sukunaLiteralTakeover", GameRules.Category.PLAYER, GameRules.BooleanValue.create(false));
+	public static final GameRules.Key<GameRules.BooleanValue> VR_MODE = GameRules.register("vrMode", GameRules.Category.PLAYER, GameRules.BooleanValue.create(false));
 }

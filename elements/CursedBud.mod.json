@@ -1,0 +1,22 @@
+{
+  "_fv": 57,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "CUSTOM:Dismantle"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": ""
+    },
+    "igniteFire": false,
+    "power": 1.0,
+    "damage": 5.0,
+    "knockback": 5,
+    "entityModel": "Modelcursedbudentity",
+    "customModelTexture": "cursedbudentity.png",
+    "onHitsEntity": {
+      "name": "CursedBudProjectileHitsLivingEntity"
+    }
+  }
+}

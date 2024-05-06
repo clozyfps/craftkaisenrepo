@@ -174,7 +174,7 @@ public class EffectFugaEntity extends PathfinderMob implements GeoEntity {
 
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
-		return super.getDimensions(p_33597_).scale((float) 1);
+		return super.getDimensions(p_33597_).scale((float) 2);
 	}
 
 	@Override

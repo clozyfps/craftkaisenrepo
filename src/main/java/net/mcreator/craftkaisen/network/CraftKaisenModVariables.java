@@ -207,6 +207,10 @@ public class CraftKaisenModVariables {
 			clone.bluepostionz = original.bluepostionz;
 			clone.DomainClashClick = original.DomainClashClick;
 			clone.ControlVaribleDomainClash = original.ControlVaribleDomainClash;
+			clone.OverTimeNBT = original.OverTimeNBT;
+			clone.ChargeKeyDown = original.ChargeKeyDown;
+			clone.VrModeAbilitySwich = original.VrModeAbilitySwich;
+			clone.FirstJoined = original.FirstJoined;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -629,6 +633,10 @@ public class CraftKaisenModVariables {
 		public double bluepostionz = 0;
 		public double DomainClashClick = 0;
 		public boolean ControlVaribleDomainClash = false;
+		public double OverTimeNBT = 0;
+		public boolean ChargeKeyDown = false;
+		public double VrModeAbilitySwich = 0.0;
+		public boolean FirstJoined = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -811,6 +819,10 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("bluepostionz", bluepostionz);
 			nbt.putDouble("DomainClashClick", DomainClashClick);
 			nbt.putBoolean("ControlVaribleDomainClash", ControlVaribleDomainClash);
+			nbt.putDouble("OverTimeNBT", OverTimeNBT);
+			nbt.putBoolean("ChargeKeyDown", ChargeKeyDown);
+			nbt.putDouble("VrModeAbilitySwich", VrModeAbilitySwich);
+			nbt.putBoolean("FirstJoined", FirstJoined);
 			return nbt;
 		}
 
@@ -990,6 +1002,10 @@ public class CraftKaisenModVariables {
 			bluepostionz = nbt.getDouble("bluepostionz");
 			DomainClashClick = nbt.getDouble("DomainClashClick");
 			ControlVaribleDomainClash = nbt.getBoolean("ControlVaribleDomainClash");
+			OverTimeNBT = nbt.getDouble("OverTimeNBT");
+			ChargeKeyDown = nbt.getBoolean("ChargeKeyDown");
+			VrModeAbilitySwich = nbt.getDouble("VrModeAbilitySwich");
+			FirstJoined = nbt.getBoolean("FirstJoined");
 		}
 	}
 
@@ -1188,6 +1204,10 @@ public class CraftKaisenModVariables {
 					variables.bluepostionz = message.data.bluepostionz;
 					variables.DomainClashClick = message.data.DomainClashClick;
 					variables.ControlVaribleDomainClash = message.data.ControlVaribleDomainClash;
+					variables.OverTimeNBT = message.data.OverTimeNBT;
+					variables.ChargeKeyDown = message.data.ChargeKeyDown;
+					variables.VrModeAbilitySwich = message.data.VrModeAbilitySwich;
+					variables.FirstJoined = message.data.FirstJoined;
 				}
 			});
 			context.setPacketHandled(true);
