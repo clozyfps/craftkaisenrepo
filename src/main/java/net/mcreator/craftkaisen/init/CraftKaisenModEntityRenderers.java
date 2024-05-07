@@ -71,6 +71,7 @@ import net.mcreator.craftkaisen.client.renderer.MegunaRenderer;
 import net.mcreator.craftkaisen.client.renderer.MegumiFushiguroRenderer;
 import net.mcreator.craftkaisen.client.renderer.MaximumElephantRenderer;
 import net.mcreator.craftkaisen.client.renderer.MaxMeteorRenderer;
+import net.mcreator.craftkaisen.client.renderer.MaxBlueRenderer;
 import net.mcreator.craftkaisen.client.renderer.MalevolentShrineRenderer;
 import net.mcreator.craftkaisen.client.renderer.MahitoRenderer;
 import net.mcreator.craftkaisen.client.renderer.MahitoCloneRenderer;
@@ -283,5 +284,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.CURSED_BUD.get(), CursedBudRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.SOUND_WAVES.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.OVERTIME.get(), OvertimeRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.MAX_BLUE.get(), MaxBlueRenderer::new);
 	}
 }

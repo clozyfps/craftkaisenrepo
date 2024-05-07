@@ -92,6 +92,7 @@ import net.mcreator.craftkaisen.entity.MegunaEntity;
 import net.mcreator.craftkaisen.entity.MegumiFushiguroEntity;
 import net.mcreator.craftkaisen.entity.MaximumElephantEntity;
 import net.mcreator.craftkaisen.entity.MaxMeteorEntity;
+import net.mcreator.craftkaisen.entity.MaxBlueEntity;
 import net.mcreator.craftkaisen.entity.MalevolentShrineEntity;
 import net.mcreator.craftkaisen.entity.MahitoEntity;
 import net.mcreator.craftkaisen.entity.MahitoCloneEntity;
@@ -664,6 +665,8 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<SoundWavesEntity>of(SoundWavesEntity::new, MobCategory.MISC).setCustomClientFactory(SoundWavesEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<OvertimeEntity>> OVERTIME = register("overtime",
 			EntityType.Builder.<OvertimeEntity>of(OvertimeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OvertimeEntity::new).fireImmune().sized(0.1f, 3f));
+	public static final RegistryObject<EntityType<MaxBlueEntity>> MAX_BLUE = register("max_blue",
+			EntityType.Builder.<MaxBlueEntity>of(MaxBlueEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MaxBlueEntity::new).fireImmune().sized(0.6f, 0.6f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -776,6 +779,7 @@ public class CraftKaisenModEntities {
 			PreDomainMobEntity.init();
 			EffectFugaEntity.init();
 			OvertimeEntity.init();
+			MaxBlueEntity.init();
 		});
 	}
 
@@ -885,5 +889,6 @@ public class CraftKaisenModEntities {
 		event.put(PRE_DOMAIN_MOB.get(), PreDomainMobEntity.createAttributes().build());
 		event.put(EFFECT_FUGA.get(), EffectFugaEntity.createAttributes().build());
 		event.put(OVERTIME.get(), OvertimeEntity.createAttributes().build());
+		event.put(MAX_BLUE.get(), MaxBlueEntity.createAttributes().build());
 	}
 }

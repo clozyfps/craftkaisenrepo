@@ -35458,6 +35458,58 @@
         ]
       },
       "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "MaxBlueOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1535,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "max_blue_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MaxBlueOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Abilities/Limitless"
+    },
+    {
+      "name": "MaxBlue",
+      "type": "animatedentity",
+      "sortid": 1536,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "max_blue",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/entity/model/MaxBlueModel.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/MaxBlueEntity.java",
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/MaxBlueRenderer.java"
+        ]
+      },
+      "path": "~/Abilities/Limitless"
     }
   ],
   "variable_elements": [
@@ -36886,6 +36938,14 @@
       ],
       "category": "player",
       "subtitle": ""
+    },
+    {
+      "name": "blood",
+      "files": [
+        "blood_splatter_sound_effect"
+      ],
+      "category": "neutral",
+      "subtitle": "Blood"
     }
   ],
   "language_map": {
@@ -36933,6 +36993,7 @@
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_rope": "CTRL - Rope",
       "block.craft_kaisen.ice_domain_wall": "Ice Domain Wall",
       "item.craft_kaisen.naginata": "Naginata",
+      "subtitles.blood": "Blood",
       "gui.craft_kaisen.main_menu.label_0": "0",
       "advancements.special_grade.title": "Special Grade",
       "item.craft_kaisen.ski_mask_helmet": "Ski Mask",
@@ -36975,6 +37036,7 @@
       "item.craft_kaisen.white_divine_dog_spawn_egg": "White Divine Dog Spawn Egg",
       "advancements.nue_advancement.descr": "Summon Nue",
       "entity.craft_kaisen.crow": "Crow",
+      "entity.craft_kaisen.max_blue": "Max Blue",
       "advancements.black_divine_dog_advancement.title": "Black Divine Dog",
       "block.craft_kaisen.domain_air_block": "Domain Air Block",
       "item.craft_kaisen.yuta_outfit_leggings": "Yuta Pants",
@@ -37550,6 +37612,7 @@
       "effect.craft_kaisen.evade_cooldown": "EvadeCooldown",
       "item.craft_kaisen.rika_spawn_egg": "Rika Spawn Egg",
       "gui.craft_kaisen.body_shape_overlay.label_ctrl_alt_shape_shift": "CTRL + ALT - Shape Shift",
+      "item.craft_kaisen.max_blue_spawn_egg": "Max Blue Spawn Egg",
       "entity.craft_kaisen.roppongi_cursed_spirit": "Roppongi Cursed Spirit",
       "advancements.toad_advancement.descr": "Tame Toad",
       "entity.craft_kaisen.rainbow_dragon": "Rainbow Dragon",
