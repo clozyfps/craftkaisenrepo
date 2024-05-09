@@ -36,7 +36,7 @@ public class MeleeParticleParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
-		this.quadSize *= 3f;
+		this.quadSize *= 1.8f;
 		this.lifetime = 4;
 		this.gravity = 0f;
 		this.hasPhysics = false;
@@ -55,7 +55,7 @@ public class MeleeParticleParticle extends TextureSheetParticle {
 	public void tick() {
 		super.tick();
 		if (!this.removed) {
-			this.setSprite(this.spriteSet.get((this.age / 1) % 4 + 1, 4));
+			this.setSprite(this.spriteSet.get((this.age / 1) % 5 + 1, 5));
 		}
 	}
 }

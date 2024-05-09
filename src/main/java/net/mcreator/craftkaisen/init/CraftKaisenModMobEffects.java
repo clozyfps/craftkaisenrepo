@@ -33,6 +33,7 @@ import net.mcreator.craftkaisen.potion.RikaStatusMobEffect;
 import net.mcreator.craftkaisen.potion.ReversalRedControlMobEffect;
 import net.mcreator.craftkaisen.potion.ReikiMobEffect;
 import net.mcreator.craftkaisen.potion.RedFogMobEffect;
+import net.mcreator.craftkaisen.potion.RatioHit2MobEffect;
 import net.mcreator.craftkaisen.potion.RCTMobEffect;
 import net.mcreator.craftkaisen.potion.PureLovePreMobEffect;
 import net.mcreator.craftkaisen.potion.PureLoveActiveMobEffect;
@@ -81,6 +82,7 @@ import net.mcreator.craftkaisen.potion.BodyShapeActiveMobEffect;
 import net.mcreator.craftkaisen.potion.BodyCrushingMobEffect;
 import net.mcreator.craftkaisen.potion.BloodWaveMobEffect;
 import net.mcreator.craftkaisen.potion.BindingIceEffectFixMobEffect;
+import net.mcreator.craftkaisen.potion.AbilityStopMobEffect;
 import net.mcreator.craftkaisen.CraftKaisenMod;
 
 public class CraftKaisenModMobEffects {
@@ -156,4 +158,6 @@ public class CraftKaisenModMobEffects {
 	public static final RegistryObject<MobEffect> OVER_TIME_EFFECT = REGISTRY.register("over_time_effect", () -> new OverTimeEffectMobEffect());
 	public static final RegistryObject<MobEffect> COOL_DOWN_2 = REGISTRY.register("cool_down_2", () -> new CoolDown2MobEffect());
 	public static final RegistryObject<MobEffect> OVER_TIME_EFFECT_2 = REGISTRY.register("over_time_effect_2", () -> new OverTimeEffect2MobEffect());
+	public static final RegistryObject<MobEffect> ABILITY_STOP = REGISTRY.register("ability_stop", () -> new AbilityStopMobEffect());
+	public static final RegistryObject<MobEffect> RATIO_HIT_2 = REGISTRY.register("ratio_hit_2", () -> new RatioHit2MobEffect());
 }

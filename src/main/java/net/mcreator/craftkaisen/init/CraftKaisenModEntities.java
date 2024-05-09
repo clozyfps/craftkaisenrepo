@@ -109,6 +109,7 @@ import net.mcreator.craftkaisen.entity.IceTickingEntity;
 import net.mcreator.craftkaisen.entity.IceNeedleEntity;
 import net.mcreator.craftkaisen.entity.HundredDemonsTickEntity;
 import net.mcreator.craftkaisen.entity.HollowPurpleProjectileProjectileEntity;
+import net.mcreator.craftkaisen.entity.HollowPurpleNukeExplosionEntity;
 import net.mcreator.craftkaisen.entity.HollowPurpleGojoEntity;
 import net.mcreator.craftkaisen.entity.HeianEraSukunaEntity;
 import net.mcreator.craftkaisen.entity.HanamiEntity;
@@ -667,6 +668,11 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<OvertimeEntity>of(OvertimeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OvertimeEntity::new).fireImmune().sized(0.1f, 3f));
 	public static final RegistryObject<EntityType<MaxBlueEntity>> MAX_BLUE = register("max_blue",
 			EntityType.Builder.<MaxBlueEntity>of(MaxBlueEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MaxBlueEntity::new).fireImmune().sized(0.6f, 0.6f));
+	public static final RegistryObject<EntityType<HollowPurpleNukeExplosionEntity>> HOLLOW_PURPLE_NUKE_EXPLOSION = register("hollow_purple_nuke_explosion",
+			EntityType.Builder.<HollowPurpleNukeExplosionEntity>of(HollowPurpleNukeExplosionEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+					.setCustomClientFactory(HollowPurpleNukeExplosionEntity::new)
+
+					.sized(0.1f, 0.1f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -780,6 +786,7 @@ public class CraftKaisenModEntities {
 			EffectFugaEntity.init();
 			OvertimeEntity.init();
 			MaxBlueEntity.init();
+			HollowPurpleNukeExplosionEntity.init();
 		});
 	}
 
@@ -890,5 +897,6 @@ public class CraftKaisenModEntities {
 		event.put(EFFECT_FUGA.get(), EffectFugaEntity.createAttributes().build());
 		event.put(OVERTIME.get(), OvertimeEntity.createAttributes().build());
 		event.put(MAX_BLUE.get(), MaxBlueEntity.createAttributes().build());
+		event.put(HOLLOW_PURPLE_NUKE_EXPLOSION.get(), HollowPurpleNukeExplosionEntity.createAttributes().build());
 	}
 }

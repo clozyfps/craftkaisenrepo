@@ -51,7 +51,7 @@ public class RatioHitProcedure {
 		if (((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ratio")) {
 			if (!((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())) {
 				sourceentity.getPersistentData().putDouble("ratio",
-						(Mth.nextInt(RandomSource.create(), (int) (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RatioMastery, 50)));
+						(Mth.nextInt(RandomSource.create(), (int) (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RatioMastery, 55)));
 				if (sourceentity.getPersistentData().getDouble("ratio") == 50) {
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.ENCHANTED_HIT, (entity.getX()), (entity.getY()), (entity.getZ()), 25, 0.1, 2, 0.1, 0.1);
@@ -59,6 +59,8 @@ public class RatioHitProcedure {
 						_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.BLOOD_SPLASH.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 15, 0.5, 2, 0.5, 0.2);
 					if (sourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.IFRAME_EFFECT.get(), 4, 1));
+					if (sourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.RATIO_HIT_2.get(), 4, 1));
 					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:ratio_damage"))), sourceentity),
 							(float) (amount * 2));
 					entity.setDeltaMovement(new Vec3((0.8 * sourceentity.getLookAngle().x), (0.3 * sourceentity.getLookAngle().y), (0.8 * sourceentity.getLookAngle().z)));
@@ -95,6 +97,15 @@ public class RatioHitProcedure {
 					if ((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RatioMastery != 50) {
 						{
 							double _setval = (sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RatioMastery + 0.6;
+							sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.RatioMastery = _setval;
+								capability.syncPlayerVariables(sourceentity);
+							});
+						}
+					}
+					if ((sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RatioMastery > 50) {
+						{
+							double _setval = 50;
 							sourceentity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.RatioMastery = _setval;
 								capability.syncPlayerVariables(sourceentity);

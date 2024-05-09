@@ -35510,6 +35510,168 @@
         ]
       },
       "path": "~/Abilities/Limitless"
+    },
+    {
+      "name": "MeleeEffectMobOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1537,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "melee_effect_mob_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/MeleeEffectMobOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "AbilityStop",
+      "type": "potioneffect",
+      "sortid": 1538,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_stop",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/AbilityStopMobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "RatioOverlay2",
+      "type": "overlay",
+      "sortid": 1539,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_overlay_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/screens/RatioOverlay2Overlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "RatioHit2",
+      "type": "potioneffect",
+      "sortid": 1540,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_hit_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/potion/RatioHit2MobEffect.java"
+        ]
+      },
+      "path": "~/Potions"
+    },
+    {
+      "name": "RatioReturn",
+      "type": "procedure",
+      "sortid": 1541,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ratio_return",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/RatioReturnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "HollowPurpleNukeExplosionOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1542,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hollow_purple_nuke_explosion_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/HollowPurpleNukeExplosionOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "HollowPurpleNukeExplosion",
+      "type": "livingentity",
+      "sortid": 1543,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hollow_purple_nuke_explosion",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/renderer/HollowPurpleNukeExplosionRenderer.java",
+          "src/main/java/net/mcreator/craftkaisen/entity/HollowPurpleNukeExplosionEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Abilities"
+    },
+    {
+      "name": "AbilityIconsFixTick",
+      "type": "procedure",
+      "sortid": 1544,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_icons_fix_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/AbilityIconsFixTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -36664,6 +36826,18 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "InDomain",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "HollowNukeID",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -37124,6 +37298,7 @@
       "entity.craft_kaisen.dagon": "Dagon",
       "effect.craft_kaisen.through_blocks": "Through Blocks",
       "effect.craft_kaisen.frame_on": "Framed",
+      "entity.craft_kaisen.hollow_purple_nuke_explosion": "Hollow Purple Nuke Explosion",
       "key.craft_kaisen.ability_4": "Ability 4",
       "entity.craft_kaisen.fly_head": "Fly Head",
       "key.craft_kaisen.ability_5": "Ability 5",
@@ -37393,6 +37568,7 @@
       "advancements.six_eyes_advancement.title": "Six Eyes",
       "subtitles.lightningflash": "",
       "gui.craft_kaisen.start_screen.label_finish": "SAVE",
+      "effect.craft_kaisen.ratio_hit_2": "Ratio",
       "item.craft_kaisen.nue_spawn_egg": "Nue Spawn Egg",
       "advancements.rika_tamed.descr": "Gain Rika\u0027s Trust",
       "advancements.grade_1.title": "Grade 1",
@@ -37585,6 +37761,7 @@
       "item.craft_kaisen.round_deer_spawn_egg": "Round Deer Spawn Egg",
       "effect.craft_kaisen.pre_fire_arrow": "PreFireArrow",
       "advancements.subjugation_of_hanami.descr": "Exorcise the special grade \"Hanami\"",
+      "effect.craft_kaisen.ability_stop": "Ability Stop",
       "effect.craft_kaisen.toji_cooldown": "TojiCooldown",
       "advancements.fearsome_womb.descr": "Kill a Finger Bearer",
       "item.craft_kaisen.blast_away_ranged": "Blast Away Ranged",

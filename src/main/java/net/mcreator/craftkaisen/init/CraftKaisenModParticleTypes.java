@@ -51,7 +51,7 @@ public class CraftKaisenModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> FIRE_PARTICLE = REGISTRY.register("fire_particle", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> PURE_LOVE_PULSE = REGISTRY.register("pure_love_pulse", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> MELEE_PARTICLE = REGISTRY.register("melee_particle", () -> new SimpleParticleType(false));
-	public static final RegistryObject<SimpleParticleType> MELEE_EFFECT = REGISTRY.register("melee_effect", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> MELEE_EFFECT = REGISTRY.register("melee_effect", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> SHRINE_1RED = REGISTRY.register("shrine_1red", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> SHRINE_2RED = REGISTRY.register("shrine_2red", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> SHRINE_3RED = REGISTRY.register("shrine_3red", () -> new SimpleParticleType(true));

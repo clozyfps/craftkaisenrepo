@@ -36,23 +36,26 @@ public class MeleeEffectParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
-		this.quadSize *= 1.9f;
-		this.lifetime = 2;
+		this.quadSize *= 1.8f;
+		this.lifetime = 4;
 		this.gravity = 0f;
 		this.hasPhysics = false;
 		this.xd = vx * 0;
 		this.yd = vy * 0;
 		this.zd = vz * 0;
-		this.pickSprite(spriteSet);
+		this.setSpriteFromAge(spriteSet);
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
+		if (!this.removed) {
+			this.setSprite(this.spriteSet.get((this.age / 1) % 5 + 1, 5));
+		}
 	}
 }

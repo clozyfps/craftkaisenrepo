@@ -1,20 +1,19 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -29,8 +28,8 @@ import net.minecraft.client.player.AbstractClientPlayer;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
 import net.mcreator.craftkaisen.entity.ReversalRedProjectileProjectileEntity;
-import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import java.util.stream.Collectors;
 import java.util.List;
@@ -175,7 +174,7 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 									});
 								}
 								if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-									_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 4, false, false));
+									_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 41, 5, false, false));
 								if (!entityiterator.level.isClientSide())
 									entityiterator.discard();
 								entity.getPersistentData().putBoolean("rightleggonen", ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).RightLegGone));
@@ -186,6 +185,8 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 								entity.getPersistentData().putDouble("leftarmdamagen", ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftArmDamage));
 								entity.getPersistentData().putDouble("rightlegdamagen", ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).rightLegDamage));
 								entity.getPersistentData().putDouble("leftlegdamagen", ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).leftLegDamage));
+								if (entity instanceof LivingEntity _entity)
+									_entity.removeEffect(CraftKaisenModMobEffects.LAPSE_BLUE_CONTROL.get());
 								if (world instanceof ServerLevel _level)
 									_level.getServer().getCommands().performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL,
@@ -220,103 +221,29 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 									_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 15, 7, 5, 7, 0);
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles(ParticleTypes.FLASH, x, y, z, 10, 7, 3, 7, 0.4);
-								CraftKaisenMod.queueServerWork(40, () -> {
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-										_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.IFRAME_EFFECT.get(), 4, 1, false, false));
-									if (world instanceof Level _level && !_level.isClientSide())
-										_level.explode(null, x, y, z, 60, Level.ExplosionInteraction.TNT);
-									if (world instanceof Level _level) {
-										if (!_level.isClientSide()) {
-											_level.playSound(null,
-													BlockPos.containing((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostionx,
-															(entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostiony,
-															(entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostionz),
-													ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1);
-										} else {
-											_level.playLocalSound(((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostionx),
-													((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostiony),
-													((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostionz),
-													ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 1, false);
-										}
+								{
+									double _setval = Mth.nextInt(RandomSource.create(), 1, 99999999);
+									entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.HollowNukeID = _setval;
+										capability.syncPlayerVariables(entity);
+									});
+								}
+								if (world instanceof ServerLevel _serverLevel) {
+									Entity entitytospawn = CraftKaisenModEntities.HOLLOW_PURPLE_NUKE_EXPLOSION.get().spawn(_serverLevel,
+											BlockPos.containing(
+													(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluex")))),
+															ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
+													(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluey")))),
+															ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
+													(entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((entity.getPersistentData().getDouble("bluez")))),
+															ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())),
+											MobSpawnType.MOB_SUMMONED);
+									if (entitytospawn != null) {
+										entitytospawn.setYRot(world.getRandom().nextFloat() * 360.0F);
 									}
-									if (world instanceof Level _level) {
-										if (!_level.isClientSide()) {
-											_level.playSound(null,
-													BlockPos.containing((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostionx,
-															(entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostiony,
-															(entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostionz),
-													ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1, 1);
-										} else {
-											_level.playLocalSound(((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostionx),
-													((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostiony),
-													((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).bluepostionz),
-													ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode")), SoundSource.NEUTRAL, 1, 1, false);
-										}
-									}
-									if (!(entity == entityiterator)) {
-										entityiterator.hurt(
-												new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("craft_kaisen:cursed_energy_damage"))),
-														entity),
-												(float) (45 + (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput));
-									}
-									{
-										double _setval = entity.getPersistentData().getDouble("leftarmdamagen");
-										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.leftArmDamage = _setval;
-											capability.syncPlayerVariables(entity);
-										});
-									}
-									{
-										double _setval = entity.getPersistentData().getDouble("rightlegdamagen");
-										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.rightLegDamage = _setval;
-											capability.syncPlayerVariables(entity);
-										});
-									}
-									{
-										double _setval = entity.getPersistentData().getDouble("rightarmdamagen");
-										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.rightArmDamage = _setval;
-											capability.syncPlayerVariables(entity);
-										});
-									}
-									{
-										double _setval = entity.getPersistentData().getDouble("leftlegdamagen");
-										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.leftLegDamage = _setval;
-											capability.syncPlayerVariables(entity);
-										});
-									}
-									{
-										boolean _setval = entity.getPersistentData().getBoolean("rightleggonen");
-										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.RightLegGone = _setval;
-											capability.syncPlayerVariables(entity);
-										});
-									}
-									{
-										boolean _setval = entity.getPersistentData().getBoolean("rightarmgonen");
-										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.RightArmGone = _setval;
-											capability.syncPlayerVariables(entity);
-										});
-									}
-									{
-										boolean _setval = entity.getPersistentData().getBoolean("leftarmgonen");
-										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.LeftArmGone = _setval;
-											capability.syncPlayerVariables(entity);
-										});
-									}
-									{
-										boolean _setval = entity.getPersistentData().getBoolean("leftleggonen");
-										entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.LeftLegGone = _setval;
-											capability.syncPlayerVariables(entity);
-										});
-									}
-									entity.getPersistentData().putDouble("hollownukecooldown", 600);
-								});
+									(entitytospawn).getPersistentData().putDouble("hollowpurplenukeidfix",
+											((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).HollowNukeID));
+								}
 							}
 						}
 					}
@@ -328,7 +255,7 @@ public class LapseBlueControlOnEffectActiveTickProcedure {
 				_entity.removeEffect(CraftKaisenModMobEffects.LAPSE_BLUE_CONTROL.get());
 		}
 		entity.getPersistentData().putDouble("hollownukecooldown", (entity.getPersistentData().getDouble("hollownukecooldown") - 1));
-		if (entity instanceof ServerPlayer _plr106 && _plr106.level instanceof ServerLevel && _plr106.getAdvancements().getOrStartProgress(_plr106.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
+		if (entity instanceof ServerPlayer _plr100 && _plr100.level instanceof ServerLevel && _plr100.getAdvancements().getOrStartProgress(_plr100.server.getAdvancements().getAdvancement(new ResourceLocation("craft_kaisen:potentional"))).isDone()
 				&& (entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput >= 100) {
 			BlueTickProcedure.execute(world,
 					(entity.level

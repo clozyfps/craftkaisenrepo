@@ -67,6 +67,7 @@ public class PlayerTickProcedure {
 		CursedEnergyIconsProcedure.execute(world, entity);
 		WeaponiconsProcedure.execute(world, entity);
 		ShadersTickProcedure.execute(world, entity);
+		AbilityIconsFixTickProcedure.execute(world, entity);
 		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Limitless")) {
 			LimitLessIconsProcedure.execute(world, entity);
 		}

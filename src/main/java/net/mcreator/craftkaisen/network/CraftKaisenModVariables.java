@@ -211,6 +211,8 @@ public class CraftKaisenModVariables {
 			clone.ChargeKeyDown = original.ChargeKeyDown;
 			clone.VrModeAbilitySwich = original.VrModeAbilitySwich;
 			clone.FirstJoined = original.FirstJoined;
+			clone.InDomain = original.InDomain;
+			clone.HollowNukeID = original.HollowNukeID;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -637,6 +639,8 @@ public class CraftKaisenModVariables {
 		public boolean ChargeKeyDown = false;
 		public double VrModeAbilitySwich = 0.0;
 		public boolean FirstJoined = false;
+		public boolean InDomain = false;
+		public double HollowNukeID = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -823,6 +827,8 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("ChargeKeyDown", ChargeKeyDown);
 			nbt.putDouble("VrModeAbilitySwich", VrModeAbilitySwich);
 			nbt.putBoolean("FirstJoined", FirstJoined);
+			nbt.putBoolean("InDomain", InDomain);
+			nbt.putDouble("HollowNukeID", HollowNukeID);
 			return nbt;
 		}
 
@@ -1006,6 +1012,8 @@ public class CraftKaisenModVariables {
 			ChargeKeyDown = nbt.getBoolean("ChargeKeyDown");
 			VrModeAbilitySwich = nbt.getDouble("VrModeAbilitySwich");
 			FirstJoined = nbt.getBoolean("FirstJoined");
+			InDomain = nbt.getBoolean("InDomain");
+			HollowNukeID = nbt.getDouble("HollowNukeID");
 		}
 	}
 
@@ -1208,6 +1216,8 @@ public class CraftKaisenModVariables {
 					variables.ChargeKeyDown = message.data.ChargeKeyDown;
 					variables.VrModeAbilitySwich = message.data.VrModeAbilitySwich;
 					variables.FirstJoined = message.data.FirstJoined;
+					variables.InDomain = message.data.InDomain;
+					variables.HollowNukeID = message.data.HollowNukeID;
 				}
 			});
 			context.setPacketHandled(true);

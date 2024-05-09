@@ -40,8 +40,6 @@ public class PreDomainEffectExpiresProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				if (entity instanceof LivingEntity _entity)
-					_entity.removeEffect(CraftKaisenModMobEffects.PRE_DOMAIN.get());
 				if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Limitless")) {
 					if (world.isClientSide()) {
 						if (entity instanceof AbstractClientPlayer player) {
@@ -146,6 +144,8 @@ public class PreDomainEffectExpiresProcedure {
 						entity.getPersistentData().putBoolean("domain", true);
 					});
 				}
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(CraftKaisenModMobEffects.PRE_DOMAIN.get());
 				CraftKaisenMod.queueServerWork(7, () -> {
 					{
 						boolean _setval = false;

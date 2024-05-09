@@ -83,6 +83,7 @@ import net.mcreator.craftkaisen.client.renderer.JinichiZeninRenderer;
 import net.mcreator.craftkaisen.client.renderer.InventoryCurseMobRenderer;
 import net.mcreator.craftkaisen.client.renderer.IcileRenderer;
 import net.mcreator.craftkaisen.client.renderer.HundredDemonsTickRenderer;
+import net.mcreator.craftkaisen.client.renderer.HollowPurpleNukeExplosionRenderer;
 import net.mcreator.craftkaisen.client.renderer.HeianEraSukunaRenderer;
 import net.mcreator.craftkaisen.client.renderer.HanamiRenderer;
 import net.mcreator.craftkaisen.client.renderer.HajimeKashimoRenderer;
@@ -285,5 +286,6 @@ public class CraftKaisenModEntityRenderers {
 		event.registerEntityRenderer(CraftKaisenModEntities.SOUND_WAVES.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.OVERTIME.get(), OvertimeRenderer::new);
 		event.registerEntityRenderer(CraftKaisenModEntities.MAX_BLUE.get(), MaxBlueRenderer::new);
+		event.registerEntityRenderer(CraftKaisenModEntities.HOLLOW_PURPLE_NUKE_EXPLOSION.get(), HollowPurpleNukeExplosionRenderer::new);
 	}
 }
