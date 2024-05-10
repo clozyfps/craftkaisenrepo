@@ -79,6 +79,7 @@ import net.mcreator.craftkaisen.item.EmberInsectProjectileItem;
 import net.mcreator.craftkaisen.item.ElectricGuitarItem;
 import net.mcreator.craftkaisen.item.DragonBoneItem;
 import net.mcreator.craftkaisen.item.DontMoveRangedItem;
+import net.mcreator.craftkaisen.item.DomainDebugStickItem;
 import net.mcreator.craftkaisen.item.DistortedBodyItem;
 import net.mcreator.craftkaisen.item.DismantleItem;
 import net.mcreator.craftkaisen.item.DisasterFlameRangedItem;
@@ -312,6 +313,8 @@ public class CraftKaisenModItems {
 	public static final RegistryObject<Item> DOMAIN_SKY = block(CraftKaisenModBlocks.DOMAIN_SKY);
 	public static final RegistryObject<Item> DOMAIN_SAND = block(CraftKaisenModBlocks.DOMAIN_SAND);
 	public static final RegistryObject<Item> TIDES_TRE_SPAWN_EGG = REGISTRY.register("tides_tre_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.TIDES_TRE, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> OVERTIME_SPAWN_EGG = REGISTRY.register("overtime_spawn_egg", () -> new ForgeSpawnEggItem(CraftKaisenModEntities.OVERTIME, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> DOMAIN_DEBUG_STICK = REGISTRY.register("domain_debug_stick", () -> new DomainDebugStickItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

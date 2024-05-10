@@ -81,6 +81,7 @@ public class DomainClashingGUIScreen extends AbstractContainerScreen<DomainClash
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
+		this.font.draw(poseStack, Component.translatable("gui.craft_kaisen.domain_clashing_gui.label_click_the_buttons"), -41, -5, -1);
 	}
 
 	@Override
@@ -91,7 +92,7 @@ public class DomainClashingGUIScreen extends AbstractContainerScreen<DomainClash
 	@Override
 	public void init() {
 		super.init();
-		imagebutton_domaiexpansionclickbutton = new ImageButton(this.leftPos + -69, this.topPos + -55, 40, 17, 0, 0, 17, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_domaiexpansionclickbutton.png"), 40, 34, e -> {
+		imagebutton_domaiexpansionclickbutton = new ImageButton(this.leftPos + -69, this.topPos + -39, 40, 17, 0, 0, 17, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_domaiexpansionclickbutton.png"), 40, 34, e -> {
 			if (DomainClashButton1Procedure.execute(entity)) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new DomainClashingGUIButtonMessage(0, x, y, z));
 				DomainClashingGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
@@ -119,7 +120,7 @@ public class DomainClashingGUIScreen extends AbstractContainerScreen<DomainClash
 		};
 		guistate.put("button:imagebutton_domaiexpansionclickbutton1", imagebutton_domaiexpansionclickbutton1);
 		this.addRenderableWidget(imagebutton_domaiexpansionclickbutton1);
-		imagebutton_domaiexpansionclickbutton2 = new ImageButton(this.leftPos + 28, this.topPos + -55, 40, 17, 0, 0, 17, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_domaiexpansionclickbutton2.png"), 40, 34, e -> {
+		imagebutton_domaiexpansionclickbutton2 = new ImageButton(this.leftPos + 28, this.topPos + -40, 40, 17, 0, 0, 17, new ResourceLocation("craft_kaisen:textures/screens/atlas/imagebutton_domaiexpansionclickbutton2.png"), 40, 34, e -> {
 			if (DomainClashButton2Procedure.execute(entity)) {
 				CraftKaisenMod.PACKET_HANDLER.sendToServer(new DomainClashingGUIButtonMessage(2, x, y, z));
 				DomainClashingGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);

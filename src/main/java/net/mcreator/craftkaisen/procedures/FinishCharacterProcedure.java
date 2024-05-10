@@ -26,6 +26,13 @@ public class FinishCharacterProcedure {
 		double overflow = 0;
 		double SoulPerception = 0;
 		double CursedWomb = 0;
+		{
+			boolean _setval = true;
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.FirstJoined = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
 		SixEyes = Mth.nextInt(RandomSource.create(), 1, 400);
 		Flash = Mth.nextInt(RandomSource.create(), 1, 70);
 		overflow = Mth.nextInt(RandomSource.create(), 1, 100);

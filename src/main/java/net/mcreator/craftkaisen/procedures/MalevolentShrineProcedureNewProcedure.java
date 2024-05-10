@@ -45,6 +45,8 @@ public class MalevolentShrineProcedureNewProcedure {
 				CraftKaisenMod.queueServerWork(1, () -> {
 					entity.getPersistentData().putBoolean("domain", true);
 				});
+				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DOMAIN_FIX_EFFECT.get(), 90, 1, false, false));
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:sukunadomain")), SoundSource.NEUTRAL, 1, 1);
@@ -89,7 +91,7 @@ public class MalevolentShrineProcedureNewProcedure {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal(("You need " + new java.text.DecimalFormat("##.##").format(500) + " cursed energy to use this move.")), true);
 			}
-		} else if (entity.getPersistentData().getBoolean("domain")) {
+		} else if (entity.getPersistentData().getBoolean("domain") && !(entity instanceof LivingEntity _livEnt26 && _livEnt26.hasEffect(CraftKaisenModMobEffects.DOMAIN_FIX_EFFECT.get()))) {
 			CraftKaisenMod.queueServerWork(1, () -> {
 				entity.getPersistentData().putBoolean("domain", false);
 				if (!world.getEntitiesOfClass(MalevolentShrineEntity.class, AABB.ofSize(new Vec3(x, y, z), 150, 150, 150), e -> true).isEmpty()) {

@@ -276,17 +276,25 @@ public class SetMovesProcedure {
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Boogie Woogie")) {
-				entity.getPersistentData().putDouble("maxMoves", 1);
+				entity.getPersistentData().putDouble("maxMoves", 2);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Clap");
 					entity.getPersistentData().putDouble("moveCost", 7);
 				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
+					entity.getPersistentData().putString("moveDisplay", "Swap");
+					entity.getPersistentData().putDouble("moveCost", 14);
+				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Ratio")) {
-				entity.getPersistentData().putDouble("maxMoves", 1);
+				entity.getPersistentData().putDouble("maxMoves", 2);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Collapse");
 					entity.getPersistentData().putDouble("moveCost", 5);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
+					entity.getPersistentData().putString("moveDisplay", "Over Time");
+					entity.getPersistentData().putDouble("moveCost", 20);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Auspicious Beasts Summon")) {
@@ -376,10 +384,14 @@ public class SetMovesProcedure {
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Sound Amplification")) {
-				entity.getPersistentData().putDouble("maxMoves", 1);
+				entity.getPersistentData().putDouble("maxMoves", 2);
 				if (entity.getPersistentData().getDouble("moveNumber") == 1) {
 					entity.getPersistentData().putString("moveDisplay", "Sound Blast");
 					entity.getPersistentData().putDouble("moveCost", 7);
+				}
+				if (entity.getPersistentData().getDouble("moveNumber") == 2) {
+					entity.getPersistentData().putString("moveDisplay", "Sound Waves");
+					entity.getPersistentData().putDouble("moveCost", 15);
 				}
 			}
 			if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Disaster Tides")) {

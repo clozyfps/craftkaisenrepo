@@ -1,0 +1,7 @@
+{
+  "_fv": 57,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"247\" y=\"168\"><field name=\"trigger\">render_event</field><next><block type=\"render_event_starter\"><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"entity_haspotioneffect\"><field name=\"potion\">CUSTOM:OverTimeEffect2</field><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value><statement name=\"DO0\"><block type=\"player_model_changer_new\"><field name=\"model\">overtimemodel</field><field name=\"last_line\">//</field><value name=\"text\"><block type=\"text\"><field name=\"TEXT\">craft_kaisen:textures/entities/ovetime.png</field></block></value></block></statement></block></next></block></next></block></xml>"
+  }
+}

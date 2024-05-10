@@ -34,8 +34,8 @@ public class LapseBlueOverlayOverlay {
 			z = entity.getZ();
 		}
 		if (LapseBlueOverlayDisplayOverlayIngameProcedure.execute(entity)) {
-			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.craft_kaisen.lapse_blue_overlay.label_ctrl_move_away"), w / 2 + 122, h / 2 + -110, -1);
-			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.craft_kaisen.lapse_blue_overlay.label_alt_move_closer"), w / 2 + 122, h / 2 + -97, -1);
+			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.craft_kaisen.lapse_blue_overlay.label_ctrl_move_away"), w / 2 + 98, h / 2 + -110, -1);
+			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.craft_kaisen.lapse_blue_overlay.label_alt_move_closer"), w / 2 + 98, h / 2 + -99, -1);
 		}
 	}
 }

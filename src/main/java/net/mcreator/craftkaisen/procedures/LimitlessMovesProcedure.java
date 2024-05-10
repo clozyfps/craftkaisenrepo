@@ -5,8 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,10 +18,6 @@ import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
 
 import javax.annotation.Nullable;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class LimitlessMovesProcedure {
@@ -59,9 +53,9 @@ public class LimitlessMovesProcedure {
 											capability.syncPlayerVariables(entity);
 										});
 									}
-									ReversalRedProceduresProcedure.execute(entity);
 									if (entity instanceof Player _player && !_player.level.isClientSide())
 										_player.displayClientMessage(Component.literal("Aka."), true);
+									ReversalRedProceduresProcedure.execute(world, entity);
 									entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 100);
 								} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 50
 										* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
@@ -158,7 +152,7 @@ public class LimitlessMovesProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							PurpleProcedureProcedure.execute(world, entity);
+							PurpleProcedureProcedure.execute(entity);
 							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 900);
 						} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 190
 								* ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentOutput / 10)) {
@@ -202,18 +196,7 @@ public class LimitlessMovesProcedure {
 									capability.syncPlayerVariables(entity);
 								});
 							}
-							VoidRemoveProcedure.execute(world, x, y, z);
-							{
-								final Vec3 _center = new Vec3(x, y, z);
-								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-										.collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entity == entityiterator)) {
-										entityiterator.getPersistentData().putBoolean("domain", false);
-									}
-								}
-							}
-							UnlimitedVoidProcedureProcedure.execute(world, x, y, z, entity);
+							PreDomainEffectStartedappliedProcedure.execute(world, x, y, z, entity);
 							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
 						} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 600) {
 							if (entity instanceof Player _player && !_player.level.isClientSide())

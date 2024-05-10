@@ -1,9 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.Entity;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import javax.annotation.Nullable;
 
 public class TitleBookRightclickedProcedure {
 	public static void execute(Entity entity, ItemStack itemstack) {

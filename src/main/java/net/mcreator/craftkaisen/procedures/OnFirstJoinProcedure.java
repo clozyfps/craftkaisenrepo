@@ -17,6 +17,7 @@ import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModGameRules;
 
 import javax.annotation.Nullable;
 
@@ -305,6 +306,36 @@ public class OnFirstJoinProcedure {
 						_player.getAdvancements().award(_adv, criteria);
 				}
 			}
+		}
+		if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.VR_MODE) == true) {
+			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).VrModeAbilitySwich == 0) {
+				{
+					double _setval = 1;
+					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.VrModeAbilitySwich = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
+		} else if (world.getLevelData().getGameRules().getBoolean(CraftKaisenModGameRules.VR_MODE) == false) {
+			if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).VrModeAbilitySwich != 0) {
+				{
+					double _setval = 0;
+					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.VrModeAbilitySwich = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
+		}
+		entity.getPersistentData().putBoolean("domain", true);
+		entity.getPersistentData().putString("domaintype", "");
+		{
+			boolean _setval = false;
+			entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.InDomain = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

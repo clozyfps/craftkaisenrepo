@@ -42,6 +42,12 @@ import net.mcreator.craftkaisen.procedures.DisplayBar11Procedure;
 import net.mcreator.craftkaisen.procedures.DisplayBar10Procedure;
 import net.mcreator.craftkaisen.procedures.BoogieWoogieTargetDisplayProcedure;
 import net.mcreator.craftkaisen.procedures.BoogieWoogieTargetCondititionProcedure;
+import net.mcreator.craftkaisen.procedures.Ability6returnProcedure;
+import net.mcreator.craftkaisen.procedures.Ability5returnProcedure;
+import net.mcreator.craftkaisen.procedures.Ability4returnProcedure;
+import net.mcreator.craftkaisen.procedures.Ability3returnProcedure;
+import net.mcreator.craftkaisen.procedures.Ability2returnProcedure;
+import net.mcreator.craftkaisen.procedures.Ability1returnProcedure;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -72,7 +78,7 @@ public class MainOverlayOverlay {
 		if (true) {
 			if (DisplayBarEmptyProcedure.execute(entity)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/cebarlayer12.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h / 2 + -120, 0, 0, 427, 240, 427, 240);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), -61, h / 2 + -118, 0, 0, 427, 240, 427, 240);
 			}
 			if (DisplayBar1Procedure.execute(entity)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/cebarlayer11.png"));
@@ -186,6 +192,30 @@ public class MainOverlayOverlay {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/emptyslot6.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 4, h / 2 + -10, 0, 0, 8, 8, 8, 8);
 
+			if (Ability1returnProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/abilityselected.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 5, h / 2 + -70, 0, 0, 16, 8, 16, 8);
+			}
+			if (Ability2returnProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/abilityselected.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 5, h / 2 + -58, 0, 0, 16, 8, 16, 8);
+			}
+			if (Ability3returnProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/abilityselected.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 5, h / 2 + -46, 0, 0, 16, 8, 16, 8);
+			}
+			if (Ability4returnProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/abilityselected.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 5, h / 2 + -34, 0, 0, 16, 8, 16, 8);
+			}
+			if (Ability5returnProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/abilityselected.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 5, h / 2 + -22, 0, 0, 16, 8, 16, 8);
+			}
+			if (Ability6returnProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("craft_kaisen:textures/screens/abilityselected.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 5, h / 2 + -10, 0, 0, 16, 8, 16, 8);
+			}
 			if (DisplayBar12Procedure.execute(entity))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 

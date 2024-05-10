@@ -41,7 +41,7 @@ public class PlayerTickProcedure {
 		BloodEdgeTickProcedure.execute(entity);
 		StopPlayerTickProcedure.execute(entity);
 		MeleeMovesProcedure.execute(world, x, y, z, entity);
-		WeaponMovesProcedure.execute(entity);
+		WeaponMovesProcedure.execute(world, x, y, z, entity);
 		RestrictedMovesProcedure.execute(world, x, y, z, entity);
 		StarPlasmaVesselQuestProcedure.execute(world, x, y, z, entity);
 		SixEyesTickProcedure.execute(world, entity);
@@ -66,6 +66,8 @@ public class PlayerTickProcedure {
 		MeleeIconsProcedure.execute(world, entity);
 		CursedEnergyIconsProcedure.execute(world, entity);
 		WeaponiconsProcedure.execute(world, entity);
+		ShadersTickProcedure.execute(world, entity);
+		AbilityIconsFixTickProcedure.execute(world, entity);
 		if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).technique).equals("Limitless")) {
 			LimitLessIconsProcedure.execute(world, entity);
 		}

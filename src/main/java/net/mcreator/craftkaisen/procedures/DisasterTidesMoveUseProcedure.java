@@ -135,6 +135,7 @@ public class DisasterTidesMoveUseProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
+						DisasterTidesDoamainExpasionProcedure.execute(world, x, y, z, entity);
 						if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 99, false, false));
 						if (world instanceof Level _level) {

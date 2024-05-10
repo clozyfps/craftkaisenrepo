@@ -22,7 +22,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.Minecraft;
 
 import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
 import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
@@ -45,12 +44,33 @@ public class UnlimitedVoidProcedureProcedure {
 		BlockState blockrevert = Blocks.AIR.defaultBlockState();
 		BlockState voidblocknew = Blocks.AIR.defaultBlockState();
 		if (!entity.getPersistentData().getBoolean("domain")) {
+			entity.getPersistentData().putString("domaintype", "Unlimited Void");
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.NEUTRAL, 1, 1);
 				} else {
 					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain")), SoundSource.NEUTRAL, 1, 1, false);
 				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = new UnlimitedVoidAccelerateEntity(CraftKaisenModEntities.UNLIMITED_VOID_ACCELERATE.get(), _level);
+				entityToSpawn.moveTo(x, y, z, 0, 0);
+				entityToSpawn.setYBodyRot(0);
+				entityToSpawn.setYHeadRot(0);
+				entityToSpawn.setDeltaMovement(0, 0, 0);
+				if (entityToSpawn instanceof Mob _mobToSpawn)
+					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+				_level.addFreshEntity(entityToSpawn);
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = new UnlimitedVoidMobEntity(CraftKaisenModEntities.UNLIMITED_VOID_MOB.get(), _level);
+				entityToSpawn.moveTo(x, (y + 3), z, 0, 0);
+				entityToSpawn.setYBodyRot(0);
+				entityToSpawn.setYHeadRot(0);
+				entityToSpawn.setDeltaMovement(0, 0, 0);
+				if (entityToSpawn instanceof Mob _mobToSpawn)
+					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+				_level.addFreshEntity(entityToSpawn);
 			}
 			CraftKaisenMod.queueServerWork(20, () -> {
 				if (world instanceof Level _level) {
@@ -70,65 +90,27 @@ public class UnlimitedVoidProcedureProcedure {
 					}
 				}
 			});
-			entity.getPersistentData().putString("domaintype", "Unlimited Void");
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120, 1, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 250, false, false));
-			entity.getPersistentData().putDouble("domainx", (entity.getX()));
-			entity.getPersistentData().putDouble("domainy", (entity.getY()));
-			entity.getPersistentData().putDouble("domainz", (entity.getZ()));
-			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = new UnlimitedVoidMobEntity(CraftKaisenModEntities.UNLIMITED_VOID_MOB.get(), _level);
-				entityToSpawn.moveTo(x, (y + 3), z, 0, 0);
-				entityToSpawn.setYBodyRot(0);
-				entityToSpawn.setYHeadRot(0);
-				entityToSpawn.setDeltaMovement(0, 0, 0);
-				if (entityToSpawn instanceof Mob _mobToSpawn)
-					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-				_level.addFreshEntity(entityToSpawn);
-			}
-			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = new UnlimitedVoidAccelerateEntity(CraftKaisenModEntities.UNLIMITED_VOID_ACCELERATE.get(), _level);
-				entityToSpawn.moveTo(x, y, z, 0, 0);
-				entityToSpawn.setYBodyRot(0);
-				entityToSpawn.setYHeadRot(0);
-				entityToSpawn.setDeltaMovement(0, 0, 0);
-				if (entityToSpawn instanceof Mob _mobToSpawn)
-					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-				_level.addFreshEntity(entityToSpawn);
-			}
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof UnlimitedVoidMobEntity && !(entityiterator instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)) {
+					if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120, 1, false, false));
+					if (entityiterator instanceof UnlimitedVoidMobEntity) {
 						if (entityiterator instanceof TamableAnimal _toTame && entity instanceof Player _owner)
 							_toTame.tame(_owner);
 						entityiterator.getPersistentData().putString("ownerdomain", (entity.getDisplayName().getString()));
 					}
-					if (entityiterator instanceof UnlimitedVoidAccelerateEntity) {
-						{
-							Entity _ent = entityiterator;
-							_ent.setYRot((float) entity.getViewYRot(Minecraft.getInstance().getPartialTick()));
-							_ent.setXRot(0);
-							_ent.setYBodyRot(_ent.getYRot());
-							_ent.setYHeadRot(_ent.getYRot());
-							_ent.yRotO = _ent.getYRot();
-							_ent.xRotO = _ent.getXRot();
-							if (_ent instanceof LivingEntity _entity) {
-								_entity.yBodyRotO = _entity.getYRot();
-								_entity.yHeadRotO = _entity.getYRot();
-							}
-						}
-					}
-					if (!(entityiterator instanceof UnlimitedVoidMobEntity)) {
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 120, 1, false, false));
-					}
 				}
 			}
+			entity.getPersistentData().putDouble("domainx", (entity.getX()));
+			entity.getPersistentData().putDouble("domainy", (entity.getY()));
+			entity.getPersistentData().putDouble("domainz", (entity.getZ()));
 			int horizontalRadiusHemiBot = (int) 20 - 1;
 			int verticalRadiusHemiBot = (int) 20;
 			int yIterationsHemiBot = verticalRadiusHemiBot;
@@ -234,14 +216,56 @@ public class UnlimitedVoidProcedureProcedure {
 			CraftKaisenMod.queueServerWork(1190, () -> {
 				if (entity.getPersistentData().getBoolean("domain")) {
 					entity.getPersistentData().putBoolean("domain", false);
+					{
+						final Vec3 _center = new Vec3(x, y, z);
+						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+								.collect(Collectors.toList());
+						for (Entity entityiterator : _entfound) {
+							{
+								boolean _setval = false;
+								entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.InDomain = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						}
+					}
 				}
 			});
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(19 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					{
+						boolean _setval = true;
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.InDomain = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+			}
 		} else if (entity.getPersistentData().getBoolean("domain")) {
 			entity.getPersistentData().putBoolean("domain", false);
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					{
+						boolean _setval = false;
+						entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.InDomain = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+			}
 			VoidRemoveProcedure.execute(world, (entity.getPersistentData().getDouble("domainx")), (entity.getPersistentData().getDouble("domainy")), (entity.getPersistentData().getDouble("domainz")));
 			{
 				final Vec3 _center = new Vec3((entity.getPersistentData().getDouble("domainx")), (entity.getPersistentData().getDouble("domainy")), (entity.getPersistentData().getDouble("domainz")));
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof UnlimitedVoidMobEntity && ((entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)

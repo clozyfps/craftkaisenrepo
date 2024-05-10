@@ -32,7 +32,7 @@
             "name": "DomainClashButton1"
           },
           "x": 145,
-          "y": 65
+          "y": 81
         }
       },
       {
@@ -64,7 +64,7 @@
             "name": "DomainClashButton2"
           },
           "x": 242,
-          "y": 65
+          "y": 80
         }
       },
       {
@@ -81,6 +81,21 @@
           },
           "x": 144,
           "y": 151
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_click_the_buttons",
+          "text": {
+            "fixedValue": "Click The Button"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 173,
+          "y": 115
         }
       }
     ],

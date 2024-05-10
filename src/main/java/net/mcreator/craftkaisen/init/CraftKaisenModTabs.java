@@ -31,6 +31,7 @@ public class CraftKaisenModTabs {
 
 		if (tabData.getTab() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(CraftKaisenModItems.TIDES_TRE_SPAWN_EGG.get());
+			tabData.accept(CraftKaisenModItems.OVERTIME_SPAWN_EGG.get());
 		}
 	}
 

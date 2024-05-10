@@ -18,6 +18,9 @@ import net.mcreator.craftkaisen.client.particle.SnowflakeParticle;
 import net.mcreator.craftkaisen.client.particle.ShrineSlice3Particle;
 import net.mcreator.craftkaisen.client.particle.ShrineSlice2Particle;
 import net.mcreator.craftkaisen.client.particle.ShrineSlice1Particle;
+import net.mcreator.craftkaisen.client.particle.Shrine3redParticle;
+import net.mcreator.craftkaisen.client.particle.Shrine2redParticle;
+import net.mcreator.craftkaisen.client.particle.Shrine1redParticle;
 import net.mcreator.craftkaisen.client.particle.RedParticleParticle;
 import net.mcreator.craftkaisen.client.particle.RedParticleBigParticle;
 import net.mcreator.craftkaisen.client.particle.RatioParticleParticle;
@@ -30,6 +33,8 @@ import net.mcreator.craftkaisen.client.particle.PureLovePulseParticle;
 import net.mcreator.craftkaisen.client.particle.PunchImpactParticle;
 import net.mcreator.craftkaisen.client.particle.NueElectricityParticle;
 import net.mcreator.craftkaisen.client.particle.MistPurpleParticle;
+import net.mcreator.craftkaisen.client.particle.MeleeParticleParticle;
+import net.mcreator.craftkaisen.client.particle.MeleeEffectParticle;
 import net.mcreator.craftkaisen.client.particle.LapseParticleParticle;
 import net.mcreator.craftkaisen.client.particle.InfinityParticleParticle;
 import net.mcreator.craftkaisen.client.particle.IceCloudParticle;
@@ -84,5 +89,10 @@ public class CraftKaisenModParticles {
 		event.registerSpriteSet(CraftKaisenModParticleTypes.UNLIMITED_VOID_SPLASH_3.get(), UnlimitedVoidSplash3Particle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.FIRE_PARTICLE.get(), FireParticleParticle::provider);
 		event.registerSpriteSet(CraftKaisenModParticleTypes.PURE_LOVE_PULSE.get(), PureLovePulseParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.MELEE_PARTICLE.get(), MeleeParticleParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.MELEE_EFFECT.get(), MeleeEffectParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_1RED.get(), Shrine1redParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_2RED.get(), Shrine2redParticle::provider);
+		event.registerSpriteSet(CraftKaisenModParticleTypes.SHRINE_3RED.get(), Shrine3redParticle::provider);
 	}
 }

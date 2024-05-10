@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"camera": {
+			"animation_length": 0.91667,
+			"bones": {
+				"right_arm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-80.47479, -17.22575, 3.13388]
+						},
+						"0.1667": {
+							"vector": [-85.47479, -17.22575, 3.13388]
+						},
+						"0.3333": {
+							"vector": [-80.47479, -17.22575, 3.13388]
+						},
+						"0.5417": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

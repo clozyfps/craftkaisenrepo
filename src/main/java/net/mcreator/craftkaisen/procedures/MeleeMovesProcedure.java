@@ -1,39 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
-
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.Component;
-import net.minecraft.core.particles.ParticleTypes;
-
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
-import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-import net.mcreator.craftkaisen.entity.StronghitProjectileEntity;
-import net.mcreator.craftkaisen.CraftKaisenMod;
 
 import javax.annotation.Nullable;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class MeleeMovesProcedure {
@@ -73,6 +42,16 @@ public class MeleeMovesProcedure {
 					projectileLevel.addFreshEntity(_entityToSpawn);
 				}
 			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1, false);
+				}
+			}
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6"));
 			entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
 			{
 				String _setval = "";
@@ -84,6 +63,15 @@ public class MeleeMovesProcedure {
 		} else if (((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentMove).equals("Grab")) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.GRAB.get(), 60, 0, false, false));
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get(), 60, 0, false, false));
+				}
+			}
 			entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 50);
 			{
 				String _setval = "";
@@ -112,6 +100,9 @@ public class MeleeMovesProcedure {
 					projectileLevel.addFreshEntity(_entityToSpawn);
 				}
 			}
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 			if (entity instanceof LivingEntity _entity)
 				_entity.swing(InteractionHand.MAIN_HAND, true);
 			CraftKaisenMod.queueServerWork(5, () -> {
@@ -134,8 +125,18 @@ public class MeleeMovesProcedure {
 						projectileLevel.addFreshEntity(_entityToSpawn);
 					}
 				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1, false);
+					}
+				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.swing(InteractionHand.MAIN_HAND, true);
+				if (world instanceof ServerLevel _level)
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 				CraftKaisenMod.queueServerWork(5, () -> {
 					{
 						Entity _shootFrom = entity;
@@ -156,8 +157,18 @@ public class MeleeMovesProcedure {
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
 					if (entity instanceof LivingEntity _entity)
 						_entity.swing(InteractionHand.MAIN_HAND, true);
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 					CraftKaisenMod.queueServerWork(5, () -> {
 						{
 							Entity _shootFrom = entity;
@@ -178,8 +189,18 @@ public class MeleeMovesProcedure {
 								projectileLevel.addFreshEntity(_entityToSpawn);
 							}
 						}
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1, false);
+							}
+						}
 						if (entity instanceof LivingEntity _entity)
 							_entity.swing(InteractionHand.MAIN_HAND, true);
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 						CraftKaisenMod.queueServerWork(5, () -> {
 							{
 								Entity _shootFrom = entity;
@@ -200,8 +221,18 @@ public class MeleeMovesProcedure {
 									projectileLevel.addFreshEntity(_entityToSpawn);
 								}
 							}
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1);
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1, false);
+								}
+							}
 							if (entity instanceof LivingEntity _entity)
 								_entity.swing(InteractionHand.MAIN_HAND, true);
+							if (world instanceof ServerLevel _level)
+								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 							CraftKaisenMod.queueServerWork(5, () -> {
 								{
 									Entity _shootFrom = entity;
@@ -222,8 +253,19 @@ public class MeleeMovesProcedure {
 										projectileLevel.addFreshEntity(_entityToSpawn);
 									}
 								}
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1);
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1, false);
+									}
+								}
 								if (entity instanceof LivingEntity _entity)
 									_entity.swing(InteractionHand.MAIN_HAND, true);
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+											("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 								CraftKaisenMod.queueServerWork(5, () -> {
 									{
 										Entity _shootFrom = entity;
@@ -244,8 +286,19 @@ public class MeleeMovesProcedure {
 											projectileLevel.addFreshEntity(_entityToSpawn);
 										}
 									}
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1);
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.strong")), SoundSource.NEUTRAL, 1, 1, false);
+										}
+									}
 									if (entity instanceof LivingEntity _entity)
 										_entity.swing(InteractionHand.MAIN_HAND, true);
+									if (world instanceof ServerLevel _level)
+										_level.getServer().getCommands().performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+												("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle craft_kaisen:melee_effect ^ ^ ^0.6 0.3 0.2 0.3 0 2"));
 								});
 							});
 						});
@@ -287,6 +340,16 @@ public class MeleeMovesProcedure {
 				_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 5, 3, 3, 3, 1);
 			entity.setDeltaMovement(new Vec3(0, 2, 0));
 			entity.fallDistance = 0;
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.crit")), SoundSource.NEUTRAL, 1, (float) 0.8);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.crit")), SoundSource.NEUTRAL, 1, (float) 0.8, false);
+				}
+			}
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						("/execute at " + entity.getDisplayName().getString() + " positioned ~ ~1.6 ~ run particle minecraft:crit ^ ^ ^0.6 0.3 0.2 0.3 0 20"));
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
@@ -323,6 +386,8 @@ public class MeleeMovesProcedure {
 							if (entity instanceof Player _player && !_player.level.isClientSide())
 								_player.displayClientMessage(Component.literal("-No Target Found-"), true);
 						} else {
+							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get(), 4, 1, false, false));
 							{
 								Entity _shootFrom = entity;
 								Level projectileLevel = _shootFrom.level;

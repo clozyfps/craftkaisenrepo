@@ -281,5 +281,14 @@
         "stream": false
       }
     ]
+  },
+  "blood": {
+    "subtitle": "subtitles.blood",
+    "sounds": [
+      {
+        "name": "craft_kaisen:blood_splatter_sound_effect",
+        "stream": false
+      }
+    ]
   }
 }
