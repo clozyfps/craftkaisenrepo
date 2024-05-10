@@ -1,8 +1,30 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
+import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
+import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
+import net.mcreator.craftkaisen.init.CraftKaisenModBlocks;
+import net.mcreator.craftkaisen.entity.TidesTreEntity;
+import net.mcreator.craftkaisen.CraftKaisenMod;
 
 public class DisasterTidesDomainExpasionProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -86,16 +108,16 @@ public class DisasterTidesDomainExpasionProcedure {
 								}
 								if (y + i < entity.getY()) {
 									if (Math.random() >= 0.5) {
-										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_SAND.get().defaultBlockState(), 3);
 									} else {
-										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_SAND.get().defaultBlockState(), 3);
 									}
 								}
 								if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 16 && Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) < 18) {
 									if (Math.random() >= 0.5) {
-										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_SAND.get().defaultBlockState(), 3);
 									} else {
-										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModItems.DELETED_MOD_ELEMENT.get().defaultBlockState(), 3);
+										world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), CraftKaisenModBlocks.DOMAIN_SAND.get().defaultBlockState(), 3);
 									}
 								}
 								if (Math.round(Math.sqrt(Math.pow(x + xi - x, 2) + Math.pow(y + i - y, 2) + Math.pow(z + zi - z, 2))) >= 18) {
@@ -118,7 +140,7 @@ public class DisasterTidesDomainExpasionProcedure {
 			CraftKaisenMod.queueServerWork(1, () -> {
 				for (int index0 = 0; index0 < 10; index0++) {
 					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new TidesTreEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
+						Entity entityToSpawn = new TidesTreEntity(CraftKaisenModEntities.TIDES_TRE.get(), _level);
 						entityToSpawn.moveTo((x + -5 + Mth.nextInt(RandomSource.create(), -4, 4)), y, (z + Mth.nextInt(RandomSource.create(), -8, 8)), 0, 0);
 						entityToSpawn.setYBodyRot(0);
 						entityToSpawn.setYHeadRot(0);

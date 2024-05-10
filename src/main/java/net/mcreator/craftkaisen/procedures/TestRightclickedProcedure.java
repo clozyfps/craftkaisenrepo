@@ -1,8 +1,17 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.player.AbstractClientPlayer;
 
-import javax.annotation.Nullable;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
+import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationAccess;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 public class TestRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -16,6 +25,7 @@ public class TestRightclickedProcedure {
 		String block = "";
 		if (entity.isShiftKeyDown()) {
 			VoidRemoveProcedure.execute(world, x, y, z);
+			DisasterTidesDomainExpasionProcedure.execute(world, x, y, z, entity);
 		} else {
 			if (world.isClientSide()) {
 				if (entity instanceof AbstractClientPlayer player) {
@@ -25,6 +35,7 @@ public class TestRightclickedProcedure {
 					}
 				}
 			}
+			FugaEffectProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

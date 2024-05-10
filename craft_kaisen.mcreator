@@ -1457,6 +1457,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -1477,6 +1481,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -1497,6 +1505,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -1517,6 +1529,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -1558,6 +1574,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -5224,6 +5244,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -32755,8 +32791,8 @@
         ],
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "arguments",
+            "type": "cmdcontext"
           },
           {
             "name": "world",
@@ -32779,8 +32815,8 @@
         ],
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "arguments",
+            "type": "cmdcontext"
           },
           {
             "name": "world",
@@ -33998,6 +34034,20 @@
         ]
       },
       "path": "~/Abilities/DisasterPlants"
+    },
+    {
+      "name": "ExtremelyLucky",
+      "type": "achievement",
+      "sortid": 1472,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "extremely_lucky",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/craft_kaisen/advancements/extremely_lucky.json"
+        ]
+      },
+      "path": "~/Advancement"
     }
   ],
   "variable_elements": [
@@ -35688,6 +35738,7 @@
       "advancements.jujutsu_kaisen.title": "Jujutsu Kaisen",
       "advancements.maximum_elephant_advancement.descr": "Tame Maximum Elephant",
       "key.craft_kaisen.output": "Output",
+      "entity.craft_kaisen.tides_tre": "Tides Tree",
       "gui.craft_kaisen.move_gui.button_4": "4",
       "gui.craft_kaisen.csmgui.button_1": "1",
       "gui.craft_kaisen.move_gui.button_3": "3",
@@ -35736,6 +35787,7 @@
       "advancements.cursed_technique.title": "Cursed Technique",
       "block.craft_kaisen.domain_ice_block": "Domain Block",
       "advancements.domain_amplification_learned.title": "Domain Amplification",
+      "advancements.extremely_lucky.descr": "You\u0027re extremely lucky!",
       "advancements.the_honored_one.descr": "Kill Satoru Gojo",
       "advancements.shibuya_incident.descr": "Arrive at Shibuya during the shibuya world event",
       "gui.craft_kaisen.mastery_gui.label_masterty_menu": "Mastery Menu",
@@ -35855,6 +35907,7 @@
       "entity.craft_kaisen.uraume": "Uraume",
       "block.craft_kaisen.domain_magma": "Domain Block",
       "advancements.older_brother.descr": "Kill Choso",
+      "block.craft_kaisen.domain_sand": "Domain Sand",
       "effect.craft_kaisen.flow": "Flow",
       "item.craft_kaisen.mouth_cursed_spirit_spawn_egg": "Mouth Cursed Spirit Spawn Egg",
       "entity.craft_kaisen.yuta_okkotsu": "Yuta Okkotsu",
@@ -35915,6 +35968,7 @@
       "gui.craft_kaisen.domain_clash.button_x": "X",
       "effect.craft_kaisen.sukuna": "Sukuna",
       "advancements.elimination_of_aoi_todo.title": "Elimination Of Aoi Todo",
+      "block.craft_kaisen.domain_sky": "Domain Sky",
       "gui.craft_kaisen.body_shape_overlay.label_shift_slicing": "SHIFT - Slicing",
       "entity.craft_kaisen.small_pox_deity": "Small Pox Deity",
       "gui.craft_kaisen.main_menu.tooltip_increase_energy_regen_rate_and_m": "increase energy regen rate and max output",
@@ -35936,6 +35990,7 @@
       "effect.craft_kaisen.prison_box_stun": "PrisonBoxStun",
       "advancements.blessed_by_the_sparks_advancement.descr": "Your chances for landing a black flash are significantly increased.",
       "advancements.rabbit_escape.title": "Rabbit Escape",
+      "item.craft_kaisen.tides_tre_spawn_egg": "Tides Tree Spawn Egg",
       "entity.craft_kaisen.nanami_kento": "Nanami Kento",
       "advancements.perception_of_the_soul.title": "Perception Of The Soul",
       "item.craft_kaisen.roppongi_cursed_spirit_spawn_egg": "Roppongi Cursed Spirit Spawn Egg",
@@ -36030,6 +36085,7 @@
       "item.craft_kaisen.stronghit": "Stronghit",
       "gui.craft_kaisen.prestige_menu.tooltip_decline": "Decline",
       "death.attack.soul_damage.item": "%1$s was killed by %2$s using %3$s",
+      "advancements.extremely_lucky.title": "Extremely Lucky",
       "item.craft_kaisen.nanami_outfit_leggings": "Nanami Outfit ",
       "advancements.subjugation_of_ko_guy.title": "Subjugation Of Ko Guy",
       "subtitles.domain.jackpot": "",
