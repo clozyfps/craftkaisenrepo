@@ -15,7 +15,7 @@ public class InfinityProcedureProcedure {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("Infinity Deactivated"), true);
 			{
-				String _setval = "Infinity: On";
+				String _setval = "Infinity: Off";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.InfinityOverlay = _setval;
 					capability.syncPlayerVariables(entity);
@@ -26,7 +26,7 @@ public class InfinityProcedureProcedure {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("Infinity Activated"), true);
 			{
-				String _setval = "Infinity: Off";
+				String _setval = "Infinity: On";
 				entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.InfinityOverlay = _setval;
 					capability.syncPlayerVariables(entity);

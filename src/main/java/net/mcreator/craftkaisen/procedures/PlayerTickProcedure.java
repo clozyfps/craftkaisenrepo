@@ -61,7 +61,7 @@ public class PlayerTickProcedure {
 		RoundBeginsProcedure.execute(world, x, y, z, entity);
 		RoundGameChoiceTimerProcedure.execute(world, x, y, z, entity);
 		BeginRollingProcedure.execute(world, x, y, z, entity);
-		CountTickProcedure.execute(world, x, y, z, entity);
+		CountTickProcedure.execute(entity);
 		BrotherTickProcedure.execute(world, x, y, z, entity);
 		MeleeIconsProcedure.execute(world, entity);
 		CursedEnergyIconsProcedure.execute(world, entity);

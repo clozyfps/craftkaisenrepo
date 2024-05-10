@@ -60,28 +60,28 @@ public class PreDomainMobOnEntityTickUpdateProcedure {
 						}
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.PRE_DOMAIN.get(), 10000, 1, false, false));
-						if (world instanceof ServerLevel _level)
-							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.DOMAIN_CLASH_PARTICLE.get()), x, y, z, 10, 5, 5, 5, 1);
-						if (world instanceof ServerLevel _level)
-							_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.CLASH_PARTICLE.get()), x, y, z, 10, 5, 5, 5, 1);
-						if (world instanceof ServerLevel _level)
-							_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 7, 5, 1, 5, 1);
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain.spin")), SoundSource.NEUTRAL, (float) 0.1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain.spin")), SoundSource.NEUTRAL, (float) 0.1, 1, false);
-							}
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:lightningflash")), SoundSource.NEUTRAL, (float) 0.1, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:lightningflash")), SoundSource.NEUTRAL, (float) 0.1, 1, false);
-							}
-						}
 					}
 				}
+			}
+		}
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.DOMAIN_CLASH_PARTICLE.get()), x, y, z, 10, 5, 5, 5, 1);
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles((SimpleParticleType) (CraftKaisenModParticleTypes.CLASH_PARTICLE.get()), x, y, z, 10, 5, 5, 5, 1);
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 7, 5, 1, 5, 1);
+		if (world instanceof Level _level) {
+			if (!_level.isClientSide()) {
+				_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain.spin")), SoundSource.NEUTRAL, (float) 0.1, 1);
+			} else {
+				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:domain.spin")), SoundSource.NEUTRAL, (float) 0.1, 1, false);
+			}
+		}
+		if (world instanceof Level _level) {
+			if (!_level.isClientSide()) {
+				_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:lightningflash")), SoundSource.NEUTRAL, (float) 0.1, 1);
+			} else {
+				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("craft_kaisen:lightningflash")), SoundSource.NEUTRAL, (float) 0.1, 1, false);
 			}
 		}
 	}

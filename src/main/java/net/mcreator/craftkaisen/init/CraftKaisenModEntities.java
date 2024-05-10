@@ -562,15 +562,11 @@ public class CraftKaisenModEntities {
 			EntityType.Builder.<KenjakuEntity>of(KenjakuEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KenjakuEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<BindingIceBlockEntity>> BINDING_ICE_BLOCK = register("binding_ice_block",
-			EntityType.Builder.<BindingIceBlockEntity>of(BindingIceBlockEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BindingIceBlockEntity::new)
-
-					.sized(1f, 2f));
+	public static final RegistryObject<EntityType<BindingIceBlockEntity>> BINDING_ICE_BLOCK = register("binding_ice_block", EntityType.Builder.<BindingIceBlockEntity>of(BindingIceBlockEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BindingIceBlockEntity::new).fireImmune().sized(1f, 2f));
 	public static final RegistryObject<EntityType<UnlimitedVoidAccelerateEntity>> UNLIMITED_VOID_ACCELERATE = register("unlimited_void_accelerate",
 			EntityType.Builder.<UnlimitedVoidAccelerateEntity>of(UnlimitedVoidAccelerateEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
-					.setCustomClientFactory(UnlimitedVoidAccelerateEntity::new)
-
-					.sized(0.6f, 1.8f));
+					.setCustomClientFactory(UnlimitedVoidAccelerateEntity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<NaobitoEntity>> NAOBITO = register("naobito",
 			EntityType.Builder.<NaobitoEntity>of(NaobitoEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NaobitoEntity::new)
 
