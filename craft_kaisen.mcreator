@@ -35672,6 +35672,97 @@
         ]
       },
       "path": "~/Procedures"
+    },
+    {
+      "name": "InfinityOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 1546,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infinity_overlay_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/InfinityOverlayDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "InfinityReturn",
+      "type": "procedure",
+      "sortid": 1547,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infinity_return",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/InfinityReturnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Procedures"
+    },
+    {
+      "name": "InfinityOverlay",
+      "type": "overlay",
+      "sortid": 1548,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "infinity_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/client/screens/InfinityOverlayOverlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "DomainDebugStickRightclicked",
+      "type": "procedure",
+      "sortid": 1549,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_debug_stick_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/craftkaisen/procedures/DomainDebugStickRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Procedure"
+    },
+    {
+      "name": "DomainDebugStick",
+      "type": "item",
+      "sortid": 1550,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "domain_debug_stick",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/craft_kaisen/models/item/domain_debug_stick.json",
+          "src/main/java/net/mcreator/craftkaisen/item/DomainDebugStickItem.java"
+        ]
+      },
+      "path": "~/Items"
     }
   ],
   "variable_elements": [
@@ -36838,6 +36929,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "InfinityOverlay",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [
@@ -37125,8 +37222,8 @@
   "language_map": {
     "en_us": {
       "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-      "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "subtitles.sukuna": "sukuna talking",
+      "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
       "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
@@ -37746,6 +37843,7 @@
       "subtitles.voidsplash": "",
       "effect.craft_kaisen.surge": "Surge",
       "item.craft_kaisen.medicine": "Medicine",
+      "item.craft_kaisen.domain_debug_stick": "Domain Debug Stick",
       "advancements.shibuya_incident.title": "Shibuya Incident",
       "item.craft_kaisen.split_soul_katana": "Split Soul Katana",
       "item.craft_kaisen.nobara_kugisaki_spawn_egg": "Nobara Kugisaki Spawn Egg",

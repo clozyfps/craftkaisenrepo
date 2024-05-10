@@ -1,7 +1,7 @@
 {
   "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-  "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
   "subtitles.sukuna": "sukuna talking",
+  "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
   "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
   "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
   "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",
@@ -621,6 +621,7 @@
   "subtitles.voidsplash": "",
   "effect.craft_kaisen.surge": "Surge",
   "item.craft_kaisen.medicine": "Medicine",
+  "item.craft_kaisen.domain_debug_stick": "Domain Debug Stick",
   "advancements.shibuya_incident.title": "Shibuya Incident",
   "item.craft_kaisen.split_soul_katana": "Split Soul Katana",
   "item.craft_kaisen.nobara_kugisaki_spawn_egg": "Nobara Kugisaki Spawn Egg",

@@ -213,6 +213,7 @@ public class CraftKaisenModVariables {
 			clone.FirstJoined = original.FirstJoined;
 			clone.InDomain = original.InDomain;
 			clone.HollowNukeID = original.HollowNukeID;
+			clone.InfinityOverlay = original.InfinityOverlay;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -641,6 +642,7 @@ public class CraftKaisenModVariables {
 		public boolean FirstJoined = false;
 		public boolean InDomain = false;
 		public double HollowNukeID = 0;
+		public String InfinityOverlay = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -829,6 +831,7 @@ public class CraftKaisenModVariables {
 			nbt.putBoolean("FirstJoined", FirstJoined);
 			nbt.putBoolean("InDomain", InDomain);
 			nbt.putDouble("HollowNukeID", HollowNukeID);
+			nbt.putString("InfinityOverlay", InfinityOverlay);
 			return nbt;
 		}
 
@@ -1014,6 +1017,7 @@ public class CraftKaisenModVariables {
 			FirstJoined = nbt.getBoolean("FirstJoined");
 			InDomain = nbt.getBoolean("InDomain");
 			HollowNukeID = nbt.getDouble("HollowNukeID");
+			InfinityOverlay = nbt.getString("InfinityOverlay");
 		}
 	}
 
@@ -1218,6 +1222,7 @@ public class CraftKaisenModVariables {
 					variables.FirstJoined = message.data.FirstJoined;
 					variables.InDomain = message.data.InDomain;
 					variables.HollowNukeID = message.data.HollowNukeID;
+					variables.InfinityOverlay = message.data.InfinityOverlay;
 				}
 			});
 			context.setPacketHandled(true);
