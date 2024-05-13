@@ -29926,28 +29926,7 @@
         "files": [
           "src/main/java/net/mcreator/craftkaisen/procedures/AwakenedMakiOnEntityTickUpdateProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Mobs/Procedure"
     },
@@ -37206,8 +37185,8 @@
   "language_map": {
     "en_us": {
       "item.craft_kaisen.geto_outfit_chestplate": "Geto Robe",
-      "subtitles.sukuna": "sukuna talking",
       "effect.craft_kaisen.distorted_body_killing": "Instant Spirit Body of Distorted Killing",
+      "subtitles.sukuna": "sukuna talking",
       "item.craft_kaisen.nyoi_staff": "Nyoi Staff",
       "advancements.sukuna_vessel.descr": "Become a Vessel Of Ryomen Sukuna",
       "advancements.jujutsu_sorcerer.descr": "Kill a Cursed Spirit",

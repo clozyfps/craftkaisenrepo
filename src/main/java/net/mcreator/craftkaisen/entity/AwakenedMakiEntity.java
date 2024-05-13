@@ -103,7 +103,7 @@ public class AwakenedMakiEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		AwakenedMakiOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		AwakenedMakiOnEntityTickUpdateProcedure.execute();
 	}
 
 	public static void init() {
