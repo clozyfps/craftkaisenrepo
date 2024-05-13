@@ -1,29 +1,6 @@
 
 package net.mcreator.craftkaisen.entity;
 
-import net.minecraftforge.network.PlayMessages;
-import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.projectile.ItemSupplier;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.util.RandomSource;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.Packet;
-
-import net.mcreator.craftkaisen.procedures.SoundWavesWhileProjectileFlyingTickProcedure;
-import net.mcreator.craftkaisen.procedures.SoundWavesProjectileHitsBlockProcedure;
-import net.mcreator.craftkaisen.init.CraftKaisenModItems;
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-
 @OnlyIn(value = Dist.CLIENT, _interface = ItemSupplier.class)
 public class SoundWavesEntity extends AbstractArrow implements ItemSupplier {
 	public static final ItemStack PROJECTILE_ITEM = new ItemStack(CraftKaisenModItems.BLAST_AWAY_RANGED.get());
@@ -69,25 +46,25 @@ public class SoundWavesEntity extends AbstractArrow implements ItemSupplier {
 	@Override
 	public void playerTouch(Player entity) {
 		super.playerTouch(entity);
-		SoundWavesProjectileHitsBlockProcedure.execute(this);
+		SoundWavesProjectileHitsBlockProcedure.execute();
 	}
 
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		SoundWavesProjectileHitsBlockProcedure.execute(this);
+		SoundWavesProjectileHitsBlockProcedure.execute();
 	}
 
 	@Override
 	public void onHitBlock(BlockHitResult blockHitResult) {
 		super.onHitBlock(blockHitResult);
-		SoundWavesProjectileHitsBlockProcedure.execute(this);
+		SoundWavesProjectileHitsBlockProcedure.execute();
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		SoundWavesWhileProjectileFlyingTickProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this.getOwner(), this);
+		SoundWavesWhileProjectileFlyingTickProcedure.execute();
 		if (this.inGround)
 			this.discard();
 	}

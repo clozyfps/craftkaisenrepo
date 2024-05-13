@@ -199,21 +199,21 @@ public class CraftKaisenModVariables {
 			clone.cameraroll = original.cameraroll;
 			clone.BrotherOneIf = original.BrotherOneIf;
 			clone.BortherTwoif = original.BortherTwoif;
-			clone.Dismantleactivated = original.Dismantleactivated;
-			clone.AnimationToPlay = original.AnimationToPlay;
 			clone.sixeyes = original.sixeyes;
-			clone.bluepostionx = original.bluepostionx;
-			clone.bluepostiony = original.bluepostiony;
-			clone.bluepostionz = original.bluepostionz;
-			clone.DomainClashClick = original.DomainClashClick;
 			clone.ControlVaribleDomainClash = original.ControlVaribleDomainClash;
 			clone.OverTimeNBT = original.OverTimeNBT;
+			clone.Dismantleactivated = original.Dismantleactivated;
 			clone.ChargeKeyDown = original.ChargeKeyDown;
 			clone.VrModeAbilitySwich = original.VrModeAbilitySwich;
-			clone.FirstJoined = original.FirstJoined;
-			clone.InDomain = original.InDomain;
 			clone.HollowNukeID = original.HollowNukeID;
+			clone.InDomain = original.InDomain;
+			clone.FirstJoined = original.FirstJoined;
+			clone.DomainClashClick = original.DomainClashClick;
 			clone.InfinityOverlay = original.InfinityOverlay;
+			clone.bluepostionz = original.bluepostionz;
+			clone.AnimationToPlay = original.AnimationToPlay;
+			clone.bluepostiony = original.bluepostiony;
+			clone.bluepostionx = original.bluepostionx;
 			if (!event.isWasDeath()) {
 				clone.currentMove = original.currentMove;
 				clone.currentOutput = original.currentOutput;
@@ -628,21 +628,21 @@ public class CraftKaisenModVariables {
 		public double cameraroll = 0;
 		public boolean BrotherOneIf = false;
 		public boolean BortherTwoif = false;
-		public boolean Dismantleactivated = false;
-		public String AnimationToPlay = "empty";
 		public boolean sixeyes = false;
-		public double bluepostionx = 0;
-		public double bluepostiony = 0;
-		public double bluepostionz = 0;
-		public double DomainClashClick = 0;
 		public boolean ControlVaribleDomainClash = false;
 		public double OverTimeNBT = 0;
+		public boolean Dismantleactivated = false;
 		public boolean ChargeKeyDown = false;
 		public double VrModeAbilitySwich = 0.0;
-		public boolean FirstJoined = false;
-		public boolean InDomain = false;
 		public double HollowNukeID = 0;
+		public boolean InDomain = false;
+		public boolean FirstJoined = false;
+		public double DomainClashClick = 0;
 		public String InfinityOverlay = "\"\"";
+		public double bluepostionz = 0;
+		public String AnimationToPlay = "empty";
+		public double bluepostiony = 0;
+		public double bluepostionx = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -817,21 +817,21 @@ public class CraftKaisenModVariables {
 			nbt.putDouble("cameraroll", cameraroll);
 			nbt.putBoolean("BrotherOneIf", BrotherOneIf);
 			nbt.putBoolean("BortherTwoif", BortherTwoif);
-			nbt.putBoolean("Dismantleactivated", Dismantleactivated);
-			nbt.putString("AnimationToPlay", AnimationToPlay);
 			nbt.putBoolean("sixeyes", sixeyes);
-			nbt.putDouble("bluepostionx", bluepostionx);
-			nbt.putDouble("bluepostiony", bluepostiony);
-			nbt.putDouble("bluepostionz", bluepostionz);
-			nbt.putDouble("DomainClashClick", DomainClashClick);
 			nbt.putBoolean("ControlVaribleDomainClash", ControlVaribleDomainClash);
 			nbt.putDouble("OverTimeNBT", OverTimeNBT);
+			nbt.putBoolean("Dismantleactivated", Dismantleactivated);
 			nbt.putBoolean("ChargeKeyDown", ChargeKeyDown);
 			nbt.putDouble("VrModeAbilitySwich", VrModeAbilitySwich);
-			nbt.putBoolean("FirstJoined", FirstJoined);
-			nbt.putBoolean("InDomain", InDomain);
 			nbt.putDouble("HollowNukeID", HollowNukeID);
+			nbt.putBoolean("InDomain", InDomain);
+			nbt.putBoolean("FirstJoined", FirstJoined);
+			nbt.putDouble("DomainClashClick", DomainClashClick);
 			nbt.putString("InfinityOverlay", InfinityOverlay);
+			nbt.putDouble("bluepostionz", bluepostionz);
+			nbt.putString("AnimationToPlay", AnimationToPlay);
+			nbt.putDouble("bluepostiony", bluepostiony);
+			nbt.putDouble("bluepostionx", bluepostionx);
 			return nbt;
 		}
 
@@ -1003,21 +1003,21 @@ public class CraftKaisenModVariables {
 			cameraroll = nbt.getDouble("cameraroll");
 			BrotherOneIf = nbt.getBoolean("BrotherOneIf");
 			BortherTwoif = nbt.getBoolean("BortherTwoif");
-			Dismantleactivated = nbt.getBoolean("Dismantleactivated");
-			AnimationToPlay = nbt.getString("AnimationToPlay");
 			sixeyes = nbt.getBoolean("sixeyes");
-			bluepostionx = nbt.getDouble("bluepostionx");
-			bluepostiony = nbt.getDouble("bluepostiony");
-			bluepostionz = nbt.getDouble("bluepostionz");
-			DomainClashClick = nbt.getDouble("DomainClashClick");
 			ControlVaribleDomainClash = nbt.getBoolean("ControlVaribleDomainClash");
 			OverTimeNBT = nbt.getDouble("OverTimeNBT");
+			Dismantleactivated = nbt.getBoolean("Dismantleactivated");
 			ChargeKeyDown = nbt.getBoolean("ChargeKeyDown");
 			VrModeAbilitySwich = nbt.getDouble("VrModeAbilitySwich");
-			FirstJoined = nbt.getBoolean("FirstJoined");
-			InDomain = nbt.getBoolean("InDomain");
 			HollowNukeID = nbt.getDouble("HollowNukeID");
+			InDomain = nbt.getBoolean("InDomain");
+			FirstJoined = nbt.getBoolean("FirstJoined");
+			DomainClashClick = nbt.getDouble("DomainClashClick");
 			InfinityOverlay = nbt.getString("InfinityOverlay");
+			bluepostionz = nbt.getDouble("bluepostionz");
+			AnimationToPlay = nbt.getString("AnimationToPlay");
+			bluepostiony = nbt.getDouble("bluepostiony");
+			bluepostionx = nbt.getDouble("bluepostionx");
 		}
 	}
 
@@ -1208,21 +1208,21 @@ public class CraftKaisenModVariables {
 					variables.cameraroll = message.data.cameraroll;
 					variables.BrotherOneIf = message.data.BrotherOneIf;
 					variables.BortherTwoif = message.data.BortherTwoif;
-					variables.Dismantleactivated = message.data.Dismantleactivated;
-					variables.AnimationToPlay = message.data.AnimationToPlay;
 					variables.sixeyes = message.data.sixeyes;
-					variables.bluepostionx = message.data.bluepostionx;
-					variables.bluepostiony = message.data.bluepostiony;
-					variables.bluepostionz = message.data.bluepostionz;
-					variables.DomainClashClick = message.data.DomainClashClick;
 					variables.ControlVaribleDomainClash = message.data.ControlVaribleDomainClash;
 					variables.OverTimeNBT = message.data.OverTimeNBT;
+					variables.Dismantleactivated = message.data.Dismantleactivated;
 					variables.ChargeKeyDown = message.data.ChargeKeyDown;
 					variables.VrModeAbilitySwich = message.data.VrModeAbilitySwich;
-					variables.FirstJoined = message.data.FirstJoined;
-					variables.InDomain = message.data.InDomain;
 					variables.HollowNukeID = message.data.HollowNukeID;
+					variables.InDomain = message.data.InDomain;
+					variables.FirstJoined = message.data.FirstJoined;
+					variables.DomainClashClick = message.data.DomainClashClick;
 					variables.InfinityOverlay = message.data.InfinityOverlay;
+					variables.bluepostionz = message.data.bluepostionz;
+					variables.AnimationToPlay = message.data.AnimationToPlay;
+					variables.bluepostiony = message.data.bluepostiony;
+					variables.bluepostionx = message.data.bluepostionx;
 				}
 			});
 			context.setPacketHandled(true);

@@ -1,19 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.craftkaisen.entity.DeathWarm2Entity;
-import net.mcreator.craftkaisen.entity.DeathSwarm3Entity;
-import net.mcreator.craftkaisen.entity.DeathSwarm1Entity;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
+import javax.annotation.Nullable;
 
 public class DeathSwarmEffectExpiresProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {

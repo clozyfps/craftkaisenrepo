@@ -168,6 +168,7 @@ public class DisasterTidesMoveUseProcedure {
 									}
 								}
 							}
+							DisasterTidesDomainExpasionProcedure.execute(world, x, y, z, entity);
 							entity.getPersistentData().putDouble(("cooldown" + new java.text.DecimalFormat("#").format(entity.getPersistentData().getDouble("coolset"))), 60);
 						});
 					} else if ((entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new CraftKaisenModVariables.PlayerVariables())).currentCursedEnergy < 500) {

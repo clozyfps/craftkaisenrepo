@@ -1,15 +1,6 @@
 
 package net.mcreator.craftkaisen.potion;
 
-import net.minecraftforge.client.extensions.common.IClientMobEffectExtensions;
-
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
-
-import com.mojang.blaze3d.vertex.PoseStack;
-
 public class RatioHit2MobEffect extends MobEffect {
 	public RatioHit2MobEffect() {
 		super(MobEffectCategory.NEUTRAL, -1);

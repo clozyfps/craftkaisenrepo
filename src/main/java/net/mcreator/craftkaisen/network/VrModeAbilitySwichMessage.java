@@ -1,22 +1,11 @@
 
 package net.mcreator.craftkaisen.network;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.FriendlyByteBuf;
-
-import net.mcreator.craftkaisen.procedures.VrModeAbilitySwichOnKeyPressedProcedure;
 import net.mcreator.craftkaisen.CraftKaisenMod;
-
-import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VrModeAbilitySwichMessage {
+
 	int type, pressedms;
 
 	public VrModeAbilitySwichMessage(int type, int pressedms) {
@@ -47,17 +36,21 @@ public class VrModeAbilitySwichMessage {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
+
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(entity.blockPosition()))
 			return;
+
 		if (type == 0) {
 
-			VrModeAbilitySwichOnKeyPressedProcedure.execute(world, x, y, z, entity);
+			VrModeAbilitySwichOnKeyPressedProcedure.execute(world, x, y, z);
 		}
+
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
 		CraftKaisenMod.addNetworkMessage(VrModeAbilitySwichMessage.class, VrModeAbilitySwichMessage::buffer, VrModeAbilitySwichMessage::new, VrModeAbilitySwichMessage::handler);
 	}
+
 }

@@ -1,38 +1,8 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.network.NetworkHooks;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.BlockPos;
-
-import net.mcreator.craftkaisen.world.inventory.DomainClashingGUIMenu;
-import net.mcreator.craftkaisen.init.CraftKaisenModParticleTypes;
-import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
-
-import io.netty.buffer.Unpooled;
+import javax.annotation.Nullable;
 
 public class PreDomainMobOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
@@ -40,7 +10,7 @@ public class PreDomainMobOnEntityTickUpdateProcedure {
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
-				if (entityiterator instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(CraftKaisenModMobEffects.PRE_DOMAIN.get())) {
+				if (entityiterator instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get())) {
 					if (!(entityiterator instanceof Player _plr1 && _plr1.containerMenu instanceof DomainClashingGUIMenu)) {
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.STOP_DOMAIN.get(), 10000, 1, false, false));
@@ -59,7 +29,7 @@ public class PreDomainMobOnEntityTickUpdateProcedure {
 							}, _bpos);
 						}
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
-							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.PRE_DOMAIN.get(), 10000, 1, false, false));
+							_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get(), 10000, 1, false, false));
 					}
 				}
 			}

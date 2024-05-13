@@ -1,21 +1,6 @@
 
 package net.mcreator.craftkaisen.potion;
 
-import net.minecraftforge.client.extensions.common.IClientMobEffectExtensions;
-
-import net.minecraft.world.entity.ai.attributes.AttributeMap;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
-
-import net.mcreator.craftkaisen.procedures.OverTimeEffectOnEffectActiveTickProcedure;
-import net.mcreator.craftkaisen.procedures.OverTimeEffectEffectStartedappliedProcedure;
-import net.mcreator.craftkaisen.procedures.OverTimeEffectEffectExpiresProcedure;
-
-import com.mojang.blaze3d.vertex.PoseStack;
-
 public class OverTimeEffectMobEffect extends MobEffect {
 	public OverTimeEffectMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -1);
@@ -28,18 +13,18 @@ public class OverTimeEffectMobEffect extends MobEffect {
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-		OverTimeEffectEffectStartedappliedProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		OverTimeEffectEffectStartedappliedProcedure.execute();
 	}
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		OverTimeEffectOnEffectActiveTickProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		OverTimeEffectOnEffectActiveTickProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
 	}
 
 	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		super.removeAttributeModifiers(entity, attributeMap, amplifier);
-		OverTimeEffectEffectExpiresProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		OverTimeEffectEffectExpiresProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
 	}
 
 	@Override

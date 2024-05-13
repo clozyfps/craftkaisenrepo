@@ -1,39 +1,15 @@
 package net.mcreator.craftkaisen.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.BlockPos;
-
-import net.mcreator.craftkaisen.network.CraftKaisenModVariables;
-import net.mcreator.craftkaisen.init.CraftKaisenModMobEffects;
-import net.mcreator.craftkaisen.init.CraftKaisenModEntities;
-import net.mcreator.craftkaisen.entity.PreDomainMobEntity;
-
-import java.util.stream.Collectors;
-import java.util.List;
-import java.util.Comparator;
+import javax.annotation.Nullable;
 
 public class PreDomainEffectStartedappliedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		double fi = 0;
-		if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(CraftKaisenModMobEffects.DOMAIN_SPAM_FIX.get()))) {
+		if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get()))) {
 			fi = 0;
 			{
 				final Vec3 _center = new Vec3(x, y, z);
@@ -47,14 +23,7 @@ public class PreDomainEffectStartedappliedProcedure {
 			}
 			if (fi >= 2) {
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DOMAIN_SPAM_FIX.get(), 100, 1, false, false));
-				{
-					double _setval = 0;
-					entity.getCapability(CraftKaisenModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.DomainClashClick = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
+					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get(), 100, 1, false, false));
 				{
 					// Get the radius of the sphere
 					double radius = 10; // 3 blocks
@@ -87,7 +56,7 @@ public class PreDomainEffectStartedappliedProcedure {
 					}
 				}
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.PRE_DOMAIN.get(), 100, 1, false, false));
+					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get(), 100, 1, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 					_entity.addEffect(new MobEffectInstance(CraftKaisenModMobEffects.STOP_DOMAIN.get(), 95, 1, false, false));
 				{
@@ -96,10 +65,10 @@ public class PreDomainEffectStartedappliedProcedure {
 							.collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
-							if (entityiterator instanceof LivingEntity _livEnt10 && _livEnt10.hasEffect(CraftKaisenModMobEffects.PRE_DOMAIN.get())) {
+							if (entityiterator instanceof LivingEntity _livEnt10 && _livEnt10.hasEffect(CraftKaisenModMobEffects.DELETED_MOD_ELEMENT.get())) {
 								if (!(!world.getEntitiesOfClass(PreDomainMobEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).isEmpty())) {
 									if (world instanceof ServerLevel _level) {
-										Entity entityToSpawn = new PreDomainMobEntity(CraftKaisenModEntities.PRE_DOMAIN_MOB.get(), _level);
+										Entity entityToSpawn = new PreDomainMobEntity(CraftKaisenModEntities.DELETED_MOD_ELEMENT.get(), _level);
 										entityToSpawn.moveTo(x, y, z, 0, 0);
 										entityToSpawn.setYBodyRot(0);
 										entityToSpawn.setYHeadRot(0);
@@ -114,7 +83,6 @@ public class PreDomainEffectStartedappliedProcedure {
 					}
 				}
 			} else {
-				PreDomainEffectExpiresProcedure.execute(world, x, y, z, entity);
 			}
 		}
 	}
